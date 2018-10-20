@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	
+	<package name="default"  extends="struts-default">
+	
+		<action name="index" class="com.efact.action.IndexAction" method = "execute">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+	
+		<action name="conciliaciones" class="com.efact.action.ReconciliationsAction" method = "index">
+			<result name="SUCCESS">/reconciliations.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
+		<action name="conciliaciones-filter" class="com.efact.action.ReconciliationsAction" method = "filter">
+			<result name="SUCCESS">/reconciliations-filter.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+	
+		<action name="transferencia" class="com.efact.action.TransferAction" method = "index">
+			<result name="SUCCESS">/transfer.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="mantenimientos" class="com.efact.action.MaintenanceAction" method = "index">
+			<result name="SUCCESS">/maintenance.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="ventas" class="com.efact.action.SalesAction" method = "index">
+			<result name="SUCCESS">/sales.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
+		<action name="interface-contable" class="com.efact.action.AccountingInterfaceAction" method = "index">
+			<result name="SUCCESS">/interface-contable.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="reportes" class="com.efact.action.ReportAction" method = "index">
+			<result name="SUCCESS">/report.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+	
+	</package>
+
+</struts>
