@@ -31,7 +31,7 @@
                 
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Productos</label>
+		                  <label for="exampleInputEmail1">Programa</label>
 		                  <select class="form-control" name="product" required="required">
 		                  	<option value="">[seleccione]</option>
 		                  	<option value="1">111</option>

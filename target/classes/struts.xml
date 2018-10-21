@@ -13,13 +13,13 @@
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
-		<action name="conciliaciones" class="com.efact.action.ReconciliationsAction" method = "index">
-			<result name="SUCCESS">/reconciliations.jsp</result>
+		<action name="conciliaciones" class="com.efact.action.ConciliationAction" method = "index">
+			<result name="SUCCESS">/conciliation.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="conciliaciones-filter" class="com.efact.action.ReconciliationsAction" method = "filter">
-			<result name="SUCCESS">/reconciliations-filter.jsp</result>
+		<action name="conciliaciones-filter" class="com.efact.action.ConciliationAction" method = "filter">
+			<result name="SUCCESS">/conciliation-filter.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
