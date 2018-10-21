@@ -114,7 +114,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
             while (rs.next()) {
                id = rs.getInt("NEXTVAL");
-               System.out.println("TEST_222::: " + id);
+               System.out.println("SEQUENCIA NEXTVAL::: " + id);
             }
             
             rs.close();

@@ -33,7 +33,7 @@
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Programa</label>
 		                  <select class="form-control" id="program" name="program" required="required">
-		                  	<option value="">[seleccione]</option>
+		                  	<option value="0">[todos]</option>
 		                  	<option value="22">vvvvvv</option>
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
@@ -48,7 +48,7 @@
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Grupos</label>
 		                  <select class="form-control" name="group">
-		                  	<option value="">[seleccione]</option>
+		                  	<option value="0">[todos]</option>
 		                  	<option value="333">dddd</option>
 		                  	<s:iterator value="listGroup" var="group">
 		                  		<option value="<s:property value = "#group.id"/>" class="group-select prod-<s:property value = "#group.prodId"/>">
@@ -63,7 +63,7 @@
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Banco</label>
 		                  <select class="form-control" name="bank">
-		                  	<option value="">[seleccione]</option>
+		                  	<option value="99">[todos]</option>
 		                  	<s:iterator value="listBank" var="bank">
 		                  		<option value="<s:property value = "#bank.id"/>">
 		                  			(<s:property value = "#bank.id"/>) <s:property value = "#bank.name"/>

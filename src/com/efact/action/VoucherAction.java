@@ -67,9 +67,6 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
         VoucherDao voucherDao = dao.getVoucherDao();
         
         
-        System.out.print("SEQUENCIA ::::: " + voucherDao.getSecuencia());
-        
-        
         listVoucher = voucherDao.search(
         		vs.getProgram(),
         		vs.getGroup(),
