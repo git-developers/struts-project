@@ -12,7 +12,7 @@ public abstract class DaoFactory {
 	public abstract ProgramDao getProgramDao();
 	public abstract GroupDao getGroupDao();
 	public abstract BankDao getBankDao();
-	
+	public abstract VoucherDao getVoucherDao();
 
 	public static DaoFactory getDAOFactory(int factory){
 		
@@ -20,7 +20,7 @@ public abstract class DaoFactory {
 			case MYSQL:
 				return new MySqlDaoFactory();
 			case SQLSERVER:
-				return new SqlDaoFactory();
+				return new SqlServerDaoFactory();
 			case ORACLE:
 				return new OracleDaoFactory();
 			default:

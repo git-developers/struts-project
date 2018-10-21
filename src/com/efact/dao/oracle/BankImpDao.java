@@ -22,7 +22,6 @@ public class BankImpDao extends OracleDaoFactory implements BankDao  {
 
         try{
         	
-        	/*
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_BANCOS() }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
@@ -42,7 +41,6 @@ public class BankImpDao extends OracleDaoFactory implements BankDao  {
             
             rs.close();
             st.close();
-            */
             
             
         } catch (Exception e){

@@ -33,6 +33,7 @@
                 data: {
                 	fields: fields
                 },
+                
                 beforeSend: function(jqXHR, settings) {
                 	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
@@ -43,6 +44,22 @@
                     console.log("error :: 333");
                 }
             });
+        };
+        
+        base.program = function(context) {
+            var id = $(context).val();  
+            
+            $('.group-select').hide();
+            
+            $('.prod-' + id).show();
+            
+            if (id === '0') {
+                $('.group-select').show();
+            }
+
+            //$('#grupo').val(0);
+
+            console.log( "ID ::: " + id );
         };
 
         // Private Functions
@@ -65,7 +82,7 @@
             });
             
             $( "#program" ).change(function(event) {
-            	  console.log("PROGRAM --- WWW");
+            	bp.program(this);
         	});
 
         });

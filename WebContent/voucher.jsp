@@ -50,9 +50,9 @@
 		                  <select class="form-control" name="group">
 		                  	<option value="">[seleccione]</option>
 		                  	<option value="333">dddd</option>
-		                  	<s:iterator value="listGroup" status="group">
-		                  		<option value="<s:property value = "group.id"/>" class="<s:property value = "group.prodId"/>">
-		                  			(<s:property value = "group.id"/>) <s:property value = "group.name"/>
+		                  	<s:iterator value="listGroup" var="group">
+		                  		<option value="<s:property value = "#group.id"/>" class="group-select prod-<s:property value = "#group.prodId"/>">
+		                  			(<s:property value = "#group.id"/>) <s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
@@ -64,9 +64,9 @@
 		                  <label for="exampleInputEmail1">Banco</label>
 		                  <select class="form-control" name="bank">
 		                  	<option value="">[seleccione]</option>
-		                  	<s:iterator value="listBank" status="bank">
-		                  		<option value="<s:property value = "bank.id"/>">
-		                  			(<s:property value = "bank.id"/>) <s:property value = "bank.name"/>
+		                  	<s:iterator value="listBank" var="bank">
+		                  		<option value="<s:property value = "#bank.id"/>">
+		                  			(<s:property value = "#bank.id"/>) <s:property value = "#bank.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>

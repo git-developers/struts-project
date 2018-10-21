@@ -2,10 +2,15 @@ package com.efact.action;
 
 import com.efact.dao.factory.DaoFactory;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.interceptor.RequestAware;
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
 import com.efact.bean.*;
@@ -14,7 +19,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-public class VoucherAction extends ActionSupportBase  {
+//https://www.journaldev.com/2203/get-servlet-session-request-response-context-attributes-struts-2-action
+
+public class VoucherAction extends ActionSupportBase implements ServletRequestAware, ServletResponseAware  {
 
 	private static final long serialVersionUID = 1L;
 	private DaoFactory dao;
@@ -22,6 +29,11 @@ public class VoucherAction extends ActionSupportBase  {
 	private List<Program> listProgram;
 	private List<Group> listGroup;
 	private List<Bank> listBank;
+	private List<Voucher> listVoucher;
+	
+	private HttpServletRequest request = null;
+	private HttpServletResponse response = null;
+	//private Map<String, Object> requestAttributes = null;
 	
     public VoucherAction() {
 		dao = DaoFactory.getDAOFactory(DaoFactory.ORACLE);
@@ -44,24 +56,24 @@ public class VoucherAction extends ActionSupportBase  {
 		listGroup = groupDao.findAll();
 		listBank = bankDao.findAll();
 		
-		for(Program program : listProgram) {
-			System.out.print("program :::: " + program.getId() + " - "  + program.getName());
-		}
-		
 		return "SUCCESS";
 	}
 	
-	public String search(HttpServletRequest request, HttpServletResponse response) throws Exception, ServletException {
+	public String search() throws Exception {
 		
-		System.out.print(":::: SEARCH :::: ");
-		
-        //String fields = request.getParameter("fields");
+        String fields = request.getParameter("fields");
+        VoucherSearch vs = gson.fromJson(serializeToJSON(fields), VoucherSearch.class);
         
-        //System.out.print("FIELDS :::: " + fields);
-
-        //VoucherSearch vs = gson.fromJson(fields, VoucherSearch.class);
-        
-        //System.out.print("VoucherSearch :::: " + vs.getProgram() + " - "  + vs.getGroup());
+        VoucherDao voucherDao = dao.getVoucherDao();
+        listVoucher = voucherDao.search(
+        		vs.getProgram(),
+        		vs.getGroup(),
+        		vs.getBank(),
+                vs.getVoucher(),
+                vs.getStatus(),
+                vs.getFrom(),
+                vs.getTo()
+        );
         
 		return "SUCCESS";
 	}
@@ -89,7 +101,27 @@ public class VoucherAction extends ActionSupportBase  {
 	public void setListBank(List<Bank> listBank) {
 		this.listBank = listBank;
 	}
-	
+
+	public List<Voucher> getListVoucher() {
+		return listVoucher;
+	}
+
+	public void setListVoucher(List<Voucher> listVoucher) {
+		this.listVoucher = listVoucher;
+	}
+
+	@Override
+	public void setServletResponse(HttpServletResponse httpServletResponse) {
+		this.response = httpServletResponse;
+	}
+
+	@Override
+	public void setServletRequest(HttpServletRequest httpServletRequest) {
+		this.request = httpServletRequest;
+	}
+
+
+
 	
 
 	

@@ -22,7 +22,6 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         
         try{
         	
-        	
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_PROGRAMAS() }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();

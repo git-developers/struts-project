@@ -42,23 +42,26 @@ public class MySqlDaoFactory extends DaoFactory {
     
 	@Override
 	public UserDao getUserDao(){
-		return new UserImpDao();
+		return null;
 	}
 	
 	@Override
 	public ProgramDao getProgramDao() {
-		return new ProgramImpDao();
+		return null;
 	}
 
 	@Override
 	public GroupDao getGroupDao() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public BankDao getBankDao() {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public VoucherDao getVoucherDao() {
 		return null;
 	}
 

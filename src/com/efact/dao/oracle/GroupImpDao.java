@@ -20,8 +20,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
         List<Group> list = new ArrayList<>();
 
         try{
-        	
-        	/*
+        
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_GRUPOS() }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
@@ -42,7 +41,6 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
             
             rs.close();
             st.close();
-            */
             
             
         } catch (Exception e){

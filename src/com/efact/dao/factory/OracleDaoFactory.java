@@ -60,6 +60,9 @@ public class OracleDaoFactory extends DaoFactory {
 		return new BankImpDao();
 	}
 	
-	
+	@Override
+	public VoucherDao getVoucherDao() {
+		return new VoucherImpDao();
+	}
 
 }

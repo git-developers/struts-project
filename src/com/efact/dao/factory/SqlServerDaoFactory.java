@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.efact.dao.interfaces.*;
 import com.efact.dao.oracle.*;
 
-public class SqlDaoFactory extends DaoFactory {
+public class SqlServerDaoFactory extends DaoFactory {
 
 	protected static Connection connection;
 	
@@ -42,23 +42,26 @@ public class SqlDaoFactory extends DaoFactory {
 	
 	@Override
 	public UserDao getUserDao(){
-		return new UserImpDao();
+		return null;
 	}
 	
 	@Override
 	public ProgramDao getProgramDao() {
-		return new ProgramImpDao();
+		return null;
 	}
 
 	@Override
 	public GroupDao getGroupDao() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public BankDao getBankDao() {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public VoucherDao getVoucherDao() {
 		return null;
 	}
 	
