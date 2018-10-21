@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.sql.Date;
 import java.util.Locale;
 
@@ -78,17 +80,13 @@ public class VoucherSearch implements Serializable {
 	
     private Date stringToDate(String dateString){
 
-        Date date = null;
+    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
+    	
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(dateString, formatter);
         
-		try {
-	    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-	        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-			date = (Date) format.parse(dateString);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-        
-        return date;
+        return Date.valueOf(localDate);
+
     }
     
     
