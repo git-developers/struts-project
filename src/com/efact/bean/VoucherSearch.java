@@ -32,9 +32,11 @@ public class VoucherSearch implements Serializable {
         	 return 0;
          }
 	}
+	
 	public void setGroup(String group) {
 		this.group = group;
 	}
+	
 	public int getBank() {
         try {
         	return Integer.parseInt(bank);
@@ -42,6 +44,7 @@ public class VoucherSearch implements Serializable {
         	 return 0;
          }
 	}
+	
 	public void setBank(String bank) {
 		this.bank = bank;
 	}
@@ -51,6 +54,7 @@ public class VoucherSearch implements Serializable {
 	public void setVoucher(String voucher) {
 		this.voucher = voucher;
 	}
+	
 	public int getStatus() {
         try {
         	return Integer.parseInt(status);
@@ -58,9 +62,11 @@ public class VoucherSearch implements Serializable {
         	 return 0;
          }
 	}
+	
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
 	public Date getFrom() {
 		return stringToDate(from);
 	}
@@ -70,23 +76,14 @@ public class VoucherSearch implements Serializable {
 	public Date getTo() {
 		return stringToDate(to);
 	}
+	
 	public void setTo(String to) {
 		this.to = to;
 	}
 	
     private Date stringToDate(String dateString){
-
     	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-    	
     	return Date.valueOf(dateString);
-    	
-    	/*
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate = LocalDate.parse(dateString, formatter);
-        
-        return Date.valueOf(localDate);
-        */
-
     }
     
     
