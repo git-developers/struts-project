@@ -207,5 +207,7 @@
      </div>
      </section>
      
+     <%@include file="voucher-modal.jsp" %>
+     
 <%@include file="themes/adminLTE/footer.jsp" %>
 
