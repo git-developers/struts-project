@@ -31,7 +31,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
         try{
         	
-            String sql = "{ ? = call FIN_PKG_REGISTROVENTASLOTE.F_LISTACONCILIACIONES(?, ?, ?, ?, ?, ?, ? ) } "; 
+            String sql = "{ ? = call FIN_PKG_REGISTROVENTASLOTE.F_LISTACONCILIACIONES(?, ?, ?, ?, ?, ?, ?) } "; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
@@ -48,6 +48,8 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){
+            	
+            	System.out.print("111 -- VOUCHER ::::: " + rs.getString("pro_nombre") + " --- CODIGO ::: " + rs.getString("aso_cod"));
             	
             	Voucher obj = new Voucher();
                 obj.setLcs_check(rs.getString("flag_html"));

@@ -52,7 +52,7 @@
 		                  	<option value="333">dddd</option>
 		                  	<s:iterator value="listGroup" var="group">
 		                  		<option value="<s:property value = "#group.id"/>" class="group-select prod-<s:property value = "#group.prodId"/>">
-		                  			(<s:property value = "#group.prodId""/>) <s:property value = "#group.name"/>
+		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>

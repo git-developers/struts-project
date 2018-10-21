@@ -75,6 +75,10 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
                 vs.getTo()
         );
         
+        for (Voucher voucher : listVoucher) {
+        	System.out.print("222 -- VOUCHER ::::: " + voucher.getLcs_pro_nombre() + " --- CODIGO ::: " + voucher.getLcs_aso_cod());
+        }
+        
 		return "SUCCESS";
 	}
 
