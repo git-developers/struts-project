@@ -3,7 +3,9 @@
 <s:iterator value="listVoucher" var="voucher" status="voucherStatus">
 	<tr>
 		<td>
-			<s:property value="%{#voucherStatus.index + 1}"/>
+			<span class="badge bg-light-blue">
+				<s:property value="%{#voucherStatus.index + 1}"/>
+			</span>
 		</td>
 		<td>
 			<input type="checkbox">
@@ -15,7 +17,9 @@
 			<s:property value = "#voucher.lcs_aso_cod"/>
 		</td>
 		<td>
-			<s:property value = "#voucher.lcs_con_cod"/>
+			<button type="button" class="btn bg-purple btn-flat btn-xs margin">
+				<s:property value = "#voucher.lcs_con_cod"/>
+			</button>
 		</td>
 		<td>
 			<s:property value = "#voucher.lcs_aso_datos"/>
@@ -24,7 +28,7 @@
 			<s:property value = "#voucher.lcs_fecha"/>
 		</td>
 		<td>
-			<s:property value = "#voucher.lcs_monto"/>
+			S/ <s:property value = "#voucher.lcs_monto"/>
 		</td>
 		<td>
 			<s:property value = "#voucher.lcs_importe"/>
@@ -33,7 +37,12 @@
 			<s:property value = "#voucher.lcs_saldo"/>
 		</td>
 		<td>
-			<s:property value = "#voucher.lcs_devengado"/>
+			<s:if test="%{#voucher.lcs_devengado=='NO'}">
+				<small class="label pull-right bg-red">No</small>
+			</s:if>
+			<s:elseif test="%{#voucher.lcs_devengado=='SI'}">
+			    <small class="label pull-right bg-green">Si</small>
+			</s:elseif>
 		</td>
 		<td>
 			<s:property value = "#voucher.lcs_cie_id"/>

@@ -174,8 +174,8 @@
 					   <th>Asociado</th>
 					   <th>Contrato</th>
 					   <th>Datos</th>
-					   <th>Fecha</th>
-					   <th>Monto</th>
+					   <th><i class="fa fa-fw fa-calendar"></i> Fecha</th>
+					   <th><i class="fa fa-fw fa-money"></i> Monto</th>
 					   <th>Conciliado</th>
 					   <th>Diferencia</th>
 					   <th>Devengado</th>
