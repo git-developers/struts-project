@@ -1,40 +1,27 @@
  <tr>
    <td>1.</td>
-   <td>Update software</td>
    <td>
-     <div class="progress progress-xs">
-       <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-     </div>
+   	<input type="checkbox">
    </td>
-   <td><span class="badge bg-red">55%</span></td>
+   <td>Programa</td>
+   <td>Asociado</td>
+   <td>Contrato</td>
+   <td>Datos</td>
+   <td>Fecha</td>
+   <td>Monto</td>
+   <td>Conciliado</td>
+   <td>Diferencia</td>
+   <td>Devengado</td>
+   <td>Cod. Cierre</td>
+   <td>Sistema</td>
  </tr>
- <tr>
-   <td>2.</td>
-   <td>Clean database</td>
-   <td>
-     <div class="progress progress-xs">
-       <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-     </div>
-   </td>
-   <td><span class="badge bg-yellow">70%</span></td>
- </tr>
- <tr>
-   <td>3.</td>
-   <td>Cron job running</td>
-   <td>
-     <div class="progress progress-xs progress-striped active">
-       <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-     </div>
-   </td>
-   <td><span class="badge bg-light-blue">30%</span></td>
- </tr>
- <tr>
-   <td>4.</td>
-   <td>Fix and squish bugs</td>
-   <td>
-     <div class="progress progress-xs progress-striped active">
-       <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-     </div>
-   </td>
-   <td><span class="badge bg-green">90%</span></td>
- </tr>
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 

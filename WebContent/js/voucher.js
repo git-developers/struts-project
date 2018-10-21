@@ -20,19 +20,21 @@
             // base.$el.append('<button name="public" style="'+base.options.buttonStyle+'">Private</button>');
         };
 
-        base.filter = function(context) {
+        base.search = function(context) {
         	
-        	var fields = $(context).serializeArray();
+        	var fields = $(context).serialize();
         	
         	console.dir(fields);
         	
             $.ajax({
-                url: 'eFACT/comprobante-por-lote-filter',
+                url: options.contextPath + '/comprobante-por-lote-search',
                 type: 'POST',
                 dataType: 'html',
-                data: fields,
+                data: {
+                	fields: fields
+                },
                 beforeSend: function(jqXHR, settings) {
-                    $("#initialize-array").html('Loading...');
+                	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
                     $("table tbody").html(data);
@@ -57,9 +59,9 @@
 
             var bp = new $.formVoucher(this, options);
 
-            $( "form[name='form-voucher']" ).submit(function( event ) {
+            $( "form[name='" + options.formName + "']" ).submit(function( event ) {
             	event.preventDefault();
-                bp.filter(this);
+                bp.search(this);
             });
             
             $( "#program" ).change(function(event) {
@@ -72,8 +74,4 @@
 })(jQuery);
 
 
-;(function($){
-    $("body").formVoucher({
-        id: '',
-    });
-})(jQuery);
+

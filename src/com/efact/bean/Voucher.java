@@ -13,7 +13,7 @@ public class Voucher implements Serializable {
     private String fecha;  
     private String abono;
     private String conciliado;
-    private String diferido;
+    private String diferencia;
     private String devengado;
     private String codcierre;
     private String sistema;    
@@ -74,11 +74,11 @@ public class Voucher implements Serializable {
 	public void setConciliado(String conciliado) {
 		this.conciliado = conciliado;
 	}
-	public String getDiferido() {
-		return diferido;
+	public String getDiferencia() {
+		return diferencia;
 	}
-	public void setDiferido(String diferido) {
-		this.diferido = diferido;
+	public void setDiferencia(String diferencia) {
+		this.diferencia = diferencia;
 	}
 	public String getDevengado() {
 		return devengado;

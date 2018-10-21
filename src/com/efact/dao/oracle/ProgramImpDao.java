@@ -19,8 +19,9 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
 	public List<Program> findAll() throws Exception {
 		
         List<Program> list = new ArrayList<>();
-
+        
         try{
+        	
         	
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_PROGRAMAS() }"; 
             
@@ -43,6 +44,7 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
             
             rs.close();
             st.close();
+            
             
         } catch (Exception e){
             throw e;

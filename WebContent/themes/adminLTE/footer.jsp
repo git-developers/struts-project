@@ -49,14 +49,7 @@
   // To make Pace works on Ajax calls
   $(document).ajaxStart(function () {
     Pace.restart()
-  })
-  $('.ajax').click(function () {
-    $.ajax({
-      url: '#', success: function (result) {
-        $('.ajax-content').html('<hr>Ajax Request Completed !')
-      }
-    })
-  })
+  });
 </script>
 	
 <c:if test="${fn:contains(pageContext.request.requestURI, 'index')}">
@@ -67,6 +60,13 @@
 <c:if test="${fn:contains(pageContext.request.requestURI, 'voucher')}">
 	<script src="js/voucher.js"></script>
 	<link rel="stylesheet" href="css/voucher.css">
+	
+	<script type="text/javascript">
+	    $("body").formVoucher({
+	    	contextPath: '${pageContext.request.contextPath}',
+	    	formName: 'form-voucher'
+	    });
+	</script>
 </c:if>
 
 

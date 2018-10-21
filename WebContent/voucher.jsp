@@ -34,7 +34,8 @@
 		                  <label for="exampleInputEmail1">Programa</label>
 		                  <select class="form-control" id="program" name="program" required="required">
 		                  	<option value="">[seleccione]</option>
-		                  	<s:iterator value="listProgram" status="program">
+		                  	<option value="22">xxxxxx</option>
+		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "program.id"/>">
 		                  			(<s:property value = "program.id"/>) <s:property value = "program.name"/>
 	                  			</option>
@@ -48,6 +49,7 @@
 		                  <label for="exampleInputEmail1">Grupos</label>
 		                  <select class="form-control" name="group">
 		                  	<option value="">[seleccione]</option>
+		                  	<option value="333">dddd</option>
 		                  	<s:iterator value="listGroup" status="group">
 		                  		<option value="<s:property value = "group.id"/>" class="<s:property value = "group.prodId"/>">
 		                  			(<s:property value = "group.id"/>) <s:property value = "group.name"/>
@@ -162,20 +164,28 @@
             <div class="box-header with-border">
               <h3 class="box-title">Recaudados conciliados</h3>
             </div>
-            <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">
 	              <thead>
 					<tr>
-					   <th style="width: 10px">#</th>
-					   <th>Task</th>
-					   <th>Progress</th>
-					   <th style="width: 40px">Label</th>
+					   <th style="width: 15px">#</th>
+					   <th style="width: 15px">&nbsp;</th>
+					   <th>Programa</th>
+					   <th>Asociado</th>
+					   <th>Contrato</th>
+					   <th>Datos</th>
+					   <th>Fecha</th>
+					   <th>Monto</th>
+					   <th>Conciliado</th>
+					   <th>Diferencia</th>
+					   <th>Devengado</th>
+					   <th>Cod. Cierre</th>
+					   <th>Sistema</th>
 					 </tr>
 	              </thead>
 		            <tbody>
 			            <tr>
-						   	<td colspan="5">
+						   	<td colspan="13" align="center">
 				   				No hay datos que mostrar.
 				   			</td>
 						 </tr>
