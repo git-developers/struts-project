@@ -18,6 +18,18 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
 	@Override
 	public List<Program> listAll() throws Exception {
 		
+		List<Program> list = null;
+        Program object = new Program();
+        object.setId(11);
+        object.setName("XXXXXXXX"); 
+        list.add(object);
+        Program object2 = new Program();
+        object2.setId(22);
+        object2.setName("AAAAAAA"); 
+        list.add(object2);
+		
+		
+		/*
         List<Program> list = null;
         CallableStatement st = null;
         //ResultSet rs = null;
@@ -57,6 +69,7 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         } finally {
             this.closeConnection();
         }
+        */
         
         return list;
 	}
