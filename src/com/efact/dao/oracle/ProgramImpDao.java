@@ -18,7 +18,8 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
 	@Override
 	public List<Program> listAll() throws Exception {
 		
-		List<Program> list = null;
+		/*
+		List<Program> list = new ArrayList<>();
         Program object = new Program();
         object.setId(11);
         object.setName("XXXXXXXX"); 
@@ -27,12 +28,11 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         object2.setId(22);
         object2.setName("AAAAAAA"); 
         list.add(object2);
+        */
 		
 		
-		/*
-        List<Program> list = null;
-        CallableStatement st = null;
-        //ResultSet rs = null;
+		
+        List<Program> list = new ArrayList<>();
 
         try{
             //this.conectar();
@@ -43,13 +43,11 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
             
-            st = connection.prepareCall(sql);
+			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
             st.execute();
             
             rs = (ResultSet) st.getObject(1);
-            
-            list = new ArrayList();
             
             //<PRO_ID=1,PRO_EXTID=884,NOM_PROGRAMA=DERCOBIENES>,
             
@@ -69,7 +67,6 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         } finally {
             this.closeConnection();
         }
-        */
         
         return list;
 	}
