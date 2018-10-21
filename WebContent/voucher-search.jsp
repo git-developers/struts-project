@@ -17,7 +17,7 @@
 			<s:property value = "#voucher.lcs_aso_cod"/>
 		</td>
 		<td>
-			<button type="button" class="btn bg-purple btn-flat btn-xs margin">
+			<button type="button" class="btn bg-purple btn-flat btn-xs">
 				<s:property value = "#voucher.lcs_con_cod"/>
 			</button>
 		</td>

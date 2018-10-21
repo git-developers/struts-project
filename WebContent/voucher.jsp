@@ -47,7 +47,7 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Grupos</label>
-		                  <select class="form-control" name="group">
+		                  <select class="form-control" name="group" id="group">
 		                  	<option value="0">[todos]</option>
 		                  	<option value="333">dddd</option>
 		                  	<s:iterator value="listGroup" var="group">
@@ -169,7 +169,7 @@
 	              <thead>
 					<tr>
 					   <th style="width: 15px">#</th>
-					   <th style="width: 15px">&nbsp;</th>
+					   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
 					   <th>Programa</th>
 					   <th>Asociado</th>
 					   <th>Contrato</th>

@@ -41,7 +41,7 @@
                     $("table tbody").html(data);
                 },
                 error: function(jqXHR, exception) {
-                    console.log("error :: 333");
+                    console.log("error :: ajax :: vocuher");
                 }
             });
         };
@@ -57,11 +57,13 @@
                 $('.group-select').show();
             }
 
-            //$('#grupo').val(0);
-
-            console.log( "ID ::: " + id );
+            $('#grupo').val(0);
         };
-
+        
+        base.checkAll = function(context) {
+        	$('input:checkbox').not(context).prop('checked', context.checked);
+        };
+        
         // Private Functions
         function debug(e) {
           console.log(e);
@@ -76,13 +78,17 @@
 
             var bp = new $.formVoucher(this, options);
 
-            $( "form[name='" + options.formName + "']" ).submit(function( event ) {
+            $("form[name='" + options.formName + "']").submit(function( event ) {
             	event.preventDefault();
                 bp.search(this);
             });
             
-            $( "#program" ).change(function(event) {
+            $("#program").change(function(event) {
             	bp.program(this);
+        	});
+            
+            $("#check-all").click(function(event) {
+            	bp.checkAll(this);
         	});
 
         });
