@@ -39,15 +39,18 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         	
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_PROGRAMAS() }"; 
             
-			Connection connection = OracleDaoFactory.getMainConnection();
+            /*
+			
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
+			*/
             
+            Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
             st.execute();
             
-            rs = (ResultSet) st.getObject(1);
+            ResultSet rs = (ResultSet) st.getObject(1);
             
             //<PRO_ID=1,PRO_EXTID=884,NOM_PROGRAMA=DERCOBIENES>,
             
