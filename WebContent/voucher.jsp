@@ -36,8 +36,8 @@
 		                  	<option value="">[seleccione]</option>
 		                  	<option value="22">xxxxxx</option>
 		                  	<s:iterator value="listProgram" var="program">
-		                  		<option value="<s:property value = "program.id"/>">
-		                  			(<s:property value = "program.id"/>) <s:property value = "program.name"/>
+		                  		<option value="<s:property value = "#program.id"/>">
+		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
