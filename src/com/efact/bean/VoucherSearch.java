@@ -18,19 +18,31 @@ public class VoucherSearch implements Serializable {
     private String to;
     
 	public int getProgram() {
-		return Integer.parseInt(program);
+        try {
+        	return Integer.parseInt(program);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
 	}
 	public void setProgram(String program) {
 		this.program = program;
 	}
 	public int getGroup() {
-		return Integer.parseInt(group);
+        try {
+        	return Integer.parseInt(group);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
 	}
 	public void setGroup(String group) {
 		this.group = group;
 	}
 	public int getBank() {
-		return Integer.parseInt(bank);
+        try {
+        	return Integer.parseInt(bank);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
 	}
 	public void setBank(String bank) {
 		this.bank = bank;
@@ -42,7 +54,11 @@ public class VoucherSearch implements Serializable {
 		this.voucher = voucher;
 	}
 	public int getStatus() {
-		return Integer.parseInt(status);
+        try {
+        	return Integer.parseInt(status);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
 	}
 	public void setStatus(String status) {
 		this.status = status;
