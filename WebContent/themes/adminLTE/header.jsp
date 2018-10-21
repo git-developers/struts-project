@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>eFACT | Dashboard</title>
-  <link rel="shortcut icon" href="images/icono.png">
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/icono.png">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="themes/adminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="themes/adminLTE/bower_components/font-awesome/css/font-awesome.min.css">

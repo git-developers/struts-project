@@ -34,7 +34,7 @@
 		                  <label for="exampleInputEmail1">Programa</label>
 		                  <select class="form-control" id="program" name="program" required="required">
 		                  	<option value="">[seleccione]</option>
-		                  	<option value="22">xxxxxx</option>
+		                  	<option value="22">vvvvvv</option>
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
 		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
