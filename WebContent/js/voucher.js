@@ -117,7 +117,7 @@
             	bp.checkAll(this);
         	});
             
-            $("form[name='form-voucher-process']").click(function( event ) {
+            $(".voucher-process").click(function( event ) {
             	event.preventDefault();
                 bp.process(this);
             });
