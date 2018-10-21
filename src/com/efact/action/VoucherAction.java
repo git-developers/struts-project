@@ -82,6 +82,12 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
         
 		return "SUCCESS";
 	}
+	
+	public String process() throws Exception {
+		
+        
+		return "SUCCESS";
+	}
 
 	public List<Program> getListProgram() {
 		return listProgram;

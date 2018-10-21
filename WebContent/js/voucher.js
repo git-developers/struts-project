@@ -27,7 +27,7 @@
         	console.dir(fields);
         	
             $.ajax({
-                url: options.contextPath + '/comprobante-por-lote-search',
+                url: options.contextPath + '/voucher-search',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -41,7 +41,33 @@
                     $("table tbody").html(data);
                 },
                 error: function(jqXHR, exception) {
-                    console.log("error :: ajax :: vocuher");
+                    console.log("error :: ajax :: voucher search");
+                }
+            });
+        };
+        
+        base.process = function(context) {
+        	
+        	var fields = $("form[name='form-voucher-process']").serialize();
+        	
+        	console.dir(fields);
+        	
+            $.ajax({
+                url: options.contextPath + '/voucher-process',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                	fields: fields
+                },
+                
+                beforeSend: function(jqXHR, settings) {
+                	$('#modal-process').modal('show');
+                },
+                success: function(data, textStatus, jqXHR) {
+                	$('#modal-process').find('.modal-body').html('XXXXXXXXXXXXXX');
+                },
+                error: function(jqXHR, exception) {
+                    console.log("error :: ajax :: voucher process");
                 }
             });
         };
@@ -78,7 +104,7 @@
 
             var bp = new $.formVoucher(this, options);
 
-            $("form[name='" + options.formName + "']").submit(function( event ) {
+            $("form[name='form-voucher']").submit(function( event ) {
             	event.preventDefault();
                 bp.search(this);
             });
@@ -90,6 +116,11 @@
             $("#check-all").click(function(event) {
             	bp.checkAll(this);
         	});
+            
+            $("form[name='form-voucher-process']").click(function( event ) {
+            	event.preventDefault();
+                bp.process(this);
+            });
 
         });
     };

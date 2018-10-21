@@ -165,32 +165,36 @@
               <h3 class="box-title">Recaudados conciliados</h3>
             </div>
             <div class="box-body">
-              <table class="table table-bordered">
-	              <thead>
-					<tr>
-					   <th style="width: 15px">#</th>
-					   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
-					   <th>Programa</th>
-					   <th>Asociado</th>
-					   <th>Contrato</th>
-					   <th>Datos</th>
-					   <th><i class="fa fa-fw fa-calendar"></i> Fecha</th>
-					   <th><i class="fa fa-fw fa-money"></i> Monto</th>
-					   <th>Conciliado</th>
-					   <th>Diferencia</th>
-					   <th>Devengado</th>
-					   <th>Cod. Cierre</th>
-					   <th>Sistema</th>
-					 </tr>
-	              </thead>
-		            <tbody>
-			            <tr>
-						   	<td colspan="13" align="center">
-				   				No hay datos que mostrar.
-				   			</td>
+            
+           	  <form role="form" name="form-voucher-process">
+	              <table class="table table-bordered">
+		              <thead>
+						<tr>
+						   <th style="width: 15px">#</th>
+						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
+						   <th>Programa</th>
+						   <th>Asociado</th>
+						   <th>Contrato</th>
+						   <th>Datos</th>
+						   <th><i class="fa fa-fw fa-calendar"></i> Fecha</th>
+						   <th><i class="fa fa-fw fa-money"></i> Monto</th>
+						   <th>Conciliado</th>
+						   <th>Diferencia</th>
+						   <th>Devengado</th>
+						   <th>Cod. Cierre</th>
+						   <th>Sistema</th>
 						 </tr>
-		          	</tbody>
-              </table>
+		              </thead>
+			            <tbody>
+				            <tr>
+							   	<td colspan="13" align="center">
+					   				No hay datos que mostrar.
+					   			</td>
+							 </tr>
+			          	</tbody>
+	              </table>
+              </form>
+              
             </div>
             
             <%-- 

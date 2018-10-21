@@ -6,6 +6,10 @@
 			<span class="badge bg-light-blue">
 				<s:property value="%{#voucherStatus.index + 1}"/>
 			</span>
+			
+			<input type="text" name="lcs_rea_id" value="<s:property value = "#voucher.lcs_rea_id"/>">
+			<input type="text" name="lcs_rec_id" value="<s:property value = "#voucher.lcs_rec_id"/>">
+			<input type="text" name="lcs_sistema" value="<s:property value = "#voucher.lcs_sistema"/>">
 		</td>
 		<td>
 			<input type="checkbox">
@@ -52,10 +56,5 @@
 		</td>
 	</tr>
  </s:iterator>
- 
-<%--
-  + "           <td style='text-align:center;visibility:hidden;'>" + a.getLcs_rea_id()+ "</td>"
-  + "           <td style='text-align:center;visibility:hidden;'>" + a.getLcs_rec_id()+ "</td>"
- --%>
 
 

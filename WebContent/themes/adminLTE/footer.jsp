@@ -64,7 +64,6 @@
 	<script type="text/javascript">
 	    $("body").formVoucher({
 	    	contextPath: '${pageContext.request.contextPath}',
-	    	formName: 'form-voucher'
 	    });
 	</script>
 </c:if>

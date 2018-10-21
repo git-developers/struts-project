@@ -18,8 +18,13 @@
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="comprobante-por-lote-search" class="com.efact.action.VoucherAction" method = "search">
+		<action name="voucher-search" class="com.efact.action.VoucherAction" method = "search">
 			<result name="SUCCESS">/voucher-search.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+	
+		<action name="voucher-process" class="com.efact.action.VoucherAction" method = "process">
+			<result name="SUCCESS">/voucher-process.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
