@@ -28,8 +28,12 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
     ) throws Exception {
 		
         List<Voucher> list = new ArrayList<>();
+        
+        System.out.print("1212 -- VOUCHER search ::::: ");
 
         try{
+        	
+        	System.out.print("33333 -- VOUCHER search ::::: " + programId + " --- CODIGO ::: " + from.getMonth() + "--" + from.getDay());
         	
             String sql = "{ ? = call FIN_PKG_REGISTROVENTASLOTE.F_LISTACONCILIACIONES(?, ?, ?, ?, ?, ?, ?) } "; 
             
@@ -86,6 +90,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
             
         } catch (Exception e){
+        	System.out.print("search -- Exception ::::: " + e.getMessage());
             throw e;
         } finally {
             this.closeConnection();
@@ -94,6 +99,37 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
         return list;
 	}
 
+    @Override
+    public Integer getSecuencia() throws Exception {
+       
+        int id = 0; 
+
+        try{
+
+            String query = "SELECT SEQ_LOTECONCILIA_LCS_NLOTE.nextval FROM dual";
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+            Statement stmt = connection.createStatement();
+            ResultSet rs =  stmt.executeQuery(query);
+
+            while (rs.next()) {
+               id = rs.getInt("NEXTVAL");
+               System.out.println("TEST_222::: " + id);
+            }
+            
+            rs.close();
+            stmt.close();
+            
+        } catch (Exception e){
+            System.out.println("getSecuencia -- Exception  :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return id;
+    }
+    
 	@Override
 	public Voucher findOneById(String id) throws Exception {
 		// TODO Auto-generated method stub

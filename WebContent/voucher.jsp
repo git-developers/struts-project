@@ -123,7 +123,7 @@
 					</div>
 									
 					<div class="col-md-2">
-					    <div class="form-group">
+					    <div class="form-group pull-right">
 					      <label for="">&nbsp;</label>
 					        <div class="input-group">
 					          <button type="submit" class="btn btn-default voucher-search">Buscar</button>
@@ -132,7 +132,7 @@
 					</div>
 																		
 					<div class="col-md-2">
-					    <div class="form-group">
+					    <div class="form-group pull-right">
 					      <label for="">&nbsp;</label>
 					        <div class="input-group">
 					          <button type="button" class="btn btn-default voucher-process">Procesar</button>
