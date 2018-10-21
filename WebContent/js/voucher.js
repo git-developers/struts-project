@@ -4,7 +4,7 @@
     // Global Variables
     var MAX_HEIGHT = 100;
 
-    $.formReconciliations = function(el, options) {
+    $.formVoucher = function(el, options) {
 
         // Global Private Variables
         var MAX_WIDTH = 200;
@@ -13,7 +13,7 @@
 
         base.$el = $(el);
         base.el = el;
-        base.$el.data('formReconciliations', base);
+        base.$el.data('formVoucher', base);
 
         base.init = function(){
             var totalButtons = 0;
@@ -27,7 +27,7 @@
         	console.dir(fields);
         	
             $.ajax({
-                url: 'eFACT/conciliaciones-filter',
+                url: 'eFACT/comprobante-por-lote-filter',
                 type: 'POST',
                 dataType: 'html',
                 data: fields,
@@ -51,16 +51,20 @@
         base.init();
     };
 
-    $.fn.formReconciliations = function(options){
+    $.fn.formVoucher = function(options){
 
         return this.each(function(){
 
-            var bp = new $.formReconciliations(this, options);
+            var bp = new $.formVoucher(this, options);
 
-            $( "form[name='form-reconciliations']" ).submit(function( event ) {
+            $( "form[name='form-voucher']" ).submit(function( event ) {
             	event.preventDefault();
                 bp.filter(this);
             });
+            
+            $( "#program" ).change(function(event) {
+            	  console.log("PROGRAM --- WWW");
+        	});
 
         });
     };
@@ -69,7 +73,7 @@
 
 
 ;(function($){
-    $("body").formReconciliations({
+    $("body").formVoucher({
         id: '',
     });
 })(jQuery);

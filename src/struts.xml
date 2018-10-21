@@ -12,39 +12,39 @@
 			<result name="SUCCESS">/index.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
-	
-		<action name="conciliaciones" class="com.efact.action.ConciliationAction" method = "index">
-			<result name="SUCCESS">/conciliation.jsp</result>
+		
+		<action name="comprobante-por-lote" class="com.efact.action.VoucherAction" method = "index">
+			<result name="SUCCESS">/voucher.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="conciliaciones-filter" class="com.efact.action.ConciliationAction" method = "filter">
-			<result name="SUCCESS">/conciliation-filter.jsp</result>
+		<action name="comprobante-por-lote-search" class="com.efact.action.VoucherAction" method = "search">
+			<result name="SUCCESS">/voucher-search.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
-		<action name="transferencia" class="com.efact.action.TransferAction" method = "index">
-			<result name="SUCCESS">/transfer.jsp</result>
-			<result name="ERROR">/error.jsp</result>
-		</action>
-
-		<action name="mantenimientos" class="com.efact.action.MaintenanceAction" method = "index">
-			<result name="SUCCESS">/maintenance.jsp</result>
-			<result name="ERROR">/error.jsp</result>
-		</action>
-
-		<action name="ventas" class="com.efact.action.SalesAction" method = "index">
-			<result name="SUCCESS">/sales.jsp</result>
+		<action name="devengados-conciliacion" class="com.efact.action.ConciliationAction" method = "accruedConciliation">
+			<result name="SUCCESS">/conciliation-accrued.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="interface-contable" class="com.efact.action.AccountingInterfaceAction" method = "index">
-			<result name="SUCCESS">/interface-contable.jsp</result>
+		<action name="emision-conciliacion" class="com.efact.action.ConciliationAction" method = "issueConciliation">
+			<result name="SUCCESS">/conciliation-issue.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
-
-		<action name="reportes" class="com.efact.action.ReportAction" method = "index">
-			<result name="SUCCESS">/report.jsp</result>
+		
+		<action name="nota-de-credito" class="com.efact.action.NoteCreditAction" method = "index">
+			<result name="SUCCESS">/note-credit.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
+		<action name="nota-de-debito" class="com.efact.action.NoteDebitAction" method = "index">
+			<result name="SUCCESS">/note-debit.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
+		<action name="registro-de-ventas" class="com.efact.action.ReportAction" method = "salesRecord">
+			<result name="SUCCESS">/report-sales-record.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 

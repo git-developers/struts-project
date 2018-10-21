@@ -5,7 +5,7 @@
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-cube"></i> Mantenimientos
+        <i class="fa fa-cc-visa"></i> Nota de cr&eacute;dito
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">

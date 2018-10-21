@@ -41,12 +41,35 @@
 <script src="themes/adminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="themes/adminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="themes/adminLTE/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="themes/adminLTE/dist/js/adminlte.min.js"></script>
+<script src="themes/adminLTE/bower_components/PACE/pace.min.js"></script>
 
+<%-- page script --%>
+<script type="text/javascript">
+  // To make Pace works on Ajax calls
+  $(document).ajaxStart(function () {
+    Pace.restart()
+  })
+  $('.ajax').click(function () {
+    $.ajax({
+      url: '#', success: function (result) {
+        $('.ajax-content').html('<hr>Ajax Request Completed !')
+      }
+    })
+  })
+</script>
+	
 <c:if test="${fn:contains(pageContext.request.requestURI, 'index')}">
-	<script src="themes/adminLTE/dist/js/adminlte.min.js"></script>
 	<script src="themes/adminLTE/dist/js/pages/dashboard.js"></script>
 	<script src="themes/adminLTE/dist/js/demo.js"></script>
 </c:if>
+
+<c:if test="${fn:contains(pageContext.request.requestURI, 'voucher')}">
+	<script src="js/voucher.js"></script>
+	<link rel="stylesheet" href="css/voucher.css">
+</c:if>
+
+
 
 </body>
 </html>

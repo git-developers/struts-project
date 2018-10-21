@@ -5,7 +5,7 @@
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-bar-chart"></i> Reportes
+        <i class="fa fa-bar-chart"></i> Reporte: registro de ventas
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">

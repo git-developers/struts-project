@@ -1,7 +1,6 @@
 package com.efact.dao.factory;
 
-import com.efact.dao.interfaces.ProgramDao;
-import com.efact.dao.interfaces.UserDao;
+import com.efact.dao.interfaces.*;
 
 public abstract class DaoFactory {
 
@@ -11,6 +10,9 @@ public abstract class DaoFactory {
 
 	public abstract UserDao getUserDao();
 	public abstract ProgramDao getProgramDao();
+	public abstract GroupDao getGroupDao();
+	public abstract BankDao getBankDao();
+	
 
 	public static DaoFactory getDAOFactory(int factory){
 		

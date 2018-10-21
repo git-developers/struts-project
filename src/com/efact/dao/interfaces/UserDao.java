@@ -2,7 +2,7 @@ package com.efact.dao.interfaces;
 
 import java.util.Vector;
 
-import com.efact.bean.User;
+import com.efact.bean.*;
 
 public interface UserDao {
 

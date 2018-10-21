@@ -6,18 +6,21 @@ import java.util.List;
 import com.efact.dao.interfaces.*;
 import com.efact.bean.*;
 
-public class ReportAction extends ActionSupportBase  {
+public class NoteDebitAction extends ActionSupportBase  {
 
+	private static final long serialVersionUID = 1L;
+	private DaoFactory dao;
+	
 	@Override
 	public String execute() throws Exception {
+		
+		return "SUCCESS";
+	}
 
-		return "SUCCESS";
-	}
-	
-	public String salesRecord() throws Exception {
-		
+	public String index() throws Exception {
 		
 		return "SUCCESS";
 	}
+
 	
 }

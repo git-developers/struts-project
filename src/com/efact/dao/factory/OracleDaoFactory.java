@@ -10,17 +10,7 @@ import com.efact.dao.oracle.*;
 public class OracleDaoFactory extends DaoFactory {
 
 	protected static Connection connection;
-	
-	@Override
-	public UserDao getUserDao(){
-		return new UserImpDao();
-	}
-	
-	@Override
-	public ProgramDao getProgramDao() {
-		return new ProgramImpDao();
-	}
-	
+
 	public static Connection getMainConnection(){
 		
 		try {
@@ -49,5 +39,27 @@ public class OracleDaoFactory extends DaoFactory {
             }
         }
     }
+    
+	@Override
+	public UserDao getUserDao(){
+		return new UserImpDao();
+	}
+	
+	@Override
+	public ProgramDao getProgramDao() {
+		return new ProgramImpDao();
+	}
+
+	@Override
+	public GroupDao getGroupDao() {
+		return new GroupImpDao();
+	}
+	
+	@Override
+	public BankDao getBankDao() {
+		return new BankImpDao();
+	}
+	
+	
 
 }

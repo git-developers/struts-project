@@ -11,16 +11,6 @@ public class MySqlDaoFactory extends DaoFactory {
 
 	protected static Connection connection;
 	
-	@Override
-	public UserDao getUserDao(){
-		return new UserImpDao();
-	}
-	
-	@Override
-	public ProgramDao getProgramDao() {
-		return new ProgramImpDao();
-	}
-	
 	public static Connection getMainConnection(){
 		
 		try {
@@ -49,5 +39,27 @@ public class MySqlDaoFactory extends DaoFactory {
             }
         }
     }
+    
+	@Override
+	public UserDao getUserDao(){
+		return new UserImpDao();
+	}
+	
+	@Override
+	public ProgramDao getProgramDao() {
+		return new ProgramImpDao();
+	}
+
+	@Override
+	public GroupDao getGroupDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankDao getBankDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
