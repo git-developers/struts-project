@@ -166,8 +166,7 @@
             </div>
             <div class="box-body">
             
-           	  <form role="form" name="form-voucher-process">
-	              <table class="table table-bordered">
+	              <table id="voucher-table" class="table table-bordered">
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
@@ -190,10 +189,9 @@
 							   	<td colspan="13" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
-							 </tr>
+				   			</tr>
 			          	</tbody>
 	              </table>
-              </form>
               
             </div>
             

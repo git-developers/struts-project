@@ -13,11 +13,14 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
+import com.efact.util.Const;
+import com.efact.util.Util;
 import com.efact.bean.*;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 
 //https://www.journaldev.com/2203/get-servlet-session-request-response-context-attributes-struts-2-action
 
@@ -33,7 +36,6 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
-	//private Map<String, Object> requestAttributes = null;
 	
     public VoucherAction() {
 		dao = DaoFactory.getDAOFactory(DaoFactory.ORACLE);
@@ -43,7 +45,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	@Override
 	public String execute() throws Exception {
 		
-		return "SUCCESS";
+		return Const.SUCCESS;
 	}
 
 	public String index() throws Exception {
@@ -56,7 +58,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		listGroup = groupDao.findAll();
 		listBank = bankDao.findAll();
 		
-		return "SUCCESS";
+		return Const.SUCCESS;
 	}
 	
 	public String search() throws Exception {
@@ -76,17 +78,25 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
                 vs.getTo()
         );
         
-        for (Voucher voucher : listVoucher) {
-        	System.out.print("222 -- VOUCHER ::::: " + voucher.getLcs_pro_nombre() + " --- CODIGO ::: " + voucher.getLcs_aso_cod());
-        }
-        
-		return "SUCCESS";
+        return Const.SUCCESS;
 	}
 	
 	public String process() throws Exception {
 		
+        String fields = request.getParameter("fields");
+        Type listType = new TypeToken<List<Voucher>>(){}.getType();
+        List<Voucher> list = new Gson().fromJson(fields, listType);
         
-		return "SUCCESS";
+        VoucherDao voucherDao = dao.getVoucherDao();
+        int sequence = voucherDao.getSequence();
+        
+        for (Voucher voucher : list) {
+            voucherDao.insertVoucher(voucher, sequence); 
+        }
+        
+        voucherDao.generateVoucher(sequence);
+        
+		return Const.SUCCESS;
 	}
 
 	public List<Program> getListProgram() {

@@ -1,10 +1,12 @@
 package com.efact.action;
 
+import com.efact.util.Const;
+
 public class IndexAction extends ActionSupportBase {
 	
 	@Override
 	public String execute() throws Exception {
-		return "SUCCESS";
+		return Const.SUCCESS;
 	}
 
 }

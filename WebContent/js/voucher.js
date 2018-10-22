@@ -48,23 +48,35 @@
         
         base.process = function(context) {
         	
-        	var fields = $("form[name='form-voucher-process']").serialize();
-        	
-        	console.dir(fields);
-        	
+        	var rows = [];
+        	$("table#voucher-table tbody tr").each(function (i, row) {
+        		
+        		var isCheck = $(row).find('td:eq(1) input[type=checkbox]').prop('checked');
+
+        	    if(!isCheck) {
+        	        return true;
+        	    }
+        	    
+        	    rows.push({
+        	    	lcs_rea_id: $(row).find('td:eq(0) input[name="lcs_rea_id"]').val(),
+        	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
+        	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val()
+        	    });
+        	});
+
             $.ajax({
                 url: options.contextPath + '/voucher-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: fields
+                	fields: JSON.stringify(rows)
                 },
                 
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').modal('show');
                 },
                 success: function(data, textStatus, jqXHR) {
-                	$('#modal-process').find('.modal-body').html('XXXXXXXXXXXXXX');
+                	$('#modal-process').find('.modal-body').html(data);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher process");
@@ -119,6 +131,13 @@
             
             $(".voucher-process").click(function( event ) {
             	event.preventDefault();
+            	
+                if (!$('.voucher-data').is(':checked')) {
+                	
+                	alert('Seleccione al menos un comprobante');
+                    return;
+                }
+            	
                 bp.process(this);
             });
 

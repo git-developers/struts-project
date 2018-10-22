@@ -22,7 +22,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
         try{
         
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_GRUPOS() }"; 
-            
+            /*
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
@@ -41,7 +41,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
             
             rs.close();
             st.close();
-            
+            */
             
         } catch (Exception e){
             throw e;
@@ -58,11 +58,6 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
 		return null;
 	}
 
-	@Override
-	public ProgramDao getProgramDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }

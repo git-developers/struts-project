@@ -6,7 +6,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
-import java.util.Vector;
 
 import java.sql.Connection;
 import com.efact.bean.*;
@@ -94,9 +93,9 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 	}
 
     @Override
-    public Integer getSecuencia() throws Exception {
+    public int getSequence() throws Exception {
        
-        int id = 0; 
+        int sequence = 0; 
 
         try{
 
@@ -107,8 +106,8 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             ResultSet rs =  stmt.executeQuery(query);
 
             while (rs.next()) {
-               id = rs.getInt("NEXTVAL");
-               System.out.println("SEQUENCIA NEXTVAL::: " + id);
+            	sequence = rs.getInt("NEXTVAL");
+               System.out.println("SEQUENCIA NEXTVAL::: " + sequence);
             }
             
             rs.close();
@@ -116,6 +115,57 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
         } catch (Exception e){
             System.out.println("getSecuencia -- Exception  :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return sequence;
+    }
+    
+    @Override
+    public int insertVoucher(Voucher voucher, int nlote) throws Exception {
+
+        int id = 0;
+
+        try{
+        	
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_INSERTALOTESCONCILIACIONES(?, ?, 1, ?, ?) }"; 
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+			CallableStatement st = connection.prepareCall(sql);
+            st.setInt(1, voucher.getLcs_rea_id());  
+            st.setLong(2, voucher.getLcs_rec_id());  
+            st.setString(3, voucher.getLcs_sistema());              
+            st.setInt(4, nlote);  
+            st.execute();
+        
+        } catch (Exception e){
+            System.out.println(":::: insertVoucher :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return id;
+    }
+
+    @Override
+    public int generateVoucher(int nlote) throws Exception {
+
+        int id = 0;
+
+        try{
+        	
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, 'efact') }"; 
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+			CallableStatement st = connection.prepareCall(sql);             
+            st.setInt(1, nlote);  
+            st.execute();
+        
+        } catch (Exception e){
+            System.out.println(":::: generateVoucher :::: " + e.getMessage());
             throw e;
         } finally {
             this.closeConnection();
@@ -130,11 +180,6 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 		return null;
 	}
 
-	@Override
-	public VoucherDao getVoucherDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }

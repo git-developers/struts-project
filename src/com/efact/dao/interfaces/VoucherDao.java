@@ -16,7 +16,11 @@ public interface VoucherDao {
 		    Date to
     ) throws Exception;
 	
-	public Integer getSecuencia() throws Exception;
+	public int getSequence() throws Exception;
+	
+	public int insertVoucher(Voucher voucher, int nlote) throws Exception;
+	
+	public int generateVoucher(int nlote) throws Exception;
 	
 	public Voucher findOneById(String id) throws Exception;
 	
