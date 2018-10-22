@@ -33,6 +33,11 @@
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
+		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method = "search">
+			<result name="SUCCESS">/accrued-conciliation-search.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
 		<action name="devengados-emision" class="com.efact.action.AccruedAction" method = "issue">
 			<result name="SUCCESS">/accrued-issue.jsp</result>
 			<result name="ERROR">/error.jsp</result>

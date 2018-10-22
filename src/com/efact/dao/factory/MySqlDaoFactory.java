@@ -65,4 +65,10 @@ public class MySqlDaoFactory extends DaoFactory {
 		return null;
 	}
 
+	@Override
+	public AccruedDao getAccruedDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

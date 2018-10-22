@@ -7,9 +7,9 @@
 				<s:property value="%{#voucherStatus.index + 1}"/>
 			</span>
 			
-			<input type="text" name="lcs_rea_id" value="<s:property value = "#voucher.lcs_rea_id"/>">
-			<input type="text" name="lcs_rec_id" value="<s:property value = "#voucher.lcs_rec_id"/>">
-			<input type="text" name="lcs_sistema" value="<s:property value = "#voucher.lcs_sistema"/>">
+			<input type="hidden" name="lcs_rea_id" value="<s:property value = "#voucher.lcs_rea_id"/>">
+			<input type="hidden" name="lcs_rec_id" value="<s:property value = "#voucher.lcs_rec_id"/>">
+			<input type="hidden" name="lcs_sistema" value="<s:property value = "#voucher.lcs_sistema"/>">
 		</td>
 		<td>
 			<input type="checkbox" class="voucher-data">

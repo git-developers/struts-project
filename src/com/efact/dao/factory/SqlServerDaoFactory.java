@@ -64,5 +64,11 @@ public class SqlServerDaoFactory extends DaoFactory {
 	public VoucherDao getVoucherDao() {
 		return null;
 	}
+
+	@Override
+	public AccruedDao getAccruedDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <%@include file="themes/adminLTE/header.jsp" %>
 
     <section class="content-header">
@@ -30,27 +29,26 @@
               
                 <div class="row">
                 
-	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Fecha de emision</label>
+		                  <label for="">Fecha de emision (Desde)</label>
 							<div class="input-group">
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
 			                  </div>
-			                  <input type="date" class="form-control">
+			                  <input type="date" class="form-control" name="from">
 			                </div>
 		                </div>
 	        		</div>
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Hasta</label>
+		                  <label for="">Fecha de emision (Hasta)</label>
 							<div class="input-group">
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
 			                  </div>
-			                  <input type="date" class="form-control">
+			                  <input type="date" class="form-control" name="to">
 			                </div>
 		                </div>
 	        		</div>
@@ -59,7 +57,7 @@
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="submit" class="btn btn-primary ">Filtro</button>
+			                  <button type="submit" class="btn btn-default accrued-search">Filtro</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -83,68 +81,36 @@
         <div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Recaudados conciliados</h3>
+              <h3 class="box-title">Conciliaci&oacute;n</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-bordered">
-                <tbody><tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </tbody></table>
+              
+        	     <table id="voucher-table" class="table table-bordered">
+		              <thead>
+						<tr>
+						   <th style="width: 15px">#</th>
+						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
+						   <th>Comprobante</th>
+						   <th>Recaudo</th>
+						   <th>Descripci&oacute;n</th>
+						   <th>Afecto</th>
+						   <th>No Afecto</th>
+						   <th>IGV</th>
+						   <th><i class="fa fa-fw fa-money"></i> Total</th>
+						 </tr>
+		              </thead>
+			            <tbody>
+				            <tr>
+							   	<td colspan="9" align="center">
+					   				No hay datos que mostrar.
+					   			</td>
+				   			</tr>
+			          	</tbody>
+	              </table>
+
             </div>
-            <!-- /.box-body -->
             <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
             </div>
           </div>
        	</div>

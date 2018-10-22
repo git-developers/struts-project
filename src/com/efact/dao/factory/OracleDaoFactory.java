@@ -65,4 +65,9 @@ public class OracleDaoFactory extends DaoFactory {
 		return new VoucherImpDao();
 	}
 
+	@Override
+	public AccruedDao getAccruedDao() {
+		return new AccruedImpDao();
+	}
+
 }

@@ -13,6 +13,8 @@ public abstract class DaoFactory {
 	public abstract GroupDao getGroupDao();
 	public abstract BankDao getBankDao();
 	public abstract VoucherDao getVoucherDao();
+	public abstract AccruedDao getAccruedDao();
+	
 
 	public static DaoFactory getDAOFactory(int factory){
 		

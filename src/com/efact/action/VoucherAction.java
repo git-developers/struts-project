@@ -136,9 +136,5 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		this.request = httpServletRequest;
 	}
 
-
-
-	
-
 	
 }

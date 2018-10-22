@@ -48,7 +48,7 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-accrued')}">active</c:if>">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">active</c:if>">
 		    	<s:a href="devengados-conciliacion" theme="simple">
 			    	<i class="fa fa-circle-o text-red"></i> Conciliaci&oacute;n
 		    	</s:a>

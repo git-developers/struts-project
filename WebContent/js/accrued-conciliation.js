@@ -22,13 +22,12 @@
 
         base.search = function(context) {
         	
-        	/*
         	var fields = $(context).serialize();
         	
         	console.dir(fields);
         	
             $.ajax({
-                url: options.contextPath + '/voucher-search',
+                url: options.contextPath + '/accrued-conciliacion-search',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -36,16 +35,15 @@
                 },
                 
                 beforeSend: function(jqXHR, settings) {
-                	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
+                	$("table tbody").html('<tr><td colspan="9" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
                     $("table tbody").html(data);
                 },
                 error: function(jqXHR, exception) {
-                    console.log("error :: ajax :: voucher search");
+                    console.log("error :: ajax :: search");
                 }
             });
-            */
         };
         
         base.process = function(context) {

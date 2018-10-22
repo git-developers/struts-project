@@ -1,8 +1,6 @@
 package com.efact.bean;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.sql.Date;
 
 public class VoucherSearch implements Serializable {
