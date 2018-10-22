@@ -28,13 +28,13 @@
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
-		<action name="devengados-conciliacion" class="com.efact.action.ConciliationAction" method = "accruedConciliation">
-			<result name="SUCCESS">/conciliation-accrued.jsp</result>
+		<action name="devengados-conciliacion" class="com.efact.action.AccruedAction" method = "conciliation">
+			<result name="SUCCESS">/accrued-conciliation.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="emision-conciliacion" class="com.efact.action.ConciliationAction" method = "issueConciliation">
-			<result name="SUCCESS">/conciliation-issue.jsp</result>
+		<action name="devengados-emision" class="com.efact.action.AccruedAction" method = "issue">
+			<result name="SUCCESS">/accrued-issue.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		

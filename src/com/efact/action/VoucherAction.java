@@ -2,19 +2,14 @@ package com.efact.action;
 
 import com.efact.dao.factory.DaoFactory;
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
 import com.efact.util.Const;
-import com.efact.util.Util;
 import com.efact.bean.*;
 
 import com.google.gson.Gson;

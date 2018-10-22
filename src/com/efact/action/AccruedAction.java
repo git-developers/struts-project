@@ -7,7 +7,7 @@ import com.efact.dao.interfaces.*;
 import com.efact.util.Const;
 import com.efact.bean.*;
 
-public class ConciliationAction extends ActionSupportBase  {
+public class AccruedAction extends ActionSupportBase  {
 
 	private static final long serialVersionUID = 1L;
 	private DaoFactory dao;
@@ -18,12 +18,12 @@ public class ConciliationAction extends ActionSupportBase  {
 		return Const.SUCCESS;
 	}
 
-	public String accruedConciliation() throws Exception {
+	public String conciliation() throws Exception {
 		
 		return Const.SUCCESS;
 	}
 	
-	public String issueConciliation() throws Exception {
+	public String issue() throws Exception {
 		
 		return Const.SUCCESS;
 	}

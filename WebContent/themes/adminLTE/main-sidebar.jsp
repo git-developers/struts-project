@@ -37,8 +37,8 @@
         </li>
         
 		<li class="treeview 
-					<c:if test="${fn:contains(pageContext.request.requestURI, 'conciliation-accrued')}">active</c:if>
-					<c:if test="${fn:contains(pageContext.request.requestURI, 'conciliation-issue')}">active</c:if>
+					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">active</c:if>
+					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">active</c:if>
 		  ">
 		  <a href="#">
 		    <i class="fa fa-exchange"></i>
@@ -48,13 +48,13 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'conciliation-accrued')}">active</c:if>">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-accrued')}">active</c:if>">
 		    	<s:a href="devengados-conciliacion" theme="simple">
 			    	<i class="fa fa-circle-o text-red"></i> Conciliaci&oacute;n
 		    	</s:a>
 	    	</li>
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'conciliation-issue')}">active</c:if>">
-		    	<s:a href="emision-conciliacion" theme="simple">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">active</c:if>">
+		    	<s:a href="devengados-emision" theme="simple">
 		    		<i class="fa fa-circle-o text-aqua"></i> Emisi&oacute;n
 		    	</s:a>
 	    	</li>

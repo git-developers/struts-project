@@ -63,11 +63,21 @@
 	
 	<script type="text/javascript">
 	    $("body").formVoucher({
-	    	contextPath: '${pageContext.request.contextPath}',
+	    	contextPath: '${pageContext.request.contextPath}'
 	    });
 	</script>
 </c:if>
 
+<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">
+	<script src="js/accrued-conciliation.js"></script>
+	<link rel="stylesheet" href="css/accrued-conciliation.css">
+	
+	<script type="text/javascript">
+	    $("body").formAccruedConciliation({
+	    	contextPath: '${pageContext.request.contextPath}'
+	    });
+	</script>
+</c:if>
 
 
 </body>
