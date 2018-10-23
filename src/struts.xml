@@ -33,7 +33,7 @@
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		
-		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method = "search">
+		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method = "conciliationSearch">
 			<result name="SUCCESS">/accrued-conciliation-search.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
