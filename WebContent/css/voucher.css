@@ -10,6 +10,6 @@
     color: white;
 }
 
-.not-process {
-	color:red;
+table tr.not-process td {
+ 	color:red   
 }
