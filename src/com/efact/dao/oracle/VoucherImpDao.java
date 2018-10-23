@@ -73,7 +73,8 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
                 obj.setLcs_devengado(rs.getString("rec_devengado")); 
                 obj.setLcs_aso_tasociado(rs.getLong("aso_tasociado")); 
                 obj.setLcs_sistema(rs.getString("sistema")); 
-                obj.setLcs_rec_id(rs.getInt("rec_id")); 
+                obj.setLcs_rec_id(rs.getInt("rec_id"));
+                obj.setIsselecitem(rs.getString("isselecitem"));
 
                 list.add(obj);
             }
