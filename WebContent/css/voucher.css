@@ -9,3 +9,7 @@
     border-color: #008d4c;
     color: white;
 }
+
+.not-process {
+	color:red;
+}

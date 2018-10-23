@@ -1,7 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <s:iterator value="listVoucher" var="voucher" status="voucherStatus">
-	<tr>
+	<tr class="<s:if test="%{#voucher.isselecitem == 'NO'}">not-process</s:if>">
 		<td>
 			<span class="badge bg-light-blue">
 				<s:property value="%{#voucherStatus.index + 1}"/>
@@ -12,7 +12,9 @@
 			<input type="hidden" name="lcs_sistema" value="<s:property value = "#voucher.lcs_sistema"/>">
 		</td>
 		<td>
-			<input type="checkbox" class="voucher-data"> --- <s:property value = "#voucher.isselecitem"/>
+			<s:if test="%{#voucher.isselecitem == 'SI'}">
+				<input type="checkbox" class="voucher-data">
+			</s:if>
 		</td>
 		<td>
 			<s:property value = "#voucher.lcs_pro_nombre"/>
