@@ -44,7 +44,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String conciliationSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
-        VoucherSearch vs = gson.fromJson(serializeToJSON(fields), VoucherSearch.class);
+        Voucher vs = gson.fromJson(serializeToJSON(fields), Voucher.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
     	

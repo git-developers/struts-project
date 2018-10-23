@@ -19,29 +19,11 @@ public class OracleDaoFactory extends DaoFactory {
 		try {
 
 			ResourceBundle rb = ResourceBundle.getBundle("parameters");
-
-//			Enumeration <String> keys = rb.getKeys();
-//			while (keys.hasMoreElements()) {
-//				String key = keys.nextElement();
-//				String value2 = rb.getString(key);
-//				System.out.println(key + ": " + value2);
-//			}
-
 			
 			String driver = rb.getString("oracle.jdbc.driver");
 			String url = rb.getString("oracle.db.url");
 			String user = rb.getString("oracle.user");
 			String pass = rb.getString("oracle.pass");
-			
-			System.out.print("oracleUser ::: " + user );
-
-			
-//		    String JDBC_DRIVER = "oracle.jdbc.OracleDriver";
-//		    String DB_URL = "jdbc:oracle:thin:@10.3.1.34:1521:DBDEV";    
-//		    String USER = "efact";
-//		    String PASS = "efact";
-			
-		    
 		    
 			Class.forName(driver);	
 			connection = DriverManager.getConnection(url, user, pass);

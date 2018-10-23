@@ -59,7 +59,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	public String search() throws Exception {
 		
         String fields = request.getParameter("fields");
-        VoucherSearch vs = gson.fromJson(serializeToJSON(fields), VoucherSearch.class);
+        Voucher vs = gson.fromJson(serializeToJSON(fields), Voucher.class);
         
         VoucherDao voucherDao = dao.getVoucherDao();
     	

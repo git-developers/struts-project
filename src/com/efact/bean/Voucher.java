@@ -1,7 +1,7 @@
 package com.efact.bean;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class Voucher implements Serializable {
 
@@ -49,6 +49,15 @@ public class Voucher implements Serializable {
     private String lcs_sistema;
     private long   lcs_nlote;
     private long   lcs_aso_tasociado;
+    private String isselecitem;
+    
+    private String queryProgram;
+    private String queryGroup;
+    private String queryBank;
+    private String queryVoucher;
+    private String queryStatus; 
+    private String queryFrom;    
+    private String queryTo;
     
 	public long getLcs_id() {
 		return lcs_id;
@@ -314,7 +323,83 @@ public class Voucher implements Serializable {
 	public void setLcs_aso_tasociado(long lcs_aso_tasociado) {
 		this.lcs_aso_tasociado = lcs_aso_tasociado;
 	}
+	public String getIsselecitem() {
+		return isselecitem;
+	}
+	public void setIsselecitem(String isselecitem) {
+		this.isselecitem = isselecitem;
+	}
     
-    
+
+	public int getProgram() {
+        try {
+        	return Integer.parseInt(queryProgram);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
+	}
+	public void setProgram(String program) {
+		this.queryProgram = program;
+	}
+	public int getGroup() {
+        try {
+        	return Integer.parseInt(queryGroup);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
+	}
+	
+	public void setGroup(String group) {
+		this.queryGroup = group;
+	}
+	
+	public int getBank() {
+        try {
+        	return Integer.parseInt(queryBank);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
+	}
+	
+	public void setBank(String bank) {
+		this.queryBank = bank;
+	}
+	public String getVoucher() {
+		return queryVoucher;
+	}
+	public void setVoucher(String voucher) {
+		this.queryVoucher = voucher;
+	}
+	
+	public int getStatus() {
+        try {
+        	return Integer.parseInt(queryStatus);
+         } catch (NumberFormatException e) {
+        	 return 0;
+         }
+	}
+	
+	public void setStatus(String status) {
+		this.queryStatus = status;
+	}
+	
+	public Date getFrom() {
+		return stringToDate(queryFrom);
+	}
+	public void setFrom(String from) {
+		this.queryFrom = from;
+	}
+	public Date getTo() {
+		return stringToDate(queryTo);
+	}
+	
+	public void setTo(String to) {
+		this.queryTo = to;
+	}
+	
+    private Date stringToDate(String dateString){
+    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
+    	return Date.valueOf(dateString);
+    }
 	
 }

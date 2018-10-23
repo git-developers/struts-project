@@ -12,7 +12,7 @@
 			<input type="hidden" name="lcs_sistema" value="<s:property value = "#voucher.lcs_sistema"/>">
 		</td>
 		<td>
-			<input type="checkbox" class="voucher-data">
+			<input type="checkbox" class="voucher-data"> --- <s:property value = "#voucher.isselecitem"/>
 		</td>
 		<td>
 			<s:property value = "#voucher.lcs_pro_nombre"/>
