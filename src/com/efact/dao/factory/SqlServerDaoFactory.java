@@ -3,6 +3,7 @@ package com.efact.dao.factory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import com.efact.dao.interfaces.*;
 import com.efact.dao.oracle.*;
@@ -15,13 +16,15 @@ public class SqlServerDaoFactory extends DaoFactory {
 		
 		try {
 			
-		    String JDBC_DRIVER = "";
-		    String DB_URL = "";    
-		    String USER = "root";
-		    String PASS = "root";
+			ResourceBundle rb = ResourceBundle.getBundle("parameters");
 			
-			Class.forName(JDBC_DRIVER);		
-			connection = DriverManager.getConnection(DB_URL, USER, PASS);
+			String driver = rb.getString("sqlserver.jdbc.driver");
+			String url = rb.getString("sqlserver.db.url");
+			String user = rb.getString("sqlserver.user");
+			String pass = rb.getString("sqlserver.pass");
+		    
+			Class.forName(driver);	
+			connection = DriverManager.getConnection(url, user, pass);
 			
 		} catch (Exception e) {
 			System.out.print(e.getMessage());

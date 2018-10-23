@@ -3,6 +3,7 @@ package com.efact.dao.factory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import com.efact.dao.interfaces.*;
 import com.efact.dao.oracle.*;
@@ -14,14 +15,16 @@ public class MySqlDaoFactory extends DaoFactory {
 	public static Connection getMainConnection(){
 		
 		try {
+		    
+			ResourceBundle rb = ResourceBundle.getBundle("parameters");
 			
-		    String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-		    String DB_URL = "jdbc:mysql://localhost:3306/efact_db";    
-		    String USER = "root";
-		    String PASS = "root";
-			
-			Class.forName(JDBC_DRIVER);		
-			connection = DriverManager.getConnection(DB_URL, USER, PASS);
+			String driver = rb.getString("mysql.jdbc.driver");
+			String url = rb.getString("mysql.db.url");
+			String user = rb.getString("mysql.user");
+			String pass = rb.getString("mysql.pass");
+		    
+			Class.forName(driver);	
+			connection = DriverManager.getConnection(url, user, pass);
 			
 		} catch (Exception e) {
 			System.out.print(e.getMessage());
