@@ -44,13 +44,13 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String conciliationSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
-        Accrued vs = gson.fromJson(serializeToJSON(fields), Accrued.class);
+        Accrued acc = gson.fromJson(serializeToJSON(fields), Accrued.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
     	
         listAccruedConciliation = accruedDao.search(
-                vs.getFrom(),
-                vs.getTo()
+        		acc.getFrom(),
+        		acc.getTo()
         );
         
         return Const.SUCCESS;
