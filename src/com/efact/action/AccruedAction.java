@@ -44,16 +44,11 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String conciliationSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
-        Voucher vs = gson.fromJson(serializeToJSON(fields), Voucher.class);
+        Accrued vs = gson.fromJson(serializeToJSON(fields), Accrued.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
     	
         listAccruedConciliation = accruedDao.search(
-        		vs.getProgram(),
-        		vs.getGroup(),
-        		vs.getBank(),
-                vs.getVoucher(),
-                vs.getStatus(),
                 vs.getFrom(),
                 vs.getTo()
         );
@@ -87,5 +82,15 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request = httpServletRequest;
 	}
+
+	public List<Accrued> getListAccruedConciliation() {
+		return listAccruedConciliation;
+	}
+
+	public void setListAccruedConciliation(List<Accrued> listAccruedConciliation) {
+		this.listAccruedConciliation = listAccruedConciliation;
+	}
+	
+	
 	
 }

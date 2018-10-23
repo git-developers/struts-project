@@ -1,41 +1,39 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<s:iterator value="listAccrued" var="accrued" status="accruedStatus">
+<s:iterator value="listAccruedConciliation" var="accrued" status="accruedStatus">
 	<tr>
 		<td>
 			<span class="badge bg-light-blue">
 				<s:property value="%{#accruedStatus.index + 1}"/>
 			</span>
 			
-			<input type="text" name="lcs_rea_id" value="<s:property value = "#accrued.lcs_rea_id"/>">
-			<input type="text" name="lcs_rec_id" value="<s:property value = "#accrued.lcs_rec_id"/>">
-			<input type="text" name="lcs_sistema" value="<s:property value = "#accrued.lcs_sistema"/>">
+			<input type="text" name="lcs_rea_id" value="<s:property value = "#accrued.comprobante1"/>">
 		</td>
 		<td>
 			<input type="checkbox" class="accrued-data">
 		</td>
 		<td>
-			<s:property value = "#accrued.lcs_pro_nombre"/>
+			<s:property value = "#accrued.comprobante1"/>
 		</td>
 		<td>
-			<s:property value = "#accrued.lcs_aso_cod"/>
+			<s:property value = "#accrued.recaudo"/>
 		</td>
 		<td>
 			<button type="button" class="btn bg-purple btn-flat btn-xs">
-				<s:property value = "#accrued.lcs_con_cod"/>
+				<s:property value = "#accrued.descripcion"/>
 			</button>
 		</td>
 		<td>
-			<s:property value = "#accrued.lcs_aso_datos"/>
+			<s:property value = "#accrued.afecto"/>
 		</td>
 		<td>
-			<s:property value = "#accrued.lcs_fecha"/>
+			<s:property value = "#accrued.noafecto"/>
 		</td>
 		<td>
-			S/ <s:property value = "#accrued.lcs_monto"/>
+			<s:property value = "#accrued.igv"/> %
 		</td>
 		<td>
-			<s:property value = "#accrued.lcs_importe"/>
+			S/ <s:property value = "#accrued.total"/>
 		</td>
 	</tr>
  </s:iterator>

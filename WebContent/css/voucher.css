@@ -13,3 +13,8 @@
 table tr.not-process td {
  	color:red   
 }
+
+input[type=checkbox]{
+	height: 17px;
+	width: 17px;
+}

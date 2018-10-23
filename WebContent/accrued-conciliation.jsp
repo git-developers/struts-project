@@ -36,7 +36,7 @@
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
 			                  </div>
-			                  <input type="date" class="form-control" name="from">
+			                  <input type="date" class="form-control" name="queryFrom">
 			                </div>
 		                </div>
 	        		</div>
@@ -48,7 +48,7 @@
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
 			                  </div>
-			                  <input type="date" class="form-control" name="to">
+			                  <input type="date" class="form-control" name="queryTo">
 			                </div>
 		                </div>
 	        		</div>
