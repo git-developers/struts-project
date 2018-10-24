@@ -24,7 +24,7 @@
 		</action>
 	
 		<action name="voucher-process" class="com.efact.action.VoucherAction" method = "process">
-			<result name="SUCCESS">/voucher-process.jsp</result>
+			<result name="SUCCESS">/process-result.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 	
@@ -35,6 +35,11 @@
 		
 		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method = "conciliationSearch">
 			<result name="SUCCESS">/accrued-conciliation-search.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		
+		<action name="accrued-conciliacion-process" class="com.efact.action.AccruedAction" method = "conciliationProcess">
+			<result name="SUCCESS">/process-result.jsp</result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
 		

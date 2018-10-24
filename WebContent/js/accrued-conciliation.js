@@ -65,7 +65,7 @@
         	});
 
             $.ajax({
-                url: options.contextPath + '/voucher-process',
+                url: options.contextPath + '/accrued-conciliacion-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -125,15 +125,8 @@
             	bp.checkAll(this);
         	});
             
-            $(".voucher-process").click(function( event ) {
+            $(".accrued-process").click(function( event ) {
             	event.preventDefault();
-            	
-                if (!$('.voucher-data').is(':checked')) {
-                	
-                	alert('Seleccione al menos un comprobante');
-                    return;
-                }
-            	
                 bp.process(this);
             });
 

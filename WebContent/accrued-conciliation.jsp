@@ -55,9 +55,18 @@
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">&nbsp;</label>
+		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="submit" class="btn btn-default accrued-search">Filtro</button>
+			                  <button type="submit" class="btn btn-default accrued-search">Buscar</button>
+			                </div>
+		                </div>
+	        		</div>
+
+	        		<div class="col-md-2">
+		                <div class="form-group">
+		                  <label for="">&nbsp;</label>
+							<div class="input-group">
+			                  <button type="submit" class="btn btn-default accrued-process">Procesar</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -116,5 +125,7 @@
        	</div>
      </div>
      </section>
+     
+<%@include file="modal-process.jsp" %>
      
 <%@include file="themes/adminLTE/footer.jsp" %>

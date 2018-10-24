@@ -4,6 +4,12 @@
     color: white;
 }
 
+.accrued-process:hover{
+	background-color: #00a65a;
+    border-color: #008d4c;
+    color: white;
+}
+
 input[type=checkbox]{
 	height: 17px;
 	width: 17px;
