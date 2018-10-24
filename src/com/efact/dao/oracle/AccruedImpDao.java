@@ -76,13 +76,14 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
         try{
         	
-            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }"; 
+            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);             
             st.setString(1, data);
             st.setString(2, "CLONE");
             st.setString(3, "EZANABRIA");
+            st.registerOutParameter(4, OracleTypes.VARCHAR);
             st.execute();
         
         } catch (Exception e){
