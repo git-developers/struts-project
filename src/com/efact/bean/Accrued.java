@@ -13,7 +13,8 @@ public class Accrued implements Serializable {
 	private String noafecto; 
 	private float igv;
 	private float total;
-	private String reaId; 
+	private String reaId;
+	private String sistema;
 	
     private String queryFrom;    
     private String queryTo;
@@ -98,6 +99,14 @@ public class Accrued implements Serializable {
 	}
 	public void setReaId(String reaId) {
 		this.reaId = reaId;
+	}
+	
+	
+	public String getSistema() {
+		return sistema;
+	}
+	public void setSistema(String sistema) {
+		this.sistema = sistema;
 	}
 	private Date stringToDate(String dateString){
     	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;

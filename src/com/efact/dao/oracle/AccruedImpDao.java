@@ -50,7 +50,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
                 obj.setIgv(rs.getFloat("rvb_igv"));
                 obj.setTotal(rs.getFloat("rvb_total"));
                 obj.setReaId(rs.getString("rea_id"));
-
+                obj.setSistema(rs.getString("sistema"));
+                
                 list.add(obj);
             }
             
@@ -69,21 +70,23 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	}
 
     @Override
-    public int generateVoucher(int nlote) throws Exception {
+    public int generateAccrued(String data) throws Exception {
 
         int id = 0;
 
         try{
         	
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, 'efact') }"; 
+            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);             
-            st.setInt(1, nlote);  
+            st.setString(1, data);
+            st.setString(2, "CLONE");
+            st.setString(3, "EZANABRIA");
             st.execute();
         
         } catch (Exception e){
-            System.out.println(":::: generateVoucher :::: " + e.getMessage());
+            System.out.println(":::: generateAccrued :::: " + e.getMessage());
             throw e;
         } finally {
             this.closeConnection();

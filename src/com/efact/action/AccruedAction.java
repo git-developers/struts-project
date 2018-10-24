@@ -65,25 +65,23 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         Type listType = new TypeToken<List<Accrued>>(){}.getType();
         List<Accrued> list = new Gson().fromJson(fields, listType);
         
-        VoucherDao voucherDao = dao.getVoucherDao();
+        AccruedDao accruedDao = dao.getAccruedDao();
+        
+        int i = 0;
+        StringBuilder sb = new StringBuilder();
         
         for (Accrued accrued : list) {
-            System.out.print("getReaId ::: " + accrued.getReaId());
+        	sb.append(accrued.getReaId());
+        	
+        	if(i++ != list.size() - 1){
+        		sb.append("_");
+            }
         }
         
+        System.out.print("TEXTO_OUT ::: " + sb.toString());
         
-        
-        /*
-        int sequence = voucherDao.getSequence();
-        
-        for (Voucher voucher : list) {
-            voucherDao.insertVoucher(voucher, sequence); 
-        }
-        
-        voucherDao.generateVoucher(sequence);
-        */
-        
-        
+        accruedDao.generateAccrued(sb.toString()); 
+
         return Const.SUCCESS;
 	}
 	

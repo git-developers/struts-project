@@ -11,8 +11,6 @@ public interface AccruedDao {
 		    Date to
     ) throws Exception;
 	
-
-	public int generateVoucher(int nlote) throws Exception;
-
+	public int generateAccrued(String data) throws Exception;
 	
 }
