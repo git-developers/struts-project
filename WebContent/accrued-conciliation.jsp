@@ -66,7 +66,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="submit" class="btn btn-default accrued-process">Procesar</button>
+			                  <button type="button" class="btn btn-default accrued-process">Procesar</button>
 			                </div>
 		                </div>
 	        		</div>
