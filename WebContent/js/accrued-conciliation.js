@@ -49,7 +49,7 @@
         base.process = function(context) {
         	
         	var rows = [];
-        	$("table#voucher-table tbody tr").each(function (i, row) {
+        	$("table#accrued-table tbody tr").each(function (i, row) {
         		
         		var isCheck = $(row).find('td:eq(1) input[type=checkbox]').prop('checked');
 
@@ -58,9 +58,7 @@
         	    }
         	    
         	    rows.push({
-        	    	lcs_rea_id: $(row).find('td:eq(0) input[name="lcs_rea_id"]').val(),
-        	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
-        	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val()
+        	    	reaId: $(row).find('td:eq(0) input[name="rea_id"]').val()
         	    });
         	});
 
@@ -127,6 +125,13 @@
             
             $(".accrued-process").click(function( event ) {
             	event.preventDefault();
+            	
+                if (!$('.accrued-data').is(':checked')) {
+                	
+                	alert('Seleccione al menos un comprobante');
+                    return;
+                }
+            	
                 bp.process(this);
             });
 

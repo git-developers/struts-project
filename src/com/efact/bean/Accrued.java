@@ -13,6 +13,7 @@ public class Accrued implements Serializable {
 	private String noafecto; 
 	private float igv;
 	private float total;
+	private String reaId; 
 	
     private String queryFrom;    
     private String queryTo;
@@ -91,8 +92,14 @@ public class Accrued implements Serializable {
 	public void setTo(String to) {
 		this.queryTo = to;
 	}
-	
-    private Date stringToDate(String dateString){
+
+    public String getReaId() {
+		return reaId;
+	}
+	public void setReaId(String reaId) {
+		this.reaId = reaId;
+	}
+	private Date stringToDate(String dateString){
     	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
     	return Date.valueOf(dateString);
     }
