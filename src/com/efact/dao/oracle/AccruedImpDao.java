@@ -25,16 +25,16 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
         try{
     		
-            String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.PREVIEW_CONCILIA_CONSOLIDA(?, ?, ?) } "; 
+            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.PREVIEW_CONCILIA_CONSOLIDA(?, ?, ?, ?) } "; 
             
             System.out.print("SEARCH :: " + from.getYear() + "--" + to.getYear());
             
             Connection connection = OracleDaoFactory.getMainConnection();
-			CallableStatement st = connection.prepareCall(sql);
-            st.registerOutParameter(1, OracleTypes.CURSOR);          
-            st.setDate(2, from);
-            st.setDate(3, to);
-            st.setString(4, "EZANABRIA");
+			CallableStatement st = connection.prepareCall(sql);       
+            st.setDate(1, from);
+            st.setDate(2, to);
+            st.setString(3, "EZANABRIA");
+            st.registerOutParameter(4, OracleTypes.CURSOR);   
             st.execute();
         	
             ResultSet rs = (ResultSet) st.getObject(1);
