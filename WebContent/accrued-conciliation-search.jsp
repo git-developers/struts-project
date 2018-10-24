@@ -13,7 +13,7 @@
 			<input type="checkbox" class="accrued-data">
 		</td>
 		<td>
-			<s:property value = "#accrued.comprobante1"/>
+			<s:property value = "#accrued.comprobante2"/>
 		</td>
 		<td>
 			<s:property value = "#accrued.recaudo"/>
