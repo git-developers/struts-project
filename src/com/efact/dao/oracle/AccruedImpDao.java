@@ -32,7 +32,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.setDate(1, from);
             st.setDate(2, to);
             st.setString(3, "EZANABRIA");
-            st.registerOutParameter(4, OracleTypes.CURSOR);   
+            st.registerOutParameter(5, OracleTypes.CURSOR);
             st.execute();
         	
             ResultSet rs = (ResultSet) st.getObject(4);
