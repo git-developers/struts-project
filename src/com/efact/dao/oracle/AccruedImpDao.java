@@ -36,7 +36,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.registerOutParameter(5, OracleTypes.CURSOR);
             st.execute();
         	
-            ResultSet rs = (ResultSet) st.getObject(4);
+            ResultSet rs = (ResultSet) st.getObject(5);
             
             while (rs.next()){
             	
