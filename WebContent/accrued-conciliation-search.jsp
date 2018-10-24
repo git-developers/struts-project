@@ -7,7 +7,7 @@
 				<s:property value="%{#accruedStatus.index + 1}"/>
 			</span>
 			
-			<input type="text" name="rea_id" value="<s:property value = "#accrued.reaId"/>">
+			<input type="hidden" name="rea_id" value="<s:property value = "#accrued.reaId"/>">
 		</td>
 		<td>
 			<input type="checkbox" class="accrued-data">
