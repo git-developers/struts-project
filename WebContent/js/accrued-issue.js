@@ -82,20 +82,6 @@
             });
         };
         
-        base.program = function(context) {
-            var id = $(context).val();  
-            
-            $('.group-select').hide();
-            
-            $('.prod-' + id).show();
-            
-            if (id === '0') {
-                $('.group-select').show();
-            }
-
-            $('#grupo').val(0);
-        };
-        
         base.checkAll = function(context) {
         	$('input:checkbox').not(context).prop('checked', context.checked);
         };
@@ -127,7 +113,6 @@
                 	programId: $('#program').val(),
                 	groupId: $('#group').val()
                 },
-                
                 beforeSend: function(jqXHR, settings) {
                 	//$('#modal-process').modal('show');
                 },

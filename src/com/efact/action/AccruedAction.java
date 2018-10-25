@@ -23,6 +23,8 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	private static final long serialVersionUID = 1L;
 	private DaoFactory dao;
 	private Gson gson;
+	private List<Program> listProgram;
+	private List<Group> listGroup;
 	private List<AccruedConciliation> listAccruedConciliation;
 	private List<AccruedIssue> listAccruedIssue;
 	private List<AccruedIssueDropdown> listAccruedIssueDropdown;
@@ -88,6 +90,13 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	
 	
 	public String issue() throws Exception {
+		
+		ProgramDao productDao = dao.getProgramDao();
+		GroupDao groupDao = dao.getGroupDao();
+		
+		listProgram = productDao.findAll();
+		listGroup = groupDao.findAll();
+		
 		return Const.SUCCESS;
 	}
 
@@ -171,8 +180,22 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public void setListAccruedIssueDropdown(List<AccruedIssueDropdown> listAccruedIssueDropdown) {
 		this.listAccruedIssueDropdown = listAccruedIssueDropdown;
 	}
-	
-	
-	
+
+	public List<Program> getListProgram() {
+		return listProgram;
+	}
+
+	public void setListProgram(List<Program> listProgram) {
+		this.listProgram = listProgram;
+	}
+
+	public List<Group> getListGroup() {
+		return listGroup;
+	}
+
+	public void setListGroup(List<Group> listGroup) {
+		this.listGroup = listGroup;
+	}
+
 	
 }

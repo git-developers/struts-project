@@ -76,6 +76,7 @@
                 	$('#modal-process').modal('show');
                 },
                 success: function(data, textStatus, jqXHR) {
+                	$('#modal-process').modal('show');
                 	$('#modal-process').find('.modal-body').html(data);
                 },
                 error: function(jqXHR, exception) {
