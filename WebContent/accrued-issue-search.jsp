@@ -7,27 +7,33 @@
 				<s:property value="%{#status.index + 1}"/>
 			</span>
 			
-			<input type="hidden" name="rea_id" value="<s:property value = "#object.reaId"/>">
+			<input type="hidden" name="rea_id" value="<s:property value = "#object.recaudoId"/>">
 		</td>
 		<td>
-			<input type="checkbox" class="object-data">
+			<s:property value = "#object.recaudoId"/>
 		</td>
 		<td>
-			<s:property value = "#object.comprobante2"/>
-		</td>
-		<td>
-			<s:property value = "#object.recaudo"/>
+			<s:property value = "#object.codigoAsociado"/>
 		</td>
 		<td>
 			<button type="button" class="btn bg-purple btn-flat btn-xs">
-				<s:property value = "#object.descripcion"/>
+				<s:property value = "#object.datosAsociados"/>
 			</button>
+		</td>
+		<td>
+			<s:property value = "#object.numeroCuota"/>
+		</td>
+				<td>
+			<s:property value = "#object.posicion"/>
+		</td>
+		<td>
+			<s:property value = "#object.descripcion"/>
 		</td>
 		<td>
 			<s:property value = "#object.afecto"/>
 		</td>
 		<td>
-			<s:property value = "#object.noafecto"/>
+			<s:property value = "#object.noAfecto"/>
 		</td>
 		<td>
 			<s:property value = "#object.igv"/> %

@@ -142,7 +142,7 @@
             $(".voucher-process").click(function( event ) {
             	event.preventDefault();
             	
-                if (!$('.voucher-data').is(':checked')) {
+                if (!$('.object-data').is(':checked')) {
                 	
                 	alert('Seleccione al menos un comprobante');
                     return;

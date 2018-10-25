@@ -159,7 +159,7 @@
             $(".accrued-process").click(function( event ) {
             	event.preventDefault();
             	
-                if (!$('.accrued-data').is(':checked')) {
+                if (!$('.object-data').is(':checked')) {
                 	
                 	alert('Seleccione al menos un comprobante');
                     return;

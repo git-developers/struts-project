@@ -118,10 +118,12 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
-						   <th>Comprobante</th>
-						   <th>Recaudo</th>
-						   <th>Descripci&oacute;n</th>
+						   <th>Recaudo Id</th>
+						   <th>C&oacute;digo asociado</th>
+						   <th>Datos asociado</th>
+						   <th>Numero de cuota</th>
+						   <th>Posici&oacute;n</th>
+						   <th>Descripcion</th>
 						   <th>Afecto</th>
 						   <th>No Afecto</th>
 						   <th>IGV</th>
@@ -130,7 +132,7 @@
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="9" align="center">
+							   	<td colspan="11" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>
