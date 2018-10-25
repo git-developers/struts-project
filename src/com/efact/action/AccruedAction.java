@@ -88,7 +88,12 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	}
 	
 	
-	
+	/**
+	 * ISSUE
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
 	public String issue() throws Exception {
 		
 		ProgramDao productDao = dao.getProgramDao();
@@ -105,8 +110,10 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         int programId = Integer.valueOf(request.getParameter("programId"));
         int groupId = Integer.valueOf(request.getParameter("groupId"));
         
+        System.out.print("issueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
+        
+        
         AccruedDao accruedDao = dao.getAccruedDao();
-    	
         listAccruedIssueDropdown = accruedDao.listAccruedIssueDropdown(programId, groupId);
         
         for (AccruedIssueDropdown voucher : listAccruedIssueDropdown) {

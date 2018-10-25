@@ -123,7 +123,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             }
         
         } catch (Exception e){
-            System.out.println(":::: generateAccrued :::: " + e.getMessage());
+            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
             throw e;
         } finally {
             this.closeConnection();
