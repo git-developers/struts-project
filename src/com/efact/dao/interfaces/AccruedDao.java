@@ -6,11 +6,20 @@ import com.efact.bean.*;
 
 public interface AccruedDao {
 
-	public List<Accrued> search(
+	public List<AccruedConciliation> conciliationSearch(
 		    Date from,    
 		    Date to
     ) throws Exception;
 	
-	public int generateAccrued(String data) throws Exception;
+
+	public List<AccruedIssue> issueSearch(
+			int programId, 
+			int groupId, 
+			Date dateTo
+	) throws Exception;
+	
+	public int generateAccruedConciliation(String data) throws Exception;
+	
+	public List<AccruedIssueDropdown> listAccruedIssueDropdown(int programId, int groupId) throws Exception;
 	
 }

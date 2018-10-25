@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<s:iterator value="listAccruedConciliation" var="object" status="status">
+<s:iterator value="listAccruedIssue" var="object" status="status">
 	<tr>
 		<td>
 			<span class="badge bg-light-blue">

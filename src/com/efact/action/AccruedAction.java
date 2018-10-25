@@ -23,8 +23,10 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	private static final long serialVersionUID = 1L;
 	private DaoFactory dao;
 	private Gson gson;
-	private List<Accrued> listAccruedConciliation;
-	
+	private List<AccruedConciliation> listAccruedConciliation;
+	private List<AccruedIssue> listAccruedIssue;
+	private List<AccruedIssueDropdown> listAccruedIssueDropdown;
+
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
 	
@@ -35,23 +37,21 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
     
 	@Override
 	public String execute() throws Exception {
-		
 		return Const.SUCCESS;
 	}
 
 	public String conciliation() throws Exception {
-		
 		return Const.SUCCESS;
 	}
 	
 	public String conciliationSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
-        Accrued acc = gson.fromJson(serializeToJSON(fields), Accrued.class);
+        AccruedConciliation acc = gson.fromJson(serializeToJSON(fields), AccruedConciliation.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
     	
-        listAccruedConciliation = accruedDao.search(
+        listAccruedConciliation = accruedDao.conciliationSearch(
         		acc.getFrom(),
         		acc.getTo()
         );
@@ -62,15 +62,15 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String conciliationProcess() throws Exception {
 		
         String fields = request.getParameter("fields");
-        Type listType = new TypeToken<List<Accrued>>(){}.getType();
-        List<Accrued> list = new Gson().fromJson(fields, listType);
+        Type listType = new TypeToken<List<AccruedConciliation>>(){}.getType();
+        List<AccruedConciliation> list = new Gson().fromJson(fields, listType);
         
         AccruedDao accruedDao = dao.getAccruedDao();
         
         int i = 0;
         StringBuilder sb = new StringBuilder();
         
-        for (Accrued accrued : list) {
+        for (AccruedConciliation accrued : list) {
         	sb.append(accrued.getReaId());
         	
         	if(i++ != list.size() - 1){
@@ -80,32 +80,63 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         System.out.print("TEXTO_OUT ::: " + sb.toString());
         
-        accruedDao.generateAccrued(sb.toString()); 
+        accruedDao.generateAccruedConciliation(sb.toString()); 
 
         return Const.SUCCESS;
 	}
 	
 	
 	
-	
-	
-	
 	public String issue() throws Exception {
+		return Const.SUCCESS;
+	}
+
+	public String issueDropdown() throws Exception {
+		
+        int programId = Integer.valueOf(request.getParameter("programId"));
+        int groupId = Integer.valueOf(request.getParameter("groupId"));
+        
+        AccruedDao accruedDao = dao.getAccruedDao();
+    	
+        listAccruedIssueDropdown = accruedDao.listAccruedIssueDropdown(programId, groupId);
+        
+        for (AccruedIssueDropdown voucher : listAccruedIssueDropdown) {
+        	System.out.print("AccruedIssueDropdown ::::: " + voucher.getCieId() + " --- DEADLINE ::: " + voucher.getCieId());
+        }
+		
 		
 		return Const.SUCCESS;
 	}
 	
-	
-	public String index() throws Exception {
+	public String issueSearch() throws Exception {
+		
+        String fields = request.getParameter("fields");
+        AccruedIssue vs = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
+        
+        AccruedDao accruedDao = dao.getAccruedDao();
+    	
+        listAccruedIssue = accruedDao.issueSearch(
+        		vs.getProgram(),
+        		vs.getGroup(),
+        		vs.getDateTo()
+        );
 		
 		return Const.SUCCESS;
 	}
 	
-	public String filter() throws Exception {
+	public String issueProcess() throws Exception {
 		
-		
+        String fields = request.getParameter("fields");
+        Type listType = new TypeToken<List<AccruedIssue>>(){}.getType();
+        List<AccruedIssue> list = new Gson().fromJson(fields, listType);
+        
+        AccruedDao accruedDao = dao.getAccruedDao();
+        
+        
 		return Const.SUCCESS;
 	}
+	
+	
 	
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {
@@ -117,13 +148,30 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 		this.request = httpServletRequest;
 	}
 
-	public List<Accrued> getListAccruedConciliation() {
+	public List<AccruedConciliation> getListAccruedConciliation() {
 		return listAccruedConciliation;
 	}
 
-	public void setListAccruedConciliation(List<Accrued> listAccruedConciliation) {
+	public void setListAccruedConciliation(List<AccruedConciliation> listAccruedConciliation) {
 		this.listAccruedConciliation = listAccruedConciliation;
 	}
+
+	public List<AccruedIssue> getListAccruedIssue() {
+		return listAccruedIssue;
+	}
+
+	public void setListAccruedIssue(List<AccruedIssue> listAccruedIssue) {
+		this.listAccruedIssue = listAccruedIssue;
+	}
+
+	public List<AccruedIssueDropdown> getListAccruedIssueDropdown() {
+		return listAccruedIssueDropdown;
+	}
+
+	public void setListAccruedIssueDropdown(List<AccruedIssueDropdown> listAccruedIssueDropdown) {
+		this.listAccruedIssueDropdown = listAccruedIssueDropdown;
+	}
+	
 	
 	
 	

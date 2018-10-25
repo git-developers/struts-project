@@ -3,7 +3,7 @@ package com.efact.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class Accrued implements Serializable {
+public class AccruedConciliation implements Serializable {
 	
 	private String comprobante1; 
 	private String comprobante2; 

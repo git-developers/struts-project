@@ -329,7 +329,6 @@ public class Voucher implements Serializable {
 	public void setIsselecitem(String isselecitem) {
 		this.isselecitem = isselecitem;
 	}
-    
 
 	public int getProgram() {
         try {

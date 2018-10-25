@@ -79,6 +79,17 @@
 	</script>
 </c:if>
 
+<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">
+	<script src="js/accrued-issue.js"></script>
+	<link rel="stylesheet" href="css/accrued-issue.css">
+	
+	<script type="text/javascript">
+	    $("body").formAccruedIssue({
+	    	contextPath: '${pageContext.request.contextPath}'
+	    });
+	</script>
+</c:if>
+
 
 </body>
 </html>

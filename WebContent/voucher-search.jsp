@@ -1,7 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
+
 <s:iterator value="listVoucher" var="voucher" status="voucherStatus">
-	<tr class="<s:if test="%{#voucher.isselecitem == 'NO'}">not-process</s:if>">
+	<tr <%-- class="<s:if test="%{#voucher.isselecitem == 'NO'}">not-process</s:if>" --%> >
 		<td>
 			<span class="badge bg-light-blue">
 				<s:property value="%{#voucherStatus.index + 1}"/>

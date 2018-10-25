@@ -31,10 +31,15 @@
                 
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Programa</label>
+		                  <label for="">Programa</label>
 		                  <select class="form-control" id="program" name="queryProgram" required="required">
 		                  	<option value="0">[todos]</option>
+		                  	
+		                  	<%-- 
 		                  	<option value="22">vvvvvv</option>
+		                  	<option value="23">nnnn</option>
+		                  	--%>
+		                  	
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
 		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
@@ -46,12 +51,21 @@
 
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Grupos</label>
+		                  <label for="">Grupos</label>
 		                  <select class="form-control" name="queryGroup" id="group">
 		                  	<option value="0">[todos]</option>
-		                  	<option value="333">dddd</option>
+		                  	
+		                  	<%--
+		                  	<option value="333" data-prod-id="22">22 - dddd</option>
+		                  	<option value="444" data-prod-id="22">22 - aaa</option>
+		                  	<option value="555" data-prod-id="23">23 - ssss</option>
+		                  	 --%>
+		                  	 
 		                  	<s:iterator value="listGroup" var="group">
-		                  		<option value="<s:property value = "#group.id"/>" class="group-select prod-<s:property value = "#group.prodId"/>">
+		                  		<option 
+		                  			data-prod-id="<s:property value = "#group.prodId"/>"
+		                  			value="<s:property value = "#group.id"/>" 
+		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
 		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
