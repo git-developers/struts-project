@@ -68,6 +68,7 @@
 		
 		
 		
+		
 		<action name="nota-de-credito" class="com.efact.action.NoteCreditAction" method="index">
 			<result name="SUCCESS">/note-credit.jsp</result>
 			<result name="ERROR">/error.jsp</result>
