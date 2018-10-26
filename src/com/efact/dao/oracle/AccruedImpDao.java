@@ -113,7 +113,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.setInt(3, groupId);
             st.execute();
             
-            ResultSet rs = (ResultSet) st.getObject(3);
+            ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){
             	
