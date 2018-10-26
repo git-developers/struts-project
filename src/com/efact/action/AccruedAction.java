@@ -110,9 +110,6 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         int programId = Integer.valueOf(request.getParameter("programId"));
         int groupId = Integer.valueOf(request.getParameter("groupId"));
         
-        System.out.print("issueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
-        
-        
         AccruedDao accruedDao = dao.getAccruedDao();
         listAccruedIssueDropdown = accruedDao.listAccruedIssueDropdown(programId, groupId);
         
