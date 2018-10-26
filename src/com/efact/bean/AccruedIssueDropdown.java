@@ -5,20 +5,23 @@ import java.sql.Date;
 
 public class AccruedIssueDropdown implements Serializable {
 	
-	private Date deadline; 
-	private int cieId;
+	private String deadline; 
+	private String cieId;
 	
-	public Date getDeadline() {
+	public String getDeadline() {
 		return deadline;
 	}
-	public void setDeadline(Date deadline) {
+	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
-	public int getCieId() {
+	public String getCieId() {
 		return cieId;
 	}
-	public void setCieId(int cieId) {
+	public void setCieId(String cieId) {
 		this.cieId = cieId;
 	}
+	
+
+	
     
 }

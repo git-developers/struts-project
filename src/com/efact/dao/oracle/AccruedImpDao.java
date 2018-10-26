@@ -118,8 +118,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             while (rs.next()){
             	
             	AccruedIssueDropdown obj = new AccruedIssueDropdown();
-                obj.setDeadline(rs.getDate("CIE_FCIERRE"));
-                obj.setCieId(rs.getInt("CIE_ID"));
+                obj.setDeadline(rs.getString("CIE_FCIERRE"));
+                obj.setCieId(rs.getString("CIE_ID"));
             	
                 list.add(obj);
             }
