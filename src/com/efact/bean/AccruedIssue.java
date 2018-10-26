@@ -94,16 +94,17 @@ public class AccruedIssue implements Serializable {
 	public void setQueryGroup(String queryGroup) {
 		this.queryGroup = queryGroup;
 	}
-	public Date getDateTo() {
-		return stringToDate(queryDateTo);
+	public String getDateTo() {
+		//return stringToDate(queryDateTo);
+		return queryDateTo;
 	}
 	public void setQueryDateTo(String queryDateTo) {
 		this.queryDateTo = queryDateTo;
 	}
 	
-    private Date stringToDate(String dateString){
-    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-    	return Date.valueOf(dateString);
-    }
+//    private Date stringToDate(String dateString){
+//    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
+//    	return Date.valueOf(dateString);
+//    }
 
 }
