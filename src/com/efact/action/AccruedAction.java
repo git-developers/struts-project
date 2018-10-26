@@ -112,11 +112,6 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         AccruedDao accruedDao = dao.getAccruedDao();
         listAccruedIssueDropdown = accruedDao.listAccruedIssueDropdown(programId, groupId);
-        
-        for (AccruedIssueDropdown voucher : listAccruedIssueDropdown) {
-        	System.out.print("AccruedIssueDropdown ::::: " + voucher.getCieId() + " --- DEADLINE ::: " + voucher.getCieId());
-        }
-		
 		
 		return Const.SUCCESS;
 	}
