@@ -27,7 +27,7 @@
         	console.dir(fields);
         	
             $.ajax({
-                url: options.contextPath + '/accrued-conciliacion-search',
+                url: options.contextPath + '/accrued-issue-search',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -63,7 +63,7 @@
         	});
 
             $.ajax({
-                url: options.contextPath + '/accrued-conciliacion-process',
+                url: options.contextPath + '/accrued-issue-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -74,6 +74,7 @@
                 	$('#modal-process').modal('show');
                 },
                 success: function(data, textStatus, jqXHR) {
+                	$('#modal-process').modal('show');
                 	$('#modal-process').find('.modal-body').html(data);
                 },
                 error: function(jqXHR, exception) {
