@@ -138,7 +138,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	public List<AccruedIssue> issueSearch(
 			int programId, 
 			int groupId, 
-			Date dateTo
+			String dateTo
 	) throws Exception {
 
         List<AccruedIssue> list = new ArrayList<>();
