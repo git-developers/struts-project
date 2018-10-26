@@ -102,7 +102,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
         try{
         	
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.F_LISTADO_FECHAS_CIE_DEVEN(?, ?, ?) }"; 
+            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.F_LISTADO_FECHAS_CIE_DEVEN(?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);             
