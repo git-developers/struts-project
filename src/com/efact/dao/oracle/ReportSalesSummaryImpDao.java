@@ -41,18 +41,18 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
             	object.setTipo(rs.getString("TIPO"));
             	object.setSerie(rs.getString("SERIE"));
             	object.setPrograma(rs.getString("PROGRAMA"));
-            	object.setEne(rs.getString("ENE"));
-            	object.setFeb(rs.getString("FEB"));
-            	object.setMar(rs.getString("MAR"));
-            	object.setAbr(rs.getString("ABR"));
-            	object.setMay(rs.getString("MAY"));
-            	object.setJun(rs.getString("JUN"));
-            	object.setJul(rs.getString("JUL"));
-            	object.setAgo(rs.getString("AGO"));
-            	object.setSet(rs.getString("SET"));
-            	object.setOct(rs.getString("OCT"));
-            	object.setNov(rs.getString("NOV"));
-            	object.setDic(rs.getString("DIC"));
+            	object.setEne(rs.getInt("ENE"));
+            	object.setFeb(rs.getInt("FEB"));
+            	object.setMar(rs.getInt("MAR"));
+            	object.setAbr(rs.getInt("ABR"));
+            	object.setMay(rs.getInt("MAY"));
+            	object.setJun(rs.getInt("JUN"));
+            	object.setJul(rs.getInt("JUL"));
+            	object.setAgo(rs.getInt("AGO"));
+            	object.setSet(rs.getInt("SET"));
+            	object.setOct(rs.getInt("OCT"));
+            	object.setNov(rs.getInt("NOV"));
+            	object.setDic(rs.getInt("DIC"));
 
                 list.add(object);
             }
