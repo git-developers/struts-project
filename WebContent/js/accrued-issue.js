@@ -21,17 +21,12 @@
         };
 
         base.search = function(context) {
-        	
-        	var fields = $(context).serialize();
-        	
-        	console.dir(fields);
-        	
             $.ajax({
                 url: options.contextPath + '/accrued-issue-search',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: fields
+                	fields: $(context).serialize()
                 },
                 
                 beforeSend: function(jqXHR, settings) {
