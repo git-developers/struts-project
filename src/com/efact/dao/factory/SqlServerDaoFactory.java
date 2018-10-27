@@ -7,28 +7,28 @@ import com.efact.dao.interfaces.*;
 
 public class SqlServerDaoFactory extends DaoFactory {
 
-	protected static Connection connection;
+	protected static Connection cxn;
 	
 	public static Connection getMainConnection(){
 		
 		try {
 			
 			Class.forName(dbDriver);	
-			connection = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			cxn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
 			
 		} catch (Exception e) {
 			System.out.print(e.getMessage());
-			System.out.print("SYSTEM INFO::: Connection Failed!");
+			System.out.print("SqlServerDaoFactory ::: Connection Failed!");
 			e.printStackTrace();
 		}
 		
-		return connection;
+		return cxn;
 	}
 	
     public void closeConnection() throws SQLException {
-        if(connection != null){
-            if(!connection.isClosed()){
-            	connection.close();
+        if(cxn != null){
+            if(!cxn.isClosed()){
+            	cxn.close();
             }
         }
     }
