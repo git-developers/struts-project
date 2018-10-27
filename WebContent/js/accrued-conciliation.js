@@ -34,10 +34,10 @@
                 },
                 
                 beforeSend: function(jqXHR, settings) {
-                	$("table tbody").html('<tr><td colspan="9" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
+                	$("table#accrued-table table tbody").html('<tr><td colspan="9" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
-                    $("table tbody").html(data);
+                    $("table#accrued-table table tbody").html(data);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: search");

@@ -29,10 +29,10 @@
                 },
                 
                 beforeSend: function(jqXHR, settings) {
-                	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
+                	$("table#voucher-table table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
-                    $("table tbody").html(data);
+                    $("table#voucher-table table tbody").html(data);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher search");
