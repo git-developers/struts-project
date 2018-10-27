@@ -100,12 +100,15 @@
         };
         
         base.group = function(context) {
-            var prodId = $(context).find(':selected').data('prod-id');  
-            $('#program').val(prodId);
+            var prodId = $(context).find(':selected').data('prod-id');
+            
+            if (parseInt(prodId) > 0) {
+                $('#program').val(prodId);
+            }
         };
         
         base.checkAll = function(context) {
-        	$('input:checkbox').not(context).prop('checked', context.checked);
+        	$('input:checkbox.check-all-able').not(context).prop('checked', context.checked);
         };
         
         // Private Functions

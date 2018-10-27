@@ -39,11 +39,11 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
     
 	@Override
 	public String execute() throws Exception {
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	public String conciliation() throws Exception {
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	public String conciliationSearch() throws Exception {
@@ -58,7 +58,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         		acc.getTo()
         );
         
-        return Const.SUCCESS;
+        return SUCCESS;
 	}
 	
 	public String conciliationProcess() throws Exception {
@@ -84,7 +84,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         accruedDao.generateAccruedConciliation(sb.toString()); 
 
-        return Const.SUCCESS;
+        return SUCCESS;
 	}
 	
 	
@@ -102,7 +102,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 		listProgram = productDao.findAll();
 		listGroup = groupDao.findAll();
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	public String issueDropdown() throws Exception {
@@ -113,7 +113,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         AccruedDao accruedDao = dao.getAccruedDao();
         listAccruedIssueDropdown = accruedDao.listAccruedIssueDropdown(programId, groupId);
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	public String issueSearch() throws Exception {
@@ -129,7 +129,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         		vs.getDateTo()
         );
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	public String issueProcess() throws Exception {
@@ -141,7 +141,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         AccruedDao accruedDao = dao.getAccruedDao();
         
         
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	

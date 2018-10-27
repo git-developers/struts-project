@@ -75,7 +75,8 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
                 obj.setLcs_sistema(rs.getString("sistema")); 
                 obj.setLcs_rec_id(rs.getInt("rec_id"));
                 obj.setIsselecitem(rs.getString("isselecitem"));
-
+                obj.setIsvisiblecheckbox(rs.getString("isvisiblecheckbox"));
+                
                 list.add(obj);
             }
             
@@ -152,19 +153,34 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
     }
 
     @Override
-    public int generateVoucher(int nlote) throws Exception {
+    public List<Voucher> generateVoucher(int nlote) throws Exception {
 
-        int id = 0;
+        List<Voucher> list = new ArrayList<>();
 
         try{
-        	
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, 'efact') }"; 
+    		
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, 'efact', ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
-			CallableStatement st = connection.prepareCall(sql);             
-            st.setInt(1, nlote);  
+			CallableStatement st = connection.prepareCall(sql);         
+            st.setInt(1, nlote);
+            st.registerOutParameter(2, OracleTypes.CURSOR);
             st.execute();
+            
+            ResultSet rs = (ResultSet) st.getObject(2);
+            
+            while (rs.next()){
+            	Voucher obj = new Voucher();
+                obj.setLote(rs.getString("LOTE"));
+                obj.setTipo(rs.getString("TIPO"));
+                obj.setTotal(rs.getString("TOTAL"));
+                
+                list.add(obj);
+            }
         
+            rs.close();
+            st.close();
+            
         } catch (Exception e){
             System.out.println(":::: generateVoucher :::: " + e.getMessage());
             throw e;
@@ -172,7 +188,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             this.closeConnection();
         }
         
-        return id;
+        return list;
     }
     
 	@Override

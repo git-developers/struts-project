@@ -9,81 +9,100 @@
 	<package name="default"  extends="struts-default">
 	
 		<action name="index" class="com.efact.action.IndexAction" method="execute">
-			<result name="SUCCESS">/index.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="comprobante-por-lote" class="com.efact.action.VoucherAction" method="index">
-			<result name="SUCCESS">/voucher.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/voucher.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="voucher-search" class="com.efact.action.VoucherAction" method="search">
-			<result name="SUCCESS">/voucher-search.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/voucher-search.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 	
 		<action name="voucher-process" class="com.efact.action.VoucherAction" method="process">
-			<result name="SUCCESS">/process-result.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/voucher-process-result.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 	
 	
 		<action name="devengados-conciliacion" class="com.efact.action.AccruedAction" method="conciliation">
-			<result name="SUCCESS">/accrued-conciliation.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/accrued-conciliation.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method="conciliationSearch">
-			<result name="SUCCESS">/accrued-conciliation-search.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/accrued-conciliation-search.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-conciliacion-process" class="com.efact.action.AccruedAction" method="conciliationProcess">
-			<result name="SUCCESS">/process-result.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/process-result.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		
 		
 		<action name="devengados-emision" class="com.efact.action.AccruedAction" method="issue">
-			<result name="SUCCESS">/accrued-issue.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/accrued-issue.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-dropdown" class="com.efact.action.AccruedAction" method="issueDropdown">
-			<result name="SUCCESS">/accrued-issue-dropdown.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/accrued-issue-dropdown.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-search" class="com.efact.action.AccruedAction" method="issueSearch">
-			<result name="SUCCESS">/accrued-issue-search.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/accrued-issue-search.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-process" class="com.efact.action.AccruedAction" method="issueProcess">
-			<result name="SUCCESS">/process-result.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/process-result.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		
 		
 		
 		<action name="nota-de-credito" class="com.efact.action.NoteCreditAction" method="index">
-			<result name="SUCCESS">/note-credit.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/note-credit.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="nota-de-debito" class="com.efact.action.NoteDebitAction" method="index">
-			<result name="SUCCESS">/note-debit.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/note-debit.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		
+		
+		<!-- 
 		<action name="registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
-			<result name="SUCCESS">/report-sales-record.jsp</result>
-			<result name="ERROR">/error.jsp</result>
+			<result name="success">/report-sales-record.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
-
+		 -->
+		
+		
+		<action name="registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
+			<result name="success">/report-sales-record.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="report-export" class="com.efact.action.ReportAction" method="salesRecordExport">
+			<result name="success"></result>
+			<result name="error">/error.jsp</result>
+			<result type="stream">
+				<param name="contentType">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename="efact.xlsx"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
 	
 	</package>
 

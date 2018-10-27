@@ -28,6 +28,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	private List<Group> listGroup;
 	private List<Bank> listBank;
 	private List<Voucher> listVoucher;
+	private List<Voucher> listVoucherResult;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -40,7 +41,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	@Override
 	public String execute() throws Exception {
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	public String index() throws Exception {
@@ -53,7 +54,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		listGroup = groupDao.findAll();
 		listBank = bankDao.findAll();
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	public String search() throws Exception {
@@ -73,7 +74,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
                 vs.getTo()
         );
         
-        return Const.SUCCESS;
+        return SUCCESS;
 	}
 	
 	public String process() throws Exception {
@@ -89,9 +90,9 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
             voucherDao.insertVoucher(voucher, sequence); 
         }
         
-        voucherDao.generateVoucher(sequence);
+        listVoucherResult = voucherDao.generateVoucher(sequence);
         
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	public List<Program> getListProgram() {
@@ -134,6 +135,14 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	@Override
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request = httpServletRequest;
+	}
+
+	public List<Voucher> getListVoucherResult() {
+		return listVoucherResult;
+	}
+
+	public void setListVoucherResult(List<Voucher> listVoucherResult) {
+		this.listVoucherResult = listVoucherResult;
 	}
 
 	

@@ -20,7 +20,7 @@ public interface VoucherDao {
 	
 	public int insertVoucher(Voucher voucher, int nlote) throws Exception;
 	
-	public int generateVoucher(int nlote) throws Exception;
+	public List<Voucher> generateVoucher(int nlote) throws Exception;
 	
 	public Voucher findOneById(String id) throws Exception;
 	

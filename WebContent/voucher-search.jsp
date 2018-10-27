@@ -10,7 +10,7 @@
 <s:else>
 	
 	<s:iterator value="listVoucher" var="object" status="status">
-		<tr <%-- class="<s:if test="%{#object.isselecitem == 'NO'}">not-process</s:if>" --%> >
+		<tr class="<s:if test="%{#object.isselecitem == 'NO'}">not-process</s:if>" >
 			<td>
 				<span class="badge bg-light-blue">
 					<s:property value="%{#status.index + 1}"/>
@@ -21,9 +21,12 @@
 				<input type="hidden" name="lcs_sistema" value="<s:property value = "#object.lcs_sistema"/>">
 			</td>
 			<td>
-				<s:if test="%{#object.isselecitem == 'SI'}">
-					<input type="checkbox" class="object-data">
+				<s:if test="%{#object.isvisiblecheckbox == 'SI'}">
+					<input type="checkbox" class="object-data check-all-able">
 				</s:if>
+				<s:elseif test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">
+				    <input type="checkbox" class="object-data">
+				</s:elseif>
 			</td>
 			<td>
 				<s:property value = "#object.lcs_pro_nombre"/>

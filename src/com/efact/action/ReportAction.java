@@ -18,10 +18,14 @@ public class ReportAction extends ActionSupportBase  {
 	@Override
 	public String execute() throws Exception {
 
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 	
 	public String salesRecord() throws Exception {
+		return SUCCESS;
+	}
+	
+	public String salesRecordExport() throws Exception {
 		
 		List<Program> list =  new ArrayList<>();
 		
@@ -35,9 +39,18 @@ public class ReportAction extends ActionSupportBase  {
 		b.setName("uuuuuuu");
 		list.add(b);
 		
-		this.excelStream = ExcelExport.salesRecord(list);
+		Program c = new Program();
+		c.setId(33);
+		c.setName("kkkkkk");
+		list.add(c);
 		
-		return Const.SUCCESS;
+		System.out.print("EXCEL EXPORT -- 11111111");
+		
+		ExcelExport xxxxx = new ExcelExport();
+		
+		this.excelStream = xxxxx.salesRecord(list);
+		
+		return SUCCESS;
 	}
 
 	public InputStream getExcelStream() {
@@ -47,7 +60,5 @@ public class ReportAction extends ActionSupportBase  {
 	public void setExcelStream(InputStream excelStream) {
 		this.excelStream = excelStream;
 	}
-	
-	
 	
 }

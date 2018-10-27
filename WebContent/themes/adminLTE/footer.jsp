@@ -90,6 +90,19 @@
 	</script>
 </c:if>
 
+<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">
+	<script src="js/report.js"></script>
+	<link rel="stylesheet" href="css/report.css">
+	
+	<script type="text/javascript">
+	    $("body").formReport({
+	    	contextPath: '${pageContext.request.contextPath}',
+	    	excelTableID: 'customers',
+	    	excelFilename: 'excel-test'
+	    });
+	</script>
+</c:if>
+
 
 </body>
 </html>

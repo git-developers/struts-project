@@ -50,6 +50,10 @@ public class Voucher implements Serializable {
     private long   lcs_nlote;
     private long   lcs_aso_tasociado;
     private String isselecitem;
+    private String isvisiblecheckbox;
+    private String lote;
+    private String tipo;
+    private String total;
     
     private String queryProgram;
     private String queryGroup;
@@ -330,6 +334,30 @@ public class Voucher implements Serializable {
 		this.isselecitem = isselecitem;
 	}
 
+	public String getIsvisiblecheckbox() {
+		return isvisiblecheckbox;
+	}
+	public void setIsvisiblecheckbox(String isvisiblecheckbox) {
+		this.isvisiblecheckbox = isvisiblecheckbox;
+	}	
+	public String getLote() {
+		return lote;
+	}
+	public void setLote(String lote) {
+		this.lote = lote;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
+	}
 	public int getProgram() {
         try {
         	return Integer.parseInt(queryProgram);

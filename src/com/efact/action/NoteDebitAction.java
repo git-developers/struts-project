@@ -15,12 +15,12 @@ public class NoteDebitAction extends ActionSupportBase  {
 	@Override
 	public String execute() throws Exception {
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	public String index() throws Exception {
 		
-		return Const.SUCCESS;
+		return SUCCESS;
 	}
 
 	

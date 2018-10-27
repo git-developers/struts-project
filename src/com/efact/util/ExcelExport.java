@@ -13,17 +13,16 @@ import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
+// https://www.callicoder.com/java-write-excel-file-apache-poi/
+
 public class ExcelExport {
 
 	
-	public static InputStream salesRecord(List<Program> listProgram) throws Exception {
+	public InputStream salesRecord(List<Program> listProgram) throws Exception {
 		
-		String[] columns = {"Name", "Email", "Date Of Birth", "Salary"};
+		String[] columns = {"Name", "Email"};
 		
-        Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
-
-        /* CreationHelper helps us create instances of various things like DataFormat, 
-           Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way */
+        Workbook workbook = new XSSFWorkbook();
         CreationHelper createHelper = workbook.getCreationHelper();
 
         // Create a Sheet
@@ -60,31 +59,17 @@ public class ExcelExport {
 
             row.createCell(0).setCellValue(employee.getName());
             row.createCell(1).setCellValue(employee.getId());
-
-//            Cell dateOfBirthCell = row.createCell(2);
-//            dateOfBirthCell.setCellValue(employee.getDateOfBirth());
-//            dateOfBirthCell.setCellStyle(dateCellStyle);
-
-            //row.createCell(3).setCellValue(employee.getSalary());
         }
 
 		// Resize all columns to fit the content size
         for(int i = 0; i < columns.length; i++) {
             sheet.autoSizeColumn(i);
         }
-
-        // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream("poi-generated-file.xlsx");
-        workbook.write(fileOut);
-        fileOut.close();
-
-        // Closing the workbook
-        //workbook.close();
         
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		workbook.write(baos);
 		
-		return  new ByteArrayInputStream(baos.toByteArray());
+		return new ByteArrayInputStream(baos.toByteArray());
     }
 
 }
