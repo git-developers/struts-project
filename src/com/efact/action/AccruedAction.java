@@ -53,8 +53,8 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         AccruedDao accruedDao = dao.getAccruedDao();
     	
         listAccruedConciliation = accruedDao.conciliationSearch(
-        		acc.getFrom(),
-        		acc.getTo()
+        		acc.getQueryFrom(),
+        		acc.getQueryTo()
         );
         
         return SUCCESS;
@@ -123,9 +123,9 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         AccruedDao accruedDao = dao.getAccruedDao();
     	
         listAccruedIssue = accruedDao.issueSearch(
-        		vs.getProgram(),
-        		vs.getGroup(),
-        		vs.getDateTo()
+        		vs.getQueryProgram(),
+        		vs.getQueryGroup(),
+        		vs.getQueryDateTo()
         );
 		
 		return SUCCESS;

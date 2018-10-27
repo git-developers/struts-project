@@ -68,25 +68,19 @@ public class AccruedConciliation implements Serializable {
 	public void setTotal(float total) {
 		this.total = total;
 	}
-	public String getQueryFrom() {
-		return queryFrom;
-	}
 	public void setQueryFrom(String queryFrom) {
 		this.queryFrom = queryFrom;
-	}
-	public String getQueryTo() {
-		return queryTo;
 	}
 	public void setQueryTo(String queryTo) {
 		this.queryTo = queryTo;
 	}
-	public Date getFrom() {
+	public Date getQueryFrom() {
 		return stringToDate(queryFrom);
 	}
 	public void setFrom(String from) {
 		this.queryFrom = from;
 	}
-	public Date getTo() {
+	public Date getQueryTo() {
 		return stringToDate(queryTo);
 	}
 	

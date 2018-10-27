@@ -74,7 +74,7 @@ public class AccruedIssue implements Serializable {
 	public void setTotal(float total) {
 		this.total = total;
 	}
-	public int getProgram() {
+	public int getQueryProgram() {
         try {
         	return Integer.parseInt(queryProgram);
          } catch (NumberFormatException e) {
@@ -84,7 +84,7 @@ public class AccruedIssue implements Serializable {
 	public void setQueryProgram(String queryProgram) {
 		this.queryProgram = queryProgram;
 	}
-	public int getGroup() {
+	public int getQueryGroup() {
         try {
         	return Integer.parseInt(queryGroup);
          } catch (NumberFormatException e) {
@@ -94,7 +94,7 @@ public class AccruedIssue implements Serializable {
 	public void setQueryGroup(String queryGroup) {
 		this.queryGroup = queryGroup;
 	}
-	public String getDateTo() {
+	public String getQueryDateTo() {
 		//return stringToDate(queryDateTo);
 		return queryDateTo;
 	}

@@ -9,6 +9,7 @@ public class User implements Serializable  {
 	private String name;
 	private byte active;
 	private Timestamp created;
+	
 	public int getId() {
 		return id;
 	}

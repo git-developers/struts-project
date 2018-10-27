@@ -24,7 +24,7 @@
               <h3 class="box-title">Quick Example</h3>
             </div>
             --%>
-            <form role="form" name="form-accrued-conciliation">
+            <form role="form" name="form-report">
               <div class="box-body">
               
                 <div class="row">
@@ -70,7 +70,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="submit" class="btn btn-default accrued-search">Buscar</button>
+			                  <button type="submit" class="btn btn-default report-search">Buscar</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -79,7 +79,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default accrued-process">Procesar</button>
+			                  <button type="button" class="btn btn-default report-process">Procesar</button>
 			                </div>
 		                </div>
 	        		</div>

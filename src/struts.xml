@@ -90,6 +90,11 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		<action name="report-sales-record-search" class="com.efact.action.ReportAction" method="salesRecordSearch">
+			<result name="success">/report-sales-record-search.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
 		<action name="report-sales-record-export" class="com.efact.action.ReportAction" method="salesRecordExport">
 			<result name="success"></result>
 			<result name="error">/error.jsp</result>
@@ -101,8 +106,16 @@
 			</result>
 		</action>
 
+
+
+
 		<action name="reporte-resumen-de-ventas" class="com.efact.action.ReportAction" method="salesSummary">
 			<result name="success">/report-sales-summary.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="report-sales-record-search" class="com.efact.action.ReportAction" method="salesSummarySearch">
+			<result name="success">/report-sales-summary-search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		

@@ -2,11 +2,12 @@ package com.efact.util;
 
 import java.util.List;
 
-import com.efact.bean.Program;
+import com.efact.bean.*;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +19,7 @@ import java.io.ByteArrayOutputStream;
 public class ExcelExport {
 
 	
-	public InputStream salesRecord(List<Program> listProgram) throws Exception {
+	public static InputStream salesRecordExport(List<ReportSalesRecord> list) throws Exception {
 		
 		String[] columns = {"Name", "Email"};
 		
@@ -54,11 +55,11 @@ public class ExcelExport {
 
         // Create Other rows and cells with employees data
         int rowNum = 1;
-        for(Program employee: listProgram) {
+        for(ReportSalesRecord object: list) {
             Row row = sheet.createRow(rowNum++);
 
-            row.createCell(0).setCellValue(employee.getName());
-            row.createCell(1).setCellValue(employee.getId());
+            //row.createCell(0).setCellValue(object.getName());
+            //row.createCell(1).setCellValue(object.getId());
         }
 
 		// Resize all columns to fit the content size

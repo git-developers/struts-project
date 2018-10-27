@@ -51,7 +51,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		return SUCCESS;
 	}
 	
-	public String search() throws Exception {
+	public String salesRecordSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
         ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
@@ -68,40 +68,42 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	}
 	
 	public String salesRecordExport() throws Exception {
-		
-		List<Program> list =  new ArrayList<>();
-		
-		Program a = new Program();
-		a.setId(11);
-		a.setName("xxxxxx");
-		list.add(a);
-		
-		Program b = new Program();
-		b.setId(22);
-		b.setName("uuuuuuu");
-		list.add(b);
-		
-		Program c = new Program();
-		c.setId(33);
-		c.setName("kkkkkk");
-		list.add(c);
-		
+
 		System.out.print("EXCEL EXPORT -- 11111111");
 		
-		ExcelExport xxxxx = new ExcelExport();
+        String fields = request.getParameter("fields");
+        ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
+        
+        ReportSalesRecordDao rsDao = dao.getReportSalesRecordDao();
+    	
+        listReportSalesRecord = rsDao.search(
+                rs.getQuerySequence(),
+                rs.getQueryFrom(),
+                rs.getQueryTo()
+        );
 		
-		this.excelStream = xxxxx.salesRecord(list);
+		this.excelStream = ExcelExport.salesRecordExport(listReportSalesRecord);
 		
 		return SUCCESS;
 	}
 	
+	
+	
+	
 	public String salesSummary() throws Exception {
+		return SUCCESS;
+	}
+	
+	public String salesSummarySearch() throws Exception {
 		return SUCCESS;
 	}
 	
 	public String salesSummaryExport() throws Exception {
 		return SUCCESS;
 	}
+	
+	
+	
 
 	public InputStream getExcelStream() {
 		return excelStream;

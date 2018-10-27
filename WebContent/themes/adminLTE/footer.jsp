@@ -87,11 +87,11 @@
 </c:if>
 
 <c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">
-	<script src="js/report.js"></script>
-	<link rel="stylesheet" href="css/report.css">
+	<script src="js/report-sales-record.js"></script>
+	<link rel="stylesheet" href="css/report-sales-record.css">
 	
 	<script type="text/javascript">
-	    $("body").formReport({
+	    $("body").formReportSalesRecord({
 	    	contextPath: '${pageContext.request.contextPath}',
 	    	excelTableID: 'customers',
 	    	excelFilename: 'excel-test'

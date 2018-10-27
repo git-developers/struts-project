@@ -4,7 +4,7 @@
     // Global Variables
     var MAX_HEIGHT = 100;
 
-    $.formReport = function(el, options) {
+    $.formReportSalesRecord = function(el, options) {
 
         // Global Private Variables
         var MAX_WIDTH = 200;
@@ -13,11 +13,36 @@
 
         base.$el = $(el);
         base.el = el;
-        base.$el.data('formReport', base);
+        base.$el.data('formReportSalesRecord', base);
 
         base.init = function(){
             var totalButtons = 0;
-            // base.$el.append('<button name="public" style="'+base.options.buttonStyle+'">Private</button>');
+        };
+        
+        base.search = function(context) {
+
+        	console.dir($(context).serialize());
+        	
+            $.ajax({
+                url: options.contextPath + '/report-sales-record-search',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                	fields: $(context).serialize()
+                },
+                
+                beforeSend: function(jqXHR, settings) {
+                	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
+                },
+                success: function(data, textStatus, jqXHR) {
+                    $("table tbody").html(data);
+                },
+                error: function(jqXHR, exception) {
+                    console.log("error :: ajax :: voucher search");
+                }
+            });
+        	
+        	
         };
         
         base.exportExcel = function(context) {
@@ -25,7 +50,7 @@
         	
         	console.log("JS :: exportExcel");
         	
-    		var url = options.contextPath + '/report-export';
+    		var url = options.contextPath + '/report-sales-record-export';
     		window.location.href = url;
         };
         
@@ -69,20 +94,19 @@
         base.init();
     };
 
-    $.fn.formReport = function(options){
+    $.fn.formReportSalesRecord = function(options){
 
         return this.each(function(){
 
-            var bp = new $.formReport(this, options);
-
-            $("#export-excel").click(function( event ) {
+            var bp = new $.formReportSalesRecord(this, options);
+            
+            $("form[name='form-report']").submit(function( event ) {
             	event.preventDefault();
-                bp.exportExcel(this);
+                bp.search(this);
             });
             
-            $("#export-excel-2").click(function( event ) {
-            	event.preventDefault();
-                bp.exportTableToExcel(this);
+            $(".report-process").click(function( event ) {
+                bp.exportExcel(this);
             });
 
         });
