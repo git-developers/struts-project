@@ -72,5 +72,10 @@ public class SqlServerDaoFactory extends DaoFactory {
 	public ReportSalesRecordDao getReportSalesRecordDao() {
 		return null;
 	}
+
+	@Override
+	public ReportSalesSummaryDao getReportSalesSummaryDao() {
+		return null;
+	}
 	
 }

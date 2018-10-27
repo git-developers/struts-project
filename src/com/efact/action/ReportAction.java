@@ -28,6 +28,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	private InputStream excelStream;
 	private List<Sequence> listSequence;
 	private List<ReportSalesRecord> listReportSalesRecord;
+	private List<ReportSalesSummary> listReportSalesSummary;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -84,18 +85,31 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		return SUCCESS;
 	}
 	
-	
-	
-	
 	public String salesSummary() throws Exception {
-		return SUCCESS;
+        return SUCCESS;
 	}
 	
 	public String salesSummarySearch() throws Exception {
+		
+        String fields = request.getParameter("fields");
+        ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
+        ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
+    	
+        listReportSalesSummary = rsDao.salesRecordSearch(rs.getQueryYear());
+        
 		return SUCCESS;
 	}
 	
 	public String salesSummaryExport() throws Exception {
+		
+        String fields = request.getParameter("fields");
+        ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
+        ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
+    	
+        listReportSalesSummary = rsDao.salesRecordSearch(rs.getQueryYear());
+        
+		this.excelStream = ExcelExport.salesRecordSummary(listReportSalesSummary);
+        
 		return SUCCESS;
 	}
 	
@@ -120,4 +134,30 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request = httpServletRequest;
 	}
+
+	public List<Sequence> getListSequence() {
+		return listSequence;
+	}
+
+	public void setListSequence(List<Sequence> listSequence) {
+		this.listSequence = listSequence;
+	}
+
+	public List<ReportSalesRecord> getListReportSalesRecord() {
+		return listReportSalesRecord;
+	}
+
+	public void setListReportSalesRecord(List<ReportSalesRecord> listReportSalesRecord) {
+		this.listReportSalesRecord = listReportSalesRecord;
+	}
+
+	public List<ReportSalesSummary> getListReportSalesSummary() {
+		return listReportSalesSummary;
+	}
+
+	public void setListReportSalesSummary(List<ReportSalesSummary> listReportSalesSummary) {
+		this.listReportSalesSummary = listReportSalesSummary;
+	}
+	
+	
 }

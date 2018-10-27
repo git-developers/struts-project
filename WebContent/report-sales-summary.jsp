@@ -73,39 +73,35 @@
         <div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Conciliaci&oacute;n</h3>
+              <h3 class="box-title">Reporte</h3>
             </div>
-            <!-- /.box-header -->
             <div class="box-body">
-              
+
         	     <table id="accrued-table" class="table table-bordered">
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th>Emisi&oacute;n</th>
-						   <th>Tipo moneda</th>
-						   <th><i class="fa fa-fw fa-calendar"></i> Fecha emisi&oacute;n</th>
-						   <th>Comprobante</th>
+						   <th><i class="fa fa-fw fa-calendar"></i> Año</th>
+						   <th>Tipo</th>
 						   <th>Serie</th>
-						   <th>Numero</th>
-   						   <th>Documento</th>
-   						   <th>Datos</th>
-   						   <th>Valor facturado</th>
-   						   <th>Base imponible</th>
-   						   <th>impin afecta</th>
-						   <th>IGV %</th>
-						   <th>Importe total</th>
-						   <th>Venta</th>
-						   <th>Total afectas</th>
-						   <th>Total no afectas</th>
-						   <th>Total igv</th>
-						   <th><i class="fa fa-fw fa-money"></i> Total</th>
-						   <th>ID</th>
+						   <th>Programa</th>
+						   <th>ene</th>
+						   <th>feb</th>
+   						   <th>mar</th>
+   						   <th>abr</th>
+   						   <th>may</th>
+   						   <th>jun</th>
+   						   <th>jul</th>
+						   <th>ago</th>
+						   <th>set</th>
+						   <th>oct</th>
+						   <th>nov</th>
+						   <th>dic</th>
 						 </tr>
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="20" align="center">
+							   	<td colspan="17" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>

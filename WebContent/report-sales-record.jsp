@@ -39,6 +39,17 @@
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
+		                  
+		                  
+		                  <!-- 
+		                  <s:select 
+		                  	name="querySequencexxxx" 
+		                  	list="listSequence" 
+		                  	listKey="id" 
+		                  	listValue="name" 
+		                  	headerKey="-1" 
+		                  	headerValue="[Seleccione]"/>
+	                  	 -->
 		                </div>
 	        		</div>
                 
@@ -103,9 +114,8 @@
         <div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Conciliaci&oacute;n</h3>
+              <h3 class="box-title">Reporte</h3>
             </div>
-            <!-- /.box-header -->
             <div class="box-body">
               
         	     <table id="accrued-table" class="table table-bordered">

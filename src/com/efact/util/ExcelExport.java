@@ -62,23 +62,95 @@ public class ExcelExport {
 
             row.createCell(0).setCellValue(object.getTipoemision());
             row.createCell(1).setCellValue(object.getRvb_tmoneda());
-            row.createCell(1).setCellValue(object.getRvb_femision());
-            row.createCell(1).setCellValue(object.getComprobante());
-            row.createCell(1).setCellValue(object.getRvb_serie());
-            row.createCell(1).setCellValue(object.getRvb_numero());
-            row.createCell(1).setCellValue(object.getRvb_documento());
-            row.createCell(1).setCellValue(object.getRvb_datos());
-            row.createCell(1).setCellValue(object.getRvb_valorfacturado());
-            row.createCell(1).setCellValue(object.getRvb_baseimponible());
-            row.createCell(1).setCellValue(object.getRvb_impinafecta());
-            row.createCell(1).setCellValue(object.getRvb_igv());
-            row.createCell(1).setCellValue(object.getRvb_imptotal());
-            row.createCell(1).setCellValue(object.getTcd_venta());
-            row.createCell(1).setCellValue(object.getTotalafectas_sol());
-            row.createCell(1).setCellValue(object.getTotalnoafectas_sol());
-            row.createCell(1).setCellValue(object.getTotaligv_sol());
-            row.createCell(1).setCellValue(object.getTotaltotal_sol());
-            row.createCell(1).setCellValue(object.getRvb_id());
+            row.createCell(2).setCellValue(object.getRvb_femision());
+            row.createCell(3).setCellValue(object.getComprobante());
+            row.createCell(4).setCellValue(object.getRvb_serie());
+            row.createCell(5).setCellValue(object.getRvb_numero());
+            row.createCell(6).setCellValue(object.getRvb_documento());
+            row.createCell(7).setCellValue(object.getRvb_datos());
+            row.createCell(8).setCellValue(object.getRvb_valorfacturado());
+            row.createCell(9).setCellValue(object.getRvb_baseimponible());
+            row.createCell(10).setCellValue(object.getRvb_impinafecta());
+            row.createCell(11).setCellValue(object.getRvb_igv());
+            row.createCell(12).setCellValue(object.getRvb_imptotal());
+            row.createCell(13).setCellValue(object.getTcd_venta());
+            row.createCell(14).setCellValue(object.getTotalafectas_sol());
+            row.createCell(15).setCellValue(object.getTotalnoafectas_sol());
+            row.createCell(16).setCellValue(object.getTotaligv_sol());
+            row.createCell(17).setCellValue(object.getTotaltotal_sol());
+            row.createCell(18).setCellValue(object.getRvb_id());
+        }
+
+		// Resize all columns to fit the content size
+        for(int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		workbook.write(baos);
+		
+		return new ByteArrayInputStream(baos.toByteArray());
+    }
+
+	public static InputStream salesRecordSummary(List<ReportSalesSummary> list) throws Exception {
+		
+		String[] columns = {
+				"Emision", "Tipo moneda", "Fecha Emision", "Comprobante", "Serie", "Numero",
+				"Documento", "Datos", "Valor facturado", "Base imponible", "impin afecta", "IGV %",
+				"Importe total", "Venta", "Total afectas", "Total no afectas", "Total igv", "Total", "ID"
+		};
+		
+        Workbook workbook = new XSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create a Sheet
+        Sheet sheet = workbook.createSheet("Employee");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        //headerFont.setBold(true);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for(int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        
+        // Create Other rows and cells with employees data
+        int rowNum = 1;
+        for(ReportSalesSummary object: list) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(object.getYear());
+            row.createCell(1).setCellValue(object.getTipo());
+            row.createCell(2).setCellValue(object.getSerie());
+            row.createCell(3).setCellValue(object.getPrograma());
+            row.createCell(4).setCellValue(object.getEne());
+            row.createCell(5).setCellValue(object.getFeb());
+            row.createCell(6).setCellValue(object.getMar());
+            row.createCell(7).setCellValue(object.getAbr());
+            row.createCell(8).setCellValue(object.getMay());
+            row.createCell(9).setCellValue(object.getJun());
+            row.createCell(10).setCellValue(object.getJul());
+            row.createCell(11).setCellValue(object.getAgo());
+            row.createCell(12).setCellValue(object.getSet());
+            row.createCell(13).setCellValue(object.getOct());
+            row.createCell(14).setCellValue(object.getNov());
+            row.createCell(15).setCellValue(object.getDic());
         }
 
 		// Resize all columns to fit the content size

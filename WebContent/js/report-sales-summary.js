@@ -21,7 +21,7 @@
         
         base.search = function(context) {
             $.ajax({
-                url: options.contextPath + '/report-sales-record-search',
+                url: options.contextPath + '/report-sales-summary-search',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -29,7 +29,7 @@
                 },
                 
                 beforeSend: function(jqXHR, settings) {
-                	$("table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
+                	$("table tbody").html('<tr><td colspan="17" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
                     $("table tbody").html(data);
@@ -41,23 +41,7 @@
         };
         
         base.exportExcel = function(context) {
-            $.ajax({
-                url: options.contextPath + '/report-sales-record-export',
-                type: 'POST',
-                dataType: 'html',
-                data: {
-                	fields: $(context).serialize()
-                },
-                beforeSend: function(jqXHR, settings) {
-                	
-                },
-                success: function(data, textStatus, jqXHR) {
-            		window.location.href = options.contextPath + '/report-sales-record-export';
-                },
-                error: function(jqXHR, exception) {
-                    console.log("error :: ajax :: voucher search");
-                }
-            });
+    		window.location.href = options.contextPath + '/report-sales-summary-export?fields=' + encodeURIComponent($("form[name='form-report']").serialize());
         };
         
         base.exportTableToExcel = function(context) {

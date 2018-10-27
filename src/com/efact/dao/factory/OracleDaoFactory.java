@@ -75,4 +75,9 @@ public class OracleDaoFactory extends DaoFactory {
 		return new ReportSalesRecordImpDao();
 	}
 
+	@Override
+	public ReportSalesSummaryDao getReportSalesSummaryDao() {
+		return new ReportSalesSummaryImpDao();
+	}
+
 }

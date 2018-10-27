@@ -73,4 +73,9 @@ public class MySqlDaoFactory extends DaoFactory {
 		return null;
 	}
 
+	@Override
+	public ReportSalesSummaryDao getReportSalesSummaryDao() {
+		return null;
+	}
+
 }

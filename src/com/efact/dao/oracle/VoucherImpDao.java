@@ -159,15 +159,16 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
         try{
     		
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, 'efact', ?) }"; 
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);         
             st.setInt(1, nlote);
-            st.registerOutParameter(2, OracleTypes.CURSOR);
+            st.setString(2, "EFACT");
+            st.registerOutParameter(3, OracleTypes.CURSOR);
             st.execute();
             
-            ResultSet rs = (ResultSet) st.getObject(2);
+            ResultSet rs = (ResultSet) st.getObject(3);
             
             while (rs.next()){
             	Voucher obj = new Voucher();
