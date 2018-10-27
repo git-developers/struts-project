@@ -23,7 +23,7 @@
             <div class="inner">
               <h3>150</h3>
 
-              <p>New Orders</p>
+              <p>Nuevas Orders</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -53,7 +53,7 @@
             <div class="inner">
               <h3>44</h3>
 
-              <p>User Registrations</p>
+              <p>Usuarios</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -68,7 +68,7 @@
             <div class="inner">
               <h3>65</h3>
 
-              <p>Unique Visitors</p>
+              <p>Visitantes</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
