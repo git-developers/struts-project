@@ -21,10 +21,10 @@
 				<input type="hidden" name="lcs_sistema" value="<s:property value = "#object.lcs_sistema"/>">
 			</td>
 			<td>
-				<s:if test="%{#object.isvisiblecheckbox == 'SI'}">
+				<s:if test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">
 					<input type="checkbox" class="object-data">
 				</s:if>
-				<s:elseif test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">
+				<s:elseif test="%{#object.isvisiblecheckbox == 'SI'}">
 				    <input type="checkbox" class="object-data check-all-able">
 				</s:elseif>
 			</td>

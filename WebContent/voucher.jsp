@@ -118,7 +118,7 @@
 					          <div class="input-group-addon">
 					            <i class="fa fa-calendar"></i>
 					          </div>
-					          <input type="date" class="form-control" name="queryTo">
+					          <input type="date" class="form-control" name="queryTo" value="">
 					        </div>
 					    </div>
 					</div>
