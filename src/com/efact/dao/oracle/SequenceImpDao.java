@@ -11,17 +11,18 @@ import com.efact.dao.interfaces.*;
 import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
-public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
+public class SequenceImpDao extends OracleDaoFactory implements SequenceDao  {
 
 	@Override
-	public List<Group> findAll() throws Exception {
+	public List<Sequence> findAll() throws Exception {
 		
-        List<Group> list = new ArrayList<>();
+        List<Sequence> list = new ArrayList<>();
 
         try{
         
-            String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_GRUPOS() }"; 
+            String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_LOTES() }"; 
             
+            /*
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
@@ -30,16 +31,16 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
             ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){
-            	Group object = new Group();
-            	object.setId(rs.getInt("GRU_ID"));
-            	object.setProdId(rs.getInt("PRO_ID"));
-            	object.setName(rs.getString("NOM_GRUPO")); 
+            	Sequence object = new Sequence();
+            	object.setId(rs.getInt("LOTE"));
+            	object.setName(rs.getString("NOM_LOTE")); 
 
                 list.add(object);
             }
             
             rs.close();
             st.close();
+            */
             
         } catch (Exception e){
             throw e;
@@ -51,7 +52,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
 	}
 
 	@Override
-	public Group findOneById(String id) throws Exception {
+	public Sequence findOneById(String id) throws Exception {
 		return null;
 	}
 

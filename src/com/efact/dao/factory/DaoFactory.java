@@ -21,7 +21,10 @@ public abstract class DaoFactory {
 	public abstract BankDao getBankDao();
 	public abstract VoucherDao getVoucherDao();
 	public abstract AccruedDao getAccruedDao();
-    
+	public abstract SequenceDao getSequenceDao();
+	public abstract ReportSalesRecordDao getReportSalesRecordDao();
+	
+	
     public DaoFactory() {
     	
     	ResourceBundle rb = ResourceBundle.getBundle("parameters");

@@ -46,6 +46,8 @@
 		
 		
 		
+		
+		
 		<action name="devengados-emision" class="com.efact.action.AccruedAction" method="issue">
 			<result name="success">/accrued-issue.jsp</result>
 			<result name="error">/error.jsp</result>
@@ -80,29 +82,46 @@
 		</action>
 		
 		
-		<!-- 
-		<action name="registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
-			<result name="success">/report-sales-record.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action>
-		 -->
 		
 		
-		<action name="registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
+		
+		<action name="reporte-registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
 			<result name="success">/report-sales-record.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
-		<action name="report-export" class="com.efact.action.ReportAction" method="salesRecordExport">
+		<action name="report-sales-record-export" class="com.efact.action.ReportAction" method="salesRecordExport">
 			<result name="success"></result>
 			<result name="error">/error.jsp</result>
 			<result type="stream">
 				<param name="contentType">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
 				<param name="inputName">excelStream</param>
-				<param name="contentDisposition">attachment;filename="efact.xlsx"</param>
+				<param name="contentDisposition">attachment;filename="efact-registro-de-ventas.xlsx"</param>
 				<param name="bufferSize">1024</param>
 			</result>
 		</action>
+
+		<action name="reporte-resumen-de-ventas" class="com.efact.action.ReportAction" method="salesSummary">
+			<result name="success">/report-sales-summary.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="report-sales-summary-export" class="com.efact.action.ReportAction" method="salesSummaryExport">
+			<result name="success"></result>
+			<result name="error">/error.jsp</result>
+			<result type="stream">
+				<param name="contentType">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename="efact-resumen-de-ventas.xlsx"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		
 	
 	</package>
 

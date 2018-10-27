@@ -65,4 +65,14 @@ public class OracleDaoFactory extends DaoFactory {
 		return new AccruedImpDao();
 	}
 
+	@Override
+	public SequenceDao getSequenceDao() {
+		return new SequenceImpDao();
+	}
+
+	@Override
+	public ReportSalesRecordDao getReportSalesRecordDao() {
+		return new ReportSalesRecordImpDao();
+	}
+
 }

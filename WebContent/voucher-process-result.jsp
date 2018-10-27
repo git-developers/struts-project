@@ -21,7 +21,7 @@
 		   <th style="width: 15px">#</th>
 		   <th><i class="fa fa-fw fa-cube"></i> Lote</th>
 		   <th><i class="fa fa-fw fa-list-ul"></i> Tipo</th>
-		   <th><i class="fa fa-fw fa-money"></i> Total</th>
+		   <th><i class="fa fa-fw fa-dot-circle-o"></i> Total</th>
 		 </tr>
     </thead>
     <tbody>
@@ -39,11 +39,11 @@
 			<s:iterator value="listVoucherResult" var="object" status="status">
 				<tr>
 					<td>
-						<span class="badge bg-green">
+						<span class="badge bg-olive margin">
 							<s:property value="%{#status.index + 1}"/>
 						</span>
 					</td>
-					<td>
+					<td class="text-right">
 						<s:property value = "#object.lote"/>
 					</td>
 					<td>

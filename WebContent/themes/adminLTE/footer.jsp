@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import = "java.util.Date" %>
 <%@ page import = "java.text.SimpleDateFormat" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 </div>
 <%-- CONTENT DIV --%>
-
-<%
-  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-  String date = sdf.format(new Date());
-%>
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
     <strong>
-    Copyright &copy; <%=date %> <a href="#">eFACT</a>.
+    Copyright &copy; <s:property value = "currentDateTime"/> <a href="#">eFACT</a>.
     </strong> Todos los derechos reservados.
   </footer>
 	<%@include file="aside.jsp" %>

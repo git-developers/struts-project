@@ -45,18 +45,18 @@
 			<td>
 				<s:property value = "#object.lcs_fecha"/>
 			</td>
-			<td>
+			<td class="text-right">
 				S/ <s:property value = "#object.lcs_monto"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.lcs_importe"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.lcs_saldo"/>
 			</td>
 			<td>
 				<s:if test="%{#object.lcs_devengado=='NO'}">
-					<small class="label pull-right bg-red">No</small>
+					<small class="label pull-right bg-green">No</small>
 				</s:if>
 				<s:elseif test="%{#object.lcs_devengado=='SI'}">
 				    <small class="label pull-right bg-green">Si</small>

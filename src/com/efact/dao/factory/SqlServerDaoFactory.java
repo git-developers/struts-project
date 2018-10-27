@@ -60,7 +60,16 @@ public class SqlServerDaoFactory extends DaoFactory {
 
 	@Override
 	public AccruedDao getAccruedDao() {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SequenceDao getSequenceDao() {
+		return null;
+	}
+
+	@Override
+	public ReportSalesRecordDao getReportSalesRecordDao() {
 		return null;
 	}
 	

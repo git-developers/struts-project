@@ -78,7 +78,10 @@
           </s:a>
         </li>
 
-    	<li class="treeview <c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">active</c:if>">
+    	<li class="treeview 
+    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">active</c:if>
+    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">active</c:if>
+ 		">
 		  <a href="#">
 		    <i class="fa fa-bar-chart"></i>
 		    <span>Consultas y Reportes</span>
@@ -88,8 +91,13 @@
 		  </a>
 		  <ul class="treeview-menu">
 		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">active</c:if>">
-		    	<s:a href="registro-de-ventas" theme="simple">
-		    		<i class="fa fa-circle-o text-red"></i> Registro de ventas
+		    	<s:a href="reporte-registro-de-ventas" theme="simple">
+		    		<i class="fa fa-line-chart text-red"></i> Registro de ventas
+		    	</s:a>
+	    	</li>
+ 			<li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">active</c:if>">
+		    	<s:a href="reporte-resumen-de-ventas" theme="simple">
+		    		<i class="fa fa-pie-chart text-blue"></i> Resumen de ventas
 		    	</s:a>
 	    	</li>
 		  </ul>

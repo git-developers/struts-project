@@ -358,7 +358,7 @@ public class Voucher implements Serializable {
 	public void setTotal(String total) {
 		this.total = total;
 	}
-	public int getProgram() {
+	public int getQueryProgram() {
         try {
         	return Integer.parseInt(queryProgram);
          } catch (NumberFormatException e) {
@@ -368,7 +368,7 @@ public class Voucher implements Serializable {
 	public void setProgram(String program) {
 		this.queryProgram = program;
 	}
-	public int getGroup() {
+	public int getQueryGroup() {
         try {
         	return Integer.parseInt(queryGroup);
          } catch (NumberFormatException e) {
@@ -380,7 +380,7 @@ public class Voucher implements Serializable {
 		this.queryGroup = group;
 	}
 	
-	public int getBank() {
+	public int getQueryBank() {
         try {
         	return Integer.parseInt(queryBank);
          } catch (NumberFormatException e) {
@@ -398,7 +398,7 @@ public class Voucher implements Serializable {
 		this.queryVoucher = voucher;
 	}
 	
-	public int getStatus() {
+	public int getQueryStatus() {
         try {
         	return Integer.parseInt(queryStatus);
          } catch (NumberFormatException e) {
@@ -410,13 +410,13 @@ public class Voucher implements Serializable {
 		this.queryStatus = status;
 	}
 	
-	public Date getFrom() {
+	public Date getQueryFrom() {
 		return stringToDate(queryFrom);
 	}
 	public void setFrom(String from) {
 		this.queryFrom = from;
 	}
-	public Date getTo() {
+	public Date getQueryTo() {
 		return stringToDate(queryTo);
 	}
 	

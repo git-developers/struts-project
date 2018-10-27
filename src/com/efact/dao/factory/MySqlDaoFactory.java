@@ -63,4 +63,14 @@ public class MySqlDaoFactory extends DaoFactory {
 		return null;
 	}
 
+	@Override
+	public SequenceDao getSequenceDao() {
+		return null;
+	}
+
+	@Override
+	public ReportSalesRecordDao getReportSalesRecordDao() {
+		return null;
+	}
+
 }

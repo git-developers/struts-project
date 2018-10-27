@@ -6,33 +6,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 import java.sql.Connection;
+import java.sql.Date;
+
 import com.efact.bean.*;
 import com.efact.dao.interfaces.*;
 import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
-public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
+public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportSalesRecordDao  {
 
 	@Override
-	public List<Group> findAll() throws Exception {
+	public List<ReportSalesRecord> search(
+		int sequence, 
+		float from,    
+		float to
+	) throws Exception {
 		
-        List<Group> list = new ArrayList<>();
+        List<ReportSalesRecord> list = new ArrayList<>();
 
         try{
         
-            String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_GRUPOS() }"; 
+        	
+        	System.out.print("sequence ::: " + sequence);
+        	System.out.print("from ::: " + from);
+        	System.out.print("to ::: " + to);
+        	
+            String sql = "{ ? = call FIN_PKG_REPORTES.F_REPORTE_VENTAS(?, ?, ?, ?, ?, ?) }"; 
             
+            /*
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
-            st.registerOutParameter(1, OracleTypes.CURSOR);   
+            st.registerOutParameter(1, OracleTypes.CURSOR);
+            st.setInt(2, 0);
+            st.setInt(3, sequence);
+            st.setFloat(4, from);
+            st.setFloat(5, to);
+            st.setString(5, "EFACT");
             st.execute();
             
             ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){
-            	Group object = new Group();
+            	ReportSalesRecord object = new ReportSalesRecord();
             	object.setId(rs.getInt("GRU_ID"));
-            	object.setProdId(rs.getInt("PRO_ID"));
             	object.setName(rs.getString("NOM_GRUPO")); 
 
                 list.add(object);
@@ -40,6 +56,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
             
             rs.close();
             st.close();
+            */
             
         } catch (Exception e){
             throw e;
@@ -51,7 +68,7 @@ public class GroupImpDao extends OracleDaoFactory implements GroupDao  {
 	}
 
 	@Override
-	public Group findOneById(String id) throws Exception {
+	public ReportSalesRecord findOneById(String id) throws Exception {
 		return null;
 	}
 

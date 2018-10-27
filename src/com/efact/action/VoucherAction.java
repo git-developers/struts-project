@@ -9,7 +9,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
-import com.efact.util.Const;
+import com.efact.util.Dates;
 import com.efact.bean.*;
 
 import com.google.gson.Gson;
@@ -29,6 +29,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	private List<Bank> listBank;
 	private List<Voucher> listVoucher;
 	private List<Voucher> listVoucherResult;
+	private String currentDate, dateOneYearAgo;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -36,6 +37,8 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
     public VoucherAction() {
 		dao = DaoFactory.getDAOFactory(DaoFactory.ORACLE);
 		gson = new GsonBuilder().setPrettyPrinting().create();
+		currentDate = Dates.getCurrentDate();
+		dateOneYearAgo = Dates.getDateOneYearAgo();
     }
 	
 	@Override
@@ -65,13 +68,13 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
         VoucherDao voucherDao = dao.getVoucherDao();
     	
         listVoucher = voucherDao.search(
-        		vs.getProgram(),
-        		vs.getGroup(),
-        		vs.getBank(),
+        		vs.getQueryProgram(),
+        		vs.getQueryGroup(),
+        		vs.getQueryBank(),
                 vs.getVoucher(),
-                vs.getStatus(),
-                vs.getFrom(),
-                vs.getTo()
+                vs.getQueryStatus(),
+                vs.getQueryFrom(),
+                vs.getQueryTo()
         );
         
         return SUCCESS;
@@ -127,6 +130,29 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		this.listVoucher = listVoucher;
 	}
 
+	public String getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+
+	public String getDateOneYearAgo() {
+		return dateOneYearAgo;
+	}
+
+	public void setDateOneYearAgo(String dateOneYearAgo) {
+		this.dateOneYearAgo = dateOneYearAgo;
+	}
+	public List<Voucher> getListVoucherResult() {
+		return listVoucherResult;
+	}
+
+	public void setListVoucherResult(List<Voucher> listVoucherResult) {
+		this.listVoucherResult = listVoucherResult;
+	}
+	
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {
 		this.response = httpServletResponse;
@@ -137,13 +163,4 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		this.request = httpServletRequest;
 	}
 
-	public List<Voucher> getListVoucherResult() {
-		return listVoucherResult;
-	}
-
-	public void setListVoucherResult(List<Voucher> listVoucherResult) {
-		this.listVoucherResult = listVoucherResult;
-	}
-
-	
 }

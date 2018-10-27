@@ -74,6 +74,7 @@
                 
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').modal('show');
+                	$('#modal-process').find('.modal-body').html("");
                 },
                 success: function(data, textStatus, jqXHR) {
                 	$('#modal-process').modal('show');
