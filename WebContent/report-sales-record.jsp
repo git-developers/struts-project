@@ -79,7 +79,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default report-process">Procesar</button>
+			                  <button type="button" class="btn btn-default report-export-excel">Procesar</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -112,19 +112,30 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
+						   <th>Emisi&oacute;n</th>
+						   <th>Tipo moneda</th>
+						   <th><i class="fa fa-fw fa-calendar"></i> Fecha emisi&oacute;n</th>
 						   <th>Comprobante</th>
-						   <th>Recaudo</th>
-						   <th>Descripci&oacute;n</th>
-						   <th>Afecto</th>
-						   <th>No Afecto</th>
-						   <th>IGV</th>
+						   <th>Serie</th>
+						   <th>Numero</th>
+   						   <th>Documento</th>
+   						   <th>Datos</th>
+   						   <th>Valor facturado</th>
+   						   <th>Base imponible</th>
+   						   <th>impin afecta</th>
+						   <th>IGV %</th>
+						   <th>Importe total</th>
+						   <th>Venta</th>
+						   <th>Total afectas</th>
+						   <th>Total no afectas</th>
+						   <th>Total igv</th>
 						   <th><i class="fa fa-fw fa-money"></i> Total</th>
+						   <th>ID</th>
 						 </tr>
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="9" align="center">
+							   	<td colspan="20" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>

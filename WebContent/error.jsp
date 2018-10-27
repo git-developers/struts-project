@@ -2,7 +2,7 @@
     
  <section class="content-header">
    <h1>
-     Dashboard
+     Informaci&oacute;n
      <small>Control panel</small>
    </h1>
    <ol class="breadcrumb">
@@ -12,10 +12,9 @@
  </section>
 
  <section class="content">
- 
    <div class="row">
      <div class="col-lg-3 col-xs-6">
      	Ocurrio un error.
    	</div>
   </div>
-  </section>
+</section>

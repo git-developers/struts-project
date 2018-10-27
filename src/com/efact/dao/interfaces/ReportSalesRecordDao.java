@@ -6,7 +6,7 @@ import com.efact.bean.*;
 
 public interface ReportSalesRecordDao {
 
-	public List<ReportSalesRecord> search(
+	public List<ReportSalesRecord> salesRecordSearch(
 			int sequence, 
 		    float from,    
 		    float to

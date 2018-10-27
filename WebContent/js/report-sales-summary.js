@@ -4,7 +4,7 @@
     // Global Variables
     var MAX_HEIGHT = 100;
 
-    $.formReportSalesRecord = function(el, options) {
+    $.formReportSalesSummary = function(el, options) {
 
         // Global Private Variables
         var MAX_WIDTH = 200;
@@ -13,7 +13,7 @@
 
         base.$el = $(el);
         base.el = el;
-        base.$el.data('formReportSalesRecord', base);
+        base.$el.data('formReportSalesSummary', base);
 
         base.init = function(){
             var totalButtons = 0;
@@ -100,11 +100,11 @@
         base.init();
     };
 
-    $.fn.formReportSalesRecord = function(options){
+    $.fn.formReportSalesSummary = function(options){
 
         return this.each(function(){
 
-            var bp = new $.formReportSalesRecord(this, options);
+            var bp = new $.formReportSalesSummary(this, options);
             
             $("form[name='form-report']").submit(function( event ) {
             	event.preventDefault();

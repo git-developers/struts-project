@@ -55,10 +55,9 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		
         String fields = request.getParameter("fields");
         ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
-        
         ReportSalesRecordDao rsDao = dao.getReportSalesRecordDao();
     	
-        listReportSalesRecord = rsDao.search(
+        listReportSalesRecord = rsDao.salesRecordSearch(
                 rs.getQuerySequence(),
                 rs.getQueryFrom(),
                 rs.getQueryTo()
@@ -68,20 +67,18 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	}
 	
 	public String salesRecordExport() throws Exception {
-
-		System.out.print("EXCEL EXPORT -- 11111111");
 		
         String fields = request.getParameter("fields");
         ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
         
         ReportSalesRecordDao rsDao = dao.getReportSalesRecordDao();
     	
-        listReportSalesRecord = rsDao.search(
+        listReportSalesRecord = rsDao.salesRecordSearch(
                 rs.getQuerySequence(),
                 rs.getQueryFrom(),
                 rs.getQueryTo()
         );
-		
+        
 		this.excelStream = ExcelExport.salesRecordExport(listReportSalesRecord);
 		
 		return SUCCESS;

@@ -93,7 +93,21 @@
 	<script type="text/javascript">
 	    $("body").formReportSalesRecord({
 	    	contextPath: '${pageContext.request.contextPath}',
-	    	excelTableID: 'customers',
+	    	excelTableID: 'export',
+	    	excelFilename: 'excel-test'
+	    });
+	</script>
+</c:if>
+
+
+<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">
+	<script src="js/report-sales-summary.js"></script>
+	<link rel="stylesheet" href="css/report-sales-summary.css">
+	
+	<script type="text/javascript">
+	    $("body").formReportSalesSummary({
+	    	contextPath: '${pageContext.request.contextPath}',
+	    	excelTableID: 'export',
 	    	excelFilename: 'excel-test'
 	    });
 	</script>

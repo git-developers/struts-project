@@ -21,8 +21,7 @@ public class SequenceImpDao extends OracleDaoFactory implements SequenceDao  {
         try{
         
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_LOTES() }"; 
-            
-            /*
+
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
@@ -40,7 +39,6 @@ public class SequenceImpDao extends OracleDaoFactory implements SequenceDao  {
             
             rs.close();
             st.close();
-            */
             
         } catch (Exception e){
             throw e;

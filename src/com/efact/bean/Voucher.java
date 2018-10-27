@@ -25,7 +25,6 @@ public class Voucher implements Serializable {
     private String lcs_capital_r;
     private String lcs_aso_datos;
     private String lcs_con_cod;
-    private String lcs_pro_nombre;
     private String lcs_aso_cod;
     private String lcs_dev_id;
     private String lcs_rvs_id;
@@ -38,6 +37,7 @@ public class Voucher implements Serializable {
     private String lcs_aso_direccion1;
     private long   lcs_con_id;
     private String lcs_pro_cod;
+    private String lcs_pro_nombre;
     private long   lcs_aso_id;   
     private Date   lcs_fdeposito;
     private String lcs_moneda;
