@@ -43,7 +43,7 @@
 							<s:property value="%{#status.index + 1}"/>
 						</span>
 					</td>
-					<td class="text-right">
+					<td class="text-center">
 						<s:property value = "#object.lote"/>
 					</td>
 					<td>

@@ -66,11 +66,11 @@
                 
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').modal('show');
-                	$("table#accrued-table tbody").html('<tr><td colspan="9" align="center">Inicie una nueva busqueda.</td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
                 	$('#modal-process').modal('show');
                 	$('#modal-process').find('.modal-body').html(data);
+                	$("table#accrued-table tbody").html('<tr><td colspan="9" align="center">Inicie una nueva busqueda.</td></tr>');
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher process");
