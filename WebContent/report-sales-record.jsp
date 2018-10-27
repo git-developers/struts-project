@@ -118,7 +118,7 @@
             </div>
             <div class="box-body">
               
-        	     <table id="accrued-table" class="table table-bordered">
+        	     <table id="accrued-table" class="table table-bordered table-striped">
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
