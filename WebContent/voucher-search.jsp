@@ -22,10 +22,10 @@
 			</td>
 			<td>
 				<s:if test="%{#object.isvisiblecheckbox == 'SI'}">
-					<input type="checkbox" class="object-data check-all-able">
+					<input type="checkbox" class="object-data">
 				</s:if>
 				<s:elseif test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">
-				    <input type="checkbox" class="object-data">
+				    <input type="checkbox" class="object-data check-all-able">
 				</s:elseif>
 			</td>
 			<td>
