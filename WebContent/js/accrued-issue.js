@@ -17,7 +17,6 @@
 
         base.init = function(){
             var totalButtons = 0;
-            // base.$el.append('<button name="public" style="'+base.options.buttonStyle+'">Private</button>');
         };
 
         base.search = function(context) {
