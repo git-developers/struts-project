@@ -30,40 +30,40 @@
 					<s:property value = "#object.programa"/>
 				</button>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.ene"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.feb"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.mar"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.abr"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.may"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.jun"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.jul"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.ago"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.set"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.oct"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.nov"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.dic"/>
 			</td>
 		</tr>
