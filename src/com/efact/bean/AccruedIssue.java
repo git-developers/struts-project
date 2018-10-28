@@ -3,6 +3,8 @@ package com.efact.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.efact.util.Util;
+
 public class AccruedIssue implements Serializable {
 	
 	private int recaudoId;
@@ -75,36 +77,22 @@ public class AccruedIssue implements Serializable {
 		this.total = total;
 	}
 	public int getQueryProgram() {
-        try {
-        	return Integer.parseInt(queryProgram);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryProgram);
 	}
 	public void setQueryProgram(String queryProgram) {
 		this.queryProgram = queryProgram;
 	}
 	public int getQueryGroup() {
-        try {
-        	return Integer.parseInt(queryGroup);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryGroup);
 	}
 	public void setQueryGroup(String queryGroup) {
 		this.queryGroup = queryGroup;
 	}
 	public String getQueryDateTo() {
-		//return stringToDate(queryDateTo);
 		return queryDateTo;
 	}
 	public void setQueryDateTo(String queryDateTo) {
 		this.queryDateTo = queryDateTo;
 	}
-	
-//    private Date stringToDate(String dateString){
-//    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-//    	return Date.valueOf(dateString);
-//    }
 
 }

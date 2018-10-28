@@ -3,6 +3,8 @@ package com.efact.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.efact.util.Util;
+
 public class Voucher implements Serializable {
 
     private long   lcs_id;
@@ -359,21 +361,13 @@ public class Voucher implements Serializable {
 		this.total = total;
 	}
 	public int getQueryProgram() {
-        try {
-        	return Integer.parseInt(queryProgram);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryProgram);
 	}
 	public void setProgram(String program) {
 		this.queryProgram = program;
 	}
 	public int getQueryGroup() {
-        try {
-        	return Integer.parseInt(queryGroup);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryGroup);
 	}
 	
 	public void setGroup(String group) {
@@ -381,11 +375,7 @@ public class Voucher implements Serializable {
 	}
 	
 	public int getQueryBank() {
-        try {
-        	return Integer.parseInt(queryBank);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryBank);
 	}
 	
 	public void setBank(String bank) {
@@ -399,11 +389,7 @@ public class Voucher implements Serializable {
 	}
 	
 	public int getQueryStatus() {
-        try {
-        	return Integer.parseInt(queryStatus);
-         } catch (NumberFormatException e) {
-        	 return 0;
-         }
+		return Util.strToInt(queryStatus);
 	}
 	
 	public void setStatus(String status) {
@@ -411,22 +397,17 @@ public class Voucher implements Serializable {
 	}
 	
 	public Date getQueryFrom() {
-		return stringToDate(queryFrom);
+		return Util.strToDate(queryFrom);
 	}
 	public void setFrom(String from) {
 		this.queryFrom = from;
 	}
 	public Date getQueryTo() {
-		return stringToDate(queryTo);
+		return Util.strToDate(queryTo);
 	}
 	
 	public void setTo(String to) {
 		this.queryTo = to;
 	}
-	
-    private Date stringToDate(String dateString){
-    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-    	return Date.valueOf(dateString);
-    }
 	
 }

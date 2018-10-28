@@ -20,22 +20,24 @@ public class ExcelExport {
 	public static InputStream salesRecordExport(List<ReportSalesRecord> list) throws Exception {
 		
 		String[] columns = {
-				"Emision", "Tipo moneda", "Fecha Emision", "Comprobante", "Serie", "Numero",
-				"Documento", "Datos", "Valor facturado", "Base imponible", "impin afecta", "IGV %",
-				"Importe total", "Venta", "Total afectas", "Total no afectas", "Total igv", "Total", "ID"
+				"Fuente", "Emision", "Tipo moneda", "Fecha Emision", "Vencimiento", "Comprobante", 
+				"Serie", "Tipo", "Numero", "Documento", "Datos", "Valor facturado", "Base imponible",
+				"Exonerada", "importe inafecta", "ISC", "IGV %", "Otros", "Importe total", "Venta",
+				"Tipo dev", "Serie dev", "Numero dev", "Tipo cambio dev", "Total afectas", 
+				"Total no afectas", "Total igv", "Total", "Documento", "ID"
 		};
 		
         Workbook workbook = new XSSFWorkbook();
         CreationHelper createHelper = workbook.getCreationHelper();
 
         // Create a Sheet
-        Sheet sheet = workbook.createSheet("Employee");
+        Sheet sheet = workbook.createSheet("Reporte");
 
         // Create a Font for styling header cells
         Font headerFont = workbook.createFont();
         //headerFont.setBold(true);
         headerFont.setFontHeightInPoints((short) 14);
-        headerFont.setColor(IndexedColors.RED.getIndex());
+        headerFont.setColor(IndexedColors.BLUE.getIndex());
 
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
@@ -106,7 +108,7 @@ public class ExcelExport {
 	public static InputStream salesRecordSummary(List<ReportSalesSummary> list) throws Exception {													
 
 		String[] columns = {
-				"Año", "Tipo", "Serie", "Programa", "Ene", "Feb",
+				"Anio", "Tipo", "Serie", "Programa", "Ene", "Feb",
 				"Mar", "Abr", "May", "Jun", "Jul", "Ago",
 				"Set", "Oct", "Nov", "Dic"
 		};
@@ -115,13 +117,13 @@ public class ExcelExport {
         CreationHelper createHelper = workbook.getCreationHelper();
 
         // Create a Sheet
-        Sheet sheet = workbook.createSheet("Employee");
+        Sheet sheet = workbook.createSheet("Reporte");
 
         // Create a Font for styling header cells
         Font headerFont = workbook.createFont();
         //headerFont.setBold(true);
         headerFont.setFontHeightInPoints((short) 14);
-        headerFont.setColor(IndexedColors.RED.getIndex());
+        headerFont.setColor(IndexedColors.BLUE.getIndex());
 
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();

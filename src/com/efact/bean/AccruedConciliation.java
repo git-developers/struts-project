@@ -3,6 +3,8 @@ package com.efact.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.efact.util.Util;
+
 public class AccruedConciliation implements Serializable {
 	
 	private String comprobante1; 
@@ -75,13 +77,13 @@ public class AccruedConciliation implements Serializable {
 		this.queryTo = queryTo;
 	}
 	public Date getQueryFrom() {
-		return stringToDate(queryFrom);
+		return Util.strToDate(queryFrom);
 	}
 	public void setFrom(String from) {
 		this.queryFrom = from;
 	}
 	public Date getQueryTo() {
-		return stringToDate(queryTo);
+		return Util.strToDate(queryTo);
 	}
 	
 	public void setTo(String to) {
@@ -95,17 +97,12 @@ public class AccruedConciliation implements Serializable {
 		this.reaId = reaId;
 	}
 	
-	
 	public String getSistema() {
 		return sistema;
 	}
 	public void setSistema(String sistema) {
 		this.sistema = sistema;
 	}
-	private Date stringToDate(String dateString){
-    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-    	return Date.valueOf(dateString);
-    }
     
     
 }

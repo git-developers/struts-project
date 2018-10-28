@@ -3,6 +3,8 @@ package com.efact.bean;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.efact.util.Util;
+
 public class ReportSalesRecord implements Serializable {
 
     private String fuente;
@@ -43,31 +45,19 @@ public class ReportSalesRecord implements Serializable {
     private String queryTo;
     
 	public int getQuerySequence() {
-		try {
-			return Integer.parseInt(querySequence);
-		}catch (NumberFormatException e) {
-			return 0;
-		}
+		return Util.strToInt(querySequence);
 	}
 	public void setQuerySequence(String querySequence) {
 		this.querySequence = querySequence;
 	}
 	public Date getQueryFrom() {
-		try {
-			return Date.valueOf(queryFrom);
-		}catch (IllegalArgumentException e) {
-			return null;
-		}
+		return Util.strToDate(queryFrom);
 	}
 	public void setQueryFrom(String queryFrom) {
 		this.queryFrom = queryFrom;
 	}
 	public Date getQueryTo() {
-		try {
-			return Date.valueOf(queryTo);
-		}catch (IllegalArgumentException e) {
-			return null;
-		}
+		return Util.strToDate(queryTo);
 	}
 	public void setQueryTo(String queryTo) {
 		this.queryTo = queryTo;

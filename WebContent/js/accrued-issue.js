@@ -99,7 +99,10 @@
         base.group = function(context) {
         	
             var prodId = $(context).find(':selected').data('prod-id');  
-            $('#program').val(prodId);
+            
+            if (parseInt(prodId) > 0) {
+                $('#program').val(prodId);
+            }
             
             $.ajax({
                 url: options.contextPath + '/accrued-issue-dropdown',
@@ -110,7 +113,7 @@
                 	groupId: $('#group').val()
                 },
                 beforeSend: function(jqXHR, settings) {
-                	//$('#modal-process').modal('show');
+                	
                 },
                 success: function(data, textStatus, jqXHR) {
                 	$('#dateTo').html(data);
