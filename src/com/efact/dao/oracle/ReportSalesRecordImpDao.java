@@ -48,8 +48,7 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             	
             	object.setFuente(rs.getString("FUENTE"));
             	object.setTipoemision(rs.getString("TIPOEMISION")); 
-            	object.setRvb_tmoneda(rs.getString("RVB_TMONEDA")); 
-            	object.setImpreso(rs.getString("IMPRESO")); 
+            	object.setRvb_tmoneda(rs.getString("RVB_TMONEDA"));  
             	object.setRvb_femision(rs.getInt("RVB_FEMISION")); 
             	object.setRvb_fvencimiento(rs.getInt("RVB_FVENCIMIENTO")); 
             	object.setComprobante(rs.getString("COMPROBANTE")); 
@@ -67,7 +66,6 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             	object.setOtros(rs.getInt("OTROS")); 
             	object.setRvb_imptotal(rs.getInt("RVB_IMPTOTAL")); 
             	object.setTcd_venta(rs.getInt("TCD_VENTA")); 
-            	object.setReferencia_fecha(rs.getString("REFERENCIA_FECHA")); 
             	object.setRvb_tipo(rs.getInt("RVB_TIPODEV")); 
             	object.setRvb_seriedev(rs.getInt("RVB_SERIEDEV")); 
             	object.setRvb_numerodev(rs.getInt("RVB_NUMERODEV")); 
