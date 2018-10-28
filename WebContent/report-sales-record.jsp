@@ -133,7 +133,7 @@
    						   <th>Valor facturado</th>
    						   <th>Base imponible</th>
    						   <th>impin afecta</th>
-						   <th>IGV %</th>
+						   <th>IGV</th>
 						   <th>Importe total</th>
 						   <th>Venta</th>
 						   <th>Total afectas</th>
