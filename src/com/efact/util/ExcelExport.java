@@ -60,25 +60,36 @@ public class ExcelExport {
         for(ReportSalesRecord object: list) {
             Row row = sheet.createRow(rowNum++);
 
-            row.createCell(0).setCellValue(object.getTipoemision());
-            row.createCell(1).setCellValue(object.getRvb_tmoneda());
-            row.createCell(2).setCellValue(object.getRvb_femision());
-            row.createCell(3).setCellValue(object.getComprobante());
-            row.createCell(4).setCellValue(object.getRvb_serie());
-            row.createCell(5).setCellValue(object.getRvb_numero());
-            row.createCell(6).setCellValue(object.getRvb_documento());
-            row.createCell(7).setCellValue(object.getRvb_datos());
-            row.createCell(8).setCellValue(object.getRvb_valorfacturado());
-            row.createCell(9).setCellValue(object.getRvb_baseimponible());
-            row.createCell(10).setCellValue(object.getRvb_impinafecta());
-            row.createCell(11).setCellValue(object.getRvb_igv());
-            row.createCell(12).setCellValue(object.getRvb_imptotal());
-            row.createCell(13).setCellValue(object.getTcd_venta());
-            row.createCell(14).setCellValue(object.getTotalafectas_sol());
-            row.createCell(15).setCellValue(object.getTotalnoafectas_sol());
-            row.createCell(16).setCellValue(object.getTotaligv_sol());
-            row.createCell(17).setCellValue(object.getTotaltotal_sol());
-            row.createCell(18).setCellValue(object.getRvb_id());
+            row.createCell(0).setCellValue(object.getFuente());
+            row.createCell(1).setCellValue(object.getTipoemision());
+            row.createCell(2).setCellValue(object.getRvb_tmoneda());
+            row.createCell(3).setCellValue(object.getRvb_femision());
+            row.createCell(4).setCellValue(object.getRvb_fvencimiento());
+            row.createCell(5).setCellValue(object.getComprobante());
+            row.createCell(6).setCellValue(object.getRvb_serie());
+            row.createCell(7).setCellValue(object.getRvb_tipo());
+            row.createCell(8).setCellValue(object.getRvb_numero());
+            row.createCell(9).setCellValue(object.getRvb_documento());
+            row.createCell(10).setCellValue(object.getRvb_datos());
+            row.createCell(11).setCellValue(object.getRvb_valorfacturado());
+            row.createCell(12).setCellValue(object.getRvb_baseimponible());
+            row.createCell(13).setCellValue(object.getExonerada());
+            row.createCell(14).setCellValue(object.getRvb_impinafecta());
+            row.createCell(15).setCellValue(object.getIsc());
+            row.createCell(16).setCellValue(object.getRvb_igv());
+            row.createCell(17).setCellValue(object.getOtros());
+            row.createCell(18).setCellValue(object.getRvb_imptotal());
+            row.createCell(19).setCellValue(object.getTcd_venta());
+            row.createCell(20).setCellValue(object.getRvb_tipodev());
+            row.createCell(21).setCellValue(object.getRvb_seriedev());
+            row.createCell(22).setCellValue(object.getRvb_numerodev());
+            row.createCell(23).setCellValue(object.getRvb_tipocambiodev());
+            row.createCell(24).setCellValue(object.getTotalafectas_sol());
+            row.createCell(25).setCellValue(object.getTotalnoafectas_sol());
+            row.createCell(26).setCellValue(object.getTotaligv_sol());
+            row.createCell(27).setCellValue(object.getTotaltotal_sol());
+            row.createCell(28).setCellValue(object.getRvb_documento());
+            row.createCell(29).setCellValue(object.getRvb_id());
         }
 
 		// Resize all columns to fit the content size
