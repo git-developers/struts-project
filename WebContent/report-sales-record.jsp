@@ -90,7 +90,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default report-export-excel">Procesar</button>
+			                  <button type="button" class="btn btn-default report-export-excel">Export Excel</button>
 			                </div>
 		                </div>
 	        		</div>
