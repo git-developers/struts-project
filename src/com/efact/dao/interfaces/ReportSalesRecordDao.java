@@ -8,8 +8,8 @@ public interface ReportSalesRecordDao {
 
 	public List<ReportSalesRecord> salesRecordSearch(
 			int sequence, 
-		    float from,    
-		    float to
+			Date from,    
+			Date to
     ) throws Exception;
 	
 	public ReportSalesRecord findOneById(String id) throws Exception;

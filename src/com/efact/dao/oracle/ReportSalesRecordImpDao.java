@@ -18,8 +18,8 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
 	@Override
 	public List<ReportSalesRecord> salesRecordSearch(
 		int sequence, 
-		float from,    
-		float to
+		Date from,    
+		Date to
 	) throws Exception {
 		
         List<ReportSalesRecord> list = new ArrayList<>();
@@ -37,9 +37,9 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             st.registerOutParameter(1, OracleTypes.CURSOR);
             st.setInt(2, 0);
             st.setInt(3, sequence);
-            st.setFloat(4, from);
-            st.setFloat(5, to);
-            st.setString(5, "EFACT");
+            st.setDate(4, from);
+            st.setDate(5, to);
+            st.setString(6, "EFACT");
             st.execute();
             
             ResultSet rs = (ResultSet) st.getObject(1);
@@ -87,7 +87,7 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             st.close();
             
         } catch (Exception e){
-        	System.out.print("Exception ::: " + e.getMessage());
+        	System.out.print("salesRecordSearch ::: Exception ::: " + e.getMessage());
             throw e;
         } finally {
             this.closeConnection();

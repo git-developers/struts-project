@@ -52,23 +52,14 @@ public class ReportSalesRecord implements Serializable {
 	public void setQuerySequence(String querySequence) {
 		this.querySequence = querySequence;
 	}
-	public float getQueryFrom() {
-		try {
-			return Integer.parseInt(queryFrom.replace("-", ""));
-		}catch (NumberFormatException e) {
-			return 20170101;
-		}
+	public Date getQueryFrom() {
+		return stringToDate(queryFrom);
 	}
 	public void setQueryFrom(String queryFrom) {
 		this.queryFrom = queryFrom;
 	}
-	public float getQueryTo() {
-		try {
-			// Float.valueOf
-			return Integer.parseInt(queryTo.replace("-", ""));
-		}catch (NumberFormatException e) {
-			return 20170101;
-		}
+	public Date getQueryTo() {
+		return stringToDate(queryTo);
 	}
 	public void setQueryTo(String queryTo) {
 		this.queryTo = queryTo;
@@ -266,5 +257,8 @@ public class ReportSalesRecord implements Serializable {
 		this.rvb_id = rvb_id;
 	}
 
-
+    private Date stringToDate(String dateString){
+    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
+    	return Date.valueOf(dateString);
+    }
 }
