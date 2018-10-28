@@ -53,13 +53,21 @@ public class ReportSalesRecord implements Serializable {
 		this.querySequence = querySequence;
 	}
 	public Date getQueryFrom() {
-		return stringToDate(queryFrom);
+		try {
+			return Date.valueOf(queryFrom);
+		}catch (IllegalArgumentException e) {
+			return null;
+		}
 	}
 	public void setQueryFrom(String queryFrom) {
 		this.queryFrom = queryFrom;
 	}
 	public Date getQueryTo() {
-		return stringToDate(queryTo);
+		try {
+			return Date.valueOf(queryTo);
+		}catch (IllegalArgumentException e) {
+			return null;
+		}
 	}
 	public void setQueryTo(String queryTo) {
 		this.queryTo = queryTo;
@@ -257,8 +265,4 @@ public class ReportSalesRecord implements Serializable {
 		this.rvb_id = rvb_id;
 	}
 
-    private Date stringToDate(String dateString){
-    	dateString = dateString.trim().equals("") ? "1980-01-01" : dateString;
-    	return Date.valueOf(dateString);
-    }
 }

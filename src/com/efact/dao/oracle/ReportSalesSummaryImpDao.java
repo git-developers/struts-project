@@ -15,7 +15,7 @@ import oracle.jdbc.OracleTypes;
 public class ReportSalesSummaryImpDao extends OracleDaoFactory implements ReportSalesSummaryDao  {
 
 	@Override
-	public List<ReportSalesSummary> salesRecordSearch(int year) throws Exception {
+	public List<ReportSalesSummary> salesSummarySearch(int year) throws Exception {
 		
         List<ReportSalesSummary> list = new ArrayList<>();
         

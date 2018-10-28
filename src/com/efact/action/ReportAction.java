@@ -92,7 +92,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
         ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
         ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
     	
-        listReportSalesSummary = rsDao.salesRecordSearch(rs.getQueryYear());
+        listReportSalesSummary = rsDao.salesSummarySearch(rs.getQueryYear());
         
 		return SUCCESS;
 	}
@@ -103,7 +103,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
         ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
         ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
     	
-        listReportSalesSummary = rsDao.salesRecordSearch(rs.getQueryYear());
+        listReportSalesSummary = rsDao.salesSummarySearch(rs.getQueryYear());
         
 		this.excelStream = ExcelExport.salesRecordSummary(listReportSalesSummary);
         

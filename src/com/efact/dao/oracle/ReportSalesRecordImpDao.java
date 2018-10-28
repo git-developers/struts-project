@@ -23,10 +23,6 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
 	) throws Exception {
 		
         List<ReportSalesRecord> list = new ArrayList<>();
-        
-    	System.out.print("sequence ::: " + sequence);
-    	System.out.print("from ::: " + from.getYear());
-    	System.out.print("to ::: " + to.getYear());
 
         try{
 
@@ -82,6 +78,7 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             
             rs.close();
             st.close();
+            
             
         } catch (Exception e){
         	System.out.print("salesRecordSearch ::: Exception ::: " + e.getMessage());

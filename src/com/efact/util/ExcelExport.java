@@ -92,12 +92,12 @@ public class ExcelExport {
 		return new ByteArrayInputStream(baos.toByteArray());
     }
 
-	public static InputStream salesRecordSummary(List<ReportSalesSummary> list) throws Exception {
-		
+	public static InputStream salesRecordSummary(List<ReportSalesSummary> list) throws Exception {													
+
 		String[] columns = {
-				"Emision", "Tipo moneda", "Fecha Emision", "Comprobante", "Serie", "Numero",
-				"Documento", "Datos", "Valor facturado", "Base imponible", "impin afecta", "IGV %",
-				"Importe total", "Venta", "Total afectas", "Total no afectas", "Total igv", "Total", "ID"
+				"Año", "Tipo", "Serie", "Programa", "Ene", "Feb",
+				"Mar", "Abr", "May", "Jun", "Jul", "Ago",
+				"Set", "Oct", "Nov", "Dic"
 		};
 		
         Workbook workbook = new XSSFWorkbook();

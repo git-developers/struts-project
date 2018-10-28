@@ -29,7 +29,7 @@
               
                 <div class="row">
                 
-	        		<div class="col-md-2">
+	        		<div class="col-md-1">
 		                <div class="form-group">
 		                  <label for="">Año</label>
 		                  <input class="form-control" type="number" value="2018" name="queryYear">
