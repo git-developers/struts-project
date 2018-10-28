@@ -25,21 +25,20 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
         List<ReportSalesRecord> list = new ArrayList<>();
         
     	System.out.print("sequence ::: " + sequence);
-    	System.out.print("from ::: " + from);
-    	System.out.print("to ::: " + to);
+    	System.out.print("from ::: " + from.getYear());
+    	System.out.print("to ::: " + to.getYear());
 
         try{
 
-            String sql = "{ ? = call FIN_PKG_REPORTES.F_REPORTE_VENTAS(?, ?, ?, ?, ?, ?) }"; 
+            String sql = "{ ? = call FIN_PKG_REPORTES.F_REPORTE_VENTAS(?, ?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);
-            st.setInt(2, 0);
-            st.setInt(3, sequence);
-            st.setDate(4, from);
-            st.setDate(5, to);
-            st.setString(6, "EFACT");
+            st.setInt(2, sequence);
+            st.setDate(3, from);
+            st.setDate(4, to);
+            st.setString(5, "EFACT");
             st.execute();
             
             ResultSet rs = (ResultSet) st.getObject(1);
