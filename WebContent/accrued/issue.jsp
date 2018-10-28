@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@include file="themes/adminLTE/header.jsp" %>
+<%@include file="../themes/adminLTE/header.jsp" %>
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-exchange"></i> Conciliaci&oacute;n de devengados
+        <i class="fa fa-exchange"></i> Emisi&oacute;n de devengados
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">
@@ -12,7 +12,6 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
-
 
     <section class="content">
     
@@ -24,32 +23,48 @@
               <h3 class="box-title">Quick Example</h3>
             </div>
             --%>
-            <form role="form" name="form-accrued-conciliation">
+            <form role="form" name="form-accrued-issue">
               <div class="box-body">
               
                 <div class="row">
                 
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="">Fecha de emision (Desde)</label>
-							<div class="input-group">
-			                  <div class="input-group-addon">
-			                    <i class="fa fa-calendar"></i>
-			                  </div>
-			                  <input type="date" class="form-control" name="queryFrom">
-			                </div>
+		                  <label for="">Programa</label>
+		                  <select class="form-control" id="program" name="queryProgram" required="required">
+		                  	<option value="0">[todos]</option>
+		                  	<s:iterator value="listProgram" var="program">
+		                  		<option value="<s:property value = "#program.id"/>">
+		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
+	                  			</option>
+	                  		</s:iterator>
+		                  </select>
 		                </div>
 	        		</div>
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="">Fecha de emision (Hasta)</label>
-							<div class="input-group">
-			                  <div class="input-group-addon">
-			                    <i class="fa fa-calendar"></i>
-			                  </div>
-			                  <input type="date" class="form-control" name="queryTo">
-			                </div>
+		                  <label for="">Grupos</label>
+		                  <select class="form-control" name="queryGroup" id="group">
+		                  	<option value="0">[todos]</option>
+		                  	<s:iterator value="listGroup" var="group">
+		                  		<option 
+		                  			data-prod-id="<s:property value = "#group.prodId"/>"
+		                  			value="<s:property value = "#group.id"/>" 
+		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
+		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
+	                  			</option>
+	                  		</s:iterator>
+		                  </select>
+		                </div>
+	        		</div>
+	        		
+	        		<div class="col-md-2">
+		                <div class="form-group">
+		                  <label for="">Fecha de fin</label>
+		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
+		                  	<option value="0">[seleccionar]</option>
+		                  </select>
 		                </div>
 	        		</div>
 	        		
@@ -99,10 +114,12 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
-						   <th>Comprobante</th>
-						   <th>Recaudo</th>
-						   <th>Descripci&oacute;n</th>
+						   <th>Recaudo Id</th>
+						   <th>C&oacute;digo asociado</th>
+						   <th>Datos asociado</th>
+						   <th>Numero de cuota</th>
+						   <th>Posici&oacute;n</th>
+						   <th>Descripcion</th>
 						   <th>Afecto</th>
 						   <th>No Afecto</th>
 						   <th>IGV</th>
@@ -111,7 +128,7 @@
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="9" align="center">
+							   	<td colspan="11" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>
@@ -126,6 +143,6 @@
      </div>
      </section>
      
-<%@include file="modal-process.jsp" %>
+<%@include file="../modal/process.jsp" %>
      
-<%@include file="themes/adminLTE/footer.jsp" %>
+<%@include file="../themes/adminLTE/footer.jsp" %>

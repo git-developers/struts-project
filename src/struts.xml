@@ -14,28 +14,28 @@
 		</action>
 		
 		<action name="comprobante-por-lote" class="com.efact.action.VoucherAction" method="index">
-			<result name="success">/voucher.jsp</result>
+			<result name="success">/voucher/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="voucher-search" class="com.efact.action.VoucherAction" method="search">
-			<result name="success">/voucher-search.jsp</result>
+			<result name="success">/voucher/search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 	
 		<action name="voucher-process" class="com.efact.action.VoucherAction" method="process">
-			<result name="success">/voucher-process-result.jsp</result>
+			<result name="success">/voucher/process-result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 	
 	
 		<action name="devengados-conciliacion" class="com.efact.action.AccruedAction" method="conciliation">
-			<result name="success">/accrued-conciliation.jsp</result>
+			<result name="success">/accrued/conciliation.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method="conciliationSearch">
-			<result name="success">/accrued-conciliation-search.jsp</result>
+			<result name="success">/accrued/conciliation-search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -49,17 +49,17 @@
 		
 		
 		<action name="devengados-emision" class="com.efact.action.AccruedAction" method="issue">
-			<result name="success">/accrued-issue.jsp</result>
+			<result name="success">/accrued/issue.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-dropdown" class="com.efact.action.AccruedAction" method="issueDropdown">
-			<result name="success">/accrued-issue-dropdown.jsp</result>
+			<result name="success">/accrued/issue-dropdown.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-search" class="com.efact.action.AccruedAction" method="issueSearch">
-			<result name="success">/accrued-issue-search.jsp</result>
+			<result name="success">/accrued/issue-search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -71,27 +71,13 @@
 		
 		
 		
-		<action name="nota-de-credito" class="com.efact.action.NoteCreditAction" method="index">
-			<result name="success">/note-credit.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action>
-		
-		<action name="nota-de-debito" class="com.efact.action.NoteDebitAction" method="index">
-			<result name="success">/note-debit.jsp</result>
-			<result name="error">/error.jsp</result>
-		</action>
-		
-		
-		
-		
-		
 		<action name="reporte-registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
-			<result name="success">/report-sales-record.jsp</result>
+			<result name="success">/report/sales-record.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="report-sales-record-search" class="com.efact.action.ReportAction" method="salesRecordSearch">
-			<result name="success">/report-sales-record-search.jsp</result>
+			<result name="success">/report/sales-record-search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -110,12 +96,12 @@
 
 
 		<action name="reporte-resumen-de-ventas" class="com.efact.action.ReportAction" method="salesSummary">
-			<result name="success">/report-sales-summary.jsp</result>
+			<result name="success">/report/sales-summary.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="report-sales-summary-search" class="com.efact.action.ReportAction" method="salesSummarySearch">
-			<result name="success">/report-sales-summary-search.jsp</result>
+			<result name="success">/report/sales-summary-search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -132,7 +118,29 @@
 		
 		
 		
+				
+		<action name="nota-de-credito" class="com.efact.action.NoteCreditAction" method="index">
+			<result name="success">/note-credit/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
 		
+		<action name="note-credit-search" class="com.efact.action.NoteCreditAction" method="search">
+			<result name="success">/note-credit/search.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="note-credit-process" class="com.efact.action.NoteCreditAction" method="process">
+			<result name="success">/note-credit/process-result.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="nota-de-debito" class="com.efact.action.NoteDebitAction" method="index">
+			<result name="success">/note-debit/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
 		
 		
 	

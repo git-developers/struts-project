@@ -37,8 +37,8 @@
         </li>
         
 		<li class="treeview 
-					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">active</c:if>
-					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">active</c:if>
+					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/conciliation')}">active</c:if>
+					<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/issue')}">active</c:if>
 		  ">
 		  <a href="#">
 		    <i class="fa fa-exchange"></i>
@@ -48,12 +48,12 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">active</c:if>">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/conciliation')}">active</c:if>">
 		    	<s:a href="devengados-conciliacion" theme="simple">
 			    	<i class="fa fa-circle-o text-red"></i> Conciliaci&oacute;n
 		    	</s:a>
 	    	</li>
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">active</c:if>">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/issue')}">active</c:if>">
 		    	<s:a href="devengados-emision" theme="simple">
 		    		<i class="fa fa-circle-o text-aqua"></i> Emisi&oacute;n
 		    	</s:a>
@@ -61,7 +61,7 @@
 		  </ul>
 		</li>
         
-        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'credit-note')}">active</c:if>" >	
+        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'note-credit')}">active</c:if>" >	
           <s:a href="nota-de-credito" theme="simple">
             <i class="fa fa-cc-visa"></i> <span>Nota de cr&eacute;dito</span>
             <span class="pull-right-container">
@@ -69,7 +69,7 @@
           </s:a>
         </li>
         
-        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'debit-note')}">active</c:if>" >	
+        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'note-debit')}">active</c:if>" >	
           <s:a href="nota-de-debito" theme="simple">
             <i class="fa fa-money"></i> <span>Nota de d&eacute;bito</span>
             <span class="pull-right-container">
@@ -79,8 +79,8 @@
         </li>
 
     	<li class="treeview 
-    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">active</c:if>
-    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">active</c:if>
+    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-record')}">active</c:if>
+    				<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-summary')}">active</c:if>
  		">
 		  <a href="#">
 		    <i class="fa fa-bar-chart"></i>
@@ -90,12 +90,12 @@
 		    </span>
 		  </a>
 		  <ul class="treeview-menu">
-		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">active</c:if>">
+		    <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-record')}">active</c:if>">
 		    	<s:a href="reporte-registro-de-ventas" theme="simple">
 		    		<i class="fa fa-line-chart text-red"></i> Registro de ventas
 		    	</s:a>
 	    	</li>
- 			<li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">active</c:if>">
+ 			<li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-summary')}">active</c:if>">
 		    	<s:a href="reporte-resumen-de-ventas" theme="simple">
 		    		<i class="fa fa-pie-chart text-blue"></i> Resumen de ventas
 		    	</s:a>

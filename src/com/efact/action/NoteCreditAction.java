@@ -14,7 +14,6 @@ public class NoteCreditAction extends ActionSupportBase  {
 	
 	@Override
 	public String execute() throws Exception {
-		
 		return SUCCESS;
 	}
 
@@ -22,5 +21,11 @@ public class NoteCreditAction extends ActionSupportBase  {
 		return SUCCESS;
 	}
 
-	
+	public String search() throws Exception {
+		return SUCCESS;
+	}
+
+	public String process() throws Exception {
+		return SUCCESS;
+	}
 }

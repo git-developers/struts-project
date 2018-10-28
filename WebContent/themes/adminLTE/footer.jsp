@@ -53,7 +53,7 @@
 	<script src="themes/adminLTE/dist/js/demo.js"></script>
 </c:if>
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'voucher')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'voucher/index')}">
 	<script src="js/voucher.js"></script>
 	<link rel="stylesheet" href="css/voucher.css">
 	
@@ -64,7 +64,7 @@
 	</script>
 </c:if>
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-conciliation')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/conciliation')}">
 	<script src="js/accrued-conciliation.js"></script>
 	<link rel="stylesheet" href="css/accrued-conciliation.css">
 	
@@ -75,7 +75,7 @@
 	</script>
 </c:if>
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued-issue')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'accrued/issue')}">
 	<script src="js/accrued-issue.js"></script>
 	<link rel="stylesheet" href="css/accrued-issue.css">
 	
@@ -86,7 +86,7 @@
 	</script>
 </c:if>
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-record')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-record')}">
 	<script src="js/report-sales-record.js"></script>
 	<link rel="stylesheet" href="css/report-sales-record.css">
 	
@@ -100,7 +100,7 @@
 </c:if>
 
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'report-sales-summary')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'report/sales-summary')}">
 	<script src="js/report-sales-summary.js"></script>
 	<link rel="stylesheet" href="css/report-sales-summary.css">
 	
@@ -109,6 +109,18 @@
 	    	contextPath: '${pageContext.request.contextPath}',
 	    	excelTableID: 'export',
 	    	excelFilename: 'excel-test'
+	    });
+	</script>
+</c:if>
+
+
+<c:if test="${fn:contains(pageContext.request.requestURI, 'note-credit/index')}">
+	<script src="js/note-credit.js"></script>
+	<link rel="stylesheet" href="css/note-credit.css">
+	
+	<script type="text/javascript">
+	    $("body").formNoteCredit({
+	    	contextPath: '${pageContext.request.contextPath}'
 	    });
 	</script>
 </c:if>

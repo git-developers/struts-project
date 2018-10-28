@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@include file="themes/adminLTE/header.jsp" %>
+<%@include file="../themes/adminLTE/header.jsp" %>
 
     <section class="content-header">
       <h1>
@@ -90,7 +90,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default report-export-excel">Export Excel</button>
+			                  <button type="button" class="btn btn-default report-export-excel">Exportar</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -160,7 +160,7 @@
      </div>
      </section>
      
-<%@include file="modal-process.jsp" %>
+<%@include file="../modal/process.jsp" %>
      
-<%@include file="themes/adminLTE/footer.jsp" %>
+<%@include file="../themes/adminLTE/footer.jsp" %>
 

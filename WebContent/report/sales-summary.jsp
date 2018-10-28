@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@include file="themes/adminLTE/header.jsp" %>
+<%@include file="../themes/adminLTE/header.jsp" %>
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-pie-chart"></i> Reporte: resumen de ventas
+        <i class="fa fa-pie-chart"></i> Reporte: resumen de ventas ---- <c:out value="${pageContext.request.requestURI}"/>
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">
@@ -49,7 +49,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default report-export-excel">Export Excel</button>
+			                  <button type="button" class="btn btn-default report-export-excel">Exportar</button>
 			                </div>
 		                </div>
 	        		</div>
@@ -66,9 +66,7 @@
           </div>
           </div>
           </div>
-    
-    
-    
+
       <div class="row">
         <div class="col-md-12">
 		<div class="box box-primary">
@@ -116,9 +114,7 @@
      </div>
      </section>
      
-<%@include file="modal-process.jsp" %>
+<%@include file="../modal/process.jsp" %>
      
-<%@include file="themes/adminLTE/footer.jsp" %>
-
-
+<%@include file="../themes/adminLTE/footer.jsp" %>
 

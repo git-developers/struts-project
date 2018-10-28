@@ -4,8 +4,8 @@
     color: white;
 }
 
-.report-process:hover{
-	background-color: #00a65a;
-    border-color: #008d4c;
+.report-export-excel:hover{
+	background-color: #f39c12;
+    border-color: #e08e0b;
     color: white;
 }

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
-<%@include file="themes/adminLTE/header.jsp" %>
+<%@include file="../themes/adminLTE/header.jsp" %>
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-cc-visa"></i> Nota de cr&eacute;dito
+        <i class="fa fa-money"></i> Nota de d&eacute;bito
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">
@@ -15,9 +14,7 @@
     </section>
 
     <section class="content">
-    
-    
-    
+
       <div class="row">
         <div class="col-md-12">
 		<div class="box box-primary">
@@ -36,4 +33,4 @@
      </div>
      </section>
      
-<%@include file="themes/adminLTE/footer.jsp" %>
+<%@include file="../themes/adminLTE/footer.jsp" %>
