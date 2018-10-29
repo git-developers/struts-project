@@ -19,6 +19,7 @@
 				<input type="hidden" name="lcs_rea_id" value="<s:property value = "#object.lcs_rea_id"/>">
 				<input type="hidden" name="lcs_rec_id" value="<s:property value = "#object.lcs_rec_id"/>">
 				<input type="hidden" name="lcs_sistema" value="<s:property value = "#object.lcs_sistema"/>">
+				<input type="hidden" name="lcs_fecha" value="<s:property value = "#object.lcs_fecha"/>">
 			</td>
 			<td>
 				<s:if test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">

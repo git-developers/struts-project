@@ -55,7 +55,8 @@
         	    rows.push({
         	    	lcs_rea_id: $(row).find('td:eq(0) input[name="lcs_rea_id"]').val(),
         	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
-        	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val()
+        	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val(),
+        	    	lcs_fecha: $(row).find('td:eq(0) input[name="lcs_fecha"]').val()
         	    });
         	});
 

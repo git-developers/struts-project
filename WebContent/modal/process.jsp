@@ -11,7 +11,8 @@
         </div>
         <div class="modal-body">
           <p>
-          	<i class="fa fa-2x fa-refresh fa-spin"></i> <span style="font-size: 16px; margin-left: 5px">Procesando...</span>
+          	<i class="fa fa-2x fa-refresh fa-spin"></i>
+          	<span style="font-size: 16px; margin-left: 5px">Procesando...</span>
           </p>
         </div>
         <div class="modal-footer">

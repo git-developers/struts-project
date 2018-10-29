@@ -92,6 +92,9 @@ public class Voucher implements Serializable {
 	public String getLcs_fecha() {
 		return lcs_fecha;
 	}
+	public int getLcs_fecha_int() {
+		return Util.strToInt(lcs_fecha);
+	}
 	public void setLcs_fecha(String lcs_fecha) {
 		this.lcs_fecha = lcs_fecha;
 	}

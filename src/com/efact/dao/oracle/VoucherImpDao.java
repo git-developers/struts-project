@@ -132,14 +132,16 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
         try{
         	
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_INSERTALOTESCONCILIACIONES(?, ?, 1, ?, ?) }"; 
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_INSERTALOTESCONCILIACIONES(?, ?, ?, ?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.setInt(1, voucher.getLcs_rea_id());  
-            st.setLong(2, voucher.getLcs_rec_id());  
-            st.setString(3, voucher.getLcs_sistema());              
-            st.setInt(4, nlote);  
+            st.setLong(2, voucher.getLcs_rec_id());
+            st.setLong(3, 1); 
+            st.setString(4, voucher.getLcs_sistema());              
+            st.setInt(5, nlote);
+            st.setInt(6, voucher.getLcs_fecha_int()); 
             st.execute();
         
         } catch (Exception e){
