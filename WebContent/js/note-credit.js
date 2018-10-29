@@ -29,6 +29,7 @@
                 },
                 
                 beforeSend: function(jqXHR, settings) {
+                	$('#modal-process').find('.modal-body').html('<p><i class="fa fa-2x fa-refresh fa-spin"></i><span style="font-size: 16px; margin-left: 5px">Procesando...</span></p>');
                 	$("div#main-box-body").html('<div class="text-center"> <i class="fa fa-3x fa-refresh fa-spin"></i> </div>');
                 },
                 success: function(data, textStatus, jqXHR) {
