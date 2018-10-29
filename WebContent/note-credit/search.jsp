@@ -1,4 +1,7 @@
+
 	
+	
+		
             	
         <!-- LEFT -->
 		<div class="col-md-6">
@@ -88,9 +91,9 @@
 	                <tr>
 	                  <td>Seguro</td>
 	                  <td>S/</td>
-	                  <td>200.00</td>
 	                  <td>0.00</td>
-	                  <td>0.00</td>
+	                  <td>100.00</td>
+	                  <td>18.00</td>
 	                  <td>118.00</td>
 	                </tr>
               	</tbody>
@@ -99,9 +102,9 @@
 	                  <td>Total</td>
 	                  <td>S/</td>
 	                  <td>200.00</td>
-	                  <td>0.00</td>
-	                  <td>0.00</td>
-	                  <td>118.00</td>
+	                  <td>100.00</td>
+	                  <td>18.00</td>
+	                  <td>318.00</td>
 	                </tr>
 			  </tfoot>
               </table>
@@ -130,21 +133,21 @@
 	    		<!-- BODY -->
 		      <div class="box-body">
 		      
-		      	<div class="col-md-6">
+		      	<div class="col-md-4">
 			      	<div class="form-group">
 			          <label for="">Tipo Comprobante</label>
 			          <input type="text" class="form-control" id="" placeholder="[000-0000]" value="F003-123456" readonly="readonly">
 			        </div>
 		      	</div>
 
-		      	<div class="col-md-6">
+		      	<div class="col-md-4">
 			      	<div class="form-group">
 			          <label for="">Numero</label>
 			          <input type="email" class="form-control" id="" placeholder="[000-0000]" value="123456" readonly="readonly">
 			        </div>
 		      	</div>
 		      	
-		      	<div class="col-md-12">
+		      	<div class="col-md-4">
 			      	<div class="form-group">
 			          <label for="">Tipo NC (09)</label>
 		                  <select class="form-control" name="xxxxx">
@@ -190,7 +193,7 @@
 				                  <div class="input-group-addon">
 				                    S/
 				                  </div>
-				                  <input type="number" class="form-control" value="218">
+				                  <input type="number" class="form-control" value="318">
 				                </div>
 			                </div>
 			                						
@@ -238,7 +241,7 @@
 	                  	<input type="number" class="form-control">
 	                  </td>
 	                  <td>0.00</td>
-	                  <td>200.00</td>
+	                  <td>43.00</td>
 	                </tr>
 	                <tr>
 	                	<td><input type="checkbox"></td>	
@@ -251,18 +254,17 @@
 	                  	<input type="number" class="form-control">
 	                  </td>
 	                  <td>0.00</td>
-	                  <td>118.00</td>
+	                  <td>59.00</td>
 	                </tr>
               	</tbody>
               	<tfoot class="bg-green">
 	                <tr>
 	                	<th>&nbsp;</th>
-	                  <td>Total</td>
-	                  <td>S/</td>
-	                  <td>200.00</td>
+	                  <td colspan="2">Total</td>
 	                  <td>0.00</td>
 	                  <td>0.00</td>
-	                  <td>118.00</td>
+	                  <td>0.00</td>
+	                  <td>102.00</td>
 	                </tr>
 			  </tfoot>
               </table>
@@ -275,3 +277,12 @@
 		</div>
        <!-- RIGHT -->	
           	
+	
+	
+	
+	
+	
+	
+	
+	
+	
