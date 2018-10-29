@@ -114,7 +114,7 @@
 </c:if>
 
 
-<c:if test="${fn:contains(pageContext.request.requestURI, 'note-credit/index')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'note-credit')}">
 	<script src="js/note-credit.js"></script>
 	<link rel="stylesheet" href="css/note-credit.css">
 	
@@ -124,6 +124,18 @@
 	    });
 	</script>
 </c:if>
+
+<c:if test="${fn:contains(pageContext.request.requestURI, 'note-debit')}">
+	<script src="js/note-debit.js"></script>
+	<link rel="stylesheet" href="css/note-debit.css">
+	
+	<script type="text/javascript">
+	    $("body").formNoteDebit({
+	    	contextPath: '${pageContext.request.contextPath}'
+	    });
+	</script>
+</c:if>
+
 
 
 </body>

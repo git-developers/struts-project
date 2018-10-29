@@ -14,23 +14,148 @@
     </section>
 
     <section class="content">
+    
+        <div class="row">
+        <div class="col-md-12">
+		<div class="box box-solid">
+			<%-- 
+            <div class="box-header with-border">
+              <h3 class="box-title">Quick Example</h3>
+            </div>
+            --%>
+            <form role="form" name="form-accrued-issue">
+              <div class="box-body">
+              
+                <div class="row">
+                
+	        		<div class="col-md-2">
+		                <div class="form-group">
+		                  <label for="">Programa</label>
+		                  <select class="form-control" id="program" name="queryProgram" required="required">
+		                  	<option value="0">[todos]</option>
+		                  	
+		                  	<s:iterator value="listProgram" var="program">
+		                  		<option value="<s:property value = "#program.id"/>">
+		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
+	                  			</option>
+	                  		</s:iterator>
+	                  		 
+		                  </select>
+		                </div>
+	        		</div>
+	        		
+	        		<div class="col-md-2">
+		                <div class="form-group">
+		                  <label for="">Grupos</label>
+		                  <select class="form-control" name="queryGroup" id="group">
+		                  	<option value="0">[todos]</option>
+		                  	 
+		                  	<s:iterator value="listGroup" var="group">
+		                  		<option 
+		                  			data-prod-id="<s:property value = "#group.prodId"/>"
+		                  			value="<s:property value = "#group.id"/>" 
+		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
+		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
+	                  			</option>
+	                  		</s:iterator>
+	                  		 
+		                  </select>
+		                </div>
+	        		</div>
+	        		
+	        		<div class="col-md-2">
+		                <div class="form-group">
+		                  <label for="">Fecha de proceso</label>
+		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
+		                  	<option value="0">[seleccionar]</option>
+		                  </select>
+		                </div>
+	        		</div>
+	        		
+	        		<div class="col-md-2">
+		                <div class="form-group pull-right">
+		                  <label for="">&nbsp;</label>
+							<div class="input-group">
+			                  <button type="submit" class="btn btn-default note-debit-search">Buscar</button>
+			                </div>
+		                </div>
+	        		</div>
+	        		
+	        		<div class="col-md-2">
+		                <div class="form-group pull-right">
+		                  <label for="">&nbsp;</label>
+							<div class="input-group">
+			                  <button type="submit" class="btn btn-default note-debit-export">Exportar</button>
+			                </div>
+		                </div>
+	        		</div>
 
+	        		<div class="col-md-2">
+		                <div class="form-group pull-right">
+		                  <label for="">&nbsp;</label>
+							<div class="input-group">
+			                  <button type="button" class="btn btn-default note-debit-process">Procesar</button>
+			                </div>
+		                </div>
+	        		</div>
+
+        		</div>
+
+              </div>
+
+				<%--
+              <div class="box-footer text-right">
+              </div>
+               --%>
+            </form>
+          </div>
+          </div>
+          </div>
+    
+    
+    
       <div class="row">
         <div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> xxxx</h3>
+              <h3 class="box-title">Grid</h3>
             </div>
+            <!-- /.box-header -->
             <div class="box-body">
               
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix">
+        	     <table id="accrued-table" class="table table-bordered table-striped">
+		              <thead>
+						<tr>
+						   <th style="width: 15px">#</th>
+						   <th>Grupo</th>
+						   <th>C&oacute;digo</th>
+						   <th>Nombre asociado</th>
+						   <th>Contrato</th>
+						   <th>Cuota</th>
+						   <th>Comprobante</th>
+						   <th>Afecto</th>
+						   <th>No Afecto</th>
+						   <th>IGV</th>
+						   <th><i class="fa fa-fw fa-money"></i> Sub Total</th>
+						 </tr>
+		              </thead>
+			            <tbody>
+				            <tr>
+							   	<td colspan="11" align="center">
+					   				No hay datos que mostrar.
+					   			</td>
+				   			</tr>
+			          	</tbody>
+	              </table>
 
+            </div>
+            <div class="box-footer clearfix">
             </div>
           </div>
        	</div>
      </div>
      </section>
+     
+<%@include file="../modal/process.jsp" %>
      
 <%@include file="../themes/adminLTE/footer.jsp" %>

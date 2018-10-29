@@ -142,6 +142,16 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		<action name="note-debit-search" class="com.efact.action.NoteDebitAction" method="search">
+			<result name="success">/note-debit/search.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="note-debit-process" class="com.efact.action.NoteDebitAction" method="process">
+			<result name="success">/note-debit/process-result.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
 		
 	
 	</package>
