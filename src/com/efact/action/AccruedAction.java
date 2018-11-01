@@ -72,7 +72,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         StringBuilder sb = new StringBuilder();
         
         for (AccruedConciliation accrued : list) {
-        	sb.append(accrued.getReaId());
+        	sb.append(accrued.getReaId() + "#" + accrued.getSistema());
         	
         	if(i++ != list.size() - 1){
         		sb.append("_");

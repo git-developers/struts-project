@@ -17,6 +17,7 @@
 				</span>
 				
 				<input type="hidden" name="rea_id" value="<s:property value = "#object.reaId"/>">
+				<input type="hidden" name="sistema" value="<s:property value = "#object.sistema"/>">
 			</td>
 			<td>
 				<input type="checkbox" class="object-data">

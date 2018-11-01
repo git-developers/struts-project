@@ -52,7 +52,8 @@
         	    }
         	    
         	    rows.push({
-        	    	reaId: $(row).find('td:eq(0) input[name="rea_id"]').val()
+        	    	reaId: $(row).find('td:eq(0) input[name="rea_id"]').val(),
+        	    	sistema: $(row).find('td:eq(0) input[name="sistema"]').val()
         	    });
         	});
 
