@@ -81,6 +81,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         System.out.print("TEXTO_OUT ::: " + sb.toString());
         
+        
         accruedDao.generateAccruedConciliation(sb.toString()); 
 
         return SUCCESS;
