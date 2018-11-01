@@ -41,7 +41,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             	
             	AccruedConciliation obj = new AccruedConciliation();
                 obj.setComprobante1(rs.getString("COMPROBANTE"));
-                obj.setComprobante1(rs.getString("COMPROBANTE2"));
+                obj.setComprobante2(rs.getString("COMPROBANTE2"));
                 obj.setRecaudo(rs.getString("rvs_recaudo"));
                 obj.setDescripcion(rs.getString("rvb_descripcion"));
                 obj.setAfecto(rs.getString("rvb_afecto"));

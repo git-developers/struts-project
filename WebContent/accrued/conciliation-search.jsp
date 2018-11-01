@@ -22,7 +22,7 @@
 				<input type="checkbox" class="object-data">
 			</td>
 			<td>
-				<s:property value = "#object.comprobante2"/>
+				<s:property value = "#object.comprobante1"/>
 			</td>
 			<td>
 				<s:property value = "#object.recaudo"/>
