@@ -20,7 +20,9 @@
 				<input type="hidden" name="sistema" value="<s:property value = "#object.sistema"/>">
 			</td>
 			<td>
-				<input type="checkbox" class="object-data">
+				<s:if test="%{#object.comprobante1 != ''}">
+					<input type="checkbox" class="object-data">
+				</s:if>
 			</td>
 			<td>
 				<s:property value = "#object.comprobante1"/>
