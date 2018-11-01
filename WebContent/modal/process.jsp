@@ -6,14 +6,11 @@
             <span aria-hidden="true">x</span>
           </button>
           <h4 class="modal-title">
-          	Comprobante por Lote
+          	Informaci&oacute;n
           </h4>
         </div>
         <div class="modal-body">
-          <p>
-          	<i class="fa fa-2x fa-refresh fa-spin"></i>
-          	<span style="font-size: 16px; margin-left: 5px">Procesando...</span>
-          </p>
+          Cargando...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" data-dismiss="modal">Cerrar</button>

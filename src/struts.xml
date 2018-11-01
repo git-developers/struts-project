@@ -40,7 +40,7 @@
 		</action>
 		
 		<action name="accrued-conciliacion-process" class="com.efact.action.AccruedAction" method="conciliationProcess">
-			<result name="success">/process-result.jsp</result>
+			<result name="success">/accrued/conciliation-process-result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -64,7 +64,7 @@
 		</action>
 		
 		<action name="accrued-issue-process" class="com.efact.action.AccruedAction" method="issueProcess">
-			<result name="success">/process-result.jsp</result>
+			<result name="success">/accrued/issue-process-result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		

@@ -29,9 +29,9 @@
               
                 <div class="row">
                 
-	        		<div class="col-md-2">
+	        		<div class="col-md-3">
 		                <div class="form-group">
-		                  <label for="">Fecha de emision (Desde)</label>
+		                  <label for="">Fecha de deposito (Desde)</label>
 							<div class="input-group">
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>
@@ -41,9 +41,9 @@
 		                </div>
 	        		</div>
 	        		
-	        		<div class="col-md-2">
+	        		<div class="col-md-3">
 		                <div class="form-group">
-		                  <label for="">Fecha de emision (Hasta)</label>
+		                  <label for="">Fecha de deposito (Hasta)</label>
 							<div class="input-group">
 			                  <div class="input-group-addon">
 			                    <i class="fa fa-calendar"></i>

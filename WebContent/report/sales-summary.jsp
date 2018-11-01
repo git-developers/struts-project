@@ -4,7 +4,7 @@
 
     <section class="content-header">
       <h1>
-        <i class="fa fa-pie-chart"></i> Reporte: resumen de ventas ---- <c:out value="${pageContext.request.requestURI}"/>
+        <i class="fa fa-pie-chart"></i> Reporte: resumen de ventas
         <small>grid</small>
       </h1>
       <ol class="breadcrumb">
@@ -29,7 +29,7 @@
               
                 <div class="row">
                 
-	        		<div class="col-md-1">
+	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="">Año</label>
 		                  <input class="form-control" type="number" value="2018" name="queryYear">
