@@ -116,34 +116,27 @@ public class ExcelExport {
         Workbook workbook = new XSSFWorkbook();
         CreationHelper createHelper = workbook.getCreationHelper();
 
-        // Create a Sheet
         Sheet sheet = workbook.createSheet("Reporte");
 
-        // Create a Font for styling header cells
         Font headerFont = workbook.createFont();
-        //headerFont.setBold(true);
+        
         headerFont.setFontHeightInPoints((short) 14);
         headerFont.setColor(IndexedColors.BLUE.getIndex());
 
-        // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
 
-        // Create a Row
         Row headerRow = sheet.createRow(0);
 
-        // Create cells
         for(int i = 0; i < columns.length; i++) {
             Cell cell = headerRow.createCell(i);
             cell.setCellValue(columns[i]);
             cell.setCellStyle(headerCellStyle);
         }
 
-        // Create Cell Style for formatting Date
         CellStyle dateCellStyle = workbook.createCellStyle();
         dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
         
-        // Create Other rows and cells with employees data
         int rowNum = 1;
         for(ReportSalesSummary object: list) {
             Row row = sheet.createRow(rowNum++);
@@ -166,7 +159,6 @@ public class ExcelExport {
             row.createCell(15).setCellValue(object.getDic());
         }
 
-		// Resize all columns to fit the content size
         for(int i = 0; i < columns.length; i++) {
             sheet.autoSizeColumn(i);
         }

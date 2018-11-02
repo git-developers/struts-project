@@ -1,10 +1,10 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <s:if test="%{accruedConciliation.status}">
-	<%@include file="../modal/success.jsp" %>
+	<%@include file="../../modal/success.jsp" %>
 </s:if>
 <s:else>
-	<%@include file="../modal/error.jsp" %>
+	<%@include file="../../modal/error.jsp" %>
 </s:else>
 
 <table class="table table-condensed">
@@ -16,7 +16,7 @@
     <tbody>
 		<tr>
 			<td>
-				<s:property value = "accruedIssue.resultado"/>
+				<s:property value = "accruedConciliation.resultado"/>
 			</td>
 		</tr>
    </tbody>

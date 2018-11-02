@@ -1,8 +1,4 @@
 
-	
-	
-		
-            	
         <!-- LEFT -->
 		<div class="col-md-6">
 		<div class="box box-primary">
@@ -10,7 +6,7 @@
 		    <div class="box-header with-border">
 		      <h3 class="box-title">Comprobante Origen</h3>
 		    </div>
-		    
+		    noteCredit
 		    	<!-- BODY -->
 		      <div class="box-body">
 		      

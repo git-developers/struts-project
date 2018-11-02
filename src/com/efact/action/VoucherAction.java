@@ -43,7 +43,6 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	
 	@Override
 	public String execute() throws Exception {
-		
 		return SUCCESS;
 	}
 

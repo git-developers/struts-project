@@ -78,4 +78,9 @@ public class MySqlDaoFactory extends DaoFactory {
 		return null;
 	}
 
+	@Override
+	public NoteCreditDao getNoteCreditDao() {
+		return null;
+	}
+
 }

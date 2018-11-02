@@ -22,6 +22,7 @@ public abstract class DaoFactory {
 	public abstract VoucherDao getVoucherDao();
 	public abstract AccruedDao getAccruedDao();
 	public abstract SequenceDao getSequenceDao();
+	public abstract NoteCreditDao getNoteCreditDao();
 	public abstract ReportSalesRecordDao getReportSalesRecordDao();
 	public abstract ReportSalesSummaryDao getReportSalesSummaryDao();
 	

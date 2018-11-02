@@ -13,6 +13,8 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		
+		
 		<action name="comprobante-por-lote" class="com.efact.action.VoucherAction" method="index">
 			<result name="success">/voucher/index.jsp</result>
 			<result name="error">/error.jsp</result>
@@ -29,18 +31,19 @@
 		</action>
 	
 	
+	
 		<action name="devengados-conciliacion" class="com.efact.action.AccruedAction" method="conciliation">
-			<result name="success">/accrued/conciliation.jsp</result>
+			<result name="success">/accrued/conciliation/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-conciliacion-search" class="com.efact.action.AccruedAction" method="conciliationSearch">
-			<result name="success">/accrued/conciliation-search.jsp</result>
+			<result name="success">/accrued/conciliation/search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-conciliacion-process" class="com.efact.action.AccruedAction" method="conciliationProcess">
-			<result name="success">/accrued/conciliation-process-result.jsp</result>
+			<result name="success">/accrued/conciliation/process-result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -49,22 +52,22 @@
 		
 		
 		<action name="devengados-emision" class="com.efact.action.AccruedAction" method="issue">
-			<result name="success">/accrued/issue.jsp</result>
+			<result name="success">/accrued/issue/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-dropdown" class="com.efact.action.AccruedAction" method="issueDropdown">
-			<result name="success">/accrued/issue-dropdown.jsp</result>
+			<result name="success">/accrued/issue/dropdown.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-search" class="com.efact.action.AccruedAction" method="issueSearch">
-			<result name="success">/accrued/issue-search.jsp</result>
+			<result name="success">/accrued/issue/search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="accrued-issue-process" class="com.efact.action.AccruedAction" method="issueProcess">
-			<result name="success">/accrued/issue-process-result.jsp</result>
+			<result name="success">/accrued/issue/process-result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		

@@ -87,16 +87,8 @@
           </div>
           </div>
     
-    
-    
 		<!-- MAIN DIV -->
 		 <div id="main-box-body" class="row">
-		       	
-	
-	
-	
-	
-	
 		
 		</div>
 		<!-- MAIN DIV -->

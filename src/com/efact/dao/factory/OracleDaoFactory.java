@@ -80,4 +80,9 @@ public class OracleDaoFactory extends DaoFactory {
 		return new ReportSalesSummaryImpDao();
 	}
 
+	@Override
+	public NoteCreditDao getNoteCreditDao() {
+		return new NoteCreditImpDao();
+	}
+
 }
