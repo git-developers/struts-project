@@ -82,8 +82,6 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.registerOutParameter(4, OracleTypes.FLOAT);
             st.execute();
             
-            System.out.println(":::: processAccruedConciliation MENSAJE OUT :::: " + st.getString(3));
-            
             obj.setResultado(st.getString(3));
             obj.setStatus(Util.floatToBool(st.getFloat(4)));
 
@@ -195,6 +193,11 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 		AccruedIssue obj = new AccruedIssue();
 
       try{
+    	  
+    	  
+    	  System.out.println(":::: POLLO PARAMETRO getQueryProgram :::: " + object.getQueryProgram());
+    	  System.out.println(":::: POLLO PARAMETRO getQueryGroup :::: " + object.getQueryGroup());
+    	  System.out.println(":::: POLLO PARAMETRO getQueryDateTo :::: " + object.getQueryDateTo());
       	
           String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EMISION_DEVENGADO_CONSOLIDA(?, ?, ?, ?, ?) }";
           
@@ -207,10 +210,11 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
           st.registerOutParameter(5, OracleTypes.VARCHAR);
           st.execute();
           
-          System.out.println(":::: processAccruedIssue MENSAJE OUT :::: " + st.getString(5));
+          System.out.println(":::: POLLO MENSAJE OUT :::: " + st.getString(5));
           
           obj.setResultado(st.getString(5));
-
+          //obj.setStatus(Util.floatToBool(st.getFloat(4)));
+          
           st.close();
       
       } catch (Exception e){
