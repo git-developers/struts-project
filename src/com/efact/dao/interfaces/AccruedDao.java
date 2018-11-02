@@ -18,7 +18,9 @@ public interface AccruedDao {
 			int queryDateTo
 	) throws Exception;
 	
-	public AccruedConciliation generateAccruedConciliation(String data) throws Exception;
+	public AccruedConciliation processAccruedConciliation(String data) throws Exception;
+	
+	public AccruedIssue processAccruedIssue(AccruedIssue object) throws Exception;
 	
 	public List<AccruedIssueDropdown> listAccruedIssueDropdown(int programId, int groupId) throws Exception;
 	

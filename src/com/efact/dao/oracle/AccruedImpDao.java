@@ -66,13 +66,13 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
         
         return list;
 	}
-
+	
     @Override
-    public AccruedConciliation generateAccruedConciliation(String data) throws Exception {
+    public AccruedConciliation processAccruedConciliation(String data) throws Exception {
 
     	AccruedConciliation obj = new AccruedConciliation();
 
-//        try{
+        try{
         	
             String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }";
             
@@ -83,18 +83,18 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.registerOutParameter(3, OracleTypes.VARCHAR);
             st.execute();
             
-            System.out.println(":::: generateAccrued MENSAJE OUT :::: " + st.getString(3));
+            System.out.println(":::: processAccruedConciliation MENSAJE OUT :::: " + st.getString(3));
             
             obj.setResultado(st.getString(3));
 
             st.close();
         
-//        } catch (Exception e){
-//            System.out.println(":::: generateAccrued :::: " + e.getMessage());
-//            throw e;
-//        } finally {
-//            this.closeConnection();
-//        }
+        } catch (Exception e){
+            System.out.println(":::: processAccruedConciliation :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
         
         return obj;
     }
@@ -191,6 +191,40 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	    }
 	    
 	    return list;
+	}
+
+	@Override
+	public AccruedIssue processAccruedIssue(AccruedIssue object) throws Exception {
+		
+		AccruedIssue obj = new AccruedIssue();
+
+      try{
+      	
+          String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EMISION_DEVENGADO_CONSOLIDA(?, ?, ?, ?, ?) }";
+          
+          Connection connection = OracleDaoFactory.getMainConnection();
+          CallableStatement st = connection.prepareCall(sql);             
+          st.setInt(1, object.getQueryProgram());
+          st.setInt(2, object.getQueryGroup());
+          st.setInt(3, object.getQueryDateTo());
+          st.setString(4, "EFACT");
+          st.registerOutParameter(5, OracleTypes.VARCHAR);
+          st.execute();
+          
+          System.out.println(":::: processAccruedIssue MENSAJE OUT :::: " + st.getString(5));
+          
+          obj.setResultado(st.getString(5));
+
+          st.close();
+      
+      } catch (Exception e){
+          System.out.println(":::: processAccruedIssue :::: " + e.getMessage());
+          throw e;
+      } finally {
+          this.closeConnection();
+      }
+      
+      return obj;
 	}
 
 }

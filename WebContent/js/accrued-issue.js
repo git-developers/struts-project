@@ -42,27 +42,13 @@
         };
         
         base.process = function(context) {
-        	
-        	var rows = [];
-        	$("table#accrued-table tbody tr").each(function (i, row) {
-        		
-        		var isCheck = $(row).find('td:eq(1) input[type=checkbox]').prop('checked');
-
-        	    if(!isCheck) {
-        	        return true;
-        	    }
-        	    
-        	    rows.push({
-        	    	reaId: $(row).find('td:eq(0) input[name="rea_id"]').val()
-        	    });
-        	});
 
             $.ajax({
                 url: options.contextPath + '/accrued-issue-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: JSON.stringify(rows)
+                	fields: $(context).serialize()
                 },
                 
                 beforeSend: function(jqXHR, settings) {
@@ -71,16 +57,12 @@
                 success: function(data, textStatus, jqXHR) {
                 	$('#modal-process').modal('show');
                 	$('#modal-process').find('.modal-body').html(data);
-                	$("table#accrued-table tbody").html('<tr><td colspan="9" align="center">Inicie una nueva busqueda.</td></tr>');
+                	$("table#accrued-table tbody").html('<tr><td colspan="11" align="center">Inicie una nueva busqueda.</td></tr>');
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher process");
                 }
             });
-        };
-        
-        base.checkAll = function(context) {
-        	$('input:checkbox').not(context).prop('checked', context.checked);
         };
         
         base.program = function(context) {
@@ -152,19 +134,8 @@
             	bp.group(this);
         	});
             
-            $("#check-all").click(function(event) {
-            	bp.checkAll(this);
-        	});
-            
             $(".accrued-process").click(function( event ) {
             	event.preventDefault();
-            	
-                if (!$('.object-data').is(':checked')) {
-                	
-                	alert('Seleccione al menos un comprobante');
-                    return;
-                }
-            	
                 bp.process(this);
             });
 

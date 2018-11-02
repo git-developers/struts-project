@@ -24,6 +24,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	private DaoFactory dao;
 	private Gson gson;
 	private AccruedConciliation accruedConciliation;
+	private AccruedIssue accruedIssue;
 	private List<Program> listProgram;
 	private List<Group> listGroup;
 	private List<AccruedConciliation> listAccruedConciliation;
@@ -86,7 +87,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         System.out.print("TEXTO_OUT ::: " + sb.toString());
         
-        accruedConciliation = accruedDao.generateAccruedConciliation(sb.toString()); 
+        accruedConciliation = accruedDao.processAccruedConciliation(sb.toString()); 
 
         return SUCCESS;
 	}
@@ -139,10 +140,11 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String issueProcess() throws Exception {
 		
         String fields = request.getParameter("fields");
-        Type listType = new TypeToken<List<AccruedIssue>>(){}.getType();
-        List<AccruedIssue> list = new Gson().fromJson(fields, listType);
+        AccruedIssue accruedObj = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
+        
+        accruedIssue = accruedDao.processAccruedIssue(accruedObj); 
         
 		return SUCCESS;
 	}
@@ -221,6 +223,14 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 
 	public void setAccruedConciliation(AccruedConciliation accruedConciliation) {
 		this.accruedConciliation = accruedConciliation;
+	}
+
+	public AccruedIssue getAccruedIssue() {
+		return accruedIssue;
+	}
+
+	public void setAccruedIssue(AccruedIssue accruedIssue) {
+		this.accruedIssue = accruedIssue;
 	}
 	
 }

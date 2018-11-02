@@ -16,6 +16,7 @@ public class AccruedIssue implements Serializable {
 	private String noAfecto; 
 	private float igv;
 	private float total;
+	private String resultado; 
 	
     private String queryProgram;    
     private String queryGroup;
@@ -96,6 +97,12 @@ public class AccruedIssue implements Serializable {
 	}
 	public void setQueryDateTo(String queryDateTo) {
 		this.queryDateTo = queryDateTo;
+	}
+	public String getResultado() {
+		return resultado;
+	}
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
 	}
 
 }
