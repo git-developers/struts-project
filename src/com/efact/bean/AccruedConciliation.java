@@ -18,6 +18,7 @@ public class AccruedConciliation implements Serializable {
 	private String reaId;
 	private String sistema;
 	private String resultado;
+	private boolean status;
 	
     private String queryFrom;    
     private String queryTo;
@@ -110,5 +111,12 @@ public class AccruedConciliation implements Serializable {
 	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 
 }

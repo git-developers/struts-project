@@ -23,7 +23,8 @@
     <tbody>
 		<tr>
 			<td>
-				<s:property value = "#accruedConciliation.resultado"/>
+				<s:property value = "accruedConciliation.status"/>
+				<s:property value = "accruedConciliation.resultado"/>
 			</td>
 		</tr>
    </tbody>

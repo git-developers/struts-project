@@ -20,5 +20,11 @@ public class Util {
 		}
 	}
 	
-	
+	public static boolean floatToBool(float s) {
+		try {
+			return s > 0 ? true : false;
+		}catch (Exception e) {
+			return false;
+		}
+	}
 }
