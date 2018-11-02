@@ -64,6 +64,18 @@
         	
         };
         
+        base.rowCheckbox = function(context) {
+        	
+        	console.log("rowCheckbox :: " );
+        	
+        	if (context.checked) {
+        		console.log("11111111");
+        	} else {
+        		console.log("2222222");
+        	}
+        	
+        };
+        
         // Private Functions
         function debug(e) {
           console.log(e);
@@ -83,10 +95,14 @@
                 bp.search(this);
             });
             
-            $(".note-credit-process").click(function( event ) {
-            	event.preventDefault();            	
+            $(".note-credit-process").click(function( event ) {          	
                 bp.process(this);
             });
+ 
+        	$(document).on('change', 'input:checkbox.row-checkbox', function(event) {
+                bp.rowCheckbox(this);
+            });
+            
 
         });
     };

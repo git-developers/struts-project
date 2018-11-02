@@ -14,7 +14,7 @@ import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
 public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
-
+	
 	@Override
 	public List<Voucher> search(Voucher object) throws Exception {
 		
@@ -85,7 +85,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
         
         return list;
 	}
-
+	
     @Override
     public int getSequence() throws Exception {
        

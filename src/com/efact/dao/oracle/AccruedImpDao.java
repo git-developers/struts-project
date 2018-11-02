@@ -194,7 +194,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
       try{
       	
-          String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EMISION_DEVENGADO_CONSOLIDA(?, ?, ?, ?, ?) }";
+          String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EMISION_DEVENGADO_CONSOLIDA(?, ?, ?, ?, ?, ?) }";
           
           Connection connection = OracleDaoFactory.getMainConnection();
           CallableStatement st = connection.prepareCall(sql);             
@@ -203,12 +203,13 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
           st.setInt(3, object.getQueryDateTo());
           st.setString(4, "EFACT");
           st.registerOutParameter(5, OracleTypes.VARCHAR);
+          st.registerOutParameter(6, OracleTypes.FLOAT);
           st.execute();
           
           System.out.println(":::: POLLO MENSAJE OUT :::: " + st.getString(5));
           
           obj.setResultado(st.getString(5));
-          //obj.setStatus(Util.floatToBool(st.getFloat(4)));
+          obj.setStatus(Util.floatToBool(st.getFloat(6)));
           
           st.close();
       

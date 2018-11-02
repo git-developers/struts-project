@@ -22,6 +22,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	private DaoFactory dao;
 	private Gson gson;
 	private NoteCredit noteCredit;
+	private List<NoteCreditType> listNoteCreditType;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -46,15 +47,9 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         String fields = request.getParameter("fields");
         NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
         
-        System.out.print("search -- JSON ::::: " + serializeToJSON(fields) );
-        
         NoteCreditDao ncDao = dao.getNoteCreditDao();
-        noteCredit = ncDao.search(ncObj);
-        
-        
-        
-//        noteCredit = new NoteCredit();
-//        noteCredit.setContrato("XXXXXX-DDDDDDD");
+        noteCredit = ncDao.search(ncObj);  
+        listNoteCreditType = ncDao.listNoteCreditType();
         
 		return SUCCESS;
 	}
@@ -70,6 +65,16 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	
 	
 	
+	public List<NoteCreditType> getListNoteCreditType() {
+		return listNoteCreditType;
+	}
+
+
+	public void setListNoteCreditType(List<NoteCreditType> listNoteCreditType) {
+		this.listNoteCreditType = listNoteCreditType;
+	}
+
+
 	public NoteCredit getNoteCredit() {
 		return noteCredit;
 	}

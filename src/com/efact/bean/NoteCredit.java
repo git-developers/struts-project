@@ -30,8 +30,8 @@ public class NoteCredit implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getQueryVoucher() {
-		return queryVoucher;
+	public int getQueryVoucher() {
+		return Util.strToInt(queryVoucher);
 	}
 	public void setQueryVoucher(String queryVoucher) {
 		this.queryVoucher = queryVoucher;

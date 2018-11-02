@@ -17,6 +17,7 @@ public class AccruedIssue implements Serializable {
 	private float igv;
 	private float total;
 	private String resultado; 
+	private boolean status;
 	
     private String queryProgram;    
     private String queryGroup;
@@ -103,6 +104,12 @@ public class AccruedIssue implements Serializable {
 	}
 	public void setResultado(String resultado) {
 		this.resultado = resultado;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }

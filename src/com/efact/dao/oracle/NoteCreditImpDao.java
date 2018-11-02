@@ -30,16 +30,17 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
         try{
     		
-            String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_CABECERA(?, ?, ?) } "; 
-            /*
+            String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_CABECERA(?, ?, ?, ?) } "; 
+            
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
-            st.setInt(1, object.getQuerySerie());
-            st.setInt(2, object.getQueryNumber());
-            st.registerOutParameter(3, OracleTypes.CURSOR);
+			st.setInt(1, object.getQueryVoucher());
+            st.setInt(2, object.getQuerySerie());
+            st.setInt(3, object.getQueryNumber());
+            st.registerOutParameter(4, OracleTypes.CURSOR);
             st.execute();
         	
-            ResultSet rs = (ResultSet) st.getObject(3);
+            ResultSet rs = (ResultSet) st.getObject(4);
             
             while (rs.next()){
             	objectOut.setId(rs.getInt("RVB_ID"));
@@ -56,7 +57,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             rs.close();
             st.close();
-            */
+            
             
         } catch (Exception e){
         	System.out.print("header -- Exception ::::: " + e.getMessage());
@@ -78,16 +79,17 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
         try{
     		
-            String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_DETALLE(?, ?, ?) } "; 
-            /*
+            String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_DETALLE(?, ?, ?, ?) } "; 
+            
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
-            st.setInt(1, object.getQuerySerie());
-            st.setInt(2, object.getQueryNumber());
-            st.registerOutParameter(3, OracleTypes.CURSOR);
+			st.setInt(1, object.getQueryVoucher());
+            st.setInt(2, object.getQuerySerie());
+            st.setInt(3, object.getQueryNumber());
+            st.registerOutParameter(4, OracleTypes.CURSOR);
             st.execute();
         	
-            ResultSet rs = (ResultSet) st.getObject(3);
+            ResultSet rs = (ResultSet) st.getObject(4);
             
             while (rs.next()){
             	
@@ -114,7 +116,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             rs.close();
             st.close();
-            */
+            
         } catch (Exception e){
         	System.out.print("detail -- Exception ::::: " + e.getMessage());
             throw e;
@@ -124,5 +126,40 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         
         return list;
 	}
+
+    @Override
+    public List<NoteCreditType> listNoteCreditType() throws Exception {
+       
+        List<NoteCreditType> list = new ArrayList<>();
+
+        try{
+
+            String query = "{ call FIN_PKG_NOTACREDITO.LISTAR_TIPO_NOTACREDITO() } ";
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+            Statement stmt = connection.createStatement();
+            ResultSet rs =  stmt.executeQuery(query);
+
+            while (rs.next()) {
+            	NoteCreditType obj = new NoteCreditType();
+            	obj.setId(rs.getString("TNC_COD"));
+            	obj.setName(rs.getString("RVB_DESCRIPCION"));
+            	
+            	list.add(obj);
+            }
+            
+            rs.close();
+            stmt.close();
+            
+        } catch (Exception e){
+            System.out.println("listNoteCreditType -- Exception  :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return list;
+    }
+    
 
 }

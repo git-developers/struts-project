@@ -209,9 +209,12 @@
       	<div class="col-md-4">
 	      	<div class="form-group">
 	          <label for="">Tipo NC (09)</label>
-                  <select class="form-control" name="xxxxx">
-           			<option value="0">Descuento por Item</option>
-                      	<option value="1">xxxx</option>
+        		 <select class="form-control" id="tipo-comprobante" name="">
+                  	<s:iterator value="listNoteCreditType" var="noteCredit">
+                  		<option value="<s:property value = "#noteCredit.id"/>">
+                  			<s:property value = "#noteCredit.name"/>
+                 			</option>
+                 		</s:iterator>
                   </select>
 	        </div>
       	</div>
@@ -307,7 +310,7 @@
               <tbody>
 					<s:if test="noteCredit.listNoteCreditDetail.empty">
 					    <tr>
-							<td colspan="6" align="center">
+							<td colspan="7" align="center">
 								El proceso no retorno datos.
 							</td>
 						</tr>
@@ -317,7 +320,7 @@
 						<s:iterator value="noteCredit.listNoteCreditDetail" var="object" status="status">
 				               <tr>
 			               		 <td>
-			               		 	<input type="checkbox">
+			               		 	<input type="checkbox" class="row-checkbox">
 	               		 		 </td>	
 				                 <td>
 				                 	<s:property value = "#object.descripcion"/>
@@ -345,9 +348,9 @@
               
               
               
-              
+              <!--  
                <tr>
-              	 <td><input type="checkbox"></td>	
+              	 <td><input type="checkbox" class="row-checkbox"></td>	
                  <td>Capital 45</td>
                  <td>S/</td>
                  <td>
@@ -360,7 +363,7 @@
                  <td>43.00</td>
                </tr>
                <tr>
-               	<td><input type="checkbox"></td>	
+               	<td><input type="checkbox" class="row-checkbox"></td>	
                  <td>Seguro</td>
                  <td>S/</td>
                  <td>
@@ -372,7 +375,7 @@
                  <td>0.00</td>
                  <td>59.00</td>
                </tr>
-               
+               -->
                
             	</tbody>
             	<tfoot class="bg-green">
