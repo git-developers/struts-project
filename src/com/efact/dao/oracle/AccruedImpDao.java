@@ -72,7 +72,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
     	AccruedConciliation obj = new AccruedConciliation();
 
-        try{
+//        try{
         	
             String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }";
             
@@ -89,12 +89,12 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
             st.close();
         
-        } catch (Exception e){
-            System.out.println(":::: generateAccrued :::: " + e.getMessage());
-            throw e;
-        } finally {
-            this.closeConnection();
-        }
+//        } catch (Exception e){
+//            System.out.println(":::: generateAccrued :::: " + e.getMessage());
+//            throw e;
+//        } finally {
+//            this.closeConnection();
+//        }
         
         return obj;
     }
