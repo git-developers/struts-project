@@ -16,7 +16,7 @@
     <tbody>
 		<tr>
 			<td>
-				<s:property value = "#accruedIssue.resultado"/>
+				<s:property value = "accruedIssue.resultado"/>
 			</td>
 		</tr>
    </tbody>
