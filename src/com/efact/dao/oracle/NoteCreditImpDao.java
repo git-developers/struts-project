@@ -31,7 +31,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         try{
     		
             String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_CABECERA(?, ?, ?) } "; 
-            
+            /*
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.setInt(1, object.getQuerySerie());
@@ -56,6 +56,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             rs.close();
             st.close();
+            */
             
         } catch (Exception e){
         	System.out.print("header -- Exception ::::: " + e.getMessage());
@@ -78,7 +79,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         try{
     		
             String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_DETALLE(?, ?, ?) } "; 
-            
+            /*
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.setInt(1, object.getQuerySerie());
@@ -113,7 +114,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             rs.close();
             st.close();
-            
+            */
         } catch (Exception e){
         	System.out.print("detail -- Exception ::::: " + e.getMessage());
             throw e;

@@ -47,20 +47,15 @@
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: $("form[name='form-note-credit']").serialize()
+                	fields: $("form[name='form-note-credit-process']").serialize()
                 },
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').find('.modal-body').html('<p><i class="fa fa-2x fa-refresh fa-spin"></i><span style="font-size: 16px; margin-left: 5px">Procesando...</span></p>');
                 	$('#modal-process').modal('show');
                 },
-                success: function(data, textStatus, jqXHR) {
-                	
-                	setTimeout(function() {
-                		$('#modal-process').modal('show');
-                		$('#modal-process').find('.modal-body').html(data);
-                		$("div#main-box-body").html('');
-            		}, 1000);
-                	
+                success: function(data, textStatus, jqXHR) {	
+            		$('#modal-process').modal('show');
+            		$('#modal-process').find('.modal-body').html(data);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher search");

@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<form role="form" name="form-note-credit">
+<form role="form" name="form-note-credit-process">
 
 <!-- LEFT -->
 <div class="col-md-6">
@@ -138,8 +138,12 @@
             	</tbody>
             	<tfoot class="bg-blue">
 	               <tr>
-	                 <td>Total</td>
-	                 <td>S/</td>
+	                 <td colspan="2">Total</td>
+	                 <!-- 
+	                 <td>
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].simbolo"/>
+	                 </td>
+	                  -->
 	                 <td>
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].noAfectoSum"/>
                  	</td>
@@ -186,8 +190,7 @@
 	          <input 
 	          		type="text" 
 	          		class="form-control" 
-	          		placeholder="[000-0000]" 
-	          		value="F003-123456" 
+	          		value="Nota de cr&eacute;dito" 
 	          		readonly="readonly">
 	        </div>
       	</div>
@@ -198,8 +201,7 @@
 	          <input 
 	          	type="text" 
 	          	class="form-control"
-	          	placeholder="[000-0000]" 
-	          	value="<s:property value="noteCredit.numero"/>" 
+	          	placeholder=""
 	          	readonly="readonly">
 	        </div>
       	</div>
@@ -225,8 +227,7 @@
                   <input 
                   	type="date" 
                   	class="form-control" 
-                  	value="<s:property value="noteCredit.fechaEmisionDestino"/>" 
-                  	readonly="readonly">
+                  	value="<s:property value="noteCredit.fechaEmision"/>" >
                 </div>
              	</div>
       	</div>
@@ -242,40 +243,46 @@
                   <input 
                   	type="date" 
                   	class="form-control" 
-                  	value="2018-10-10" 
-                  	readonly="readonly">
+                  	value="<s:property value="noteCredit.fechaVencimiento"/>" >
                 </div>
              	</div>
       	</div>
       	
-      	<div class="row">
-	      	<div class="col-md-12">
-		        <div class="form-group">
-					
-					<div class="col-md-4">
-						<label>Total</label>
+      	<div class="col-md-12">
+      	
+      		<div class="row">
+	      		<div class="col-md-4">
+			        <div class="form-group">
+		                <label>Total</label>
+		
 		                <div class="input-group">
 		                  <div class="input-group-addon">
-		                    S/
+		                    <i class="fa fa-money"></i>
 		                  </div>
 		                  <input 
-		                  		type="number" 
-		                  		class="form-control" 
-		                  		value="<s:property value="noteCredit.listNoteCreditDetail[0].totalSum"/>">
+		                  	type="number" 
+		                  	class="form-control" 
+		                  	readonly="readonly">
 		                </div>
-	                </div>
-	                						
-					<div class="col-md-8">
-						<label>&nbsp;</label>
+		             </div>
+	             </div>
+	             
+	             <div class="col-md-8">
+		             <div class="form-group">
+		                <label>&nbsp;</label>
+		
 		                <div class="input-group">
 		                  <div class="input-group-addon">
-		                    S/
+		                    <i class="fa fa-align-left"></i>
 		                  </div>
-		                  <input type="text" class="form-control" value="Doscientos dieciocho y 00/100 soles">
+		                  <input 
+		                  	type="number" 
+		                  	class="form-control" 
+		                  	readonly="readonly">
 		                </div>
-	                </div>
-              	</div>
-	      	</div>
+		             </div>
+	             </div>
+             </div>
       	</div>
       	
       </div>
@@ -298,8 +305,49 @@
                </tr>
 		  </thead>
               <tbody>
+					<s:if test="noteCredit.listNoteCreditDetail.empty">
+					    <tr>
+							<td colspan="6" align="center">
+								El proceso no retorno datos.
+							</td>
+						</tr>
+					</s:if>
+					<s:else>
+						
+						<s:iterator value="noteCredit.listNoteCreditDetail" var="object" status="status">
+				               <tr>
+			               		 <td>
+			               		 	<input type="checkbox">
+	               		 		 </td>	
+				                 <td>
+				                 	<s:property value = "#object.descripcion"/>
+				                 </td>
+				                 <td>
+				                 	<s:property value = "#object.simbolo"/>
+				                 </td>
+				                 <td>
+				                 	<input type="number" class="form-control">
+				                 </td>
+				                 <td>
+				                 	<input type="number" class="form-control">
+				                 </td>
+				                 <td>
+				                 	<s:property value = "#object.igv"/>%
+				                 </td>
+				                 <td>
+				                 	<s:property value = "#object.total"/>
+				                 </td>
+				               </tr>
+						 </s:iterator>
+					
+					</s:else>
+              
+              
+              
+              
+              
                <tr>
-              		<td><input type="checkbox"></td>	
+              	 <td><input type="checkbox"></td>	
                  <td>Capital 45</td>
                  <td>S/</td>
                  <td>
@@ -324,6 +372,8 @@
                  <td>0.00</td>
                  <td>59.00</td>
                </tr>
+               
+               
             	</tbody>
             	<tfoot class="bg-green">
                <tr>

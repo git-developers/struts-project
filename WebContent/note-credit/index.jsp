@@ -32,8 +32,7 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Comprobante</label>
-		                  <select class="form-control" name="queryVoucher">
-                       	  	<option value="0">Todos</option>        
+		                  <select class="form-control" name="queryVoucher">      
 	                		<option value="1">Boleta de venta</option>
                 			<option value="2">Factura</option>
 		                  </select>
