@@ -53,13 +53,9 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		
         String fields = request.getParameter("fields");
         ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
+        
         ReportSalesRecordDao rsDao = dao.getReportSalesRecordDao();
-    	
-        listReportSalesRecord = rsDao.salesRecordSearch(
-                rs.getQuerySequence(),
-                rs.getQueryFrom(),
-                rs.getQueryTo()
-        );
+        listReportSalesRecord = rsDao.salesRecordSearch(rs);
         
         return SUCCESS;
 	}
@@ -70,12 +66,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
         ReportSalesRecord rs = gson.fromJson(serializeToJSON(fields), ReportSalesRecord.class);
         
         ReportSalesRecordDao rsDao = dao.getReportSalesRecordDao();
-    	
-        listReportSalesRecord = rsDao.salesRecordSearch(
-                rs.getQuerySequence(),
-                rs.getQueryFrom(),
-                rs.getQueryTo()
-        );
+        listReportSalesRecord = rsDao.salesRecordSearch(rs);
         
 		this.excelStream = ExcelExport.salesRecordExport(listReportSalesRecord);
 		
@@ -92,7 +83,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
         ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
         ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
     	
-        listReportSalesSummary = rsDao.salesSummarySearch(rs.getQueryYear());
+        listReportSalesSummary = rsDao.salesSummarySearch(rs);
         
 		return SUCCESS;
 	}
@@ -101,17 +92,14 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		
         String fields = request.getParameter("fields");
         ReportSalesSummary rs = gson.fromJson(serializeToJSON(fields), ReportSalesSummary.class);
+        
         ReportSalesSummaryDao rsDao = dao.getReportSalesSummaryDao();
-    	
-        listReportSalesSummary = rsDao.salesSummarySearch(rs.getQueryYear());
+        listReportSalesSummary = rsDao.salesSummarySearch(rs);
         
 		this.excelStream = ExcelExport.salesRecordSummary(listReportSalesSummary);
         
 		return SUCCESS;
 	}
-	
-	
-	
 
 	public InputStream getExcelStream() {
 		return excelStream;

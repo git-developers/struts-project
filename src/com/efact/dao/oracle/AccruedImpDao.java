@@ -15,10 +15,7 @@ import oracle.jdbc.OracleTypes;
 public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	
 	@Override
-	public List<AccruedConciliation> conciliationSearch(
-		    Date from,    
-		    Date to
-    ) throws Exception {
+	public List<AccruedConciliation> conciliationSearch(AccruedConciliation object) throws Exception {
 		
         List<AccruedConciliation> list = new ArrayList<>();
 
@@ -28,8 +25,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);       
-            st.setDate(1, from);
-            st.setDate(2, to);
+            st.setDate(1, object.getQueryFrom());
+            st.setDate(2, object.getQueryTo());
             st.setString(3, "efact");
             st.registerOutParameter(4, OracleTypes.VARCHAR);
             st.registerOutParameter(5, OracleTypes.CURSOR);
@@ -139,26 +136,22 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
     }
 
 	@Override
-	public List<AccruedIssue> issueSearch(
-			int programId, 
-			int groupId, 
-			int queryDateTo
-	) throws Exception {
+	public List<AccruedIssue> issueSearch(AccruedIssue object) throws Exception {
 
         List<AccruedIssue> list = new ArrayList<>();
 
         try{
         	
-        	System.out.println("queryDateTo ::: " + queryDateTo);
+        	System.out.println("queryDateTo ::: " + object.getQueryDateTo());
 	        	
 	        String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_PREVIEW_EMITE_DEVENGADO(?, ?, ?) } "; 
 	        
 	        Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);       
 	        st.registerOutParameter(1, OracleTypes.CURSOR);
-	        st.setInt(2, programId);
-	        st.setInt(3, groupId);
-	        st.setInt(4, queryDateTo);
+	        st.setInt(2, object.getQueryProgram());
+	        st.setInt(3, object.getQueryGroup());
+	        st.setInt(4, object.getQueryDateTo());
 
 	        st.execute();
 	    	

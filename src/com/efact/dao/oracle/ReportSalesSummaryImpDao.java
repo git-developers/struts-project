@@ -15,11 +15,11 @@ import oracle.jdbc.OracleTypes;
 public class ReportSalesSummaryImpDao extends OracleDaoFactory implements ReportSalesSummaryDao  {
 
 	@Override
-	public List<ReportSalesSummary> salesSummarySearch(int year) throws Exception {
+	public List<ReportSalesSummary> salesSummarySearch(ReportSalesSummary object) throws Exception {
 		
         List<ReportSalesSummary> list = new ArrayList<>();
         
-    	System.out.print("YEAR ::: " + year);
+    	System.out.print("YEAR ::: " + object.getQueryYear());
 
         try{
 
@@ -28,33 +28,33 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);
-            st.setInt(2, year);
+            st.setInt(2, object.getQueryYear());
             st.setString(3, "EFACT");
             st.execute();
             
             ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){
-            	ReportSalesSummary object = new ReportSalesSummary();
+            	ReportSalesSummary obj = new ReportSalesSummary();
             	
-            	object.setYear(rs.getString("ANIO"));
-            	object.setTipo(rs.getString("TIPO"));
-            	object.setSerie(rs.getString("SERIE"));
-            	object.setPrograma(rs.getString("PROGRAMA"));
-            	object.setEne(rs.getInt("ENE"));
-            	object.setFeb(rs.getInt("FEB"));
-            	object.setMar(rs.getInt("MAR"));
-            	object.setAbr(rs.getInt("ABR"));
-            	object.setMay(rs.getInt("MAY"));
-            	object.setJun(rs.getInt("JUN"));
-            	object.setJul(rs.getInt("JUL"));
-            	object.setAgo(rs.getInt("AGO"));
-            	object.setSet(rs.getInt("SET"));
-            	object.setOct(rs.getInt("OCT"));
-            	object.setNov(rs.getInt("NOV"));
-            	object.setDic(rs.getInt("DIC"));
+            	obj.setYear(rs.getString("ANIO"));
+            	obj.setTipo(rs.getString("TIPO"));
+            	obj.setSerie(rs.getString("SERIE"));
+            	obj.setPrograma(rs.getString("PROGRAMA"));
+            	obj.setEne(rs.getInt("ENE"));
+            	obj.setFeb(rs.getInt("FEB"));
+            	obj.setMar(rs.getInt("MAR"));
+            	obj.setAbr(rs.getInt("ABR"));
+            	obj.setMay(rs.getInt("MAY"));
+            	obj.setJun(rs.getInt("JUN"));
+            	obj.setJul(rs.getInt("JUL"));
+            	obj.setAgo(rs.getInt("AGO"));
+            	obj.setSet(rs.getInt("SET"));
+            	obj.setOct(rs.getInt("OCT"));
+            	obj.setNov(rs.getInt("NOV"));
+            	obj.setDic(rs.getInt("DIC"));
 
-                list.add(object);
+                list.add(obj);
             }
             
             rs.close();

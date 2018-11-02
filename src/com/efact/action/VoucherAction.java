@@ -66,16 +66,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
         Voucher vs = gson.fromJson(serializeToJSON(fields), Voucher.class);
         
         VoucherDao voucherDao = dao.getVoucherDao();
-    	
-        listVoucher = voucherDao.search(
-        		vs.getQueryProgram(),
-        		vs.getQueryGroup(),
-        		vs.getQueryBank(),
-                vs.getVoucher(),
-                vs.getQueryStatus(),
-                vs.getQueryFrom(),
-                vs.getQueryTo()
-        );
+        listVoucher = voucherDao.search(vs);
         
         return SUCCESS;
 	}

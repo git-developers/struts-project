@@ -16,15 +16,7 @@ import oracle.jdbc.OracleTypes;
 public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
 	@Override
-	public List<Voucher> search(
-			int programId,
-			int groupId,
-			int bankId,
-			String voucher,
-			int status, 
-		    Date from,    
-		    Date to
-    ) throws Exception {
+	public List<Voucher> search(Voucher object) throws Exception {
 		
         List<Voucher> list = new ArrayList<>();
 
@@ -35,13 +27,13 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);
-            st.setInt(2, programId);
-            st.setInt(3, groupId);
-            st.setInt(4, bankId);            
-            st.setString(5, voucher);
-            st.setInt(6, status);
-            st.setDate(7, from);
-            st.setDate(8,to); 
+            st.setInt(2, object.getQueryProgram());
+            st.setInt(3, object.getQueryGroup());
+            st.setInt(4, object.getQueryBank());            
+            st.setString(5, object.getVoucher());
+            st.setInt(6, object.getQueryStatus());
+            st.setDate(7, object.getQueryFrom());
+            st.setDate(8, object.getQueryTo()); 
             st.execute();
         	
             ResultSet rs = (ResultSet) st.getObject(1);
@@ -109,7 +101,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
             while (rs.next()) {
             	sequence = rs.getInt("NEXTVAL");
-               System.out.println("SEQUENCIA NEXTVAL::: " + sequence);
+            	System.out.println("SEQUENCIA NEXTVAL::: " + sequence);
             }
             
             rs.close();

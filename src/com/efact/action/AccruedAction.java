@@ -57,11 +57,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         AccruedConciliation acc = gson.fromJson(serializeToJSON(fields), AccruedConciliation.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
-    	
-        listAccruedConciliation = accruedDao.conciliationSearch(
-        		acc.getQueryFrom(),
-        		acc.getQueryTo()
-        );
+        listAccruedConciliation = accruedDao.conciliationSearch(acc);
         
         return SUCCESS;
 	}
@@ -124,15 +120,10 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public String issueSearch() throws Exception {
 		
         String fields = request.getParameter("fields");
-        AccruedIssue vs = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
+        AccruedIssue accruedIssue = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
         
         AccruedDao accruedDao = dao.getAccruedDao();
-    	
-        listAccruedIssue = accruedDao.issueSearch(
-        		vs.getQueryProgram(),
-        		vs.getQueryGroup(),
-        		vs.getQueryDateTo()
-        );
+        listAccruedIssue = accruedDao.issueSearch(accruedIssue);
 		
 		return SUCCESS;
 	}
@@ -141,16 +132,12 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 		
         String fields = request.getParameter("fields");
         AccruedIssue accruedObj = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
-        
-        System.out.println(":::: issueProcess :::: " + accruedObj.getQueryDateTo());
-        
+
         AccruedDao accruedDao = dao.getAccruedDao();
         accruedIssue = accruedDao.processAccruedIssue(accruedObj); 
         
 		return SUCCESS;
 	}
-	
-	
 	
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {

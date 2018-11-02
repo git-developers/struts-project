@@ -6,11 +6,7 @@ import com.efact.bean.*;
 
 public interface ReportSalesRecordDao {
 
-	public List<ReportSalesRecord> salesRecordSearch(
-			int sequence, 
-			Date from,    
-			Date to
-    ) throws Exception;
+	public List<ReportSalesRecord> salesRecordSearch(ReportSalesRecord object) throws Exception;
 	
 	public ReportSalesRecord findOneById(String id) throws Exception;
 	
