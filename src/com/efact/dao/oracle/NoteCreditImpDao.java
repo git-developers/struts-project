@@ -134,11 +134,14 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
         try{
 
-            String query = "{ call FIN_PKG_NOTACREDITO.LISTAR_TIPO_NOTACREDITO() } ";
+            String sql = "{ call FIN_PKG_NOTACREDITO.LISTAR_TIPO_NOTACREDITO(?) } ";
             
             Connection connection = OracleDaoFactory.getMainConnection();
-            Statement stmt = connection.createStatement();
-            ResultSet rs =  stmt.executeQuery(query);
+			CallableStatement st = connection.prepareCall(sql);
+            st.registerOutParameter(1, OracleTypes.CURSOR);
+            st.execute();
+            
+            ResultSet rs = (ResultSet) st.getObject(1);
 
             while (rs.next()) {
             	NoteCreditType obj = new NoteCreditType();
@@ -149,7 +152,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             }
             
             rs.close();
-            stmt.close();
+            st.close();
             
         } catch (Exception e){
             System.out.println("listNoteCreditType -- Exception  :::: " + e.getMessage());
