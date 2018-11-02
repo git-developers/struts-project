@@ -51,10 +51,19 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.search(ncObj);
         
+        
+        
+//        noteCredit = new NoteCredit();
+//        noteCredit.setContrato("XXXXXX-DDDDDDD");
+        
 		return SUCCESS;
 	}
 
 	public String process() throws Exception {
+		
+        String fields = request.getParameter("fields");
+        NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
+		
 		return SUCCESS;
 	}
 	

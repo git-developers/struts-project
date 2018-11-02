@@ -69,6 +69,10 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
 	private List<NoteCreditDetail> detail(NoteCredit object) throws Exception {
 		
+		float afectoSum = 0;
+		float igvSum = 0;
+		float noAfectoSum = 0;
+		float totalSum = 0;
         List<NoteCreditDetail> list = new ArrayList<>();
 
         try{
@@ -89,10 +93,20 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	NoteCreditDetail obj = new NoteCreditDetail();
             	obj.setDescripcion(rs.getString("RVB_DESCRIPCION"));
             	obj.setSimbolo(rs.getString("SIMBOLO"));
-            	obj.setAfecto(rs.getInt("RVB_AFECTO"));
+            	obj.setAfecto(rs.getFloat("RVB_AFECTO"));
             	obj.setIgv(rs.getFloat("RVB_IGV"));
             	obj.setNoAfecto(rs.getFloat("RVB_NOAFECTO"));
             	obj.setTotal(rs.getFloat("RVB_TOTAL"));
+            	
+            	afectoSum += rs.getFloat("RVB_AFECTO");
+            	igvSum += rs.getFloat("RVB_IGV");
+            	noAfectoSum += rs.getFloat("RVB_NOAFECTO");
+            	totalSum += rs.getFloat("RVB_TOTAL");
+            	
+               	obj.setAfectoSum(afectoSum);
+            	obj.setIgvSum(igvSum);
+            	obj.setNoAfectoSum(noAfectoSum);
+            	obj.setTotalSum(totalSum);
             	
             	list.add(obj);
             }

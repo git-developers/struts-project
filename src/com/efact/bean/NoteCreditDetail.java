@@ -14,6 +14,11 @@ public class NoteCreditDetail implements Serializable {
     private float noAfecto;
     private float total;
     
+    private float afectoSum;
+    private float noAfectoSum;
+    private float igvSum;
+    private float totalSum;
+    
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -49,6 +54,30 @@ public class NoteCreditDetail implements Serializable {
 	}
 	public void setTotal(float total) {
 		this.total = total;
+	}
+	public float getAfectoSum() {
+		return afectoSum;
+	}
+	public void setAfectoSum(float afectoSum) {
+		this.afectoSum = afectoSum;
+	}
+	public float getNoAfectoSum() {
+		return noAfectoSum;
+	}
+	public void setNoAfectoSum(float noAfectoSum) {
+		this.noAfectoSum = noAfectoSum;
+	}
+	public float getIgvSum() {
+		return igvSum;
+	}
+	public void setIgvSum(float igvSum) {
+		this.igvSum = igvSum;
+	}
+	public float getTotalSum() {
+		return totalSum;
+	}
+	public void setTotalSum(float totalSum) {
+		this.totalSum = totalSum;
 	}
     
     

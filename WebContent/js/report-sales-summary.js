@@ -27,7 +27,6 @@
                 data: {
                 	fields: $(context).serialize()
                 },
-                
                 beforeSend: function(jqXHR, settings) {
                 	$("table tbody").html('<tr><td colspan="17" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
