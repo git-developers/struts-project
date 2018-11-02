@@ -304,7 +304,7 @@
                  <th>No afecto</th>
                  <th>Afecto</th>
                  <th>IGV</th>
-                 <th>Sub total</th>
+                 <th>total</th>
                </tr>
 		  </thead>
               <tbody>
