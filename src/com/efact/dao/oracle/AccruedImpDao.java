@@ -177,8 +177,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	            obj.setNoAfecto(rs.getString("NOAFECTO"));
 	            obj.setIgv(rs.getFloat("IGV"));
 	            obj.setTotal(rs.getFloat("TOTAL"));
-	            
-	            
+
 	            list.add(obj);
 	        }
 	        
