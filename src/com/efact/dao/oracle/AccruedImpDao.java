@@ -193,11 +193,6 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 		AccruedIssue obj = new AccruedIssue();
 
       try{
-    	  
-    	  
-    	  System.out.println(":::: POLLO PARAMETRO getQueryProgram :::: " + object.getQueryProgram());
-    	  System.out.println(":::: POLLO PARAMETRO getQueryGroup :::: " + object.getQueryGroup());
-    	  System.out.println(":::: POLLO PARAMETRO getQueryDateTo :::: " + object.getQueryDateTo());
       	
           String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EMISION_DEVENGADO_CONSOLIDA(?, ?, ?, ?, ?) }";
           
