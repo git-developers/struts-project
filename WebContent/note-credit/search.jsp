@@ -348,7 +348,7 @@
               
               
               
-              <!--  
+             
                <tr>
               	 <td><input type="checkbox" class="row-checkbox"></td>	
                  <td>Capital 45</td>
@@ -375,7 +375,11 @@
                  <td>0.00</td>
                  <td>59.00</td>
                </tr>
-               -->
+               
+               
+               
+               
+               
                
             	</tbody>
             	<tfoot class="bg-green">
