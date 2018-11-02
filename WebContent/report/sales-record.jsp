@@ -33,6 +33,7 @@
 		                <div class="form-group">
 		                  <label for="">Lote</label>
 		                  <select class="form-control" id="program" name="querySequence">
+		                  	<option value="0">[todos]</option>
 		                  	<s:iterator value="listSequence" var="sequence">
 		                  		<option value="<s:property value = "#sequence.id"/>">
 		                  			<s:property value = "#sequence.name"/>

@@ -42,9 +42,12 @@
     			    <div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Serie</label>
+		                  <input type="number" class="form-control" name="querySerie">
+		                  <!-- 
 		                  <select class="form-control" name="querySerie">
                        	  	<option value="003">003</option>
 		                  </select>
+		                   -->
 		                </div>
 	        		</div>
 	        		
