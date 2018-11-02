@@ -20,7 +20,7 @@ public class AccruedIssue implements Serializable {
     private String queryProgram;    
     private String queryGroup;
     private String queryDateTo;
-    
+	private int queryCieId;
     
 	public int getRecaudoId() {
 		return recaudoId;
@@ -94,5 +94,12 @@ public class AccruedIssue implements Serializable {
 	public void setQueryDateTo(String queryDateTo) {
 		this.queryDateTo = queryDateTo;
 	}
+	public int getQueryCieId() {
+		return queryCieId;
+	}
+	public void setQueryCieId(int queryCieId) {
+		this.queryCieId = queryCieId;
+	}
+
 
 }

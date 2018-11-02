@@ -17,6 +17,7 @@ public class AccruedConciliation implements Serializable {
 	private float total;
 	private String reaId;
 	private String sistema;
+	private String resultado;
 	
     private String queryFrom;    
     private String queryTo;
@@ -103,6 +104,11 @@ public class AccruedConciliation implements Serializable {
 	public void setSistema(String sistema) {
 		this.sistema = sistema;
 	}
-    
-    
+	public String getResultado() {
+		return resultado;
+	}
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
+
 }

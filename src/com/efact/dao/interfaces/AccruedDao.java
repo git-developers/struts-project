@@ -15,10 +15,10 @@ public interface AccruedDao {
 	public List<AccruedIssue> issueSearch(
 			int programId, 
 			int groupId, 
-			String dateTo
+			int cieId
 	) throws Exception;
 	
-	public int generateAccruedConciliation(String data) throws Exception;
+	public AccruedConciliation generateAccruedConciliation(String data) throws Exception;
 	
 	public List<AccruedIssueDropdown> listAccruedIssueDropdown(int programId, int groupId) throws Exception;
 	

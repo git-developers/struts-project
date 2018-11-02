@@ -61,10 +61,13 @@
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="">Fecha de fin</label>
-		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
+		                  <label for="">Cie Id</label>
+		                  <input type="number" class="form-control" name="queryCieId" placeholder="Cie Id">
+		                  <!-- 
+		                  <select class="form-control" id="dateTo" name="queryCieId" required="required">
 		                  	<option value="0">[seleccionar]</option>
 		                  </select>
+		                   -->
 		                </div>
 	        		</div>
 	        		

@@ -12,6 +12,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
+import com.efact.util.Dates;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -22,11 +23,13 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	private static final long serialVersionUID = 1L;
 	private DaoFactory dao;
 	private Gson gson;
+	private AccruedConciliation accruedConciliation;
 	private List<Program> listProgram;
 	private List<Group> listGroup;
 	private List<AccruedConciliation> listAccruedConciliation;
 	private List<AccruedIssue> listAccruedIssue;
 	private List<AccruedIssueDropdown> listAccruedIssueDropdown;
+	private String currentDate, dateTwoMonthsAgo;
 
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -34,6 +37,8 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
     public AccruedAction() {
 		dao = DaoFactory.getDAOFactory(DaoFactory.ORACLE);
 		gson = new GsonBuilder().setPrettyPrinting().create();
+		currentDate = Dates.getCurrentDate();
+		dateTwoMonthsAgo = Dates.getDateTwoMonthsAgo();
     }
     
 	@Override
@@ -81,7 +86,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         
         System.out.print("TEXTO_OUT ::: " + sb.toString());
         
-        accruedDao.generateAccruedConciliation(sb.toString()); 
+        accruedConciliation = accruedDao.generateAccruedConciliation(sb.toString()); 
 
         return SUCCESS;
 	}
@@ -125,7 +130,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         listAccruedIssue = accruedDao.issueSearch(
         		vs.getQueryProgram(),
         		vs.getQueryGroup(),
-        		vs.getQueryDateTo()
+        		vs.getQueryCieId()
         );
 		
 		return SUCCESS;
@@ -138,7 +143,6 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         List<AccruedIssue> list = new Gson().fromJson(fields, listType);
         
         AccruedDao accruedDao = dao.getAccruedDao();
-        
         
 		return SUCCESS;
 	}
@@ -194,6 +198,29 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
 	public void setListGroup(List<Group> listGroup) {
 		this.listGroup = listGroup;
 	}
+	
+	public String getCurrentDate() {
+		return currentDate;
+	}
 
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+
+	public String getDateTwoMonthsAgo() {
+		return dateTwoMonthsAgo;
+	}
+
+	public void setDateTwoMonthsAgo(String dateTwoMonthsAgo) {
+		this.dateTwoMonthsAgo = dateTwoMonthsAgo;
+	}
+
+	public AccruedConciliation getAccruedConciliation() {
+		return accruedConciliation;
+	}
+
+	public void setAccruedConciliation(AccruedConciliation accruedConciliation) {
+		this.accruedConciliation = accruedConciliation;
+	}
 	
 }

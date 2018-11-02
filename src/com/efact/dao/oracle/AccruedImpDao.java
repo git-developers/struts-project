@@ -57,7 +57,6 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             rs.close();
             st.close();
             
-            
         } catch (Exception e){
         	System.out.print("search -- Exception ::::: " + e.getMessage());
             throw e;
@@ -69,21 +68,29 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	}
 
     @Override
-    public int generateAccruedConciliation(String data) throws Exception {
+    public AccruedConciliation generateAccruedConciliation(String data) throws Exception {
 
-        int id = 0;
+    	AccruedConciliation obj = new AccruedConciliation();
 
         try{
         	
-            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }";  // ?, ?, ?, ?
+            String sql = "{ call FIN_PKG_REGISTRODEVENGADOS.EJECUTA_CONCILIA_CONSOLIDA(?, ?, ?) }";
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);             
             st.setString(1, data);
-//            st.setString(2, "CLONE");
             st.setString(2, "EFACT");
             st.registerOutParameter(3, OracleTypes.VARCHAR);
             st.execute();
+            
+            ResultSet rs = (ResultSet) st.getObject(3);
+            
+            while (rs.next()){
+                obj.setResultado(rs.getString("P_RESULTADO"));
+            }
+            
+            rs.close();
+            st.close();
         
         } catch (Exception e){
             System.out.println(":::: generateAccrued :::: " + e.getMessage());
@@ -92,7 +99,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             this.closeConnection();
         }
         
-        return id;
+        return obj;
     }
     
     @Override
@@ -138,21 +145,21 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	public List<AccruedIssue> issueSearch(
 			int programId, 
 			int groupId, 
-			String dateTo
+			int cieId
 	) throws Exception {
 
         List<AccruedIssue> list = new ArrayList<>();
 
         try{
 	        	
-	        String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_PREVIEW_EMITE_DEVENGADO(?, ?) } "; 
+	        String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_PREVIEW_EMITE_DEVENGADO(?, ?, ?) } "; 
 	        
 	        Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);       
-//	        st.setDate(1, from);
 	        st.registerOutParameter(1, OracleTypes.CURSOR);
 	        st.setInt(2, programId);
 	        st.setInt(3, groupId);
+	        st.setInt(4, cieId);
 
 	        st.execute();
 	    	

@@ -105,7 +105,7 @@
 					          <div class="input-group-addon">
 					            <i class="fa fa-calendar"></i>
 					          </div>
-					          <input type="date" class="form-control" name="queryFrom" value="<s:property value = "dateOneYearAgo"/>">
+					          <input type="date" class="form-control" name="queryFrom" value="<s:property value="dateOneYearAgo"/>">
 					        </div>
 					    </div>
 					</div>
@@ -117,7 +117,7 @@
 					          <div class="input-group-addon">
 					            <i class="fa fa-calendar"></i>
 					          </div>
-					          <input type="date" class="form-control" name="queryTo" value="<s:property value = "currentDate"/>">
+					          <input type="date" class="form-control" name="queryTo" value="<s:property value="currentDate"/>">
 					        </div>
 					    </div>
 					</div>

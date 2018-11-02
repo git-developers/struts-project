@@ -13,4 +13,18 @@
         <span class="progress-description"></span>
   </div>
 </div>
-     
+
+<table class="table table-condensed">
+     <thead>
+		<tr>
+		   <th><i class="fa fa-fw fa-align-justify"></i> Resultado</th>
+		 </tr>
+    </thead>
+    <tbody>
+		<tr>
+			<td>
+				<s:property value = "#accruedConciliation.resultado"/>
+			</td>
+		</tr>
+   </tbody>
+</table>

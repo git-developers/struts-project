@@ -26,4 +26,14 @@ public class Dates {
 		return sdf.format(cal.getTime());
 	}
 
+	public static String getDateTwoMonthsAgo() {
+		Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("GMT"));
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.add(Calendar.MONTH, -2);
+        
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(cal.getTime());
+	}
+
 }

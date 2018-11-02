@@ -14,7 +14,6 @@
   </div>
 </div>
           
-          
 <table class="table table-condensed">
      <thead>
 		<tr>
@@ -25,7 +24,6 @@
 		 </tr>
     </thead>
     <tbody>
-    <%@ taglib prefix="s" uri="/struts-tags" %>
 		
 		<s:if test="listVoucherResult.empty">
 		    <tr>
