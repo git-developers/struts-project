@@ -83,6 +83,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.registerOutParameter(3, OracleTypes.VARCHAR);
             st.execute();
             
+            System.out.println(":::: generateAccrued MENSAJE OUT :::: " + st.getString(3));
+            
             obj.setResultado(st.getString(3));
 
             st.close();
