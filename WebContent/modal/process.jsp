@@ -10,7 +10,7 @@
           </h4>
         </div>
         <div class="modal-body">
-          Cargando...
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" data-dismiss="modal">Cerrar</button>

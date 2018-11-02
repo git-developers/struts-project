@@ -85,7 +85,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             System.out.println(":::: processAccruedConciliation MENSAJE OUT :::: " + st.getString(3));
             
             obj.setResultado(st.getString(3));
-            obj.setStatus(Util.floatToBool(st.getFloat(3)));
+            obj.setStatus(Util.floatToBool(st.getFloat(4)));
 
             st.close();
         
