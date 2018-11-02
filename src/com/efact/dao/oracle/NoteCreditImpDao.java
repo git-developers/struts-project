@@ -44,14 +44,14 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             while (rs.next()){
             	objectOut.setId(rs.getInt("RVB_ID"));
             	objectOut.setNumero(rs.getInt("RVB_NUMERO"));
-            	objectOut.setSerie(rs.getInt("RVB_SERIE"));
+            	objectOut.setSerie(rs.getInt("RVB_SERIE"));//serie - numero
             	objectOut.setContrato(rs.getString("RVB_CONTRATO"));
-            	objectOut.setDatos(rs.getString("RVB_DATOS"));
+            	objectOut.setDatos(rs.getString("RVB_DATOS"));//titular
             	objectOut.setFechaEmision(rs.getInt("RVB_FEMISION"));
             	objectOut.setFechaVencimiento(rs.getInt("RVB_FVENCIMIENTO"));
             	objectOut.setBd(rs.getString("BD"));
-            	objectOut.setTipoDocDestino(rs.getInt("TIPO_DOC_DESTINO"));
-            	objectOut.setFechaEmisionDestino(rs.getDate("FEC_EMISION_DESTINO"));
+            	objectOut.setTipoDocDestino(rs.getInt("TIPO_DOC_DESTINO"));// aqui llega numero 4 - NOTA DE CREDITO
+            	objectOut.setFechaEmisionDestino(rs.getDate("FEC_EMISION_DESTINO"));//mismo campo fecha emision - vencimineto - NOTA ORIGEN - Modificable
             }
             
             rs.close();
@@ -92,7 +92,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	
             	NoteCreditDetail obj = new NoteCreditDetail();
             	obj.setDescripcion(rs.getString("RVB_DESCRIPCION"));
-            	obj.setSimbolo(rs.getString("SIMBOLO"));
+            	obj.setSimbolo(rs.getString("SIMBOLO"));// misma moneda
             	obj.setAfecto(rs.getFloat("RVB_AFECTO"));
             	obj.setIgv(rs.getFloat("RVB_IGV"));
             	obj.setNoAfecto(rs.getFloat("RVB_NOAFECTO"));

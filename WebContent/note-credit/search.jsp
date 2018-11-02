@@ -20,7 +20,7 @@
 	         		type="text" 
 	         		class="form-control"
 	         		placeholder="[000-0000]"
-	         		value="<s:property value="noteCredit.numero"/>" 
+	         		value="<s:property value="noteCredit.serie"/>-<s:property value="noteCredit.numero"/>" 
 	         		readonly="readonly">
 	        </div>
       	</div>
