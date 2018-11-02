@@ -42,13 +42,15 @@
         };
         
         base.process = function(context) {
+        	
+        	console.log("PROCESS :: " + $("form[name='form-accrued-issue']").serialize());
 
             $.ajax({
                 url: options.contextPath + '/accrued-issue-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: $(context).serialize()
+                	fields: $("form[name='form-accrued-issue']").serialize()
                 },
                 
                 beforeSend: function(jqXHR, settings) {

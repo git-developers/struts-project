@@ -142,8 +142,9 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         String fields = request.getParameter("fields");
         AccruedIssue accruedObj = gson.fromJson(serializeToJSON(fields), AccruedIssue.class);
         
-        AccruedDao accruedDao = dao.getAccruedDao();
+        System.out.println(":::: issueProcess :::: " + accruedObj.getQueryDateTo());
         
+        AccruedDao accruedDao = dao.getAccruedDao();
         accruedIssue = accruedDao.processAccruedIssue(accruedObj); 
         
 		return SUCCESS;

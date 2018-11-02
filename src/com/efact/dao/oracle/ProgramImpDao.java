@@ -21,7 +21,7 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
         try{
         	
             String sql = "{ ? = call fin_pkg_registroventaslote.F_LISTA_PROGRAMAS() }"; 
-
+        	
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
             st.registerOutParameter(1, OracleTypes.CURSOR);   
@@ -39,7 +39,7 @@ public class ProgramImpDao extends OracleDaoFactory implements ProgramDao  {
             
             rs.close();
             st.close();
-
+			
         } catch (Exception e){
             throw e;
         } finally {
