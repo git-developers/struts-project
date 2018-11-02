@@ -15,7 +15,7 @@ public interface AccruedDao {
 	public List<AccruedIssue> issueSearch(
 			int programId, 
 			int groupId, 
-			int cieId
+			int queryDateTo
 	) throws Exception;
 	
 	public AccruedConciliation generateAccruedConciliation(String data) throws Exception;

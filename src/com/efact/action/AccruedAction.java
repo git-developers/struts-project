@@ -130,7 +130,7 @@ public class AccruedAction extends ActionSupportBase implements ServletRequestAw
         listAccruedIssue = accruedDao.issueSearch(
         		vs.getQueryProgram(),
         		vs.getQueryGroup(),
-        		vs.getQueryCieId()
+        		vs.getQueryDateTo()
         );
 		
 		return SUCCESS;

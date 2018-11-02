@@ -83,13 +83,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.registerOutParameter(3, OracleTypes.VARCHAR);
             st.execute();
             
-            ResultSet rs = (ResultSet) st.getObject(3);
-            
-            while (rs.next()){
-                obj.setResultado(rs.getString("P_RESULTADO"));
-            }
-            
-            rs.close();
+            obj.setResultado(st.getString(3));
+
             st.close();
         
         } catch (Exception e){
@@ -145,12 +140,14 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	public List<AccruedIssue> issueSearch(
 			int programId, 
 			int groupId, 
-			int cieId
+			int queryDateTo
 	) throws Exception {
 
         List<AccruedIssue> list = new ArrayList<>();
 
         try{
+        	
+        	System.out.println("queryDateTo ::: " + queryDateTo);
 	        	
 	        String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_PREVIEW_EMITE_DEVENGADO(?, ?, ?) } "; 
 	        
@@ -159,7 +156,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	        st.registerOutParameter(1, OracleTypes.CURSOR);
 	        st.setInt(2, programId);
 	        st.setInt(3, groupId);
-	        st.setInt(4, cieId);
+	        st.setInt(4, queryDateTo);
 
 	        st.execute();
 	    	
@@ -183,8 +180,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	        
 	        rs.close();
 	        st.close();
-	        
-	        
+
 	    } catch (Exception e){
 	    	System.out.print("search -- Exception ::::: " + e.getMessage());
 	        throw e;
