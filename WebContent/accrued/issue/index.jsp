@@ -32,7 +32,7 @@
 		                <div class="form-group">
 		                  <label for="">Programa</label>
 		                  <select class="form-control" id="program" name="queryProgram" required="required">
-		                  	<option value="0">[todos]</option>
+		                  	<!-- <option value="0">[todos]</option>  -->
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
 		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
