@@ -62,7 +62,9 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="">Fecha de fin</label>
-		                  <input type="date" class="form-control" name="queryDateTo" >
+		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
+		                  	<option value="0">[seleccionar]</option>
+		                  </select>
 		                </div>
 	        		</div>
 	        		
