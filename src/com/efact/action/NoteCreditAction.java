@@ -52,8 +52,8 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
         
         NoteCreditDao ncDao = dao.getNoteCreditDao();
-//        noteCredit = ncDao.search(ncObj);  
-//        listNoteCreditType = ncDao.listNoteCreditType();
+        noteCredit = ncDao.search(ncObj);  
+        listNoteCreditType = ncDao.listNoteCreditType();
         
 		return SUCCESS;
 	}
@@ -63,6 +63,11 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         String fields = request.getParameter("fields");
         NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
 		
+        NoteCreditDao ncDao = dao.getNoteCreditDao();
+        noteCredit = ncDao.process(ncObj);
+        
+        System.out.println(gson.toJson(noteCredit));
+        
 		return SUCCESS;
 	}
 

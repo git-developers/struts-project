@@ -1,10 +1,11 @@
 package com.efact.bean;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class ReportSalesSummary implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
     private String year;
     private String tipo;
     private String serie;

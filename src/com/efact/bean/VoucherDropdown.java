@@ -2,11 +2,11 @@ package com.efact.bean;
 
 import java.io.Serializable;
 
-public class Program implements Serializable {
+public class VoucherDropdown implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-    private int id;
+	private int id;
     private String name;
     
 	public int getId() {

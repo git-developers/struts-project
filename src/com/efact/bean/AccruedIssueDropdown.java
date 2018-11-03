@@ -1,9 +1,10 @@
 package com.efact.bean;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class AccruedIssueDropdown implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String deadline; 
 	private String cieId;

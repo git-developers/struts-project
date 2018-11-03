@@ -2,6 +2,12 @@
 
 <form role="form" name="form-note-credit-process">
 
+	<input type="hidden" name="id" value="<s:property value="noteCredit.id"/>" >
+	<input type="hidden" name="bd" value="<s:property value="noteCredit.bd"/>" >
+
+	
+	
+	
 <!-- LEFT -->
 <div class="col-md-6">
 <div class="box box-primary">
@@ -19,7 +25,6 @@
 	          <input 
 	         		type="text" 
 	         		class="form-control"
-	         		placeholder="[000-0000]"
 	         		value="<s:property value="noteCredit.serie"/>-<s:property value="noteCredit.numero"/>" 
 	         		readonly="readonly">
 	        </div>
@@ -31,7 +36,6 @@
 		          <input 
 		          		type="email" 
 		          		class="form-control" 
-		          		placeholder="[000-0000]" 
 		          		value="<s:property value="noteCredit.contrato"/>" 
 		          		readonly="readonly">
 	        </div>
@@ -43,7 +47,6 @@
 	          <input 
 	          		type="text" 
 	          		class="form-control" 
-	          		placeholder="Ingrese nombre" 
 	          		value="<s:property value="noteCredit.datos"/>" 
 	          		readonly="readonly">
 	        </div>
@@ -201,7 +204,7 @@
 	          <input 
 	          	type="text" 
 	          	class="form-control"
-	          	placeholder=""
+	          	id="number-out"
 	          	readonly="readonly">
 	        </div>
       	</div>
@@ -209,7 +212,7 @@
       	<div class="col-md-4">
 	      	<div class="form-group">
 	          <label for="">Tipo NC (09)</label>
-        		 <select class="form-control" id="tipo-comprobante" name="">
+        		 <select class="form-control" id="note-credit-type" name="queryNoteCreditType">
                   	<s:iterator value="listNoteCreditType" var="noteCredit">
                   		<option value="<s:property value = "#noteCredit.id"/>">
                   			<s:property value = "#noteCredit.name"/>
@@ -230,6 +233,7 @@
                   <input 
                   	type="date" 
                   	class="form-control" 
+                  	name="fechaEmision"
                   	value="<s:property value="noteCredit.fechaEmision"/>" >
                 </div>
              	</div>
@@ -246,6 +250,7 @@
                   <input 
                   	type="date" 
                   	class="form-control" 
+                  	name="fechaVencimiento"
                   	value="<s:property value="noteCredit.fechaVencimiento"/>" >
                 </div>
              	</div>
@@ -265,6 +270,7 @@
 		                  <input 
 		                  	type="number" 
 		                  	class="form-control" 
+		                  	name="queryTotal" 
 		                  	readonly="readonly">
 		                </div>
 		             </div>
@@ -281,6 +287,7 @@
 		                  <input 
 		                  	type="number" 
 		                  	class="form-control" 
+		                  	name="queryMoneyIntoWords" 
 		                  	readonly="readonly">
 		                </div>
 		             </div>
@@ -329,10 +336,18 @@
 				                 	<s:property value = "#object.simbolo"/>
 				                 </td>
 				                 <td>
-				                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+				                 	<input 
+				                 		type="number" 
+				                 		class="form-control row-note-credit" 
+				                 		disabled="disabled" 
+				                 		name="noAfecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td>
-				                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+				                 	<input 
+				                 		type="number" 
+				                 		class="form-control row-note-credit" 
+				                 		disabled="disabled" 
+				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td>
 				                 	<s:property value = "#object.igv"/>

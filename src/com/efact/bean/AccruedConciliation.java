@@ -7,6 +7,8 @@ import com.efact.util.Util;
 
 public class AccruedConciliation implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+	
 	private String comprobante1; 
 	private String comprobante2; 
 	private String recaudo; 

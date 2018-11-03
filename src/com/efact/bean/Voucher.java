@@ -7,6 +7,8 @@ import com.efact.util.Util;
 
 public class Voucher implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
     private long   lcs_id;
     private String lcs_check;
     private String lcs_banco;

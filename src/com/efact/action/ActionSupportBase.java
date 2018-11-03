@@ -9,7 +9,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ActionSupportBase extends ActionSupport {
 
-	private String contextPath;
+	private static final long serialVersionUID = 1L;
+	
 	private String currentDateTime;
 
 	ActionSupportBase() { 
@@ -33,15 +34,6 @@ public class ActionSupportBase extends ActionSupport {
 	    }
 	    
 	    return json.toString();
-	}
-	
-	public String getContextPath() {
-		return "GGGGGGG";
-		//return contextPath;
-	}
-
-	public void setContextPath(String contextPath) {
-		this.contextPath = contextPath;
 	}
 
 	public String getCurrentDateTime() {

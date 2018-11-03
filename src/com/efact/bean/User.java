@@ -5,6 +5,8 @@ import java.security.Timestamp;
 
 public class User implements Serializable  {
 
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String name;
 	private byte active;

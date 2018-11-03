@@ -7,6 +7,8 @@ import com.efact.util.Util;
 
 public class ReportSalesRecord implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
     private String fuente;
     private String tipoemision;
     private String rvb_tmoneda;

@@ -5,7 +5,9 @@ import com.efact.bean.*;
 
 public interface NoteCreditDao {
 	
-	public NoteCredit search(NoteCredit noteCredit) throws Exception;
+	public NoteCredit search(NoteCredit object) throws Exception;
+	
+	public NoteCredit process(NoteCredit object) throws Exception;
 	
 	public List<NoteCreditType> listNoteCreditType() throws Exception;
 	

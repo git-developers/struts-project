@@ -35,5 +35,13 @@ public class Util {
 			return -1;
 		}
 	}
-	
+
+	public static int intDateToInt(int s) {
+		try {
+			String ss = String.valueOf(s);
+			return Integer.valueOf(ss.replace("-", ""));
+		}catch (NumberFormatException e) {
+			return -1;
+		}
+	}
 }

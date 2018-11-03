@@ -36,6 +36,14 @@
 	                		<option value="1">Boleta de venta</option>
                 			<option value="2">Factura</option>
 		                  </select>
+		                  
+				         <select class="form-control" id="query-voucher" name="queryVoucher" required="required">
+		                  	<s:iterator value="listVoucher" var="voucher">
+		                  		<option value="<s:property value = "#voucher.id"/>">
+		                  			<s:property value = "#voucher.name"/>
+		                 			</option>
+		                 		</s:iterator>
+		                  </select>
 		                </div>
 	        		</div>
 	        		

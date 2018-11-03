@@ -3,7 +3,6 @@ package com.efact.dao.oracle;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 
 import java.sql.Connection;

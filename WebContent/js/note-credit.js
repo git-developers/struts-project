@@ -43,22 +43,52 @@
         
         base.process = function(context) {
         	
-        	var rows = [];
-    	    rows.push({
-    	    	lcs_rea_id: $(row).find('input[name="queryVoucher"]').val(),
-    	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
-    	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val(),
-    	    	lcs_fecha: $(row).find('td:eq(0) input[name="lcs_fecha"]').val()
-    	    });
         	
-        	console.log("ROWS ::: " + JSON.stringify(rows));
+        	var row = {};
+        	row ['queryVoucher'] = $('select[name="queryVoucher"]').val();
+        	row ['id'] = $('input[name="id"]').val();
+        	row ['bd'] = $('input[name="bd"]').val();
+        	row ['fechaEmision'] = $('input[name="fechaEmision"]').val();
+        	row ['fechaVencimiento'] = $('input[name="fechaVencimiento"]').val();
+        	row ['queryTotal'] = $('input[name="queryTotal"]').val();
+        	row ['queryMoneyIntoWords'] = $('input[name="queryMoneyIntoWords"]').val();
+        	
+        	row ['noAfecto_1'] = $('input[name="noAfecto-1"]').val();
+        	row ['afecto_1'] = $('input[name="afecto-1"]').val();
+        	
+        	row ['noAfecto_2'] = $('input[name="noAfecto-2"]').val();
+        	row ['afecto_2'] = $('input[name="afecto-2"]').val();
+        	
+        	row ['noAfecto_3'] = $('input[name="noAfecto-3"]').val();
+        	row ['afecto_3'] = $('input[name="afecto-3"]').val();
+        	
+        	row ['noAfecto_4'] = $('input[name="noAfecto-4"]').val();
+        	row ['afecto_4'] = $('input[name="afecto-4"]').val();
+            
+        	row ['noAfecto_5'] = $('input[name="noAfecto-5"]').val();
+        	row ['afecto_5'] = $('input[name="afecto-5"]').val();
+            
+        	row ['noAfecto_6'] = $('input[name="noAfecto-6"]').val();
+        	row ['afecto_6'] = $('input[name="afecto-6"]').val();
+            
+        	row ['noAfecto_7'] = $('input[name="noAfecto-7"]').val();
+        	row ['afecto_7'] = $('input[name="afecto-7"]').val();
+            
+        	row ['noAfecto_8'] = $('input[name="noAfecto-8"]').val();
+        	row ['afecto_8'] = $('input[name="afecto-8"]').val();
+            
+        	row ['queryNoteCreditType'] = $('input[name="queryNoteCreditType"]').val();
+
+        	
+        	console.log("ROWS ::: " + JSON.stringify(row));
+        	
         	
             $.ajax({
                 url: options.contextPath + '/note-credit-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: JSON.stringify(rows) //$("form[name='form-note-credit-process']").serialize()
+                	fields: JSON.stringify(row) //$("form[name='form-note-credit-process']").serialize()
                 },
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').find('.modal-body').html('<p><i class="fa fa-2x fa-refresh fa-spin"></i><span style="font-size: 16px; margin-left: 5px">Procesando...</span></p>');

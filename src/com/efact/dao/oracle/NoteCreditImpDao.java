@@ -10,6 +10,7 @@ import java.util.List;
 import java.sql.Connection;
 import com.efact.bean.*;
 import com.efact.dao.interfaces.*;
+import com.efact.util.Util;
 import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
@@ -163,6 +164,78 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         
         return list;
     }
+
+	@Override
+	public NoteCredit process(NoteCredit object) throws Exception {
+		
+		NoteCredit objectOut = new NoteCredit();
+
+        try{
+    		
+            String sql = "{ call FIN_PKG_NOTACREDITO.EMISION_NOTACREDITO("
+            		+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+            		+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+            		+ "?, ?, ?, ?, ?, ?, ?, ? "
+            		+ ") } "; 
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+			CallableStatement st = connection.prepareCall(sql);
+			
+			st.setInt(1, object.getQueryVoucher());
+            st.setInt(2, object.getId());
+            st.setString(3, object.getBd());
+            st.setInt(4, object.getFechaEmisionInt());
+            st.setInt(5, object.getFechaVencimientoInt());
+            st.setInt(6, object.getQueryTotal());
+            st.setString(7, object.getQueryNoteCreditType());
+            
+            st.setInt(8, object.getAfecto_1());
+            st.setInt(9, object.getNoAfecto_1());
+            
+            st.setInt(10, object.getAfecto_2());
+            st.setInt(11, object.getNoAfecto_2());
+            
+            st.setInt(12, object.getAfecto_3());
+            st.setInt(13, object.getNoAfecto_3());
+            
+            st.setInt(14, object.getAfecto_4());
+            st.setInt(15, object.getNoAfecto_4());
+            
+            st.setInt(16, object.getAfecto_5());
+            st.setInt(17, object.getNoAfecto_5());
+            
+            st.setInt(18, object.getAfecto_6());
+            st.setInt(19, object.getNoAfecto_6());
+            
+            st.setInt(20, object.getAfecto_7());
+            st.setInt(21, object.getNoAfecto_7());
+
+            st.setInt(22, object.getAfecto_8());
+            st.setInt(23, object.getNoAfecto_8());
+            
+            st.setInt(24, 0);
+            st.setString(25, object.getQueryNoteCreditType());
+            st.setString(26, "EFACT");
+            
+            st.execute();
+            
+            objectOut.setNumeroOut(st.getString(27));
+            objectOut.setSerieOut(st.getString(28));
+            
+        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28));
+
+            st.close();
+            
+            
+        } catch (Exception e){
+        	System.out.print("process -- Exception ::::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return objectOut;
+	}
     
 
 }
