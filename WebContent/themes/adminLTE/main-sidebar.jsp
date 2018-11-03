@@ -24,7 +24,7 @@
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVEGACIÓN PRINCIPAL</li>
-        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'eFACT/index')}">active</c:if>">
+        <li class="<c:if test="${fn:contains(pageContext.request.requestURI, 'dashboard')}">active</c:if>">
           <s:a href="index" theme="simple">
             <i class="fa fa-dashboard"></i> <span>Inicio</span>
           </s:a>

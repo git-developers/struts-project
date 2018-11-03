@@ -48,7 +48,7 @@
   });
 </script>
 	
-<c:if test="${fn:contains(pageContext.request.requestURI, 'eFACT/index')}">
+<c:if test="${fn:contains(pageContext.request.requestURI, 'dashboard')}">
 	<script src="themes/adminLTE/dist/js/pages/dashboard.js"></script>
 	<script src="themes/adminLTE/dist/js/demo.js"></script>
 </c:if>
