@@ -1,0 +1,22 @@
+NOW := $(shell /bin/date "+%Y-%m-%d . %H:%M:%S")
+AUTHOR_EMAIL := "jafeth.bendezu.a@gmail.com"
+AUTHOR_NAME := "Tianos"
+HOST_PROJECT := Tianos.xyz
+REMOTE := bitbucket_http
+BRANCH_NAME := master
+
+perm:
+	@echo ---;
+	@echo xxxxxx;
+
+save:
+	@echo ---;
+	@echo * START SAVE *;
+	@echo ---;
+	git status
+	git add .
+	git config --global user.email $(AUTHOR_EMAIL)
+	git config --global user.name $(AUTHOR_NAME) --replace-all
+	git commit -m "Tianos said -> modifications made on: $(NOW)"
+	git push $(REMOTE) $(BRANCH_NAME)
+	@echo *** Proceso Terminado ***
