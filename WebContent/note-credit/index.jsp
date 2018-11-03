@@ -31,34 +31,35 @@
                 
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Comprobante</label>
-		                  <select class="form-control" name="queryVoucher" required="required">      
-	                		<option value="1">Boleta de venta</option>
-                			<option value="2">Factura</option>
-		                  </select>
-		                  
-				         <select class="form-control" id="query-voucher" name="queryVoucher" required="required">
-		                  	<s:iterator value="listVoucher" var="voucher">
+		                  <label for="">Comprobante</label>
+				         <select class="form-control" id="select-voucher" name="queryVoucher" required="required">
+		                  	<s:iterator value="listVoucherDropdown" var="voucher">
 		                  		<option value="<s:property value = "#voucher.id"/>">
 		                  			<s:property value = "#voucher.name"/>
-		                 			</option>
-		                 		</s:iterator>
+	                 			</option>
+	                 		</s:iterator>
 		                  </select>
 		                </div>
 	        		</div>
 	        		
     			    <div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Serie</label>
-		                  <select class="form-control" name="querySerie" required="required">
-                       	  	<option value="003">003</option>
+		                  <label for="">Serie</label>
+				         <select class="form-control" id="select-series" name="querySerie" required="required">
+		                  	<s:iterator value="listSeries" var="series">
+		                  		<option 
+		                  			value="<s:property value = "#series.id"/>"
+		                  			class="select-series voucher-<s:property value = "#series.voucherId"/>">
+		                  			<s:property value = "#series.name"/>
+	                 			</option>
+	                 		</s:iterator>
 		                  </select>
 		                </div>
 	        		</div>
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
-		                  <label for="exampleInputEmail1">Numero</label>
+		                  <label for="">Numero</label>
 		                  <input type="number" class="form-control" name="queryNumber" required="required">
 		                </div>
 	        		</div>

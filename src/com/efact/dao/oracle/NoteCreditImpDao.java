@@ -2,15 +2,12 @@ package com.efact.dao.oracle;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 
 import java.sql.Connection;
 import com.efact.bean.*;
 import com.efact.dao.interfaces.*;
-import com.efact.util.Util;
 import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
@@ -236,6 +233,77 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         
         return objectOut;
 	}
-    
 
+	@Override
+	public List<VoucherDropdown> listVoucherDropdown() throws Exception {
+		
+		List<VoucherDropdown> list = new ArrayList<>();
+
+        try{
+        	
+            String sql = "{ call FIN_PKG_NOTACREDITO.P_LISTAR_COMPOBANTES(?) }"; 
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+			CallableStatement st = connection.prepareCall(sql);  
+            st.setInt(1, 4);
+            st.execute();
+            
+            ResultSet rs = (ResultSet) st.getObject(1);
+            
+            while (rs.next()){
+            	
+            	VoucherDropdown obj = new VoucherDropdown();
+                obj.setId(rs.getInt("CSC_TIPO"));
+                obj.setName(rs.getString("CSC_TIPO_NOMBRE"));
+                obj.setShortName(rs.getString("CSC_TIPO_NOMBRE_CORTO"));
+                
+                list.add(obj);
+            }
+        
+        } catch (Exception e){
+            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return list;
+	}
+	
+	@Override
+	public List<Series> listSeries() throws Exception {
+		
+		List<Series> list = new ArrayList<>();
+
+        try{
+        	
+            String sql = "{ call FIN_PKG_NOTACREDITO.P_LISTAR_SERIE_COMPRO(?) }"; 
+            
+            Connection connection = OracleDaoFactory.getMainConnection();
+			CallableStatement st = connection.prepareCall(sql);  
+            st.setInt(1, 4);
+            st.execute();
+            
+            ResultSet rs = (ResultSet) st.getObject(1);
+            
+            while (rs.next()){
+            	
+            	Series obj = new Series();
+                obj.setId(rs.getInt("csc_serie"));
+                obj.setName(rs.getString("SERIE"));
+                obj.setVoucherId(rs.getInt("csc_tipo"));
+                
+                list.add(obj);
+            }
+        
+        } catch (Exception e){
+            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
+            throw e;
+        } finally {
+            this.closeConnection();
+        }
+        
+        return list;
+	}
+    
 }

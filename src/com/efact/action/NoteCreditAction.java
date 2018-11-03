@@ -26,6 +26,8 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	private Gson gson;
 	private NoteCredit noteCredit;
 	private List<NoteCreditType> listNoteCreditType;
+	private List<VoucherDropdown> listVoucherDropdown;
+	private List<Series> listSeries;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -54,6 +56,8 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.search(ncObj);  
         listNoteCreditType = ncDao.listNoteCreditType();
+        listVoucherDropdown = ncDao.listVoucherDropdown();
+        listSeries = ncDao.listSeries();
         
 		return SUCCESS;
 	}
@@ -100,4 +104,15 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request = httpServletRequest;
 	}
+
+
+	public List<VoucherDropdown> getListVoucherDropdown() {
+		return listVoucherDropdown;
+	}
+
+
+	public void setListVoucherDropdown(List<VoucherDropdown> listVoucherDropdown) {
+		this.listVoucherDropdown = listVoucherDropdown;
+	}
+
 }

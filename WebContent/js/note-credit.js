@@ -115,6 +115,15 @@
         	}
         };
         
+        base.voucher = function(context) {
+        	
+            var id = $(context).val();  
+            
+            $('.select-series').hide();
+            
+            $('.voucher-' + id).show();
+        };
+        
         // Private Functions
         function debug(e) {
           console.log(e);
@@ -137,6 +146,10 @@
             $(".note-credit-process").click(function( event ) {          	
                 bp.process(this);
             });
+            
+            $("#select-voucher").change(function(event) {
+            	bp.voucher(this);
+        	});
  
         	$(document).on('change', 'input:checkbox.row-checkbox', function(event) {
                 bp.rowCheckbox(this);

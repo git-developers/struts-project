@@ -11,4 +11,8 @@ public interface NoteCreditDao {
 	
 	public List<NoteCreditType> listNoteCreditType() throws Exception;
 	
+	public List<VoucherDropdown> listVoucherDropdown() throws Exception;
+	
+	public List<Series> listSeries() throws Exception;
+	
 }
