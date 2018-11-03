@@ -68,7 +68,9 @@
         };
         
         base.program = function(context) {
-            var id = $(context).val();  
+            var id = $(context).val();
+            
+            console.log("EMISION DEVENGADOS ::: " + id);
             
             $('.group-select').hide();
             

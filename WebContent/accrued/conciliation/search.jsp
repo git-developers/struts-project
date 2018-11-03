@@ -2,7 +2,7 @@
 
 <s:if test="listAccruedConciliation.empty">
     <tr>
-		<td colspan="9" align="center">
+		<td colspan="10" align="center">
 			El proceso no retorno datos.
 		</td>
 	</tr>
@@ -42,10 +42,13 @@
 				<s:property value = "#object.noafecto"/>
 			</td>
 			<td>
-				<s:property value = "#object.igv"/> %
+				<s:property value = "#object.igv"/>
 			</td>
 			<td>
 				S/ <s:property value = "#object.total"/>
+			</td>
+			<td>
+				<s:property value = "#object.sistema"/>
 			</td>
 		</tr>
 	 </s:iterator>

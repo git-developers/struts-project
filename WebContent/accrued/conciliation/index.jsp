@@ -107,11 +107,12 @@
 						   <th>No Afecto</th>
 						   <th>IGV</th>
 						   <th><i class="fa fa-fw fa-money"></i> Total</th>
+						   <th>Sistema</th>
 						 </tr>
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="9" align="center">
+							   	<td colspan="10" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>

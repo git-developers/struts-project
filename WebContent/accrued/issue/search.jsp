@@ -45,7 +45,7 @@
 				<s:property value = "#object.noAfecto"/>
 			</td>
 			<td>
-				<s:property value = "#object.igv"/> %
+				<s:property value = "#object.igv"/>
 			</td>
 			<td>
 				S/ <s:property value = "#object.total"/>

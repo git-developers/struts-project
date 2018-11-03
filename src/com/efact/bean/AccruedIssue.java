@@ -18,6 +18,7 @@ public class AccruedIssue implements Serializable {
 	private float total;
 	private String resultado; 
 	private boolean status;
+	private String codigoAsociado; 
 	
     private String queryProgram;    
     private String queryGroup;
@@ -106,6 +107,12 @@ public class AccruedIssue implements Serializable {
 	}
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+	public String getCodigoAsociado() {
+		return codigoAsociado;
+	}
+	public void setCodigoAsociado(String codigoAsociado) {
+		this.codigoAsociado = codigoAsociado;
 	}
 
 }

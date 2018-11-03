@@ -53,7 +53,7 @@
 		                  			data-prod-id="<s:property value = "#group.prodId"/>"
 		                  			value="<s:property value = "#group.id"/>" 
 		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
-		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
+		                  			<s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
