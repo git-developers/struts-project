@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 </div>
 <%-- CONTENT DIV --%>
@@ -9,7 +10,7 @@
       <b>Version</b> 2.4.0
     </div>
     <strong>
-    Copyright &copy; <s:property value = "currentDateTime"/> <a href="#">eFACT</a>.
+    Copyright &copy; <s:property value = "currentDateTime"/> <a href="#"><c:out value="${pageContext.request.contextPath}"/></a>.
     </strong> Todos los derechos reservados.
   </footer>
 	<%@include file="aside.jsp" %>
