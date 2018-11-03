@@ -75,6 +75,16 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 		return SUCCESS;
 	}
 
+	public List<Series> getListSeries() {
+		return listSeries;
+	}
+
+
+	public void setListSeries(List<Series> listSeries) {
+		this.listSeries = listSeries;
+	}
+
+
 	public List<NoteCreditType> getListNoteCreditType() {
 		return listNoteCreditType;
 	}
