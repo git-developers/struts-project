@@ -90,11 +90,7 @@ public class AccruedIssue implements Serializable {
 		this.queryGroup = queryGroup;
 	}
 	public int getQueryDateTo() {
-		try {
-			return Integer.valueOf(queryDateTo.replace("-", ""));
-		}catch (NumberFormatException e) {
-			return -1;
-		}
+		return Util.strDateToInt(queryDateTo);
 	}
 	public void setQueryDateTo(String queryDateTo) {
 		this.queryDateTo = queryDateTo;

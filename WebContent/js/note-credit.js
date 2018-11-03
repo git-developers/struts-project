@@ -33,6 +33,7 @@
                 },
                 success: function(data, textStatus, jqXHR) {
                 	$("div#main-box-body").html(data); 
+                	$("button.note-credit-process").prop("disabled", false);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher search");
@@ -42,12 +43,22 @@
         
         base.process = function(context) {
         	
+        	var rows = [];
+    	    rows.push({
+    	    	lcs_rea_id: $(row).find('input[name="queryVoucher"]').val(),
+    	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
+    	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val(),
+    	    	lcs_fecha: $(row).find('td:eq(0) input[name="lcs_fecha"]').val()
+    	    });
+        	
+        	console.log("ROWS ::: " + JSON.stringify(rows));
+        	
             $.ajax({
                 url: options.contextPath + '/note-credit-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: $("form[name='form-note-credit-process']").serialize()
+                	fields: JSON.stringify(rows) //$("form[name='form-note-credit-process']").serialize()
                 },
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').find('.modal-body').html('<p><i class="fa fa-2x fa-refresh fa-spin"></i><span style="font-size: 16px; margin-left: 5px">Procesando...</span></p>');
@@ -56,6 +67,8 @@
                 success: function(data, textStatus, jqXHR) {	
             		$('#modal-process').modal('show');
             		$('#modal-process').find('.modal-body').html(data);
+            		$("div#main-box-body :input").prop("disabled", true);
+            		$("button.note-credit-process").prop("disabled", true);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher search");
@@ -65,7 +78,6 @@
         };
         
         base.rowCheckbox = function(context) {
-        	
         	if (context.checked) {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', false);
         	} else {

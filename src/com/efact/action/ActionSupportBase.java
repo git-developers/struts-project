@@ -24,7 +24,12 @@ public class ActionSupportBase extends ActionSupport {
 	    
 	    for (String pair : pairs) {
 	        int idx = pair.indexOf("=");
-	        json.addProperty(URLDecoder.decode(pair.substring(0, idx), "UTF-8"), URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
+	        
+	        try {
+	        	json.addProperty(URLDecoder.decode(pair.substring(0, idx), "UTF-8"), URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
+	        }catch (StringIndexOutOfBoundsException e) {
+	        	System.out.print("serializeToJSON -- Exception ::::: " + e.getMessage());
+			}
 	    }
 	    
 	    return json.toString();

@@ -32,7 +32,7 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Comprobante</label>
-		                  <select class="form-control" name="queryVoucher">      
+		                  <select class="form-control" name="queryVoucher" required="required">      
 	                		<option value="1">Boleta de venta</option>
                 			<option value="2">Factura</option>
 		                  </select>
@@ -42,19 +42,16 @@
     			    <div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Serie</label>
-		                  <input type="number" class="form-control" name="querySerie">
-		                  <!-- 
-		                  <select class="form-control" name="querySerie">
+		                  <select class="form-control" name="querySerie" required="required">
                        	  	<option value="003">003</option>
 		                  </select>
-		                   -->
 		                </div>
 	        		</div>
 	        		
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Numero</label>
-		                  <input type="number" class="form-control" name="queryNumber">
+		                  <input type="number" class="form-control" name="queryNumber" required="required">
 		                </div>
 	        		</div>
 	        		
@@ -71,7 +68,7 @@
 		                <div class="form-group pull-right">
 		                  <label for="">&nbsp;</label>
 							<div class="input-group">
-			                  <button type="button" class="btn btn-default note-credit-process">Procesar</button>
+			                  <button type="button" class="btn btn-default note-credit-process" disabled="disabled">Procesar</button>
 			                </div>
 		                </div>
 	        		</div>

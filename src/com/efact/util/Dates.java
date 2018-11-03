@@ -1,5 +1,6 @@
 package com.efact.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -36,4 +37,43 @@ public class Dates {
 		return sdf.format(cal.getTime());
 	}
 
+	public static String strToDate(String s) {
+
+		try {
+			
+			SimpleDateFormat original = new SimpleDateFormat("yyyyMMdd");
+			Date date = original.parse(s);
+			SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+			
+			return newFormat.format(date);
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public static String intToDate(int s) {
+
+		try {
+			SimpleDateFormat original = new SimpleDateFormat("yyyyMMdd");
+			Date date = original.parse(String.valueOf(s));
+			SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+			
+			return newFormat.format(date);
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	
+
+	
+	
+	
+	
 }

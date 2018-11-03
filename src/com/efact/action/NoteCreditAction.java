@@ -1,6 +1,9 @@
 package com.efact.action;
 
 import com.efact.dao.factory.DaoFactory;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +42,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	}
 
 	public String index() throws Exception {
+		
 		return SUCCESS;
 	}
 
@@ -48,8 +52,8 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
         
         NoteCreditDao ncDao = dao.getNoteCreditDao();
-        noteCredit = ncDao.search(ncObj);  
-        listNoteCreditType = ncDao.listNoteCreditType();
+//        noteCredit = ncDao.search(ncObj);  
+//        listNoteCreditType = ncDao.listNoteCreditType();
         
 		return SUCCESS;
 	}
@@ -61,10 +65,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 		
 		return SUCCESS;
 	}
-	
-	
-	
-	
+
 	public List<NoteCreditType> getListNoteCreditType() {
 		return listNoteCreditType;
 	}

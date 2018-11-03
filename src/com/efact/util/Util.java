@@ -27,4 +27,13 @@ public class Util {
 			return false;
 		}
 	}
+	
+	public static int strDateToInt(String s) {
+		try {
+			return Integer.valueOf(s.replace("-", ""));
+		}catch (NumberFormatException e) {
+			return -1;
+		}
+	}
+	
 }

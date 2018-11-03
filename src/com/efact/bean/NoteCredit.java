@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+import com.efact.util.Dates;
 import com.efact.util.Util;
 
 public class NoteCredit implements Serializable {
@@ -78,14 +79,14 @@ public class NoteCredit implements Serializable {
 	public void setDatos(String datos) {
 		this.datos = datos;
 	}
-	public int getFechaEmision() {
-		return fechaEmision;
+	public String getFechaEmision() {
+		return Dates.intToDate(fechaEmision);
 	}
 	public void setFechaEmision(int fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
-	public int getFechaVencimiento() {
-		return fechaVencimiento;
+	public String getFechaVencimiento() {
+		return Dates.intToDate(fechaVencimiento);
 	}
 	public void setFechaVencimiento(int fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
