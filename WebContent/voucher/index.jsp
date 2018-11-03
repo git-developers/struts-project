@@ -99,7 +99,7 @@
         		
         		<div class="row">
         		
-					<div class="col-md-2">
+					<div class="col-md-3">
 					    <div class="form-group">
 					      <label for="exampleInputEmail1">Fecha de deposito (Desde)</label>
 					        <div class="input-group">
@@ -111,7 +111,7 @@
 					    </div>
 					</div>
 					
-					<div class="col-md-2">
+					<div class="col-md-3">
 					    <div class="form-group">
 					      <label for="exampleInputEmail1">Fecha de deposito (Hasta)</label>
 					        <div class="input-group">
