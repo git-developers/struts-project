@@ -54,7 +54,7 @@
 		                </div>
 	        		</div>
                 
-	        		<div class="col-md-2">
+	        		<div class="col-md-3">
 		                <div class="form-group">
 		                  <label for="">Fecha de emision (Desde)</label>
 							<div class="input-group">
@@ -66,7 +66,7 @@
 		                </div>
 	        		</div>
 	        		
-	        		<div class="col-md-2">
+	        		<div class="col-md-3">
 		                <div class="form-group">
 		                  <label for="">Fecha de emision (Hasta)</label>
 							<div class="input-group">

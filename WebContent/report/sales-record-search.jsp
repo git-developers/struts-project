@@ -52,7 +52,7 @@
 				<s:property value = "#object.rvb_impinafecta"/>
 			</td>
 			<td>
-				<s:property value = "#object.rvb_igv"/>%
+				<s:property value = "#object.rvb_igv"/>
 			</td>
 			<td class="text-right">
 				<s:property value = "#object.rvb_imptotal"/>

@@ -66,14 +66,11 @@
         
         base.rowCheckbox = function(context) {
         	
-        	console.log("rowCheckbox :: " );
-        	
         	if (context.checked) {
-        		console.log("11111111");
+        		$(context).closest('tr').find('input[type=number]').prop('disabled', false);
         	} else {
-        		console.log("2222222");
+        		$(context).closest('tr').find('input[type=number]').prop('disabled', true);
         	}
-        	
         };
         
         // Private Functions

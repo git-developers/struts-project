@@ -329,13 +329,13 @@
 				                 	<s:property value = "#object.simbolo"/>
 				                 </td>
 				                 <td>
-				                 	<input type="number" class="form-control">
+				                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
 				                 </td>
 				                 <td>
-				                 	<input type="number" class="form-control">
+				                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
 				                 </td>
 				                 <td>
-				                 	<s:property value = "#object.igv"/>%
+				                 	<s:property value = "#object.igv"/>
 				                 </td>
 				                 <td>
 				                 	<s:property value = "#object.total"/>
@@ -354,10 +354,10 @@
                  <td>Capital 45</td>
                  <td>S/</td>
                  <td>
-                 	<input type="number" class="form-control">
+                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
                  </td>
                  <td>
-                 	<input type="number" class="form-control">
+                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
                  </td>
                  <td>0.00</td>
                  <td>43.00</td>
@@ -367,10 +367,10 @@
                  <td>Seguro</td>
                  <td>S/</td>
                  <td>
-                 	<input type="number" class="form-control">
+                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
                  </td>
                  <td>
-                 	<input type="number" class="form-control">
+                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
                  </td>
                  <td>0.00</td>
                  <td>59.00</td>
