@@ -53,8 +53,10 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.search(ncObj);  
+		VoucherDao voucherDao = dao.getVoucherDao();
+		
         listNoteCreditType = ncDao.listNoteCreditType();
-        listVoucherDropdown = ncDao.listVoucherDropdown();
+        listVoucherDropdown = voucherDao.listVoucherDropdown(Const.MODULE_NOTE_CREDIT);
         listSeries = ncDao.listSeries();
         
 		return SUCCESS;

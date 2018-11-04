@@ -13,6 +13,6 @@ public interface VoucherDao {
 	
 	public List<Voucher> generateVoucher(int nlote) throws Exception;
 	
-	public Voucher findOneById(String id) throws Exception;
+	public List<VoucherDropdown> listVoucherDropdown(int option) throws Exception;
 	
 }

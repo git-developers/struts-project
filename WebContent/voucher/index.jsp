@@ -78,10 +78,13 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="exampleInputEmail1">Comprobante</label>
-		                  <select class="form-control" name="queryVoucher">
-                       	  	<option value="0">Todos</option>        
-	                		<option value="1">Boleta de venta</option>
-                			<option value="2">Factura</option>
+		                 <select class="form-control" id="select-voucher" name="queryVoucher" required="required">
+		                 	<option value="0">Todos</option> 
+		                  	<s:iterator value="listVoucherDropdown" var="voucher">
+		                  		<option value="<s:property value = "#voucher.id"/>">
+		                  			<s:property value = "#voucher.name"/>
+	                 			</option>
+	                 		</s:iterator>
 		                  </select>
 		                </div>
 	        		</div>

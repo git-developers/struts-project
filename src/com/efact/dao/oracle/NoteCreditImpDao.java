@@ -235,43 +235,6 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 	}
 
 	@Override
-	public List<VoucherDropdown> listVoucherDropdown() throws Exception {
-		
-		List<VoucherDropdown> list = new ArrayList<>();
-
-        try{
-        	
-            String sql = "{ call FIN_PKG_NOTACREDITO.P_LISTAR_COMPOBANTES(?, ?) }"; 
-            
-            Connection connection = OracleDaoFactory.getMainConnection();
-			CallableStatement st = connection.prepareCall(sql);  
-            st.setInt(1, 4);
-            st.registerOutParameter(2, OracleTypes.CURSOR);
-            st.execute();
-            
-            ResultSet rs = (ResultSet) st.getObject(1);
-            
-            while (rs.next()){
-            	
-            	VoucherDropdown obj = new VoucherDropdown();
-                obj.setId(rs.getInt("CSC_TIPO"));
-                obj.setName(rs.getString("CSC_TIPO_NOMBRE"));
-                obj.setShortName(rs.getString("CSC_TIPO_NOMBRE_CORTO"));
-                
-                list.add(obj);
-            }
-        
-        } catch (Exception e){
-            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
-            throw e;
-        } finally {
-            this.closeConnection();
-        }
-        
-        return list;
-	}
-	
-	@Override
 	public List<Series> listSeries() throws Exception {
 		
 		List<Series> list = new ArrayList<>();

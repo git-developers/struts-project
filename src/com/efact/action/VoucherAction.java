@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
+import com.efact.util.Const;
 import com.efact.util.Dates;
 import com.efact.bean.*;
 
@@ -30,6 +31,7 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	private List<Voucher> listVoucher;
 	private List<Voucher> listVoucherResult;
 	private String currentDate, dateOneYearAgo;
+	private List<VoucherDropdown> listVoucherDropdown;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -51,11 +53,13 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 		ProgramDao productDao = dao.getProgramDao();
 		GroupDao groupDao = dao.getGroupDao();
 		BankDao bankDao = dao.getBankDao();
+		VoucherDao voucherDao = dao.getVoucherDao();
 		
 		listProgram = productDao.findAll();
 		listGroup = groupDao.findAll();
 		listBank = bankDao.findAll();
-		
+        listVoucherDropdown = voucherDao.listVoucherDropdown(Const.MODULE_VOUCHER);
+        
 		return SUCCESS;
 	}
 	
@@ -151,6 +155,14 @@ public class VoucherAction extends ActionSupportBase implements ServletRequestAw
 	@Override
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request = httpServletRequest;
+	}
+
+	public List<VoucherDropdown> getListVoucherDropdown() {
+		return listVoucherDropdown;
+	}
+
+	public void setListVoucherDropdown(List<VoucherDropdown> listVoucherDropdown) {
+		this.listVoucherDropdown = listVoucherDropdown;
 	}
 
 }
