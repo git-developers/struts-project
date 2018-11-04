@@ -119,6 +119,9 @@ public class NoteCreditDetail implements Serializable {
 		this.igvSum = igvSum;
 	}
 	public float getTotalSum() {
+		
+		System.out.print("getTotalSum -- ROUND ::::: " + totalSum);
+		
 		return Maths.roundNumber(totalSum, 2);
 	}
 	public void setTotalSum(float totalSum) {

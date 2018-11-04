@@ -76,9 +76,6 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	
 	public String salesSummary() throws Exception {
 		
-    	System.out.print("salesSummary -- ROUND ::::: " + Maths.roundNumber(123.78484, 2));
-		
-		
         return SUCCESS;
 	}
 	
