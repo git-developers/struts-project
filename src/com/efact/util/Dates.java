@@ -55,17 +55,20 @@ public class Dates {
 	}
 
 	public static String intToDate(int s) {
+		
+		System.out.print("FUNCTION intToDate -- ::::: " + s);
+		return String.valueOf(s);
 
-		try {
-			SimpleDateFormat original = new SimpleDateFormat("yyyyMMdd");
-			Date date = original.parse(String.valueOf(s));
-			SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
-			
-			return newFormat.format(date);
-			
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			SimpleDateFormat original = new SimpleDateFormat("yyyyMMdd");
+//			Date date = original.parse(String.valueOf(s));
+//			SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+//			
+//			return newFormat.format(date);
+//			
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
 		
 		return null;
 	}
