@@ -22,7 +22,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
 
         try{
         	
-            System.out.print("listAccruedIssueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
+            System.out.print("33 - listNoteDebitDropdown ::::: PROGRAM:: " + programId + " --- GROUP:: " + groupId);
         	
             String sql = "{ ? = call FIN_PKG_NOTADEBITO.USP_LISTA_FECHAS(?, ?, ?) }"; 
             
