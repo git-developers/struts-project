@@ -12,6 +12,7 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
 import com.efact.util.ExcelExport;
+import com.efact.util.Maths;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.efact.bean.*;
@@ -74,6 +75,10 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	}
 	
 	public String salesSummary() throws Exception {
+		
+    	System.out.print("salesSummary -- ROUND ::::: " + Maths.roundNumber(123.78484, 2));
+		
+		
         return SUCCESS;
 	}
 	
