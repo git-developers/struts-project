@@ -200,7 +200,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
         try{
         	
-            String sql = "{ call FIN_PKG_NOTACREDITO.P_LISTAR_COMPROBANTES(?, ?) }"; 
+            String sql = "{ call P_LISTAR_COMPROBANTES(?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);  
