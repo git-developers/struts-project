@@ -214,8 +214,8 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             }
         
         } catch (Exception e){
-            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
-            throw e;
+            System.out.println("listAccruedIssueDropdown :::: Exception :: " + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
