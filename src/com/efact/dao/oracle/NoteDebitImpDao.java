@@ -86,6 +86,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
                 obj.setIgv(rs.getString("IGV"));
                 obj.setSubTotal(rs.getString("TOTAL"));
                 obj.setPenalidad(rs.getString("PENALIDAD"));
+                obj.setOrigen(rs.getString("ORIGEN"));
                 
                 list.add(obj);
             }
