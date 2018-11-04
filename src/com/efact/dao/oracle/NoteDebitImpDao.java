@@ -127,7 +127,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
 			st.setInt(1, object.getQueryGroup());
             st.setInt(2, object.getQueryCieId());
             st.setString(3, "EFACT");
-            st.setString(4, "SISTEMA");
+            st.setString(4, object.getOrigen());
             st.execute();
             
             objectOut.setResultado(st.getString(5));

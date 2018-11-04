@@ -19,6 +19,7 @@ public class NoteDebit implements Serializable {
 	private String subTotal;
 	private String penalidad;
     private String resultado;
+    private String origen;
     
 	private int queryGroup;
 	private int queryCieId;
@@ -116,7 +117,13 @@ public class NoteDebit implements Serializable {
 	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
-	
+	public String getOrigen() {
+		return origen;
+	}
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+
 	
     
 }

@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<s:if test="listVoucher.empty">
+<s:if test="listNoteDebit.empty">
     <tr>
 		<td colspan="13" align="center">
 			El proceso no retorno datos.
@@ -9,64 +9,52 @@
 </s:if>
 <s:else>
 	
-	<s:iterator value="listVoucher" var="object" status="status">
-		<tr class="<s:if test="%{#object.isselecitem == 'NO'}">not-process</s:if>" >
+	<s:iterator value="listNoteDebit" var="object" status="status">
+		<tr>
 			<td>
 				<span class="badge bg-light-blue">
 					<s:property value="%{#status.index + 1}"/>
 				</span>
 				
-				<input type="hidden" name="lcs_rea_id" value="<s:property value = "#object.lcs_rea_id"/>">
-				<input type="hidden" name="lcs_rec_id" value="<s:property value = "#object.lcs_rec_id"/>">
-				<input type="hidden" name="lcs_sistema" value="<s:property value = "#object.lcs_sistema"/>">
+				<input type="hidden" name="origen" value="<s:property value = "#object.origen"/>">
 			</td>
 			<td>
-				<s:if test="%{#object.isvisiblecheckbox == 'SI' && #object.isselecitem == 'NO' }">
-					<input type="checkbox" class="object-data">
-				</s:if>
-				<s:elseif test="%{#object.isvisiblecheckbox == 'SI'}">
-				    <input type="checkbox" class="object-data check-all-able">
-				</s:elseif>
+				<s:property value = "#object.contrato"/>
 			</td>
 			<td>
-				<s:property value = "#object.lcs_pro_nombre"/>
+				<s:property value = "#object.grupo"/>
 			</td>
 			<td>
-				<s:property value = "#object.lcs_aso_cod"/>
+				<s:property value = "#object.cupo"/>
 			</td>
 			<td>
 				<button type="button" class="btn bg-purple btn-flat btn-xs">
-					<s:property value = "#object.lcs_con_cod"/>
+					<s:property value = "#object.nombreAsociado"/>
 				</button>
 			</td>
 			<td>
-				<s:property value = "#object.lcs_aso_datos"/>
+				<s:property value = "#object.cuota"/>
 			</td>
 			<td>
-				<s:property value = "#object.lcs_fecha"/>
+				<s:property value = "#object.mesGrupo"/>
+			</td>
+			<td>
+				<s:property value = "#object.descripcion"/>
 			</td>
 			<td class="text-right">
-				S/ <s:property value = "#object.lcs_monto"/>
+				<s:property value = "#object.noAfecto"/>
 			</td>
 			<td class="text-right">
-				<s:property value = "#object.lcs_importe"/>
+				<s:property value = "#object.afecto"/>
 			</td>
 			<td class="text-right">
-				<s:property value = "#object.lcs_saldo"/>
+				<s:property value = "#object.igv"/>
+			</td>
+			<td class="text-right">
+				<s:property value = "#object.subTotal"/>
 			</td>
 			<td>
-				<s:if test="%{#object.lcs_devengado=='NO'}">
-					<small class="label pull-right bg-green">No</small>
-				</s:if>
-				<s:elseif test="%{#object.lcs_devengado=='SI'}">
-				    <small class="label pull-right bg-green">Si</small>
-				</s:elseif>
-			</td>
-			<td>
-				<s:property value = "#object.lcs_cie_id"/>
-			</td>
-			<td>
-				<s:property value = "#object.lcs_sistema"/>
+				<s:property value = "#object.penalidad"/>
 			</td>
 		</tr>
 	 </s:iterator>

@@ -78,12 +78,22 @@
         
         base.process = function(context) {
         	
+        	var table = $("table#voucher-table tbody tr");
+        	var firstOrigen = $(table).find('td:eq(0) input[name="origen"]').val();
+        	
+        	console.log("firstOrigen :: " + firstOrigen);
+        	
+//			filtros: $('#formulario_proveedor').serialize() + 
+//			'&' + $.param({ 'listProductos': listProductos.join('#') }) + 
+//			'&' + $.param({ 'listLotes': listLotes.join('#') })
+//        	
+        	
             $.ajax({
                 url: options.contextPath + '/note-debit-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: $(context).serialize()
+                	fields: $(context).serialize() + '&' + $.param({ 'origen': firstOrigen })
                 },
                 
                 beforeSend: function(jqXHR, settings) {
