@@ -154,7 +154,7 @@
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].afectoSum"/>
 	                 </td>
 	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].igvSum"/>%
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].igvSum"/>
 	                 </td>
 	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].totalSum"/>
