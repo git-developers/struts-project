@@ -12,6 +12,7 @@ public class NoteCreditDetail implements Serializable {
     private String igv;
     private String noAfecto;
     private String total;
+    private String recaudo;
     
     private float afectoSum;
     private float noAfectoSum;
@@ -77,6 +78,12 @@ public class NoteCreditDetail implements Serializable {
 	}
 	public void setTotal(String total) {
 		this.total = total;
+	}
+	public String getRecaudo() {
+		return recaudo;
+	}
+	public void setRecaudo(String recaudo) {
+		this.recaudo = recaudo;
 	}
     
     

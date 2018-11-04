@@ -119,7 +119,7 @@
 				                 <td>
 				                 	<s:property value = "#object.descripcion"/>
 				                 </td>
-				                 <td>
+				                 <td class="text-center">
 				                 	<s:property value = "#object.simbolo"/>
 				                 </td>
 				                 <td class="text-right">
@@ -330,10 +330,10 @@
 			               		 	<input type="checkbox" class="row-checkbox">
 	               		 		 </td>	
 				                 <td>
-				                 	<s:property value = "#object.descripcion"/>
+				                 	<s:property value = "#object.recaudo"/>
 				                 </td>
 				                 <td>
-				                 	<s:property value = "#object.simbolo"/>
+				                 	<s:property value = "#object.descripcion"/>
 				                 </td>
 				                 <td>
 				                 	<input 

@@ -24,7 +24,6 @@ public class NoteDebitAction extends ActionSupportBase  {
 	
 	@Override
 	public String execute() throws Exception {
-		
 		return SUCCESS;
 	}
 
@@ -39,5 +38,29 @@ public class NoteDebitAction extends ActionSupportBase  {
 		return SUCCESS;
 	}
 
+	public String search() throws Exception {
+
+		return SUCCESS;
+	}
+
+	public String process() throws Exception {
+		return SUCCESS;
+	}
+
+	public List<Program> getListProgram() {
+		return listProgram;
+	}
+
+	public void setListProgram(List<Program> listProgram) {
+		this.listProgram = listProgram;
+	}
+
+	public List<Group> getListGroup() {
+		return listGroup;
+	}
+
+	public void setListGroup(List<Group> listGroup) {
+		this.listGroup = listGroup;
+	}
 	
 }

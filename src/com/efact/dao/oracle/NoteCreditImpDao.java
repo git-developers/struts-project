@@ -96,6 +96,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             while (rs.next()){
             	
             	NoteCreditDetail obj = new NoteCreditDetail();
+            	obj.setRecaudo(rs.getString("RVS_RECAUDO"));
             	obj.setDescripcion(rs.getString("RVB_DESCRIPCION"));
             	obj.setSimbolo(rs.getString("SIMBOLO"));// misma moneda
             	obj.setAfecto(rs.getString("RVB_AFECTO"));

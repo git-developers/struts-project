@@ -72,48 +72,6 @@
                 }
             });
         	
-
-
-        	
-        	/*
-        	
-        	var rows = [];
-        	$("table#voucher-table tbody tr").each(function (i, row) {
-        		
-        		var isCheck = $(row).find('td:eq(1) input[type=checkbox]').prop('checked');
-
-        	    if(!isCheck) {
-        	        return true;
-        	    }
-        	    
-        	    rows.push({
-        	    	lcs_rea_id: $(row).find('td:eq(0) input[name="lcs_rea_id"]').val(),
-        	    	lcs_rec_id: $(row).find('td:eq(0) input[name="lcs_rec_id"]').val(),
-        	    	lcs_sistema: $(row).find('td:eq(0) input[name="lcs_sistema"]').val()
-        	    });
-        	});
-
-            $.ajax({
-                url: options.contextPath + '/voucher-process',
-                type: 'POST',
-                dataType: 'html',
-                data: {
-                	fields: JSON.stringify(rows)
-                },
-                
-                beforeSend: function(jqXHR, settings) {
-                	$('#modal-process').modal('show');
-                },
-                success: function(data, textStatus, jqXHR) {
-                	$('#modal-process').modal('show');
-                	$('#modal-process').find('.modal-body').html(data);
-                	$("table#voucher-table tbody").html('<tr><td colspan="13" align="center">Inicie una nueva busqueda.</td></tr>');
-                },
-                error: function(jqXHR, exception) {
-                    console.log("error :: ajax :: voucher process");
-                }
-            });
-            */
         };
         
         // Private Functions
