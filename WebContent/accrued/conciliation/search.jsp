@@ -44,7 +44,7 @@
 			<td class="text-right">
 				<s:property value = "#object.igv"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.total"/>
 			</td>
 			<td>
