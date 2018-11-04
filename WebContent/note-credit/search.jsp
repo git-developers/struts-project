@@ -4,7 +4,7 @@
 
 	<input type="hidden" name="id" value="<s:property value="noteCredit.id"/>" >
 	<input type="hidden" name="bd" value="<s:property value="noteCredit.bd"/>" >
-
+	<input type="hidden" name="igv" value="<s:property value="noteCredit.igv"/>" >
 	
 	
 	
@@ -141,11 +141,6 @@
             	<tfoot class="bg-blue">
 	               <tr>
 	                 <td colspan="2">Total</td>
-	                 <!-- 
-	                 <td>
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].simbolo"/>
-	                 </td>
-	                  -->
 	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].noAfectoSum"/>
                  	</td>

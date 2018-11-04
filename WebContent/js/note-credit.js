@@ -52,6 +52,7 @@
         	row ['fechaVencimiento'] = $('input[name="fechaVencimiento"]').val();
         	row ['queryTotal'] = $('input[name="queryTotal"]').val();
         	row ['queryMoneyIntoWords'] = $('input[name="queryMoneyIntoWords"]').val();
+        	row ['queryNoteCreditType'] = $('input[name="queryNoteCreditType"]').val();
         	
         	row ['noAfecto_1'] = $('input[name="noAfecto-1"]').val();
         	row ['afecto_1'] = $('input[name="afecto-1"]').val();
@@ -76,9 +77,6 @@
             
         	row ['noAfecto_8'] = $('input[name="noAfecto-8"]').val();
         	row ['afecto_8'] = $('input[name="afecto-8"]').val();
-            
-        	row ['queryNoteCreditType'] = $('input[name="queryNoteCreditType"]').val();
-
         	
         	console.log("ROWS ::: " + JSON.stringify(row));
         	

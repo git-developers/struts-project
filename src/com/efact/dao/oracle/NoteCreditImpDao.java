@@ -46,14 +46,14 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	objectOut.setId(rs.getInt("RVB_ID"));
             	objectOut.setIgv(rs.getFloat("IGV"));
             	objectOut.setNumero(rs.getInt("RVB_NUMERO"));
-            	objectOut.setSerie(rs.getInt("RVB_SERIE"));//serie - numero
+            	objectOut.setSerie(rs.getInt("RVB_SERIE"));
             	objectOut.setContrato(rs.getString("RVB_CONTRATO"));
-            	objectOut.setDatos(rs.getString("RVB_DATOS"));//titular
+            	objectOut.setDatos(rs.getString("RVB_DATOS"));
             	objectOut.setFechaEmision(rs.getInt("RVB_FEMISION"));
             	objectOut.setFechaVencimiento(rs.getInt("RVB_FVENCIMIENTO"));
             	objectOut.setBd(rs.getString("BD"));
-            	objectOut.setTipoDocDestino(rs.getInt("TIPO_DOC_DESTINO"));// aqui llega numero 4 - NOTA DE CREDITO
-            	objectOut.setFechaEmisionDestino(rs.getDate("FEC_EMISION_DESTINO"));//mismo campo fecha emision - vencimineto - NOTA ORIGEN - Modificable
+            	objectOut.setTipoDocDestino(rs.getInt("TIPO_DOC_DESTINO"));
+            	objectOut.setFechaEmisionDestino(rs.getDate("FEC_EMISION_DESTINO"));
             }
             
             rs.close();
