@@ -67,7 +67,8 @@
 		                  	<option value="99">[todos]</option>
 		                  	<s:iterator value="listBank" var="bank">
 		                  		<option value="<s:property value = "#bank.id"/>">
-		                  			(<s:property value = "#bank.id"/>) <s:property value = "#bank.name"/>
+		                  			<s:property value = "#bank.name"/>
+		                  			<!-- (<s:property value = "#bank.id"/>)  -->
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
@@ -99,7 +100,7 @@
         		
         		<div class="row">
         		
-					<div class="col-md-3">
+					<div class="col-md-2">
 					    <div class="form-group">
 					      <label for="exampleInputEmail1">Fecha de deposito (Desde)</label>
 					        <div class="input-group">
@@ -111,7 +112,7 @@
 					    </div>
 					</div>
 					
-					<div class="col-md-3">
+					<div class="col-md-2">
 					    <div class="form-group">
 					      <label for="exampleInputEmail1">Fecha de deposito (Hasta)</label>
 					        <div class="input-group">
@@ -172,17 +173,17 @@
 						<tr>
 						   <th style="width: 15px">#</th>
 						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
-						   <th>Programa</th>
-						   <th>Asociado</th>
-						   <th>Contrato</th>
-						   <th>Datos</th>
-						   <th><i class="fa fa-fw fa-calendar"></i> Fecha</th>
-						   <th><i class="fa fa-fw fa-money"></i> Monto</th>
-						   <th>Conciliado</th>
-						   <th>Diferencia</th>
-						   <th>Devengado</th>
-						   <th>Cod. Cierre</th>
-						   <th>Sistema</th>
+						   <th class="text-center">Programa</th>
+						   <th class="text-center">Asociado</th>
+						   <th class="text-center">Contrato</th>
+						   <th class="text-center">Datos</th>
+						   <th class="text-center"><i class="fa fa-fw fa-calendar"></i> Fecha</th>
+						   <th class="text-center"><i class="fa fa-fw fa-money"></i> Monto</th>
+						   <th class="text-center">Conciliado</th>
+						   <th class="text-center">Diferencia</th>
+						   <th class="text-center">Devengado</th>
+						   <th class="text-center">Cod. Cierre</th>
+						   <th class="text-center">Sistema</th>
 						 </tr>
 		              </thead>
 			            <tbody>

@@ -286,7 +286,6 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.registerOutParameter(2, OracleTypes.CURSOR);
             st.execute();
             
-            
             ResultSet rs = (ResultSet) st.getObject(1);
             
             while (rs.next()){

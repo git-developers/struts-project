@@ -46,8 +46,9 @@
 			<td>
 				<s:property value = "#object.lcs_fecha"/>
 			</td>
-			<td class="text-right" style="width: 45px">
-				S/ <s:property value = "#object.lcs_monto"/>
+			<td class="text-right" >
+			<!-- style="width: 45px" -->
+				<s:property value = "#object.lcs_monto"/>
 			</td>
 			<td class="text-right">
 				<s:property value = "#object.lcs_importe"/>

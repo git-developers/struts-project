@@ -79,22 +79,22 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th><i class="fa fa-fw fa-calendar"></i> Año</th>
-						   <th>Tipo</th>
-						   <th>Serie</th>
-						   <th>Programa</th>
-						   <th>ene</th>
-						   <th>feb</th>
-   						   <th>mar</th>
-   						   <th>abr</th>
-   						   <th>may</th>
-   						   <th>jun</th>
-   						   <th>jul</th>
-						   <th>ago</th>
-						   <th>set</th>
-						   <th>oct</th>
-						   <th>nov</th>
-						   <th>dic</th>
+						   <th class="text-center"><i class="fa fa-fw fa-calendar"></i> Año</th>
+						   <th class="text-center">Tipo</th>
+						   <th class="text-center">Serie</th>
+						   <th class="text-center">Programa</th>
+						   <th class="text-center">ene</th>
+						   <th class="text-center">feb</th>
+   						   <th class="text-center">mar</th>
+   						   <th class="text-center">abr</th>
+   						   <th class="text-center">may</th>
+   						   <th class="text-center">jun</th>
+   						   <th class="text-center">jul</th>
+						   <th class="text-center">ago</th>
+						   <th class="text-center">set</th>
+						   <th class="text-center">oct</th>
+						   <th class="text-center">nov</th>
+						   <th class="text-center">dic</th>
 						 </tr>
 		              </thead>
 			            <tbody>

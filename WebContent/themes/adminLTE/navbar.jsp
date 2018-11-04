@@ -208,7 +208,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="themes/adminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alfredo Yupanqui</span>
+              <span class="hidden-xs">Jair Garcia</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -216,7 +216,7 @@
                 <img src="themes/adminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alfredo Yupanqui - Web Developer
+                  Jair Garcia - Gerente
                   <small>Miembro desde Nov. 2018</small>
                 </p>
               </li>

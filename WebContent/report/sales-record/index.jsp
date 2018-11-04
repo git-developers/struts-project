@@ -123,25 +123,25 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th>Emisi&oacute;n</th>
-						   <th>Tipo moneda</th>
-						   <th><i class="fa fa-fw fa-calendar"></i> Fecha emisi&oacute;n</th>
-						   <th>Comprobante</th>
-						   <th>Serie</th>
-						   <th>Numero</th>
-   						   <th>Documento</th>
-   						   <th>Datos</th>
-   						   <th>Valor facturado</th>
-   						   <th>Base imponible</th>
-   						   <th>impin afecta</th>
-						   <th>IGV</th>
-						   <th>Importe total</th>
-						   <th>Venta</th>
-						   <th>Total afectas</th>
-						   <th>Total no afectas</th>
-						   <th>Total igv</th>
-						   <th><i class="fa fa-fw fa-money"></i> Total</th>
-						   <th>ID</th>
+						   <th class="text-center">Emisi&oacute;n</th>
+						   <th class="text-center">Tipo moneda</th>
+						   <th class="text-center"><i class="fa fa-fw fa-calendar"></i> Fecha emisi&oacute;n</th>
+						   <th class="text-center">Comprobante</th>
+						   <th class="text-center">Serie</th>
+						   <th class="text-center">Numero</th>
+   						   <th class="text-center">Documento</th>
+   						   <th class="text-center">Datos</th>
+   						   <th class="text-center">Valor facturado</th>
+   						   <th class="text-center">Base imponible</th>
+   						   <th class="text-center">impin afecta</th>
+						   <th class="text-center">IGV</th>
+						   <th class="text-center">Importe total</th>
+						   <th class="text-center">Venta</th>
+						   <th class="text-center">Total afectas</th>
+						   <th class="text-center">Total no afectas</th>
+						   <th class="text-center">Total igv</th>
+						   <th class="text-center"><i class="fa fa-fw fa-money"></i> Total</th>
+						   <th class="text-center">ID</th>
 						 </tr>
 		              </thead>
 			            <tbody>
