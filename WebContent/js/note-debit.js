@@ -119,14 +119,6 @@
         return this.each(function(){
 
             var bp = new $.formNoteDebit(this, options);
-
-            $("#program").change(function(event) {
-            	bp.program(this);
-        	});
-            
-            $("#group").change(function(event) {
-            	bp.group(this);
-        	});
             
             $("form[name='form-note-debit']").submit(function( event ) {
             	event.preventDefault();
@@ -139,6 +131,18 @@
             
             $(".note-debit-export").click(function( event ) {
                 bp.exportExcel(this);
+            });
+            
+            $("#program").change(function(event) {
+            	bp.program(this);
+        	});
+            
+            $("#group").change(function(event) {
+            	bp.group(this);
+        	});
+            
+            $(document).ready(function(){
+            	bp.program(this);
             });
 
         });
