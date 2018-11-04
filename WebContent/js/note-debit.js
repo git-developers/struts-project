@@ -133,8 +133,7 @@
                 bp.search(this);
             });
             
-            $(".note-debit-process").click(function( event ) {
-            	event.preventDefault();            	
+            $(".note-debit-process").click(function( event ) {         	
                 bp.process(this);
             });
             
