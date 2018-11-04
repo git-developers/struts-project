@@ -21,7 +21,6 @@
         
         base.program = function(context) {
             var id = $('#program').val();
-
             $('#group').prop('selectedIndex',0);
             $('.group-select').hide();
             $('.prod-' + id).show();
