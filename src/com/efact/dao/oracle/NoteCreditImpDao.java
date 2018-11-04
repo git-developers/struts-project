@@ -98,10 +98,10 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	NoteCreditDetail obj = new NoteCreditDetail();
             	obj.setDescripcion(rs.getString("RVB_DESCRIPCION"));
             	obj.setSimbolo(rs.getString("SIMBOLO"));// misma moneda
-            	obj.setAfecto(rs.getFloat("RVB_AFECTO"));
-            	obj.setIgv(rs.getFloat("RVB_IGV"));
-            	obj.setNoAfecto(rs.getFloat("RVB_NOAFECTO"));
-            	obj.setTotal(rs.getFloat("RVB_TOTAL"));
+            	obj.setAfecto(rs.getString("RVB_AFECTO"));
+            	obj.setIgv(rs.getString("RVB_IGV"));
+            	obj.setNoAfecto(rs.getString("RVB_NOAFECTO"));
+            	obj.setTotal(rs.getString("RVB_TOTAL"));
             	
             	afectoSum += rs.getFloat("RVB_AFECTO");
             	igvSum += rs.getFloat("RVB_IGV");

@@ -8,10 +8,10 @@ public class NoteCreditDetail implements Serializable {
 	
     private String descripcion;
     private String simbolo;
-    private float afecto;
-    private float igv;
-    private float noAfecto;
-    private float total;
+    private String afecto;
+    private String igv;
+    private String noAfecto;
+    private String total;
     
     private float afectoSum;
     private float noAfectoSum;
@@ -29,30 +29,6 @@ public class NoteCreditDetail implements Serializable {
 	}
 	public void setSimbolo(String simbolo) {
 		this.simbolo = simbolo;
-	}
-	public float getAfecto() {
-		return afecto;
-	}
-	public void setAfecto(float afecto) {
-		this.afecto = afecto;
-	}
-	public float getIgv() {
-		return igv;
-	}
-	public void setIgv(float igv) {
-		this.igv = igv;
-	}
-	public float getNoAfecto() {
-		return noAfecto;
-	}
-	public void setNoAfecto(float noAfecto) {
-		this.noAfecto = noAfecto;
-	}
-	public float getTotal() {
-		return total;
-	}
-	public void setTotal(float total) {
-		this.total = total;
 	}
 	public float getAfectoSum() {
 		return afectoSum;
@@ -77,6 +53,30 @@ public class NoteCreditDetail implements Serializable {
 	}
 	public void setTotalSum(float totalSum) {
 		this.totalSum = totalSum;
+	}
+	public String getAfecto() {
+		return afecto;
+	}
+	public void setAfecto(String afecto) {
+		this.afecto = afecto;
+	}
+	public String getIgv() {
+		return igv;
+	}
+	public void setIgv(String igv) {
+		this.igv = igv;
+	}
+	public String getNoAfecto() {
+		return noAfecto;
+	}
+	public void setNoAfecto(String noAfecto) {
+		this.noAfecto = noAfecto;
+	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
 	}
     
     
