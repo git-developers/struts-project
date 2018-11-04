@@ -121,8 +121,8 @@
 						   <th class="text-center">C&oacute;digo asociado</th>
 						   <th class="text-center">Datos asociado</th>
 						   <th class="text-center">Numero de cuota</th>
-						   <th class="text-center">Posici&oacute;n</th>
-						   <th class="text-center">Descripcion</th>
+						   <th class="text-center">Grupo mes</th>
+						   <th class="text-center">Descripci&oacute;n</th>
 						   <th class="text-center">Afecto</th>
 						   <th class="text-center">No Afecto</th>
 						   <th class="text-center">IGV</th>
