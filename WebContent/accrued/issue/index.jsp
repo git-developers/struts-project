@@ -46,7 +46,6 @@
 		                <div class="form-group">
 		                  <label for="">Grupos</label>
 		                  <select class="form-control" name="queryGroup" id="group">
-		                  	<option value="0">[todos]</option>
 		                  	<s:iterator value="listGroup" var="group">
 		                  		<option 
 		                  			data-prod-id="<s:property value = "#group.prodId"/>"
@@ -117,16 +116,16 @@
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th>Recaudo Id</th>
-						   <th>C&oacute;digo asociado</th>
-						   <th>Datos asociado</th>
-						   <th>Numero de cuota</th>
-						   <th>Posici&oacute;n</th>
-						   <th>Descripcion</th>
-						   <th>Afecto</th>
-						   <th>No Afecto</th>
-						   <th>IGV</th>
-						   <th><i class="fa fa-fw fa-money"></i> Total</th>
+						   <th class="text-center">Recaudo Id</th>
+						   <th class="text-center">C&oacute;digo asociado</th>
+						   <th class="text-center">Datos asociado</th>
+						   <th class="text-center">Numero de cuota</th>
+						   <th class="text-center">Posici&oacute;n</th>
+						   <th class="text-center">Descripcion</th>
+						   <th class="text-center">Afecto</th>
+						   <th class="text-center">No Afecto</th>
+						   <th class="text-center">IGV</th>
+						   <th class="text-center"><i class="fa fa-fw fa-money"></i> Total</th>
 						 </tr>
 		              </thead>
 			            <tbody>

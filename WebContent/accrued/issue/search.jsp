@@ -38,17 +38,17 @@
 			<td>
 				<s:property value = "#object.descripcion"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.afecto"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.noAfecto"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.igv"/>
 			</td>
-			<td>
-				S/ <s:property value = "#object.total"/>
+			<td class="text-right">
+				<s:property value = "#object.total"/>
 			</td>
 		</tr>
 	 </s:iterator>

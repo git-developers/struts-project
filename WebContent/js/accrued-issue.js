@@ -142,6 +142,10 @@
             	event.preventDefault();
                 bp.process(this);
             });
+            
+            $(document).ready(function(){
+            	bp.program(this);
+            });
 
         });
     };
