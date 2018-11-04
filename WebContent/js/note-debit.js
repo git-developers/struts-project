@@ -78,10 +78,10 @@
         
         base.process = function(context) {
         	
-        	var table = $("table#voucher-table tbody tr");
-        	var firstOrigen = $(table).find('td:eq(0) input[name="origen"]').val();
+        	var table = $("table#note-debit-table tbody tr");
+        	var origen = table.find('td:eq(0) input[name="origen"]').val();
         	
-        	console.log("firstOrigen :: " + firstOrigen);
+        	console.log("ORIGEN :: " + origen);
         	
 //			filtros: $('#formulario_proveedor').serialize() + 
 //			'&' + $.param({ 'listProductos': listProductos.join('#') }) + 
@@ -93,7 +93,7 @@
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: $(context).serialize() + '&' + $.param({ 'origen': firstOrigen })
+                	fields: $(context).serialize() + '&' + $.param({ 'origen': origen })
                 },
                 
                 beforeSend: function(jqXHR, settings) {

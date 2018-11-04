@@ -22,8 +22,6 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
 
         try{
         	
-            System.out.print("33 - listNoteDebitDropdown ::::: PROGRAM:: " + programId + " --- GROUP:: " + groupId);
-        	
             String sql = "{ call FIN_PKG_NOTADEBITO.USP_LISTA_FECHAS(?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
@@ -136,7 +134,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
 
         } catch (Exception e){
         	System.out.print("process -- Exception ::::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }
