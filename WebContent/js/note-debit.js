@@ -106,6 +106,7 @@
     		window.location.href = options.contextPath + '/note-debit-export?fields=' + encodeURIComponent($("form[name='form-note-debit']").serialize());
         };
         
+        
         // Private Functions
         function debug(e) {
           console.log(e);
