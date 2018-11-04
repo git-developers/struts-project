@@ -76,11 +76,13 @@
             
             $('.prod-' + id).show();
             
-            if (id === '0') {
-                $('.group-select').show();
-            }
+            $('#grupo').attr('selected', '-1');
+            
+//            if (id === '0') {
+//                $('.group-select').show();
+//            }
 
-            $('#grupo').val(0);
+            //$('#grupo').val(0);
         };
         
         base.group = function(context) {
