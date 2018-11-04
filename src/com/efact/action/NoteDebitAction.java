@@ -76,17 +76,6 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
 		return SUCCESS;
 	}
 
-	public String process() throws Exception {
-		
-        String fields = request.getParameter("fields");
-        NoteDebit nbObj = gson.fromJson(serializeToJSON(fields), NoteDebit.class);
-
-        NoteDebitDao noteDebitDao = dao.getNoteDebitDao();
-        noteDebit = noteDebitDao.process(nbObj); 
-        
-		return SUCCESS;
-	}
-	
 	public String export() throws Exception {
 		
         String fields = request.getParameter("fields");
@@ -97,6 +86,17 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
         
 		this.excelStream = ExcelExport.noteDebitExport(listNoteDebit);
 		
+		return SUCCESS;
+	}
+	
+	public String process() throws Exception {
+		
+        String fields = request.getParameter("fields");
+        NoteDebit nbObj = gson.fromJson(serializeToJSON(fields), NoteDebit.class);
+
+        NoteDebitDao noteDebitDao = dao.getNoteDebitDao();
+        noteDebit = noteDebitDao.process(nbObj); 
+        
 		return SUCCESS;
 	}
 	

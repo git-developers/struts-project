@@ -61,7 +61,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
 
         try{
     		
-            String sql = "{ ? = call FIN_PKG_NOTADEBITO.USP_LISTA_DETALLE(?, ?, ?) } "; 
+            String sql = "{ call FIN_PKG_NOTADEBITO.USP_LISTA_DETALLE(?, ?, ?) } "; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
