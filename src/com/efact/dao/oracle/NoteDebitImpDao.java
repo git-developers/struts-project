@@ -24,7 +24,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
         	
             System.out.print("33 - listNoteDebitDropdown ::::: PROGRAM:: " + programId + " --- GROUP:: " + groupId);
         	
-            String sql = "{ ? = call FIN_PKG_NOTADEBITO.USP_LISTA_FECHAS(?, ?, ?) }"; 
+            String sql = "{ call FIN_PKG_NOTADEBITO.USP_LISTA_FECHAS(?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);  
