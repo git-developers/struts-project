@@ -65,7 +65,7 @@
                 },
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').find('.modal-body').html('');
-                	$("table#note-debit-table tbody").html('<div class="text-center"><i class="fa fa-3x fa-refresh fa-spin"></i></div>');
+                	$("table#note-debit-table tbody").html('<tr><td colspan="13" align="center"><i class="fa fa-3x fa-refresh fa-spin"></i></td></tr>');
                 },
                 success: function(data, textStatus, jqXHR) {
                     $("table#note-debit-table tbody").html(data);
