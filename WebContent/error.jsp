@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+<%@include file="themes/adminLTE/header.jsp" %>
+
  <section class="content-header">
    <h1>
      Informaci&oacute;n
@@ -18,3 +21,5 @@
    	</div>
   </div>
 </section>
+
+<%@include file="themes/adminLTE/footer.jsp" %>

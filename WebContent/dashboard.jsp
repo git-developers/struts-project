@@ -97,10 +97,7 @@
               <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
             </div>
           </div>
-          <!-- /.nav-tabs-custom -->
 
-
-          <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
@@ -214,8 +211,7 @@
           <!-- /.box -->
 
         </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
         <section class="col-lg-5 connectedSortable">
 
           <!-- Map box -->
@@ -258,12 +254,9 @@
                   <div id="sparkline-3"></div>
                   <div class="knob-label">Exists</div>
                 </div>
-                <!-- ./col -->
               </div>
-              <!-- /.row -->
             </div>
           </div>
-          <!-- /.box -->
 
           <!-- solid sales graph -->
           <div class="box box-solid bg-teal-gradient">
@@ -291,35 +284,26 @@
 
                   <div class="knob-label">Mail-Orders</div>
                 </div>
-                <!-- ./col -->
                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                   <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                          data-fgColor="#39CCCC">
 
                   <div class="knob-label">Online</div>
                 </div>
-                <!-- ./col -->
                 <div class="col-xs-4 text-center">
                   <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                          data-fgColor="#39CCCC">
 
                   <div class="knob-label">In-Store</div>
                 </div>
-                <!-- ./col -->
               </div>
-              <!-- /.row -->
             </div>
-            <!-- /.box-footer -->
           </div>
-          <!-- /.box -->
 
         </section>
-        <!-- right col -->
       </div>
-      <!-- /.row (main row) -->
 
     </section>
-    <!-- /.content -->
 
 <%@include file="themes/adminLTE/footer.jsp" %>
 
