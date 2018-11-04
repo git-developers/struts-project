@@ -14,8 +14,8 @@ public class AccruedIssue implements Serializable {
 	private String descripcion; 
 	private String afecto; 
 	private String noAfecto; 
-	private float igv;
-	private float total;
+	private String igv;
+	private String total;
 	private String resultado; 
 	private boolean status;
 	private String codigoAsociado; 
@@ -66,18 +66,6 @@ public class AccruedIssue implements Serializable {
 	public void setNoAfecto(String noAfecto) {
 		this.noAfecto = noAfecto;
 	}
-	public float getIgv() {
-		return igv;
-	}
-	public void setIgv(float igv) {
-		this.igv = igv;
-	}
-	public float getTotal() {
-		return total;
-	}
-	public void setTotal(float total) {
-		this.total = total;
-	}
 	public int getQueryProgram() {
 		return Util.strToInt(queryProgram);
 	}
@@ -113,6 +101,18 @@ public class AccruedIssue implements Serializable {
 	}
 	public void setCodigoAsociado(String codigoAsociado) {
 		this.codigoAsociado = codigoAsociado;
+	}
+	public String getIgv() {
+		return igv;
+	}
+	public void setIgv(String igv) {
+		this.igv = igv;
+	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 }
