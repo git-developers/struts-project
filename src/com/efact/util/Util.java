@@ -1,6 +1,7 @@
 package com.efact.util;
 
 import java.sql.Date;
+import java.text.DecimalFormat;
 
 public class Util {
 
@@ -44,4 +45,14 @@ public class Util {
 			return -1;
 		}
 	}
+
+	public static String amountFormat(String s) {
+		DecimalFormat decimalFormat = new DecimalFormat("###,###.##");
+		return decimalFormat.format(s);
+	}
+	
+	
+	
+	
+	
 }

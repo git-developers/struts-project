@@ -46,7 +46,7 @@
 			<td>
 				<s:property value = "#object.lcs_fecha"/>
 			</td>
-			<td class="text-right">
+			<td class="text-right" style="width: 45px">
 				S/ <s:property value = "#object.lcs_monto"/>
 			</td>
 			<td class="text-right">

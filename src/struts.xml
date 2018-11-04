@@ -75,12 +75,12 @@
 		
 		
 		<action name="reporte-registro-de-ventas" class="com.efact.action.ReportAction" method="salesRecord">
-			<result name="success">/report/sales-record.jsp</result>
+			<result name="success">/report/sales-record/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="report-sales-record-search" class="com.efact.action.ReportAction" method="salesRecordSearch">
-			<result name="success">/report/sales-record-search.jsp</result>
+			<result name="success">/report/sales-record/search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
@@ -99,12 +99,12 @@
 
 
 		<action name="reporte-resumen-de-ventas" class="com.efact.action.ReportAction" method="salesSummary">
-			<result name="success">/report/sales-summary.jsp</result>
+			<result name="success">/report/sales-summary/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		
 		<action name="report-sales-summary-search" class="com.efact.action.ReportAction" method="salesSummarySearch">
-			<result name="success">/report/sales-summary-search.jsp</result>
+			<result name="success">/report/sales-summary/search.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		

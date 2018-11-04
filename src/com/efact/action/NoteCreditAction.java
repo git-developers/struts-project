@@ -2,8 +2,6 @@ package com.efact.action;
 
 import com.efact.dao.factory.DaoFactory;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
