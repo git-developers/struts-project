@@ -61,7 +61,7 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="">Fecha de proceso</label>
-		                  <select class="form-control" id="dateTo" name="queryCieId" required="required">
+		                  <select class="form-control" id="queryCieId" name="queryCieId" required="required">
 		                  	<option>[seleccionar]</option>
 		                  </select>
 		                </div>
