@@ -46,7 +46,7 @@
 		                <div class="form-group">
 		                  <label for="">Grupos</label>
 		                  <select class="form-control" name="queryGroup" id="group" required="required">
-		                  	<option value="">[seleccione]</option>
+		                  	<option>[seleccione]</option>
 		                  	<s:iterator value="listGroup" var="group">
 		                  		<option 
 		                  			data-prod-id="<s:property value = "#group.prodId"/>"

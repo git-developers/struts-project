@@ -164,7 +164,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	            obj.setRecaudoId(rs.getInt("REC_ID"));
 	            obj.setDatosAsociados(rs.getString("DATOS"));
 	            obj.setNumeroCuota(rs.getInt("REC_NCUOTA"));
-	            obj.setPosicion(rs.getInt("CIE_NPOSICION"));
+	            obj.setPosicion(rs.getInt("CUP_NPOSICION"));
 	            obj.setDescripcion(rs.getString("DESCRIPCION"));
 	            obj.setAfecto(rs.getString("AFECTO"));
 	            obj.setNoAfecto(rs.getString("NOAFECTO"));
