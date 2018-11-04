@@ -2,35 +2,13 @@ package com.efact.bean;
 
 import java.io.Serializable;
 
+import com.efact.util.Maths;
+
 
 public class NoteCreditDetail implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-//    private String descripcion;
-//    private String simbolo;
-//    private String afecto;
-//    private String igv;
-//    private String noAfecto;
-//    private String total;
-//    private String recaudo;
-//	
-//    RVD.RVB_DESCRIPCION CO_RVB_DESCRIPCION,
-//    M.SIMBOLO CO_SIMBOLO,
-//    trim(to_char(round(RVD.RVB_NOAFECTO,2),'999,999.99')) as CO_RVB_NOAFECTO,
-//    trim(to_char(round(RVD.RVB_AFECTO,2),'999,999.99')) as CO_RVB_AFECTO,
-//    trim(to_char(round(RVD.RVB_IGV,2),'999,999.99')) as CO_RVB_IGV,
-//    trim(to_char(round(RVD.RVB_TOTAL,2),'999,999.99')) as CO_RVB_TOTAL,
-//    
-//    -- LISTAD0 DE Nota de crédito
-//    
-//    RVD.RVS_RECAUDO NC_RVS_RECAUDO,
-//    RVD.RVB_DESCRIPCION NC_RVB_CONCEPTO,
-//    trim(to_char(round(RVD.RVB_NOAFECTO,2),'999,999.99')) as NC_RVB_NOAFECTO,
-//    trim(to_char(round(RVD.RVB_AFECTO,2),'999,999.99')) as NC_RVB_AFECTO,
-//    trim(to_char(round(RVD.RVB_IGV,2),'999,999.99')) as NC_RVB_IGV,
-//    trim(to_char(round(RVD.RVB_TOTAL,2),'999,999.99')) as NC_RVB_TOTAL
-//    
+  
 	private String COdescripcion;
 	private String COsimbolo;
 	private String COnoAfecto;
@@ -141,7 +119,7 @@ public class NoteCreditDetail implements Serializable {
 		this.igvSum = igvSum;
 	}
 	public float getTotalSum() {
-		return totalSum;
+		return Maths.roundNumber(totalSum, 2);
 	}
 	public void setTotalSum(float totalSum) {
 		this.totalSum = totalSum;
