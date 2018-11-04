@@ -32,10 +32,9 @@
 		                <div class="form-group">
 		                  <label for="">Programa</label>
 		                  <select class="form-control" id="program" name="queryProgram" required="required">
-		                  	<!-- <option value="0">[todos]</option>  -->
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
-		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
+		                  			<s:property value = "#program.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>
@@ -52,7 +51,7 @@
 		                  			data-prod-id="<s:property value = "#group.prodId"/>"
 		                  			value="<s:property value = "#group.id"/>" 
 		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
-		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
+		                  			<s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
 		                  </select>

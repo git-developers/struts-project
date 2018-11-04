@@ -42,7 +42,7 @@ public class BankImpDao extends OracleDaoFactory implements BankDao  {
 
         } catch (Exception e){
         	System.out.print("BANK findAll -- Exception ::::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }

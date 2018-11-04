@@ -43,6 +43,12 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 
 	public String index() throws Exception {
 		
+        NoteCreditDao ncDao = dao.getNoteCreditDao();
+		VoucherDao voucherDao = dao.getVoucherDao();
+		
+        listVoucherDropdown = voucherDao.listVoucherDropdown(Const.MODULE_NOTE_CREDIT);
+        listSeries = ncDao.listSeries();
+        
 		return SUCCESS;
 	}
 
@@ -53,11 +59,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.search(ncObj);  
-		VoucherDao voucherDao = dao.getVoucherDao();
-		
         listNoteCreditType = ncDao.listNoteCreditType();
-        listVoucherDropdown = voucherDao.listVoucherDropdown(Const.MODULE_NOTE_CREDIT);
-        listSeries = ncDao.listSeries();
         
 		return SUCCESS;
 	}

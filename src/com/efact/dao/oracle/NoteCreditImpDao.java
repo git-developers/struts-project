@@ -241,7 +241,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
         try{
         	
-            String sql = "{ call FIN_PKG_NOTACREDITO.P_LISTAR_SERIE_COMPRO(?, ?) }"; 
+            String sql = "{ call P_LISTAR_SERIE_COMPRO(?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);  
@@ -249,7 +249,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.registerOutParameter(2, OracleTypes.CURSOR);
             st.execute();
             
-            ResultSet rs = (ResultSet) st.getObject(1);
+            ResultSet rs = (ResultSet) st.getObject(2);
             
             while (rs.next()){
             	
