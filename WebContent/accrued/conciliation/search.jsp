@@ -48,7 +48,7 @@
 				<s:property value = "#object.total"/>
 			</td>
 			<td>
-				<small class="label pull-right bg-green">
+				<small class="label bg-green">
 					<s:property value = "#object.sistema"/>
 				</small>
 			</td>
