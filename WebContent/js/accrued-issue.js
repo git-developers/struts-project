@@ -72,8 +72,8 @@
             
             console.log("11 EMISION DEVENGADOS ::: " + id);
             
-//            $('#grupo').prop('selectedIndex',0);
-            $('#grupo').val('');
+            $('#group').prop('selectedIndex',0);
+//            $('#grupo').val('');
             
             $('.group-select').hide();
             

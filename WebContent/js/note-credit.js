@@ -117,7 +117,7 @@
         
         base.voucher = function(context) {
         	
-            var id = $(context).val();  
+            var id = $('#select-voucher').val();  
             
             $('.select-series').hide();
             
@@ -154,7 +154,10 @@
         	$(document).on('change', 'input:checkbox.row-checkbox', function(event) {
                 bp.rowCheckbox(this);
             });
-            
+        	
+            $(document).ready(function(){
+            	bp.voucher(this);
+            });
 
         });
     };

@@ -363,35 +363,35 @@
               
               
               
-             
-               <tr>
-              	 <td><input type="checkbox" class="row-checkbox"></td>	
-                 <td>Capital 45</td>
-                 <td>S/</td>
-                 <td>
-                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-                 </td>
-                 <td>
-                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-                 </td>
-                 <td>0.00</td>
-                 <td>43.00</td>
-               </tr>
-               <tr>
-               	<td><input type="checkbox" class="row-checkbox"></td>	
-                 <td>Seguro</td>
-                 <td>S/</td>
-                 <td>
-                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-                 </td>
-                 <td>
-                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-                 </td>
-                 <td>0.00</td>
-                 <td>59.00</td>
-               </tr>
-               
-               
+		             	<!-- 
+		               <tr>
+		              	 <td><input type="checkbox" class="row-checkbox"></td>	
+		                 <td>Capital 45</td>
+		                 <td>S/</td>
+		                 <td>
+		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+		                 </td>
+		                 <td>
+		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+		                 </td>
+		                 <td>0.00</td>
+		                 <td>43.00</td>
+		               </tr>
+		               <tr>
+		               	<td><input type="checkbox" class="row-checkbox"></td>	
+		                 <td>Seguro</td>
+		                 <td>S/</td>
+		                 <td>
+		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+		                 </td>
+		                 <td>
+		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
+		                 </td>
+		                 <td>0.00</td>
+		                 <td>59.00</td>
+		               </tr>
+		                -->
+		               
                
                
                
