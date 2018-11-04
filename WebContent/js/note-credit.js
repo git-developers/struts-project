@@ -52,7 +52,7 @@
         	row ['fechaVencimiento'] = $('input[name="fechaVencimiento"]').val();
         	row ['queryTotal'] = $('input[name="queryTotal"]').val();
         	row ['queryMoneyIntoWords'] = $('input[name="queryMoneyIntoWords"]').val();
-        	row ['queryNoteCreditType'] = $('input[name="queryNoteCreditType"]').val();
+        	row ['queryNoteCreditType'] = $('select[name="queryNoteCreditType"]').val();
         	
         	row ['noAfecto_1'] = $('input[name="noAfecto-1"]').val();
         	row ['afecto_1'] = $('input[name="afecto-1"]').val();
@@ -79,14 +79,13 @@
         	row ['afecto_8'] = $('input[name="afecto-8"]').val();
         	
         	console.log("ROWS ::: " + JSON.stringify(row));
-        	
-        	
+
             $.ajax({
                 url: options.contextPath + '/note-credit-process',
                 type: 'POST',
                 dataType: 'html',
                 data: {
-                	fields: JSON.stringify(row) //$("form[name='form-note-credit-process']").serialize()
+                	fields: JSON.stringify(row)
                 },
                 beforeSend: function(jqXHR, settings) {
                 	$('#modal-process').find('.modal-body').html('<p><i class="fa fa-2x fa-refresh fa-spin"></i><span style="font-size: 16px; margin-left: 5px">Procesando...</span></p>');
@@ -102,7 +101,6 @@
                     console.log("error :: ajax :: voucher search");
                 }
             });
-        	
         };
         
         base.rowCheckbox = function(context) {
@@ -122,6 +120,11 @@
             $('.voucher-' + id).show();
         };
         
+        base.rowAfecto = function(context) {
+            console.log("XXXXX");
+        };
+
+
         // Private Functions
         function debug(e) {
           console.log(e);
@@ -155,6 +158,10 @@
         	
             $(document).ready(function(){
             	bp.voucher(this);
+            });
+            
+        	$(document).on('keyup', '.row-afecto', function(event) {
+                bp.rowAfecto(this);
             });
 
         });

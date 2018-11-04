@@ -340,7 +340,7 @@
 				                 <td>
 				                 	<input 
 				                 		type="number" 
-				                 		class="form-control row-note-credit" 
+				                 		class="form-control row-note-credit row-afecto" 
 				                 		disabled="disabled" 
 				                 		value="<s:property value = "#object.NCafecto"/>"
 				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
