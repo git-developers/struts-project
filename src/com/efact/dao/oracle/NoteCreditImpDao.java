@@ -42,8 +42,6 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             while (rs.next()){
             	
-            	System.out.print("COMPROBANTE_ORIGEN ::::: " + rs.getString("COMPROBANTE_ORIGEN"));
-            	
             	objectOut.setComprobanteOrigen(rs.getString("COMPROBANTE_ORIGEN"));
             	objectOut.setId(rs.getInt("RVB_ID"));
             	objectOut.setNumero(rs.getInt("RVB_NUMERO"));
