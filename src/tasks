@@ -23,13 +23,3 @@ save:
 	@echo "*** Proceso Terminado ***";
 	@echo ---;
 	
-pull:
-	@echo ---;
-	@echo "* INICIO DE PULL DE DATOS - del repositorio Origen *";
-	@echo ---;
-	git stash
-	git status
-	git pull origin master
-	@echo ---;
-	@echo "*** Proceso Terminado ***";
-	@echo ---;
