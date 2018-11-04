@@ -39,11 +39,6 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
             while (rs.next()){
             	
-            	System.out.print("monto_cuota ::::: " + rs.getString("monto_cuota"));
-            	System.out.print("abono_cuota ::::: " + rs.getString("abono_cuota"));
-            	System.out.print("saldo_cuota ::::: " + rs.getString("saldo_cuota"));
-            	System.out.print("abo_documento ::::: " + rs.getString("abo_documento"));
-            	
             	Voucher obj = new Voucher();
                 obj.setLcs_check(rs.getString("flag_html"));
                 obj.setLcs_banco(rs.getString("banco"));    		    
@@ -195,8 +190,6 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 	public List<VoucherDropdown> listVoucherDropdown(int option) throws Exception {
 		
 		List<VoucherDropdown> list = new ArrayList<>();
-		
-		System.out.println(":::: listVoucherDropdown NEXT :::: " + option);
 
         try{
         	
