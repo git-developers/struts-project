@@ -28,8 +28,8 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);  
-            st.setInt(2, programId);
-            st.setInt(1, groupId);
+            st.setInt(1, programId);
+            st.setInt(2, groupId);
             st.registerOutParameter(3, OracleTypes.CURSOR);
             st.execute();
             

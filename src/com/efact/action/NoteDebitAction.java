@@ -26,7 +26,7 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
 	private InputStream excelStream;
 	private List<Program> listProgram;
 	private List<Group> listGroup;
-	private List<NoteDebitDropdown> listNoteCreditDropdown;
+	private List<NoteDebitDropdown> listNoteDebitDropdown;
 	private List<NoteDebit> listNoteDebit;
 	private NoteDebit noteDebit;
 	
@@ -58,9 +58,9 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
 
         int programId = Integer.valueOf(request.getParameter("programId"));
         int groupId = Integer.valueOf(request.getParameter("groupId"));
-        
+
         NoteDebitDao noteDebitDao = dao.getNoteDebitDao();
-        listNoteCreditDropdown = noteDebitDao.listNoteDebitDropdown(programId, groupId);
+        listNoteDebitDropdown = noteDebitDao.listNoteDebitDropdown(programId, groupId);
         
 		return SUCCESS;
 	}
@@ -126,14 +126,6 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
 		this.listGroup = listGroup;
 	}
 
-	public List<NoteDebitDropdown> getListNoteCreditDropdown() {
-		return listNoteCreditDropdown;
-	}
-
-	public void setListNoteCreditDropdown(List<NoteDebitDropdown> listNoteCreditDropdown) {
-		this.listNoteCreditDropdown = listNoteCreditDropdown;
-	}
-
 	public List<NoteDebit> getListNoteDebit() {
 		return listNoteDebit;
 	}
@@ -149,4 +141,25 @@ public class NoteDebitAction extends ActionSupportBase implements ServletRequest
 	public void setExcelStream(InputStream excelStream) {
 		this.excelStream = excelStream;
 	}
+
+	public List<NoteDebitDropdown> getListNoteDebitDropdown() {
+		return listNoteDebitDropdown;
+	}
+
+	public void setListNoteDebitDropdown(List<NoteDebitDropdown> listNoteDebitDropdown) {
+		this.listNoteDebitDropdown = listNoteDebitDropdown;
+	}
+
+	public NoteDebit getNoteDebit() {
+		return noteDebit;
+	}
+
+	public void setNoteDebit(NoteDebit noteDebit) {
+		this.noteDebit = noteDebit;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }
