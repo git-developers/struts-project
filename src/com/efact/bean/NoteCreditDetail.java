@@ -101,27 +101,24 @@ public class NoteCreditDetail implements Serializable {
 		NCtotal = nCtotal;
 	}
 	public float getAfectoSum() {
-		return afectoSum;
+		return Maths.roundNumber(afectoSum, 2);
 	}
 	public void setAfectoSum(float afectoSum) {
 		this.afectoSum = afectoSum;
 	}
 	public float getNoAfectoSum() {
-		return noAfectoSum;
+		return Maths.roundNumber(noAfectoSum, 2);
 	}
 	public void setNoAfectoSum(float noAfectoSum) {
 		this.noAfectoSum = noAfectoSum;
 	}
 	public float getIgvSum() {
-		return igvSum;
+		return Maths.roundNumber(igvSum, 2);
 	}
 	public void setIgvSum(float igvSum) {
 		this.igvSum = igvSum;
 	}
 	public float getTotalSum() {
-		
-		System.out.print("getTotalSum -- ROUND ::::: " + totalSum);
-		
 		return Maths.roundNumber(totalSum, 2);
 	}
 	public void setTotalSum(float totalSum) {

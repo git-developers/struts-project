@@ -225,6 +225,8 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.setString(25, object.getQueryNoteCreditType());
             st.setString(26, "EFACT");
             
+            st.registerOutParameter(27, OracleTypes.VARCHAR);
+            st.registerOutParameter(28, OracleTypes.VARCHAR);
             st.execute();
             
             objectOut.setNumeroOut(st.getString(27));
