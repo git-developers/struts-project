@@ -129,7 +129,7 @@
 				                 	<s:property value = "#object.afecto"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.igv"/>%
+				                 	<s:property value = "#object.igv"/>
 				                 </td>
 				                 <td class="text-right">
 				                 	<s:property value = "#object.total"/>
@@ -401,10 +401,10 @@
                <tr>
                	<td class="text-center">&nbsp;</th>
                  <td colspan="2">Total</td>
-                 <td>0.00</td>
-                 <td class="text-center">0.00</td>
-                 <td class="text-center">0.00</td>
-                 <td class="text-center">102.00</td>
+                 <td class="text-right">0.00</td>
+                 <td class="text-right">0.00</td>
+                 <td class="text-right">0.00</td>
+                 <td class="text-right">102.00</td>
                </tr>
 	  </tfoot>
             </table>
