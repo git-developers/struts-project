@@ -47,7 +47,7 @@
                 	
                 },
                 success: function(data, textStatus, jqXHR) {
-                	$('#dateTo').html(data);
+                	$('#queryCieId').html(data);
                 },
                 error: function(jqXHR, exception) {
                     console.log("error :: ajax :: voucher process");
