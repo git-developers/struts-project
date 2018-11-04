@@ -41,6 +41,11 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             ResultSet rs = (ResultSet) st.getObject(4);
             
             while (rs.next()){
+            	
+            	
+            	System.out.print("HEADER -- RVB_DATOS ::::: " + rs.getString("RVB_DATOS"));
+            	System.out.print("HEADER -- RVB_FEMISION ::::: " + rs.getString("RVB_FEMISION"));
+            	
             	objectOut.setId(rs.getInt("RVB_ID"));
             	objectOut.setNumero(rs.getInt("RVB_NUMERO"));
             	objectOut.setSerie(rs.getInt("RVB_SERIE"));//serie - numero
