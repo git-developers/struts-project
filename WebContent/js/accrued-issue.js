@@ -68,9 +68,9 @@
         };
         
         base.program = function(context) {
-            var id = $(context).val();
+            var id = $('#program').val();
             
-            console.log("EMISION DEVENGADOS ::: " + id);
+            console.log("11 EMISION DEVENGADOS ::: " + id);
             
             $('.group-select').hide();
             
