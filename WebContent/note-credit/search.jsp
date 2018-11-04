@@ -340,6 +340,7 @@
 				                 		type="number" 
 				                 		class="form-control row-note-credit" 
 				                 		disabled="disabled" 
+				                 		value="<s:property value = "#object.afecto"/>"
 				                 		name="noAfecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td>
@@ -347,6 +348,7 @@
 				                 		type="number" 
 				                 		class="form-control row-note-credit" 
 				                 		disabled="disabled" 
+				                 		value="<s:property value = "#object.noAfecto"/>"
 				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td class="text-right">
