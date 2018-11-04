@@ -29,10 +29,10 @@
 					<s:property value = "#object.datosAsociados"/>
 				</button>
 			</td>
-			<td>
+			<td class="text-center">
 				<s:property value = "#object.numeroCuota"/>
 			</td>
-					<td>
+			<td class="text-center">
 				<s:property value = "#object.posicion"/>
 			</td>
 			<td>
