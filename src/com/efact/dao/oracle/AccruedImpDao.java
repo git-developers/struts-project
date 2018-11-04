@@ -55,8 +55,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.close();
             
         } catch (Exception e){
-        	System.out.print("search -- Exception ::::: " + e.getMessage());
-            throw e;
+        	System.out.print("conciliationSearch -- Exception ::::: " + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -119,15 +119,15 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             while (rs.next()){
             	
             	AccruedIssueDropdown obj = new AccruedIssueDropdown();
-                obj.setDeadline(rs.getString("CIE_FCIERRE"));
-                obj.setCieId(rs.getString("CIE_ID"));
-            	
+                obj.setId(rs.getString("CIE_ID"));
+                obj.setName(rs.getString("CIE_FCIERRE"));
+                
                 list.add(obj);
             }
         
         } catch (Exception e){
-            System.out.println(":::: listAccruedIssueDropdown :::: " + e.getMessage());
-            throw e;
+            System.out.println(":::: listAccruedIssueDropdown ::::Exception::" + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -178,8 +178,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	        st.close();
 
 	    } catch (Exception e){
-	    	System.out.print("search -- Exception ::::: " + e.getMessage());
-	        throw e;
+	    	System.out.print("issueSearch -- Exception ::::: " + e.getMessage());
+//	        throw e;
 	    } finally {
 	        this.closeConnection();
 	    }

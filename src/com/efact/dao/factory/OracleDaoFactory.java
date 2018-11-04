@@ -85,4 +85,9 @@ public class OracleDaoFactory extends DaoFactory {
 		return new NoteCreditImpDao();
 	}
 
+	@Override
+	public NoteDebitDao getNoteDebitDao() {
+		return new NoteDebitImpDao();
+	}
+
 }

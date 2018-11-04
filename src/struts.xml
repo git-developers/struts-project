@@ -145,6 +145,11 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		<action name="note-debit-dropdown" class="com.efact.action.NoteDebitAction" method="dropdown">
+			<result name="success">/note-debit/dropdown.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
 		<action name="note-debit-search" class="com.efact.action.NoteDebitAction" method="search">
 			<result name="success">/note-debit/search.jsp</result>
 			<result name="error">/error.jsp</result>
@@ -155,6 +160,17 @@
 			<result name="error">/error.jsp</result>
 		</action>
 		
+		<action name="note-debit-export" class="com.efact.action.NoteDebitAction" method="export">
+			<result name="success"></result>
+			<result name="error">/error.jsp</result>
+			<result type="stream">
+				<param name="contentType">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename="nota-debito.xlsx"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
 		
 	
 	</package>

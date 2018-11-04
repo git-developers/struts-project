@@ -44,6 +44,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	
             	objectOut.setComprobanteOrigen(rs.getString("COMPROBANTE_ORIGEN"));
             	objectOut.setId(rs.getInt("RVB_ID"));
+            	objectOut.setIgv(rs.getFloat("IGV"));
             	objectOut.setNumero(rs.getInt("RVB_NUMERO"));
             	objectOut.setSerie(rs.getInt("RVB_SERIE"));//serie - numero
             	objectOut.setContrato(rs.getString("RVB_CONTRATO"));
@@ -94,18 +95,25 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             while (rs.next()){
             	
             	NoteCreditDetail obj = new NoteCreditDetail();
-            	obj.setRecaudo(rs.getString("RVS_RECAUDO"));
-            	obj.setDescripcion(rs.getString("RVB_DESCRIPCION"));
-            	obj.setSimbolo(rs.getString("SIMBOLO"));// misma moneda
-            	obj.setAfecto(rs.getString("RVB_AFECTO"));
-            	obj.setIgv(rs.getString("RVB_IGV"));
-            	obj.setNoAfecto(rs.getString("RVB_NOAFECTO"));
-            	obj.setTotal(rs.getString("RVB_TOTAL"));
+            
+            	obj.setCOdescripcion(rs.getString("CO_RVB_DESCRIPCION"));
+            	obj.setCOsimbolo(rs.getString("CO_SIMBOLO"));
+            	obj.setCOnoAfecto(rs.getString("CO_RVB_NOAFECTO"));
+            	obj.setCOafecto(rs.getString("CO_RVB_AFECTO"));
+            	obj.setCOigv(rs.getString("CO_RVB_IGV"));
+            	obj.setCOtotal(rs.getString("CO_RVB_TOTAL"));
             	
-            	afectoSum += rs.getFloat("RVB_AFECTO");
-            	igvSum += rs.getFloat("RVB_IGV");
-            	noAfectoSum += rs.getFloat("RVB_NOAFECTO");
-            	totalSum += rs.getFloat("RVB_TOTAL");
+            	obj.setNCrecaudo(rs.getString("NC_RVS_RECAUDO"));
+            	obj.setNCconcepto(rs.getString("NC_RVB_CONCEPTO"));
+            	obj.setNCnoAfecto(rs.getString("NC_RVB_NOAFECTO"));
+            	obj.setNCafecto(rs.getString("NC_RVB_AFECTO"));
+            	obj.setNCigv(rs.getString("NC_RVB_IGV"));
+            	obj.setNCtotal(rs.getString("NC_RVB_TOTAL"));
+            	
+            	afectoSum += rs.getFloat("CO_RVB_AFECTO");
+            	igvSum += rs.getFloat("CO_RVB_IGV");
+            	noAfectoSum += rs.getFloat("CO_RVB_NOAFECTO");
+            	totalSum += rs.getFloat("CO_RVB_TOTAL");
             	
                	obj.setAfectoSum(afectoSum);
             	obj.setIgvSum(igvSum);

@@ -87,8 +87,7 @@
       	</div>
       	
       </div>
-      <!-- BODY -->
-      
+      <!-- BODY -->	
       
       <!-- FOOTER -->
       <div class="box-footer">
@@ -117,22 +116,22 @@
 						<s:iterator value="noteCredit.listNoteCreditDetail" var="object" status="status">
 				               <tr>
 				                 <td>
-				                 	<s:property value = "#object.descripcion"/>
+				                 	<s:property value = "#object.COdescripcion"/>
 				                 </td>
 				                 <td class="text-center">
-				                 	<s:property value = "#object.simbolo"/>
+				                 	<s:property value = "#object.COsimbolo"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.noAfecto"/>
+				                 	<s:property value = "#object.COnoAfecto"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.afecto"/>
+				                 	<s:property value = "#object.COafecto"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.igv"/>
+				                 	<s:property value = "#object.COigv"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.total"/>
+				                 	<s:property value = "#object.COtotal"/>
 				                 </td>
 				               </tr>
 						 </s:iterator>
@@ -329,18 +328,18 @@
 			               		 <td>
 			               		 	<input type="checkbox" class="row-checkbox">
 	               		 		 </td>	
-				                 <td title="<s:property value = "#object.recaudo"/>">
-				                 	<s:property value = "#object.recaudo"/>
+				                 <td title="<s:property value = "#object.NCrecaudo"/>">
+				                 	<s:property value = "#object.NCrecaudo"/>
 				                 </td>
-				                 <td title="<s:property value = "#object.descripcion"/>" class="td-ellipsis">
-				                 	<s:property value = "#object.descripcion"/>
+				                 <td title="<s:property value = "#object.NCconcepto"/>" class="td-ellipsis">
+				                 	<s:property value = "#object.NCconcepto"/>
 				                 </td>
 				                 <td>
 				                 	<input 
 				                 		type="number" 
 				                 		class="form-control row-note-credit" 
 				                 		disabled="disabled" 
-				                 		value="<s:property value = "#object.noAfecto"/>"
+				                 		value="<s:property value = "#object.NCnoAfecto"/>"
 				                 		name="noAfecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td>
@@ -348,14 +347,14 @@
 				                 		type="number" 
 				                 		class="form-control row-note-credit" 
 				                 		disabled="disabled" 
-				                 		value="<s:property value = "#object.afecto"/>"
+				                 		value="<s:property value = "#object.NCafecto"/>"
 				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.igv"/>
+				                 	<s:property value = "#object.NCigv"/>
 				                 </td>
 				                 <td class="text-right">
-				                 	<s:property value = "#object.total"/>
+				                 	<s:property value = "#object.NCtotal"/>
 				                 </td>
 				               </tr>
 						 </s:iterator>

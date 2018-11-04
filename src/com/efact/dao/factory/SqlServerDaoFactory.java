@@ -82,5 +82,10 @@ public class SqlServerDaoFactory extends DaoFactory {
 	public NoteCreditDao getNoteCreditDao() {
 		return null;
 	}
+
+	@Override
+	public NoteDebitDao getNoteDebitDao() {
+		return null;
+	}
 	
 }

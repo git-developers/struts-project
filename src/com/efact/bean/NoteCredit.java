@@ -21,6 +21,8 @@ public class NoteCredit implements Serializable {
     private String bd;
     private int tipoDocDestino;
     private Date fechaEmisionDestino;
+    private float igv;
+    
     private List<NoteCreditDetail> listNoteCreditDetail;
     private String numeroOut;
     private String serieOut;
@@ -272,6 +274,12 @@ public class NoteCredit implements Serializable {
 	}
 	public void setComprobanteOrigen(String comprobanteOrigen) {
 		this.comprobanteOrigen = comprobanteOrigen;
+	}
+	public float getIgv() {
+		return igv;
+	}
+	public void setIgv(float igv) {
+		this.igv = igv;
 	}
 	
 }

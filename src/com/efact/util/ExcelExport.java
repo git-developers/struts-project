@@ -169,4 +169,63 @@ public class ExcelExport {
 		return new ByteArrayInputStream(baos.toByteArray());
     }
 
+	public static InputStream noteDebitExport(List<NoteDebit> list) throws Exception {													
+
+		String[] columns = {
+				"Contrato", "Grupo", "Cupo", "Nombre asociado", "Cuota", "Mes grupo",
+				"Descripcion", "No Afecto", "Afecto", "IGV", "Sub total", "Penalidad"
+		};
+		
+        Workbook workbook = new XSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        Sheet sheet = workbook.createSheet("Reporte");
+
+        Font headerFont = workbook.createFont();
+        
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.BLUE.getIndex());
+
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        Row headerRow = sheet.createRow(0);
+
+        for(int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        
+        int rowNum = 1;
+        for(NoteDebit object: list) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(object.getContrato());
+            row.createCell(1).setCellValue(object.getGrupo());
+            row.createCell(2).setCellValue(object.getCupo());
+            row.createCell(3).setCellValue(object.getNombreAsociado());
+            row.createCell(4).setCellValue(object.getCuota());
+            row.createCell(5).setCellValue(object.getMesGrupo());
+            row.createCell(6).setCellValue(object.getDescripcion());
+            row.createCell(7).setCellValue(object.getNoAfecto());
+            row.createCell(8).setCellValue(object.getAfecto());
+            row.createCell(9).setCellValue(object.getIgv());
+            row.createCell(10).setCellValue(object.getSubTotal());
+            row.createCell(11).setCellValue(object.getPenalidad());
+        }
+
+        for(int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		workbook.write(baos);
+		
+		return new ByteArrayInputStream(baos.toByteArray());
+    }
+
 }

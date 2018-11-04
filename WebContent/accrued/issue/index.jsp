@@ -62,9 +62,6 @@
 		                <div class="form-group">
 		                  <label for="">Fecha de fin</label>
 		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
-		                  	<!-- 
-		                  	<option value="201810910">[xxxxxxxxxx]</option>
-		                  	 -->
 		                  	<option value="0">[seleccionar]</option>
 		                  </select>
 		                </div>

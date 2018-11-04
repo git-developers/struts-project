@@ -23,7 +23,7 @@
               <h3 class="box-title">Quick Example</h3>
             </div>
             --%>
-            <form role="form" name="form-accrued-issue">
+            <form role="form" name="form-note-debit">
               <div class="box-body">
               
                 <div class="row">
@@ -32,14 +32,11 @@
 		                <div class="form-group">
 		                  <label for="">Programa</label>
 		                  <select class="form-control" id="program" name="queryProgram" required="required">
-		                  	<option value="0">[todos]</option>
-		                  	
 		                  	<s:iterator value="listProgram" var="program">
 		                  		<option value="<s:property value = "#program.id"/>">
-		                  			(<s:property value = "#program.id"/>) <s:property value = "#program.name"/>
+		                  			<s:property value = "#program.name"/>
 	                  			</option>
 	                  		</s:iterator>
-	                  		 
 		                  </select>
 		                </div>
 	        		</div>
@@ -47,18 +44,16 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="">Grupos</label>
-		                  <select class="form-control" name="queryGroup" id="group">
-		                  	<option value="0">[todos]</option>
-		                  	 
+		                  <select class="form-control" name="queryGroup" id="group" required="required">
+		                  	<option>[seleccione]</option>
 		                  	<s:iterator value="listGroup" var="group">
 		                  		<option 
 		                  			data-prod-id="<s:property value = "#group.prodId"/>"
 		                  			value="<s:property value = "#group.id"/>" 
 		                  			class="group-select prod-<s:property value = "#group.prodId"/>">
-		                  			(<s:property value = "#group.prodId"/>) <s:property value = "#group.name"/>
+		                  			<s:property value = "#group.name"/>
 	                  			</option>
 	                  		</s:iterator>
-	                  		 
 		                  </select>
 		                </div>
 	        		</div>
@@ -66,8 +61,8 @@
 	        		<div class="col-md-2">
 		                <div class="form-group">
 		                  <label for="">Fecha de proceso</label>
-		                  <select class="form-control" id="dateTo" name="queryDateTo" required="required">
-		                  	<option value="0">[seleccionar]</option>
+		                  <select class="form-control" id="dateTo" name="queryCieId" required="required">
+		                  	<option>[seleccionar]</option>
 		                  </select>
 		                </div>
 	        		</div>
@@ -123,25 +118,27 @@
             <!-- /.box-header -->
             <div class="box-body">
               
-        	     <table id="accrued-table" class="table table-bordered table-striped">
+        	     <table id="note-debit-table" class="table table-bordered table-striped">
 		              <thead>
 						<tr>
 						   <th style="width: 15px">#</th>
-						   <th>Grupo</th>
-						   <th>C&oacute;digo</th>
-						   <th>Nombre asociado</th>
-						   <th>Contrato</th>
-						   <th>Cuota</th>
-						   <th>Comprobante</th>
-						   <th>Afecto</th>
-						   <th>No Afecto</th>
-						   <th>IGV</th>
-						   <th><i class="fa fa-fw fa-money"></i> Sub Total</th>
+						   <th class="text-center">Contrato</th>
+						   <th class="text-center">Grupo</th>
+						   <th class="text-center">Cupo</th>
+						   <th class="text-center">Nombre asociado</th>
+						   <th class="text-center">Cuota</th>
+						   <th class="text-center">Mes grupo</th>
+						   <th class="text-center">Descripci&oacute;n</th>
+						   <th class="text-center">No Afecto</th>
+						   <th class="text-center">Afecto</th>
+						   <th class="text-center">IGV</th>
+						   <th class="text-center"><i class="fa fa-fw fa-money"></i> Sub total</th>
+						   <th class="text-center">Penalidad</th>
 						 </tr>
 		              </thead>
 			            <tbody>
 				            <tr>
-							   	<td colspan="11" align="center">
+							   	<td colspan="13" align="center">
 					   				No hay datos que mostrar.
 					   			</td>
 				   			</tr>

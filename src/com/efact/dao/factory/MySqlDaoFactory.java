@@ -83,4 +83,9 @@ public class MySqlDaoFactory extends DaoFactory {
 		return null;
 	}
 
+	@Override
+	public NoteDebitDao getNoteDebitDao() {
+		return null;
+	}
+
 }
