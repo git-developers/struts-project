@@ -149,7 +149,7 @@ public class Voucher implements Serializable {
 		this.lcs_importe = lcs_importe;
 	}
 	public String getLcs_monto() {
-		return Util.amountFormat(lcs_monto);
+		return lcs_monto;
 	}
 	public void setLcs_monto(String lcs_monto) {
 		this.lcs_monto = lcs_monto;
