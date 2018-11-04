@@ -100,14 +100,14 @@
 						<tr>
 						   <th style="width: 15px">#</th>
 						   <th style="width: 15px"><input type="checkbox" id="check-all"></th>
-						   <th>Comprobante</th>
-						   <th>Recaudo</th>
-						   <th>Descripci&oacute;n</th>
-						   <th>Afecto</th>
-						   <th>No Afecto</th>
-						   <th>IGV</th>
-						   <th><i class="fa fa-fw fa-money"></i> Total</th>
-						   <th>Sistema</th>
+						   <th class="text-center">Comprobante</th>
+						   <th class="text-center">Recaudo</th>
+						   <th class="text-center">Descripci&oacute;n</th>
+						   <th class="text-center">Afecto</th>
+						   <th class="text-center">No Afecto</th>
+						   <th class="text-center">IGV</th>
+						   <th class="text-center"><i class="fa fa-fw fa-money"></i> Total</th>
+						   <th class="text-center">Sistema</th>
 						 </tr>
 		              </thead>
 			            <tbody>

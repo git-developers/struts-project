@@ -35,20 +35,22 @@
 					<s:property value = "#object.descripcion"/>
 				</button>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.afecto"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.noafecto"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.igv"/>
 			</td>
-			<td>
-				S/ <s:property value = "#object.total"/>
+			<td class="text-right">
+				<s:property value = "#object.total"/>
 			</td>
 			<td>
-				<s:property value = "#object.sistema"/>
+				<small class="label pull-right bg-green">
+					<s:property value = "#object.sistema"/>
+				</small>
 			</td>
 		</tr>
 	 </s:iterator>
