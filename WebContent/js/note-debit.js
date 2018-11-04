@@ -81,12 +81,7 @@
         	var origen = table.find('td:eq(0) input[name="origen"]').val();
         	
         	console.log("ORIGEN :: " + origen);
-        	
-//			filtros: $('#formulario_proveedor').serialize() + 
-//			'&' + $.param({ 'listProductos': listProductos.join('#') }) + 
-//			'&' + $.param({ 'listLotes': listLotes.join('#') })
-//        	
-        	
+    		
             $.ajax({
                 url: options.contextPath + '/note-debit-process',
                 type: 'POST',

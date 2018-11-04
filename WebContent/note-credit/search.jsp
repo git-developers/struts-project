@@ -147,16 +147,16 @@
 	                 </td>
 	                  -->
 	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].noAfectoSum"/>
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].noAfectoSum"/>
                  	</td>
 	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].afectoSum"/>
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].afectoSum"/>
 	                 </td>
 	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].igvSum"/>
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].igvSum"/>
 	                 </td>
 	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].totalSum"/>
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].totalSum"/>
 	                 </td>
 	               </tr>
 				  </tfoot>
@@ -391,6 +391,19 @@
 		                 <td>0.00</td>
 		                 <td>59.00</td>
 		               </tr>
+		               
+		             <td class="text-right">
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].noAfectoSum"/>
+                 	</td>
+	                 <td class="text-right">
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].afectoSum"/>
+	                 </td>
+	                 <td class="text-right">
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].igvSum"/>
+	                 </td>
+	                 <td class="text-right">
+	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].totalSum"/>
+	                 </td>
 		                -->
 		               
                
@@ -402,10 +415,18 @@
                <tr>
                	<td class="text-center">&nbsp;</th>
                  <td colspan="2">Total</td>
-                 <td class="text-right">0.00</td>
-                 <td class="text-right">0.00</td>
-                 <td class="text-right">0.00</td>
-                 <td class="text-right">102.00</td>
+                 <td class="text-right">
+                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].noAfectoSum"/>
+                 </td>
+                 <td class="text-right">
+                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].afectoSum"/>
+                 </td>
+                 <td class="text-right">
+                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].igvSum"/>
+                 </td>
+                 <td class="text-right">
+                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].totalSum"/>
+                 </td>
                </tr>
 	  </tfoot>
             </table>

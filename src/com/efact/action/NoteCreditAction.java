@@ -35,7 +35,6 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 		gson = new GsonBuilder().setPrettyPrinting().create();
     }
 	
-	
 	@Override
 	public String execute() throws Exception {
 		return SUCCESS;

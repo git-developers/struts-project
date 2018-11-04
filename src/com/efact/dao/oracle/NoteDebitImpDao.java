@@ -104,12 +104,6 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
         
         return list;
 	}
-	
-//	p_gru_id  NUMBER, 
-//	p_cie_id NUMBER, 
-//	p_app_user VARCHAR2, 
-//	P_ORIGEN VARCHAR2,
-//	C_RESULTADO OUT varchar2)
 
 	@Override
 	public NoteDebit process(NoteDebit object) throws Exception {
