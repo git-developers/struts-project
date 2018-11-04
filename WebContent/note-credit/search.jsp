@@ -25,7 +25,7 @@
 	          <input 
 	         		type="text" 
 	         		class="form-control"
-	         		value="<s:property value="noteCredit.serie"/>-<s:property value="noteCredit.numero"/>" 
+	         		value="<s:property value="noteCredit.comprobanteOrigen"/>" 
 	         		readonly="readonly">
 	        </div>
       	</div>
@@ -34,10 +34,10 @@
 	      	<div class="form-group">
 		          <label for="">Contrato</label>
 		          <input 
-		          		type="email" 
-		          		class="form-control" 
-		          		value="<s:property value="noteCredit.contrato"/>" 
-		          		readonly="readonly">
+	          		type="email" 
+	          		class="form-control" 
+	          		value="<s:property value="noteCredit.contrato"/>" 
+	          		readonly="readonly">
 	        </div>
       	</div>
       	
@@ -96,12 +96,12 @@
 		<table class="table table-bordered table-striped">
 		  <thead class="bg-blue">
                <tr>
-                 <th>Descripci&oacute;n</th>
-                 <th>Mon</th>
-                 <th>No afecto</th>
-                 <th>Afecto</th>
-                 <th>IGV</th>
-                 <th>Sub total</th>
+                 <th class="text-center">Descripci&oacute;n</th>
+                 <th class="text-center">Mon</th>
+                 <th class="text-center">No afecto</th>
+                 <th class="text-center">Afecto</th>
+                 <th class="text-center">IGV</th>
+                 <th class="text-center">Sub total</th>
                </tr>
 		  </thead>
               <tbody>
@@ -122,16 +122,16 @@
 				                 <td>
 				                 	<s:property value = "#object.simbolo"/>
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.noAfecto"/>
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.afecto"/>
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.igv"/>%
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.total"/>
 				                 </td>
 				               </tr>
@@ -147,16 +147,16 @@
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].simbolo"/>
 	                 </td>
 	                  -->
-	                 <td>
+	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].noAfectoSum"/>
                  	</td>
-	                 <td>
+	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].afectoSum"/>
 	                 </td>
-	                 <td>
+	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].igvSum"/>%
 	                 </td>
-	                 <td>
+	                 <td class="text-right">
 	                 	<s:property value = "noteCredit.listNoteCreditDetail[0].totalSum"/>
 	                 </td>
 	               </tr>
@@ -197,17 +197,6 @@
 	          		readonly="readonly">
 	        </div>
       	</div>
-
-      	<div class="col-md-4">
-	      	<div class="form-group">
-	          <label for="">Numero</label>
-	          <input 
-	          	type="text" 
-	          	class="form-control"
-	          	id="number-out"
-	          	readonly="readonly">
-	        </div>
-      	</div>
       	
       	<div class="col-md-4">
 	      	<div class="form-group">
@@ -222,7 +211,18 @@
 	        </div>
       	</div>
       	
-      	<div class="col-md-6">
+    	<div class="col-md-4">
+	      	<div class="form-group">
+	          <label for="">Numero</label>
+	          <input 
+	          	type="text" 
+	          	class="form-control"
+	          	id="number-out"
+	          	readonly="readonly">
+	        </div>
+      	</div>
+      	
+      	<div class="col-md-4">
 	        <div class="form-group">
                 <label>Fecha de emisi&oacute;n</label>
 
@@ -239,7 +239,7 @@
              	</div>
       	</div>
       	
-      	<div class="col-md-6">
+      	<div class="col-md-4">
 	        <div class="form-group">
                 <label>Fecha de vencimiento</label>
 
@@ -306,12 +306,12 @@
 		  <thead class="bg-green">
                <tr>
                  <th>&nbsp;</th>
-                 <th>Recaudo</th>
-                 <th>Concepto</th>
-                 <th>No afecto</th>
-                 <th>Afecto</th>
-                 <th>IGV</th>
-                 <th>total</th>
+                 <th class="text-center">Recaudo</th>
+                 <th class="text-center">Concepto</th>
+                 <th class="text-center">No afecto</th>
+                 <th class="text-center">Afecto</th>
+                 <th class="text-center">IGV</th>
+                 <th class="text-center">total</th>
                </tr>
 		  </thead>
               <tbody>
@@ -349,10 +349,10 @@
 				                 		disabled="disabled" 
 				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.igv"/>
 				                 </td>
-				                 <td>
+				                 <td class="text-right">
 				                 	<s:property value = "#object.total"/>
 				                 </td>
 				               </tr>
@@ -399,12 +399,12 @@
             	</tbody>
             	<tfoot class="bg-green">
                <tr>
-               	<th>&nbsp;</th>
+               	<td class="text-center">&nbsp;</th>
                  <td colspan="2">Total</td>
                  <td>0.00</td>
-                 <td>0.00</td>
-                 <td>0.00</td>
-                 <td>102.00</td>
+                 <td class="text-center">0.00</td>
+                 <td class="text-center">0.00</td>
+                 <td class="text-center">102.00</td>
                </tr>
 	  </tfoot>
             </table>

@@ -24,6 +24,7 @@ public class NoteCredit implements Serializable {
     private List<NoteCreditDetail> listNoteCreditDetail;
     private String numeroOut;
     private String serieOut;
+    private String comprobanteOrigen;
     
     private int noAfecto_1;
     private int afecto_1;
@@ -265,6 +266,12 @@ public class NoteCredit implements Serializable {
 	}
 	public void setAfecto_8(int afecto_8) {
 		this.afecto_8 = afecto_8;
+	}
+	public String getComprobanteOrigen() {
+		return comprobanteOrigen;
+	}
+	public void setComprobanteOrigen(String comprobanteOrigen) {
+		this.comprobanteOrigen = comprobanteOrigen;
 	}
 	
 }
