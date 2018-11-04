@@ -15,8 +15,8 @@ public class AccruedConciliation implements Serializable {
 	private String descripcion;
 	private String afecto; 
 	private String noafecto; 
-	private float igv;
-	private float total;
+	private String igv;
+	private String total;
 	private String reaId;
 	private String sistema;
 	private String resultado;
@@ -62,18 +62,6 @@ public class AccruedConciliation implements Serializable {
 	public void setNoafecto(String noafecto) {
 		this.noafecto = noafecto;
 	}
-	public float getIgv() {
-		return igv;
-	}
-	public void setIgv(float igv) {
-		this.igv = igv;
-	}
-	public float getTotal() {
-		return total;
-	}
-	public void setTotal(float total) {
-		this.total = total;
-	}
 	public void setQueryFrom(String queryFrom) {
 		this.queryFrom = queryFrom;
 	}
@@ -118,6 +106,18 @@ public class AccruedConciliation implements Serializable {
 	}
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+	public String getIgv() {
+		return igv;
+	}
+	public void setIgv(String igv) {
+		this.igv = igv;
+	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 
