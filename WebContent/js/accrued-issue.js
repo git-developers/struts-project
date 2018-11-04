@@ -69,21 +69,10 @@
         
         base.program = function(context) {
             var id = $('#program').val();
-            
-            console.log("11 EMISION DEVENGADOS ::: " + id);
-            
+
             $('#group').prop('selectedIndex',0);
-//            $('#grupo').val('');
-            
             $('.group-select').hide();
-            
             $('.prod-' + id).show();
-            
-//            if (id === '0') {
-//                $('.group-select').show();
-//            }
-        	// $("#grupo option:first").val()
-            
         };
         
         base.group = function(context) {

@@ -119,8 +119,8 @@
         	
             var id = $('#select-voucher').val();  
             
+            $('#select-series').prop('selectedIndex',0);
             $('.select-series').hide();
-            
             $('.voucher-' + id).show();
         };
         
