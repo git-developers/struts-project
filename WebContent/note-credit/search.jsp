@@ -329,10 +329,10 @@
 			               		 <td>
 			               		 	<input type="checkbox" class="row-checkbox">
 	               		 		 </td>	
-				                 <td>
+				                 <td title="<s:property value = "#object.recaudo"/>">
 				                 	<s:property value = "#object.recaudo"/>
 				                 </td>
-				                 <td>
+				                 <td title="<s:property value = "#object.descripcion"/>" class="td-ellipsis">
 				                 	<s:property value = "#object.descripcion"/>
 				                 </td>
 				                 <td>
