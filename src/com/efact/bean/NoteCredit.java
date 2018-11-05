@@ -56,7 +56,10 @@ public class NoteCredit implements Serializable {
     private String queryVoucher;
     private String querySerie;
     private String queryNumber;
+    private String queryMoneyIntoWords;
     private String queryNoteCreditType;
+    
+    
     private int queryTotal;
     
 	public int getId() {
@@ -280,6 +283,15 @@ public class NoteCredit implements Serializable {
 	}
 	public void setIgv(float igv) {
 		this.igv = igv;
+	}
+	public String getQueryMoneyIntoWords() {
+		return queryMoneyIntoWords;
+	}
+	public void setQueryMoneyIntoWords(String queryMoneyIntoWords) {
+		this.queryMoneyIntoWords = queryMoneyIntoWords;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

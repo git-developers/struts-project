@@ -6,6 +6,9 @@ import java.text.DecimalFormat;
 public class Util {
 
 	public static int strToInt(String s) {
+		
+		System.out.print("strToInt -- ::::: " + s);
+		
         try {
         	return Integer.parseInt(s);
          } catch (NumberFormatException e) {

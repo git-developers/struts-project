@@ -198,7 +198,8 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.setInt(4, object.getFechaEmisionInt());
             st.setInt(5, object.getFechaVencimientoInt());
             st.setInt(6, object.getQueryTotal());
-            st.setString(7, object.getQueryNoteCreditType());
+            st.setString(7, object.getQueryMoneyIntoWords());
+            //st.setString(7, object.getQueryNoteCreditType());
             
             st.setInt(8, object.getAfecto_1());
             st.setInt(9, object.getNoAfecto_1());
