@@ -188,11 +188,13 @@
     				igv += parseFloat($('.td-igv-' + position));
     				total += parseFloat($('.sub-total-' + position));
     				
-    				console.log("sumTotalFooter ::: " + total);
+    				console.log("sumTotalFooter 11 ::: " + total);
     			}
         		
             });
         	
+    		console.log("sumTotalFooter 22 ::: " + total);
+    		
     		$('.no-afecto-footer-sum').html(noAfecto.toFixed(2));
     		$('.afecto-footer-sum').html(afecto.toFixed(2));
     		$('.igv-footer-sum').html(igv.toFixed(2));
