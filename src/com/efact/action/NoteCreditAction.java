@@ -66,7 +66,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	public String process() throws Exception {
 		
         String fields = request.getParameter("fields");
-        NoteCredit ncObj = gson.fromJson(serializeToJSON(fields), NoteCredit.class);
+        NoteCredit ncObj = gson.fromJson(fields, NoteCredit.class);
 		
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.process(ncObj);

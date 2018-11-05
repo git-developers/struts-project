@@ -16,8 +16,8 @@ public class NoteCredit implements Serializable {
     private int serie;
     private String contrato;
     private String datos;
-    private int fechaEmision;
-    private int fechaVencimiento;
+    private String fechaEmision;
+    private String fechaVencimiento;
     private String bd;
     private int tipoDocDestino;
     private Date fechaEmisionDestino;
@@ -116,23 +116,24 @@ public class NoteCredit implements Serializable {
 	public void setDatos(String datos) {
 		this.datos = datos;
 	}
+	
 	public String getFechaEmision() {
-		return Dates.intToDate(fechaEmision);
+		return fechaEmision;
 	}
-	public int getFechaEmisionInt() {
-		return Util.intDateToInt(fechaEmision);
-	}
-	public void setFechaEmision(int fechaEmision) {
+	public void setFechaEmision(String fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 	public String getFechaVencimiento() {
-		return Dates.intToDate(fechaVencimiento);
+		return fechaVencimiento;
+	}
+	public void setFechaVencimiento(String fechaVencimiento) {
+		this.fechaVencimiento = fechaVencimiento;
+	}
+	public int getFechaEmisionInt() {
+		return Util.strDateToInt(fechaEmision);
 	}
 	public int getFechaVencimientoInt() {
-		return Util.intDateToInt(fechaVencimiento);
-	}
-	public void setFechaVencimiento(int fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
+		return Util.strDateToInt(fechaVencimiento);
 	}
 	public String getBd() {
 		return bd;

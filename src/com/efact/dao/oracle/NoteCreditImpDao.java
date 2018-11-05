@@ -49,8 +49,8 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             	objectOut.setSerie(rs.getInt("RVB_SERIE"));
             	objectOut.setContrato(rs.getString("RVB_CONTRATO"));
             	objectOut.setDatos(rs.getString("RVB_DATOS"));
-            	objectOut.setFechaEmision(rs.getInt("RVB_FEMISION"));
-            	objectOut.setFechaVencimiento(rs.getInt("RVB_FVENCIMIENTO"));
+            	objectOut.setFechaEmision(String.valueOf(rs.getInt("RVB_FEMISION")));
+            	objectOut.setFechaVencimiento(String.valueOf(rs.getInt("RVB_FVENCIMIENTO")));
             	objectOut.setBd(rs.getString("BD"));
             	objectOut.setTipoDocDestino(rs.getInt("TIPO_DOC_DESTINO"));
             	objectOut.setFechaEmisionDestino(rs.getDate("FEC_EMISION_DESTINO"));
@@ -179,6 +179,11 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 		NoteCredit objectOut = new NoteCredit();
 		
         System.out.print("TIPO COMPROBANTE -- ::::: " + object.getQueryVoucher());
+        System.out.print("getFechaEmisionInt -- ::::: " + object.getFechaEmisionInt());
+        System.out.print("getFechaVencimientoInt -- ::::: " + object.getFechaVencimientoInt());
+        System.out.print("getQueryNoteCreditType -- ::::: " + object.getQueryNoteCreditType());
+        System.out.print("getQueryTotal -- ::::: " + object.getQueryTotal());
+        System.out.print("getQueryMoneyIntoWords -- ::::: " + object.getQueryMoneyIntoWords());
 
 
 //        try{
@@ -199,7 +204,6 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.setInt(5, object.getFechaVencimientoInt());
             st.setInt(6, object.getQueryTotal());
             st.setString(7, object.getQueryMoneyIntoWords());
-            //st.setString(7, object.getQueryNoteCreditType());
             
             st.setInt(8, object.getAfecto_1());
             st.setInt(9, object.getNoAfecto_1());
@@ -231,6 +235,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             st.registerOutParameter(27, OracleTypes.VARCHAR);
             st.registerOutParameter(28, OracleTypes.VARCHAR);
+            st.registerOutParameter(29, OracleTypes.VARCHAR);
             st.execute();
             
             objectOut.setNumeroOut(st.getString(27));
@@ -238,7 +243,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 
             st.close();
             
-        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28));
+        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28) + "" + st.getString(29));
             
             
 //        } catch (Exception e){
