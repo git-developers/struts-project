@@ -148,7 +148,6 @@
             sumRowSubTotal(position);
             sumTotalFooter();
         };
-
         
         base.rowAfecto = function(context) {
         	
@@ -198,6 +197,7 @@
     		$('.afecto-footer-sum').html(afecto.toFixed(2));
     		$('.igv-footer-sum').html(igv.toFixed(2));
         	$('.total-footer-sum').html(total.toFixed(2));
+        	$("input[name='queryTotal']").val(total.toFixed(2));
         	
         }
         
