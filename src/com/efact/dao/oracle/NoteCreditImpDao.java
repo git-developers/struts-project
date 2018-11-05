@@ -184,6 +184,13 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
         System.out.print("getQueryNoteCreditType -- ::::: " + object.getQueryNoteCreditType());
         System.out.print("getQueryTotal -- ::::: " + object.getQueryTotal());
         System.out.print("getQueryMoneyIntoWords -- ::::: " + object.getQueryMoneyIntoWords());
+        
+        System.out.print("getAfecto_1 -- ::::: " + object.getAfecto_1());
+        System.out.print("getNoAfecto_1 -- ::::: " + object.getNoAfecto_1());
+        System.out.print("getAfecto_2 -- ::::: " + object.getAfecto_2());
+        System.out.print("getNoAfecto_2 -- ::::: " + object.getNoAfecto_2());
+        System.out.print("getAfecto_3 -- ::::: " + object.getAfecto_3());
+        System.out.print("getNoAfecto_3 -- ::::: " + object.getNoAfecto_3());
 
 
 //        try{
