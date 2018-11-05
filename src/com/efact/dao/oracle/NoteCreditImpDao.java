@@ -209,32 +209,32 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.setString(3, object.getBd());
             st.setInt(4, object.getFechaEmisionInt());
             st.setInt(5, object.getFechaVencimientoInt());
-            st.setInt(6, object.getQueryTotal());
+            st.setFloat(6, object.getQueryTotal());
             st.setString(7, object.getQueryMoneyIntoWords());
             
-            st.setInt(8, object.getAfecto_1());
-            st.setInt(9, object.getNoAfecto_1());
+            st.setFloat(8, object.getAfecto_1());
+            st.setFloat(9, object.getNoAfecto_1());
             
-            st.setInt(10, object.getAfecto_2());
-            st.setInt(11, object.getNoAfecto_2());
+            st.setFloat(10, object.getAfecto_2());
+            st.setFloat(11, object.getNoAfecto_2());
             
-            st.setInt(12, object.getAfecto_3());
-            st.setInt(13, object.getNoAfecto_3());
+            st.setFloat(12, object.getAfecto_3());
+            st.setFloat(13, object.getNoAfecto_3());
             
-            st.setInt(14, object.getAfecto_4());
-            st.setInt(15, object.getNoAfecto_4());
+            st.setFloat(14, object.getAfecto_4());
+            st.setFloat(15, object.getNoAfecto_4());
             
-            st.setInt(16, object.getAfecto_5());
-            st.setInt(17, object.getNoAfecto_5());
+            st.setFloat(16, object.getAfecto_5());
+            st.setFloat(17, object.getNoAfecto_5());
             
-            st.setInt(18, object.getAfecto_6());
-            st.setInt(19, object.getNoAfecto_6());
+            st.setFloat(18, object.getAfecto_6());
+            st.setFloat(19, object.getNoAfecto_6());
             
-            st.setInt(20, object.getAfecto_7());
-            st.setInt(21, object.getNoAfecto_7());
+            st.setFloat(20, object.getAfecto_7());
+            st.setFloat(21, object.getNoAfecto_7());
 
-            st.setInt(22, object.getAfecto_8());
-            st.setInt(23, object.getNoAfecto_8());
+            st.setFloat(22, object.getAfecto_8());
+            st.setFloat(23, object.getNoAfecto_8());
             
             st.setInt(24, 0);
             st.setString(25, object.getQueryNoteCreditType());
