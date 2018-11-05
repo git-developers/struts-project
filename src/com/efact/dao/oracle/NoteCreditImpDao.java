@@ -61,8 +61,8 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             
         } catch (Exception e){
-        	System.out.print("header -- Exception ::::: " + e.getMessage());
-            throw e;
+        	System.out.print("HEADER -nota credito- Exception ::::: " + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -127,8 +127,8 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             st.close();
             
         } catch (Exception e){
-        	System.out.print("detail -- Exception ::::: " + e.getMessage());
-            throw e;
+        	System.out.print("DETAIL -nota credito- Exception ::::: " + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
