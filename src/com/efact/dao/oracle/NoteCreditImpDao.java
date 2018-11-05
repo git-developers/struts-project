@@ -198,7 +198,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             String sql = "{ call FIN_PKG_NOTACREDITO.EMISION_NOTACREDITO("
             		+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
             		+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-            		+ "?, ?, ?, ?, ?, ?, ?, ? "
+            		+ "?, ?, ?, ?, ?, ?, ?, ?, ? "
             		+ ") } "; 
             
             
@@ -248,11 +248,13 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             objectOut.setNumeroOut(st.getString(27));
             objectOut.setSerieOut(st.getString(28));
-
+            
+        	System.out.print("PROCESS OUT ::::: " + 
+        	st.getString(27) + "" + 
+			st.getString(28) + "" + 
+        	st.getString(29));
+            
             st.close();
-            
-        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28) + "" + st.getString(29));
-            
             
 //        } catch (Exception e){
 //        	System.out.print("NOTA CREDITO :: process -- Exception ::::: " + e.getMessage());
