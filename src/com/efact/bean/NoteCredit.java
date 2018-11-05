@@ -118,13 +118,13 @@ public class NoteCredit implements Serializable {
 	}
 	
 	public String getFechaEmision() {
-		return fechaEmision;
+		return Dates.strToDate(fechaEmision);
 	}
 	public void setFechaEmision(String fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 	public String getFechaVencimiento() {
-		return fechaVencimiento;
+		return Dates.strToDate(fechaVencimiento);
 	}
 	public void setFechaVencimiento(String fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
