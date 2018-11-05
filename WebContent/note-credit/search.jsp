@@ -263,8 +263,9 @@
 		                  </div>
 		                  <input 
 		                  	type="number" 
-		                  	class="form-control" 
+		                  	class="form-control total-footer-sum" 
 		                  	name="queryTotal" 
+		                  	value="0"
 		                  	readonly="readonly">
 		                </div>
 		             </div>
@@ -321,7 +322,11 @@
 						<s:iterator value="noteCredit.listNoteCreditDetail" var="object" status="status">
 				               <tr>
 			               		 <td>
-			               		 	<input type="checkbox" class="row-checkbox">
+			               		 	<input 
+			               		 		type="checkbox" 
+			               		 		class="row-checkbox"
+			               		 		data-position="<s:property value="%{#status.index + 1}"/>"
+			               		 		>
 	               		 		 </td>	
 				                 <td title="<s:property value = "#object.NCrecaudo"/>">
 				                 	<s:property value = "#object.NCrecaudo"/>
@@ -332,8 +337,9 @@
 				                 <td>
 				                 	<input 
 				                 		type="number" 
-				                 		class="form-control row-note-credit" 
+				                 		class="form-control row-note-credit row-no-afecto" 
 				                 		disabled="disabled" 
+				                 		data-position="<s:property value="%{#status.index + 1}"/>"
 				                 		value="<s:property value = "#object.NCnoAfecto"/>"
 				                 		name="noAfecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
@@ -342,85 +348,37 @@
 				                 		type="number" 
 				                 		class="form-control row-note-credit row-afecto" 
 				                 		disabled="disabled" 
+				                 		data-position="<s:property value="%{#status.index + 1}"/>"
 				                 		value="<s:property value = "#object.NCafecto"/>"
 				                 		name="afecto-<s:property value="%{#status.index + 1}"/>">
 				                 </td>
-				                 <td class="text-right">
+				                 <td class="text-right td-igv-<s:property value="%{#status.index + 1}"/>">
 				                 	<s:property value = "#object.NCigv"/>
 				                 </td>
-				                 <td class="text-right">
+				                 <td class="text-right sub-total-<s:property value="%{#status.index + 1}"/>">
 				                 	<s:property value = "#object.NCtotal"/>
 				                 </td>
 				               </tr>
 						 </s:iterator>
 					
 					</s:else>
-              
-              
-              
-              
-		             	<!-- 
-		               <tr>
-		              	 <td><input type="checkbox" class="row-checkbox"></td>	
-		                 <td>Capital 45</td>
-		                 <td>S/</td>
-		                 <td>
-		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-		                 </td>
-		                 <td>
-		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-		                 </td>
-		                 <td>0.00</td>
-		                 <td>43.00</td>
-		               </tr>
-		               <tr>
-		               	<td><input type="checkbox" class="row-checkbox"></td>	
-		                 <td>Seguro</td>
-		                 <td>S/</td>
-		                 <td>
-		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-		                 </td>
-		                 <td>
-		                 	<input type="number" class="form-control row-note-credit" disabled="disabled">
-		                 </td>
-		                 <td>0.00</td>
-		                 <td>59.00</td>
-		               </tr>
-		               
-		             <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].noAfectoSum"/>
-                 	</td>
-	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].afectoSum"/>
-	                 </td>
-	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].igvSum"/>
-	                 </td>
-	                 <td class="text-right">
-	                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size].totalSum"/>
-	                 </td>
-		                -->
-		               
-               
-               
-               
-               
+
             	</tbody>
             	<tfoot class="bg-green">
                <tr>
                	<td class="text-center">&nbsp;</th>
                  <td colspan="2">Total</td>
-                 <td class="text-right">
-                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].noAfectoSum"/>
+                 <td class="text-right no-afecto-footer-sum">
+                 	0
                  </td>
-                 <td class="text-right">
-                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].afectoSum"/>
+                 <td class="text-right afecto-footer-sum">
+                 	0
                  </td>
-                 <td class="text-right">
-                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].igvSum"/>
+                 <td class="text-right igv-footer-sum">
+                 	0
                  </td>
-                 <td class="text-right">
-                 	<s:property value = "noteCredit.listNoteCreditDetail[noteCredit.listNoteCreditDetail.size - 1].totalSum"/>
+                 <td class="text-right total-footer-sum">
+                 	0
                  </td>
                </tr>
 	  </tfoot>

@@ -115,6 +115,8 @@
 
 <c:if test="${fn:contains(pageContext.request.requestURI, 'note-credit')}">
 	<script src="js/note-credit.js"></script>
+	<script src="js/jquery.num2words.js"></script>
+
 	<link rel="stylesheet" href="css/note-credit.css">
 	
 	<script type="text/javascript">

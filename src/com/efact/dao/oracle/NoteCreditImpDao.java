@@ -177,6 +177,9 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
 	public NoteCredit process(NoteCredit object) throws Exception {
 		
 		NoteCredit objectOut = new NoteCredit();
+		
+        System.out.print("TIPO COMPROBANTE -- ::::: " + object.getQueryVoucher());
+
 
 //        try{
     		
@@ -231,12 +234,10 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             objectOut.setNumeroOut(st.getString(27));
             objectOut.setSerieOut(st.getString(28));
-            
-            
-            System.out.print("TIPO COMPROBANTE -- ::::: " + object.getQueryVoucher());
-        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28));
 
             st.close();
+            
+        	System.out.print("PROCESS OUT ::::: " + st.getString(27) + "" + st.getString(28));
             
             
 //        } catch (Exception e){

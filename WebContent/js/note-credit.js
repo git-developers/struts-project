@@ -54,30 +54,46 @@
         	row ['queryMoneyIntoWords'] = $('input[name="queryMoneyIntoWords"]').val();
         	row ['queryNoteCreditType'] = $('select[name="queryNoteCreditType"]').val();
         	
-        	row ['noAfecto_1'] = $('input[name="noAfecto-1"]').val();
-        	row ['afecto_1'] = $('input[name="afecto-1"]').val();
-        	
-        	row ['noAfecto_2'] = $('input[name="noAfecto-2"]').val();
-        	row ['afecto_2'] = $('input[name="afecto-2"]').val();
-        	
-        	row ['noAfecto_3'] = $('input[name="noAfecto-3"]').val();
-        	row ['afecto_3'] = $('input[name="afecto-3"]').val();
-        	
-        	row ['noAfecto_4'] = $('input[name="noAfecto-4"]').val();
-        	row ['afecto_4'] = $('input[name="afecto-4"]').val();
-            
-        	row ['noAfecto_5'] = $('input[name="noAfecto-5"]').val();
-        	row ['afecto_5'] = $('input[name="afecto-5"]').val();
-            
-        	row ['noAfecto_6'] = $('input[name="noAfecto-6"]').val();
-        	row ['afecto_6'] = $('input[name="afecto-6"]').val();
-            
-        	row ['noAfecto_7'] = $('input[name="noAfecto-7"]').val();
-        	row ['afecto_7'] = $('input[name="afecto-7"]').val();
-            
-        	row ['noAfecto_8'] = $('input[name="noAfecto-8"]').val();
-        	row ['afecto_8'] = $('input[name="afecto-8"]').val();
-        	
+            if (!$('input[name="noAfecto-1"]').is(':disabled')) {
+                row ['noAfecto_1'] = $('input[name="noAfecto-1"]').val();
+                row ['afecto_1'] = $('input[name="afecto-1"]').val();
+            }
+
+            if (!$('input[name="noAfecto-2"]').is(':disabled')) {
+                row ['noAfecto_2'] = $('input[name="noAfecto-2"]').val();
+                row ['afecto_2'] = $('input[name="afecto-2"]').val();
+            }
+
+            if (!$('input[name="noAfecto-3"]').is(':disabled')) {
+                row ['noAfecto_3'] = $('input[name="noAfecto-3"]').val();
+                row ['afecto_3'] = $('input[name="afecto-3"]').val();
+            }
+
+            if (!$('input[name="noAfecto-4"]').is(':disabled')) {
+                row ['noAfecto_4'] = $('input[name="noAfecto-4"]').val();
+                row ['afecto_4'] = $('input[name="afecto-4"]').val();
+            }
+
+            if (!$('input[name="noAfecto-5"]').is(':disabled')) {
+                row ['noAfecto_5'] = $('input[name="noAfecto-5"]').val();
+                row ['afecto_5'] = $('input[name="afecto-5"]').val();
+            }
+
+            if (!$('input[name="noAfecto-6"]').is(':disabled')) {
+                row ['noAfecto_6'] = $('input[name="noAfecto-6"]').val();
+                row ['afecto_6'] = $('input[name="afecto-6"]').val();
+            }
+
+            if (!$('input[name="noAfecto-7"]').is(':disabled')) {
+                row ['noAfecto_7'] = $('input[name="noAfecto-7"]').val();
+                row ['afecto_7'] = $('input[name="afecto-7"]').val();
+            }
+
+            if (!$('input[name="noAfecto-8"]').is(':disabled')) {
+                row ['noAfecto_8'] = $('input[name="noAfecto-8"]').val();
+                row ['afecto_8'] = $('input[name="afecto-8"]').val();
+            }
+
         	console.log("ROWS ::: " + JSON.stringify(row));
 
             $.ajax({
@@ -104,6 +120,10 @@
         };
         
         base.rowCheckbox = function(context) {
+        	
+        	var position = $(context).data('position');
+        	resetRowToZero(position);
+        	
         	if (context.checked) {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', false);
         	} else {
@@ -120,10 +140,70 @@
             $('.voucher-' + id).show();
         };
         
-        base.rowAfecto = function(context) {
-            console.log("XXXXX");
+        base.rowNoAfecto = function(context) {
+        	
+            var value = $(context).val();
+            var position = $(context).data('position');
+            
+            sumRowSubTotal(position);
+            sumTotalFooter();
         };
 
+        
+        base.rowAfecto = function(context) {
+        	
+            var value = $(context).val();
+            var igv = $('input[name=igv]').val();
+            var position = $(context).data('position');
+            var newIgv = parseFloat(value) * parseFloat(igv);
+
+            $('.td-igv-' + position).html(newIgv.toFixed(2));
+            
+            sumRowSubTotal(position);
+            sumTotalFooter();
+        };
+
+        function sumRowSubTotal(position) {
+            var noAfecto = $('input[name=noAfecto-' + position + ']').val();
+            var afecto = $('input[name=afecto-' + position + ']').val();
+            var igv = $('.td-igv-' + position).val();
+
+            var newSubTotal = parseFloat(noAfecto) + parseFloat(afecto) + parseFloat(igv);
+            $('.sub-total-' + position).html(newSubTotal.toFixed(2));
+        }
+        
+        function sumTotalFooter() {
+        	
+        	var noAfecto = 0;
+        	var afecto = 0;
+        	var igv = 0;
+        	var total = 0;
+        	
+        	
+    		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
+    			
+    			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
+    				noAfecto += parseFloat($('input[name=noAfecto-' + position + ']'));
+    				afecto += parseFloat($('input[name=afecto-' + position + ']'));
+    				igv += parseFloat($('.td-igv-' + position));
+    				total += parseFloat($('.sub-total-' + position));
+    			}
+        		
+            });
+        	
+    		$('.no-afecto-footer-sum').html(noAfecto.toFixed(2));
+    		$('.afecto-footer-sum').html(afecto.toFixed(2));
+    		$('.igv-footer-sum').html(igv.toFixed(2));
+        	$('.total-footer-sum').html(total.toFixed(2));
+        	
+        }
+        
+        function resetRowToZero(position) {
+            $('input[name=noAfecto-' + position + ']').val(0);
+            $('input[name=afecto-' + position + ']').val(0);
+            $('.td-igv-' + position).val(0);
+            $('.sub-total-' + position).html(0);
+        }
 
         // Private Functions
         function debug(e) {
@@ -162,6 +242,10 @@
             
         	$(document).on('keyup', '.row-afecto', function(event) {
                 bp.rowAfecto(this);
+            });
+        	
+        	$(document).on('keyup', '.row-no-afecto', function(event) {
+                bp.rowNoAfecto(this);
             });
 
         });
