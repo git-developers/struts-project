@@ -183,10 +183,10 @@
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
     			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
-    				noAfecto += parseFloat($('input[name=noAfecto-' + position + ']').val());
-    				afecto += parseFloat($('input[name=afecto-' + position + ']').val());
-    				igv += parseFloat($('.td-igv-' + position).html());
-    				total += parseFloat($('.sub-total-' + position).html());
+    				noAfecto += parseFloat(validInt( $('input[name=noAfecto-' + position + ']').val() ));
+    				afecto += parseFloat(validInt( $('input[name=afecto-' + position + ']').val() ));
+    				igv += parseFloat(validInt( $('.td-igv-' + position).html() ));
+    				total += parseFloat(validInt( $('.sub-total-' + position).html() ));
     				
     				console.log("sumTotalFooter 11 ::: " + total);
     			}
@@ -200,6 +200,14 @@
     		$('.igv-footer-sum').html(igv.toFixed(2));
         	$('.total-footer-sum').html(total.toFixed(2));
         	
+        }
+        
+        function validInt(number) {
+            if (typeof number == 'undefined'){
+                return 0;
+            }
+
+            return number;
         }
         
         function resetRowToZero(position) {
