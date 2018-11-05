@@ -121,13 +121,13 @@
         
         base.rowCheckbox = function(context) {
         	
-        	var position = $(context).data('position');
-        	resetRowToZero(position);
-        	
         	if (context.checked) {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', false);
         	} else {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', true);
+        		
+            	var position = $(context).data('position');
+            	resetRowToZero(position);
         	}
         };
         
@@ -187,6 +187,8 @@
     				afecto += parseFloat($('input[name=afecto-' + position + ']'));
     				igv += parseFloat($('.td-igv-' + position));
     				total += parseFloat($('.sub-total-' + position));
+    				
+    				console.log("sumTotalFooter ::: " + total);
     			}
         		
             });
