@@ -201,6 +201,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             		+ "?, ?, ?, ?, ?, ?, ?, ? "
             		+ ") } "; 
             
+            
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);
 			
