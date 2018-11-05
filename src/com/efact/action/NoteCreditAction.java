@@ -71,8 +71,6 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.process(ncObj);
         
-        System.out.println(gson.toJson(noteCredit));
-        
 		return SUCCESS;
 	}
 

@@ -22,6 +22,7 @@ public class NoteCredit implements Serializable {
     private int tipoDocDestino;
     private Date fechaEmisionDestino;
     private float igv;
+    private String resultado;
     
     private List<NoteCreditDetail> listNoteCreditDetail;
     private String numeroOut;
@@ -297,6 +298,12 @@ public class NoteCredit implements Serializable {
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public String getResultado() {
+		return resultado;
+	}
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
 	}
 	
 }

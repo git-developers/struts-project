@@ -248,6 +248,7 @@ public class NoteCreditImpDao extends OracleDaoFactory implements NoteCreditDao 
             
             objectOut.setNumeroOut(st.getString(27));
             objectOut.setSerieOut(st.getString(28));
+            objectOut.setResultado(st.getString(29));
             
         	System.out.print("PROCESS OUT ::::: " + 
         	st.getString(27) + "" + 

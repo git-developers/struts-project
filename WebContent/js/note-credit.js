@@ -179,7 +179,6 @@
         	var igv = 0;
         	var total = 0;
         	
-        	
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
     			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
