@@ -166,7 +166,7 @@
         function sumRowSubTotal(position) {
             var noAfecto = $('input[name=noAfecto-' + position + ']').val();
             var afecto = $('input[name=afecto-' + position + ']').val();
-            var igv = $('.td-igv-' + position).val();
+            var igv = $('.td-igv-' + position).html();
 
             var newSubTotal = parseFloat(noAfecto) + parseFloat(afecto) + parseFloat(igv);
             $('.sub-total-' + position).html(newSubTotal.toFixed(2));
@@ -183,10 +183,10 @@
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
     			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
-    				noAfecto += parseFloat($('input[name=noAfecto-' + position + ']'));
-    				afecto += parseFloat($('input[name=afecto-' + position + ']'));
-    				igv += parseFloat($('.td-igv-' + position));
-    				total += parseFloat($('.sub-total-' + position));
+    				noAfecto += parseFloat($('input[name=noAfecto-' + position + ']').val());
+    				afecto += parseFloat($('input[name=afecto-' + position + ']').val());
+    				igv += parseFloat($('.td-igv-' + position).html());
+    				total += parseFloat($('.sub-total-' + position).html());
     				
     				console.log("sumTotalFooter 11 ::: " + total);
     			}
@@ -205,7 +205,7 @@
         function resetRowToZero(position) {
             $('input[name=noAfecto-' + position + ']').val(0);
             $('input[name=afecto-' + position + ']').val(0);
-            $('.td-igv-' + position).val(0);
+            $('.td-igv-' + position).html(0);
             $('.sub-total-' + position).html(0);
         }
 
