@@ -7,10 +7,10 @@
     $.formNum2Words = function(el, options) {
 
         var defaults = {
-           units: [ "", "One", "Two", "Three", "Four", "Five", "Six","Seven", "Eight", "Nine", "Ten" ],
-           teens: [ "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen","Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty" ],
-           tens: [ "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty","Seventy", "Eighty", "Ninety" ],
-           othersIntl: [ "Thousand", "Million", "Billion", "Trillion" ]
+           units: [ "", "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis","Siete", "Ocho", "Nueve", "Diez" ],
+           teens: [ "Once", "Doce", "Trece", "Catorce", "Quince","Dieciseis", "Diecisiete", "Dieciocho", "Diecinueve", "Veinte" ],
+           tens: [ "", "Diez", "Veinte", "Treinta", "Cuarenta", "Cincuenta", "Sesenta","Setenta", "Ochenta", "Noventa" ],
+           othersIntl: [ "Miles", "Millones", "Billones", "Trillones" ]
         };
 
         // Global Private Variables
@@ -59,7 +59,7 @@
             
             n = Math.floor(n / 100);
             var hun = Math.floor(n % 10);
-            word = (hun > 0 ? (units[hun] + " Hundred ") : '') + word;
+            word = (hun > 0 ? (units[hun] + " Ciento ") : '') + word;
             
             return word;
         }
@@ -124,8 +124,8 @@
                 i++;
             };
 
-            if (word!='') word = word.toUpperCase() + ' DOLLARS';
-            if (word2!='') word2 = ' AND ' + word2.toUpperCase() + ' CENTS';
+            if (word!='') word = word.toUpperCase() + ' SOLES';
+            if (word2!='') word2 = ' y ' + word2.toUpperCase() + ' CENTS';
 
             return word+word2;
         }
