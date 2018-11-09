@@ -59,6 +59,9 @@ public class Voucher implements Serializable {
     private String tipo;
     private String total;
     
+    private String resultado;
+	private boolean status;
+    
     private String queryProgram;
     private String queryGroup;
     private String queryBank;
@@ -413,6 +416,18 @@ public class Voucher implements Serializable {
 	
 	public void setTo(String to) {
 		this.queryTo = to;
+	}
+	public String getResultado() {
+		return resultado;
+	}
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 }

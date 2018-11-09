@@ -9,6 +9,7 @@ import java.util.List;
 import java.sql.Connection;
 import com.efact.bean.*;
 import com.efact.dao.interfaces.*;
+import com.efact.util.Util;
 import com.efact.dao.factory.OracleDaoFactory;
 import oracle.jdbc.OracleTypes;
 
@@ -153,22 +154,34 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
 
         try{
     		
-            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, ?, ?) }"; 
+            String sql = "{ call FIN_PKG_REGISTROVENTASLOTE.P_GENERACOMPROBANTES(?, ?, ?, ?, ?) }"; 
             
             Connection connection = OracleDaoFactory.getMainConnection();
 			CallableStatement st = connection.prepareCall(sql);         
             st.setInt(1, nlote);
             st.setString(2, "EFACT");
             st.registerOutParameter(3, OracleTypes.CURSOR);
+            st.registerOutParameter(4, OracleTypes.VARCHAR);
+            st.registerOutParameter(5, OracleTypes.FLOAT);
             st.execute();
             
             ResultSet rs = (ResultSet) st.getObject(3);
             
-            while (rs.next()){
+            if (Util.floatToBool(st.getFloat(5))) {
+                while (rs.next()){
+                	Voucher obj = new Voucher();
+                    obj.setLote(rs.getString("LOTE"));
+                    obj.setTipo(rs.getString("TIPO"));
+                    obj.setTotal(rs.getString("TOTAL"));
+                    obj.setResultado(st.getString(4));
+                    obj.setStatus(Util.floatToBool(st.getFloat(5)));
+                    
+                    list.add(obj);
+                }
+            } else {
             	Voucher obj = new Voucher();
-                obj.setLote(rs.getString("LOTE"));
-                obj.setTipo(rs.getString("TIPO"));
-                obj.setTotal(rs.getString("TOTAL"));
+                obj.setResultado(st.getString(4));
+                obj.setStatus(Util.floatToBool(st.getFloat(5)));
                 
                 list.add(obj);
             }

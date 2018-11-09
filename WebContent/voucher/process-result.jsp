@@ -1,19 +1,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<div class="info-box bg-green">
-  <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-
-  <div class="info-box-content">
-    <span class="info-box-text">Proceso terminado</span>
-    <span class="info-box-number"></span>
-
-    <div class="progress">
-      <div class="progress-bar" style="width: 70%"></div>
-    </div>
-        <span class="progress-description"></span>
-  </div>
-</div>
-          
+<s:if test="%{listVoucherResult[0].status}">
+	<%@include file="../../modal/success.jsp" %>
+</s:if>
+<s:else>
+	<%@include file="../../modal/error.jsp" %>
+</s:else>
           
 <table class="table table-condensed">
      <thead>
@@ -25,17 +17,8 @@
 		 </tr>
     </thead>
     <tbody>
-    <%@ taglib prefix="s" uri="/struts-tags" %>
-		
-		<s:if test="listVoucherResult.empty">
-		    <tr>
-				<td colspan="4" align="center">
-					El proceso no retorno datos.
-				</td>
-			</tr>
-		</s:if>
-		<s:else>
-			
+    
+		<s:if test="%{listVoucherResult[0].status}">
 			<s:iterator value="listVoucherResult" var="object" status="status">
 				<tr>
 					<td>
@@ -56,7 +39,13 @@
 					</td>
 				</tr>
 			 </s:iterator>
-		
+		</s:if>
+		<s:else>
+		    <tr>
+				<td colspan="4" align="center">
+					<s:property value = "listVoucherResult[0].resultado"/>
+				</td>
+			</tr>
 		</s:else>
    </tbody>
 </table>

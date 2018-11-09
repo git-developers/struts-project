@@ -170,6 +170,8 @@
 
                 var currency = bp.num2Words(n);
                 
+                $('input[name="queryMoneyIntoWords"]').val(currency);
+                
                 console.log("OUT :: " + currency);
             });
 

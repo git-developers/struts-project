@@ -282,7 +282,7 @@
 		                    <i class="fa fa-align-left"></i>
 		                  </div>
 		                  <input 
-		                  	type="number" 
+		                  	type="text" 
 		                  	class="form-control" 
 		                  	name="queryMoneyIntoWords" 
 		                  	readonly="readonly">

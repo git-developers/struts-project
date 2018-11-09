@@ -59,8 +59,6 @@ public class NoteCredit implements Serializable {
     private String queryNumber;
     private String queryMoneyIntoWords;
     private String queryNoteCreditType;
-    
-    
     private float queryTotal;
     
 	public int getId() {
