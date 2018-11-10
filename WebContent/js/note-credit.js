@@ -178,7 +178,13 @@
         	
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
     			
+    			console.log("position ::: " + position);
+    			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
+    				
+    				console.log("noAfecto ::: " + $('input[name=noAfecto-' + position + ']').val());
+    				
+    				
     				noAfecto += parseFloat(validInt( $('input[name=noAfecto-' + position + ']').val() ));
     				afecto += parseFloat(validInt( $('input[name=afecto-' + position + ']').val() ));
     				igv += parseFloat(validInt( $('.td-igv-' + position).html() ));
