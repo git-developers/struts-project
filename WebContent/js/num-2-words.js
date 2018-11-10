@@ -142,8 +142,6 @@
             var othersIntl = o.othersIntl;
 
             var currency = base.numberToWords(n);
-
-            console.log("CURRENCY :: " + currency);
             
             return currency;
         };
@@ -165,8 +163,6 @@
             $(document).on('change', "input[name='queryTotal']", function(event) {
 
                 var n = $(this).val();
-
-                console.log("TTTTTTT :: " + n);
 
                 var currency = bp.num2Words(n);
                 

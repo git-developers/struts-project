@@ -161,9 +161,9 @@
         };
 
         function sumRowSubTotal(position) {
-            var noAfecto = $('input[name=noAfecto-' + position + ']').val();
-            var afecto = $('input[name=afecto-' + position + ']').val();
-            var igv = $('.td-igv-' + position).html();
+            var noAfecto = validInt( $('input[name=noAfecto-' + position + ']').val() );
+            var afecto = validInt( $('input[name=afecto-' + position + ']').val() );
+            var igv = validInt( $('.td-igv-' + position).html() );
 
             var newSubTotal = parseFloat(noAfecto) + parseFloat(afecto) + parseFloat(igv);
             $('.sub-total-' + position).html(newSubTotal.toFixed(2));
@@ -183,6 +183,9 @@
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
     				
     				console.log("noAfecto ::: " + $('input[name=noAfecto-' + position + ']').val());
+    				console.log("afecto ::: " + $('input[name=afecto-' + position + ']').val());
+    				console.log("td-igv ::: " + $('.td-igv-' + position).html() );
+    				console.log("sub-total ::: " + $('.sub-total-' + position).html() );
     				
     				
     				noAfecto += parseFloat(validInt( $('input[name=noAfecto-' + position + ']').val() ));
@@ -206,7 +209,7 @@
         }
         
         function validInt(number) {
-            if (typeof number == 'undefined' || number == ""){
+            if (typeof number == 'undefined' || isNaN(number) || number == ""){
                 return 0;
             }
 
