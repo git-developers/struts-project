@@ -220,7 +220,7 @@
         }
         
         function validInt(number) {
-            if (typeof number == 'undefined' || isNaN(number) || number == ""){
+            if (typeof number == 'undefined' || isNaN(number) || number == "" || Number.isInteger(number)){
                 return 0;
             }
 
