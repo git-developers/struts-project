@@ -268,8 +268,7 @@
 		                  	class="form-control total-footer-sum" 
 		                  	name="queryTotal" 
 		                  	value="0"
-		                  	>
-		                  	<!-- readonly="readonly" -->
+		                  	readonly="readonly">
 		                </div>
 		             </div>
 	             </div>
