@@ -149,8 +149,8 @@
         
         base.rowAfecto = function(context) {
         	
-            var value = $(context).val();
-            var igv = $('input[name=igv]').val();
+            var value = validInt( $(context).val() );
+            var igv = validInt( $('input[name=igv]').val() );
             var position = $(context).data('position');
             var newIgv = parseFloat(value) * parseFloat(igv);
 
