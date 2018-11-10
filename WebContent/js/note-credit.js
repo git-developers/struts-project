@@ -161,6 +161,15 @@
         };
 
         function sumRowSubTotal(position) {
+        	
+        	console.log("::: sumRowSubTotal ::: " );
+        	console.log("position ::: " + position);
+        	console.log("noAfecto position ::: " + $('input[name=noAfecto-' + position + ']').val());
+        	console.log("afecto position ::: " + $('input[name=afecto-' + position + ']').val() );
+        	console.log("td-igv ::: " + $('.td-igv-' + position).html());
+        	
+        	
+        	
             var noAfecto = validInt( $('input[name=noAfecto-' + position + ']').val() );
             var afecto = validInt( $('input[name=afecto-' + position + ']').val() );
             var igv = validInt( $('.td-igv-' + position).html() );
@@ -178,14 +187,16 @@
         	
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
     			
-    			console.log("position ::: " + position);
+    			//console.log("position ::: " + position);
     			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
     				
+    				/*
     				console.log("noAfecto ::: " + $('input[name=noAfecto-' + position + ']').val());
     				console.log("afecto ::: " + $('input[name=afecto-' + position + ']').val());
     				console.log("td-igv ::: " + $('.td-igv-' + position).html() );
     				console.log("sub-total ::: " + $('.sub-total-' + position).html() );
+    				*/
     				
     				
     				noAfecto += parseFloat(validInt( $('input[name=noAfecto-' + position + ']').val() ));
@@ -193,12 +204,12 @@
     				igv += parseFloat(validInt( $('.td-igv-' + position).html() ));
     				total += parseFloat(validInt( $('.sub-total-' + position).html() ));
     				
-    				console.log("sumTotalFooter 11 ::: " + total);
+    				//console.log("sumTotalFooter 11 ::: " + total);
     			}
         		
             });
         	
-    		console.log("sumTotalFooter 22 ::: " + total);
+    		//console.log("sumTotalFooter 22 ::: " + total);
     		
     		$('.no-afecto-footer-sum').html(noAfecto.toFixed(2));
     		$('.afecto-footer-sum').html(afecto.toFixed(2));
