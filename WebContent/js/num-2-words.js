@@ -33,11 +33,11 @@
             };
 
             if (n <= 10) {
-                return units[n];
+                return defaults.units[n];
             };
 
             if (n <= 20) {
-                return teens[n - 10 - 1];
+                return defaults.teens[n - 10 - 1];
             };
 
             var unit = Math.floor(n % 10);
@@ -59,7 +59,7 @@
             
             n = Math.floor(n / 100);
             var hun = Math.floor(n % 10);
-            word = (hun > 0 ? (units[hun] + " Ciento ") : '') + word;
+            word = (hun > 0 ? (defaults.units[hun] + " Ciento ") : '') + word;
             
             return word;
         }

@@ -206,7 +206,7 @@
         }
         
         function validInt(number) {
-            if (typeof number == 'undefined'){
+            if (typeof number == 'undefined' || number == ""){
                 return 0;
             }
 
