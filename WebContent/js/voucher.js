@@ -97,7 +97,7 @@
         	
         	console.log("index ::: " + index);
         	
-        	$('.search-count').val(index);
+        	$('.search-count').html(index);
         };
         
         base.program = function(context) {
@@ -105,20 +105,6 @@
             $('#group').prop('selectedIndex',0);
             $('.group-select').hide();
             $('.prod-' + id).show();
-        	
-        	
-        	
-//            var id = $(context).val();  
-//            
-//            $('.group-select').hide();
-//            
-//            $('.prod-' + id).show();
-//            
-//            if (id === '0') {
-//                $('.group-select').show();
-//            }
-//
-//            $('#grupo').val(0);
         };
         
         base.group = function(context) {
@@ -166,6 +152,7 @@
             
             $("#check-all").click(function(event) {
             	bp.checkAll(this);
+            	bp.checkboxClick(this);
         	});
             
             $(".voucher-process").click(function( event ) {
@@ -180,7 +167,7 @@
                 bp.process(this);
             });
             
-        	$(document).on('click', '.check-all-able', function(event) {
+        	$(document).on('click', 'input:checkbox.check-all-able', function(event) {
                 bp.checkboxClick(this);
             });
 
