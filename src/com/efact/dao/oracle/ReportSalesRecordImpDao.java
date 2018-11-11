@@ -36,7 +36,7 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             
             while (rs.next()){
             	ReportSalesRecord obj = new ReportSalesRecord();
-            	
+
             	obj.setFuente(rs.getString("FUENTE"));
             	obj.setTipoemision(rs.getString("TIPOEMISION")); 
             	obj.setRvb_tmoneda(rs.getString("RVB_TMONEDA"));  
@@ -51,20 +51,20 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             	obj.setRvb_valorfacturado(rs.getString("RVB_VALORFACTURADO"));
             	obj.setRvb_baseimponible(rs.getString("RVB_BASEIMPONIBLE"));
             	obj.setExonerada(rs.getString("EXONERADA"));
-            	obj.setRvb_impinafecta(rs.getInt("RVB_IMPINAFECTA")); 
-            	obj.setIsc(rs.getInt("ISC")); 
-            	obj.setRvb_igv(rs.getInt("RVB_IGV")); 
-            	obj.setOtros(rs.getInt("OTROS")); 
-            	obj.setRvb_imptotal(rs.getInt("RVB_IMPTOTAL")); 
-            	obj.setTcd_venta(rs.getInt("TCD_VENTA")); 
+            	obj.setRvb_impinafecta(rs.getString("RVB_IMPINAFECTA")); 
+            	obj.setIsc(rs.getString("ISC")); 
+            	obj.setRvb_igv(rs.getString("RVB_IGV")); 
+            	obj.setOtros(rs.getString("OTROS")); 
+            	obj.setRvb_imptotal(rs.getString("RVB_IMPTOTAL")); 
+            	obj.setTcd_venta(rs.getString("TCD_VENTA")); 
             	obj.setRvb_tipo(rs.getInt("RVB_TIPODEV")); 
             	obj.setRvb_seriedev(rs.getInt("RVB_SERIEDEV")); 
             	obj.setRvb_numerodev(rs.getInt("RVB_NUMERODEV")); 
             	obj.setRvb_tipocambiodev(rs.getInt("RVB_TIPOCAMBIODEV")); 
-            	obj.setTotalafectas_sol(rs.getInt("TOTALAFECTAS_SOL")); 
-            	obj.setTotalnoafectas_sol(rs.getInt("TOTALNOAFECTAS_SOL")); 
-            	obj.setTotaligv_sol(rs.getInt("TOTALIGV_SOL")); 
-            	obj.setTotaltotal_sol(rs.getInt("TOTALTOTAL_SOL")); 
+            	obj.setTotalafectas_sol(rs.getString("TOTALAFECTAS_SOL")); 
+            	obj.setTotalnoafectas_sol(rs.getString("TOTALNOAFECTAS_SOL")); 
+            	obj.setTotaligv_sol(rs.getString("TOTALIGV_SOL")); 
+            	obj.setTotaltotal_sol(rs.getString("TOTALTOTAL_SOL")); 
             	obj.setRvb_documento(rs.getString("RVB_TDOCUMENTO")); 
             	obj.setRvb_id(rs.getInt("RVB_ID")); 
 

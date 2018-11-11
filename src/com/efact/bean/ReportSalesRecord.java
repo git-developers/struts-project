@@ -8,7 +8,7 @@ import com.efact.util.Util;
 public class ReportSalesRecord implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
     private String fuente;
     private String tipoemision;
     private String rvb_tmoneda;
@@ -24,21 +24,21 @@ public class ReportSalesRecord implements Serializable {
     private String rvb_valorfacturado;
     private String rvb_baseimponible;
     private String exonerada;
-    private int rvb_impinafecta;
-    private int isc;
-    private int rvb_igv;
-    private int otros;
-    private int	 rvb_imptotal;
-    private int tcd_venta;
+    private String rvb_impinafecta;
+    private String isc;
+    private String rvb_igv;
+    private String otros;
+    private String	 rvb_imptotal;
+    private String tcd_venta;
     private String referencia_fecha;
     private int rvb_tipodev;
     private int rvb_seriedev;
     private int rvb_numerodev;
     private int rvb_tipocambiodev;
-    private int totalafectas_sol;
-    private int totalnoafectas_sol;
-    private int totaligv_sol;
-    private int totaltotal_sol;
+    private String totalafectas_sol;
+    private String totalnoafectas_sol;
+    private String totaligv_sol;
+    private String totaltotal_sol;
     private int rvb_tdocumento;
     private int rvb_id;
 
@@ -158,42 +158,6 @@ public class ReportSalesRecord implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public int getRvb_impinafecta() {
-		return rvb_impinafecta;
-	}
-	public void setRvb_impinafecta(int rvb_impinafecta) {
-		this.rvb_impinafecta = rvb_impinafecta;
-	}
-	public int getIsc() {
-		return isc;
-	}
-	public void setIsc(int isc) {
-		this.isc = isc;
-	}
-	public int getRvb_igv() {
-		return rvb_igv;
-	}
-	public void setRvb_igv(int rvb_igv) {
-		this.rvb_igv = rvb_igv;
-	}
-	public int getOtros() {
-		return otros;
-	}
-	public void setOtros(int otros) {
-		this.otros = otros;
-	}
-	public int getRvb_imptotal() {
-		return rvb_imptotal;
-	}
-	public void setRvb_imptotal(int rvb_imptotal) {
-		this.rvb_imptotal = rvb_imptotal;
-	}
-	public int getTcd_venta() {
-		return tcd_venta;
-	}
-	public void setTcd_venta(int tcd_venta) {
-		this.tcd_venta = tcd_venta;
-	}
 	public String getReferencia_fecha() {
 		return referencia_fecha;
 	}
@@ -224,30 +188,6 @@ public class ReportSalesRecord implements Serializable {
 	public void setRvb_tipocambiodev(int rvb_tipocambiodev) {
 		this.rvb_tipocambiodev = rvb_tipocambiodev;
 	}
-	public int getTotalafectas_sol() {
-		return totalafectas_sol;
-	}
-	public void setTotalafectas_sol(int totalafectas_sol) {
-		this.totalafectas_sol = totalafectas_sol;
-	}
-	public int getTotalnoafectas_sol() {
-		return totalnoafectas_sol;
-	}
-	public void setTotalnoafectas_sol(int totalnoafectas_sol) {
-		this.totalnoafectas_sol = totalnoafectas_sol;
-	}
-	public int getTotaligv_sol() {
-		return totaligv_sol;
-	}
-	public void setTotaligv_sol(int totaligv_sol) {
-		this.totaligv_sol = totaligv_sol;
-	}
-	public int getTotaltotal_sol() {
-		return totaltotal_sol;
-	}
-	public void setTotaltotal_sol(int totaltotal_sol) {
-		this.totaltotal_sol = totaltotal_sol;
-	}
 	public int getRvb_tdocumento() {
 		return rvb_tdocumento;
 	}
@@ -259,6 +199,66 @@ public class ReportSalesRecord implements Serializable {
 	}
 	public void setRvb_id(int rvb_id) {
 		this.rvb_id = rvb_id;
+	}
+	public String getRvb_impinafecta() {
+		return rvb_impinafecta;
+	}
+	public void setRvb_impinafecta(String rvb_impinafecta) {
+		this.rvb_impinafecta = rvb_impinafecta;
+	}
+	public String getIsc() {
+		return isc;
+	}
+	public void setIsc(String isc) {
+		this.isc = isc;
+	}
+	public String getRvb_igv() {
+		return rvb_igv;
+	}
+	public void setRvb_igv(String rvb_igv) {
+		this.rvb_igv = rvb_igv;
+	}
+	public String getOtros() {
+		return otros;
+	}
+	public void setOtros(String otros) {
+		this.otros = otros;
+	}
+	public String getRvb_imptotal() {
+		return rvb_imptotal;
+	}
+	public void setRvb_imptotal(String rvb_imptotal) {
+		this.rvb_imptotal = rvb_imptotal;
+	}
+	public String getTcd_venta() {
+		return tcd_venta;
+	}
+	public void setTcd_venta(String tcd_venta) {
+		this.tcd_venta = tcd_venta;
+	}
+	public String getTotalafectas_sol() {
+		return totalafectas_sol;
+	}
+	public void setTotalafectas_sol(String totalafectas_sol) {
+		this.totalafectas_sol = totalafectas_sol;
+	}
+	public String getTotalnoafectas_sol() {
+		return totalnoafectas_sol;
+	}
+	public void setTotalnoafectas_sol(String totalnoafectas_sol) {
+		this.totalnoafectas_sol = totalnoafectas_sol;
+	}
+	public String getTotaligv_sol() {
+		return totaligv_sol;
+	}
+	public void setTotaligv_sol(String totaligv_sol) {
+		this.totaligv_sol = totaligv_sol;
+	}
+	public String getTotaltotal_sol() {
+		return totaltotal_sol;
+	}
+	public void setTotaltotal_sol(String totaltotal_sol) {
+		this.totaltotal_sol = totaltotal_sol;
 	}
 
 }
