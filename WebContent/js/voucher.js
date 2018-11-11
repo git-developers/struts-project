@@ -95,8 +95,6 @@
         	    }
         	});
         	
-        	console.log("index ::: " + index);
-        	
         	$('.search-count').html(index);
         };
         

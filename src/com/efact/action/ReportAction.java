@@ -11,6 +11,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.efact.dao.interfaces.*;
+import com.efact.util.Dates;
 import com.efact.util.ExcelExport;
 import com.efact.util.Maths;
 import com.google.gson.Gson;
@@ -27,6 +28,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	private List<Sequence> listSequence;
 	private List<ReportSalesRecord> listReportSalesRecord;
 	private List<ReportSalesSummary> listReportSalesSummary;
+	private String currentDate;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -46,6 +48,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		
 		SequenceDao sequenceDao = dao.getSequenceDao();
 		listSequence = sequenceDao.findAll();
+		currentDate = Dates.getCurrentDate();
 		
 		return SUCCESS;
 	}
@@ -144,6 +147,18 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 
 	public void setListReportSalesSummary(List<ReportSalesSummary> listReportSalesSummary) {
 		this.listReportSalesSummary = listReportSalesSummary;
+	}
+
+	public String getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 	
