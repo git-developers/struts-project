@@ -79,7 +79,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
         } catch (Exception e){
         	System.out.print("search -- Exception ::::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -109,7 +109,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
         } catch (Exception e){
             System.out.println("getSecuencia -- Exception  :::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -138,7 +138,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
         
         } catch (Exception e){
             System.out.println(":::: insertVoucher :::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -190,7 +190,7 @@ public class VoucherImpDao extends OracleDaoFactory implements VoucherDao  {
             
         } catch (Exception e){
             System.out.println(":::: generateVoucher :::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }

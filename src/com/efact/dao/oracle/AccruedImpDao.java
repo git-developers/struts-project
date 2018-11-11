@@ -87,8 +87,8 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
             st.close();
         
         } catch (Exception e){
-            System.out.println(":::: processAccruedConciliation :::: " + e.getMessage());
-            throw e;
+            System.out.println("processAccruedConciliation ::Exception:: " + e.getMessage());
+//            throw e;
         } finally {
             this.closeConnection();
         }
@@ -102,8 +102,6 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
     	List<AccruedIssueDropdown> list = new ArrayList<>();
 
         try{
-        	
-//            System.out.print("listAccruedIssueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
         	
             String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_LISTADO_FECHAS_CIE_DEVEN(?, ?) }"; 
             
@@ -216,7 +214,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
       
       } catch (Exception e){
           System.out.println(":::: processAccruedIssue :::: " + e.getMessage());
-          throw e;
+//          throw e;
       } finally {
           this.closeConnection();
       }

@@ -97,7 +97,7 @@ public class NoteDebitImpDao extends OracleDaoFactory implements NoteDebitDao  {
             
         } catch (Exception e){
         	System.out.print("NoteDebit search -- Exception ::::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }

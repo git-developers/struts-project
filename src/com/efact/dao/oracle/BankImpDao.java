@@ -56,11 +56,4 @@ public class BankImpDao extends OracleDaoFactory implements BankDao  {
 		return null;
 	}
 
-	@Override
-	public BankDao getBankDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 }
