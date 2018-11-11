@@ -133,7 +133,7 @@
    						   <th class="text-center">Datos</th>
    						   <th class="text-center">Valor facturado</th>
    						   <th class="text-center">Base imponible</th>
-   						   <th class="text-center">impin afecta</th>
+   						   <th class="text-center">inafecta</th>
 						   <th class="text-center">IGV</th>
 						   <th class="text-center">Importe total</th>
 						   <th class="text-center">Venta</th>
