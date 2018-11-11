@@ -134,7 +134,7 @@
         	if(new Date(fechaVencimiento) < new Date(fechaEmision))
         	{
         		$('input[name="fechaVencimiento"]').val(fechaEmision);
-        		alert("La fecha de vencimiento no puede ser menor a la fecha de emisión.");
+        		alert("La fecha de vencimiento no puede ser menor a la fecha de emision.");
         	}
         };
         
