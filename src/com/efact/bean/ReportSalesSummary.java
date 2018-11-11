@@ -10,18 +10,18 @@ public class ReportSalesSummary implements Serializable {
     private String tipo;
     private String serie;
     private String programa;
-    private int ene;
-    private int feb;
-    private int mar;
-    private int abr;
-    private int may;
-    private int jun;
-    private int jul;
-    private int ago;
-    private int set;
-    private int oct;
-    private int nov;
-    private int dic;
+    private String ene;
+    private String feb;
+    private String mar;
+    private String abr;
+    private String may;
+    private String jun;
+    private String jul;
+    private String ago;
+    private String set;
+    private String oct;
+    private String nov;
+    private String dic;
 
     private int queryYear;
 
@@ -66,101 +66,106 @@ public class ReportSalesSummary implements Serializable {
 		this.programa = programa;
 	}
 
-	public int getEne() {
+	public String getEne() {
 		return ene;
 	}
 
-	public void setEne(int ene) {
+	public void setEne(String ene) {
 		this.ene = ene;
 	}
 
-	public int getFeb() {
+	public String getFeb() {
 		return feb;
 	}
 
-	public void setFeb(int feb) {
+	public void setFeb(String feb) {
 		this.feb = feb;
 	}
 
-	public int getMar() {
+	public String getMar() {
 		return mar;
 	}
 
-	public void setMar(int mar) {
+	public void setMar(String mar) {
 		this.mar = mar;
 	}
 
-	public int getAbr() {
+	public String getAbr() {
 		return abr;
 	}
 
-	public void setAbr(int abr) {
+	public void setAbr(String abr) {
 		this.abr = abr;
 	}
 
-	public int getMay() {
+	public String getMay() {
 		return may;
 	}
 
-	public void setMay(int may) {
+	public void setMay(String may) {
 		this.may = may;
 	}
 
-	public int getJun() {
+	public String getJun() {
 		return jun;
 	}
 
-	public void setJun(int jun) {
+	public void setJun(String jun) {
 		this.jun = jun;
 	}
 
-	public int getJul() {
+	public String getJul() {
 		return jul;
 	}
 
-	public void setJul(int jul) {
+	public void setJul(String jul) {
 		this.jul = jul;
 	}
 
-	public int getAgo() {
+	public String getAgo() {
 		return ago;
 	}
 
-	public void setAgo(int ago) {
+	public void setAgo(String ago) {
 		this.ago = ago;
 	}
 
-	public int getSet() {
+	public String getSet() {
 		return set;
 	}
 
-	public void setSet(int set) {
+	public void setSet(String set) {
 		this.set = set;
 	}
 
-	public int getOct() {
+	public String getOct() {
 		return oct;
 	}
 
-	public void setOct(int oct) {
+	public void setOct(String oct) {
 		this.oct = oct;
 	}
 
-	public int getNov() {
+	public String getNov() {
 		return nov;
 	}
 
-	public void setNov(int nov) {
+	public void setNov(String nov) {
 		this.nov = nov;
 	}
 
-	public int getDic() {
+	public String getDic() {
 		return dic;
 	}
 
-	public void setDic(int dic) {
+	public void setDic(String dic) {
 		this.dic = dic;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 
 }
