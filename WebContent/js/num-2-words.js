@@ -66,8 +66,6 @@
 
         base.numberToWords = function(n) {
 
-            console.log("numberToWords :: " + n);
-
             if (isNaN(n)) {
                 return "Not a number";
             };
@@ -131,16 +129,12 @@
         }
 
         base.num2Words = function(n) {
-
-            //var n = 55;
-    	
+        	
             var o = options;
-            
             var units = o.units;
             var teens = o.teens;
             var tens = o.tens;
             var othersIntl = o.othersIntl;
-
             var currency = base.numberToWords(n);
             
             return currency;
@@ -163,7 +157,6 @@
             $(document).on('change', "input[name='queryTotal']", function(event) {
 
                 var n = $(this).val();
-
                 var currency = bp.num2Words(n);
                 
                 $('input[name="queryMoneyIntoWords"]').val(currency);

@@ -82,18 +82,43 @@
             });
         };
         
-        base.program = function(context) {
-            var id = $(context).val();  
-            
-            $('.group-select').hide();
-            
-            $('.prod-' + id).show();
-            
-            if (id === '0') {
-                $('.group-select').show();
-            }
+        base.checkboxClick = function(context) {
+        	
+        	var index = 0;
+        	
+        	$("table#voucher-table tbody tr").each(function (i, row) {
+        		
+        		var isCheck = $(row).find('td:eq(1) input[type=checkbox]').prop('checked');
 
-            $('#grupo').val(0);
+        	    if(isCheck) {
+        	    	index++;
+        	    }
+        	});
+        	
+        	console.log("index ::: " + index);
+        	
+        	$('.search-count').val(index);
+        };
+        
+        base.program = function(context) {
+            var id = $('#program').val();
+            $('#group').prop('selectedIndex',0);
+            $('.group-select').hide();
+            $('.prod-' + id).show();
+        	
+        	
+        	
+//            var id = $(context).val();  
+//            
+//            $('.group-select').hide();
+//            
+//            $('.prod-' + id).show();
+//            
+//            if (id === '0') {
+//                $('.group-select').show();
+//            }
+//
+//            $('#grupo').val(0);
         };
         
         base.group = function(context) {
@@ -131,6 +156,10 @@
             	bp.program(this);
         	});
             
+            $(document).ready(function(){
+            	bp.program(this);
+            });
+            
             $("#group").change(function(event) {
             	bp.group(this);
         	});
@@ -149,6 +178,10 @@
                 }
             	
                 bp.process(this);
+            });
+            
+        	$(document).on('click', '.check-all-able', function(event) {
+                bp.checkboxClick(this);
             });
 
         });

@@ -128,9 +128,6 @@
         	var fechaVencimiento = $(context).val(); 
         	var fechaEmision = $('input[name="fechaEmision"]').val();
         	
-        	console.log("fechaVencimiento :: " + fechaVencimiento);
-        	console.log("fechaEmision :: " + fechaEmision);
-        	
         	if(new Date(fechaVencimiento) < new Date(fechaEmision))
         	{
         		$('input[name="fechaVencimiento"]').val(fechaEmision);

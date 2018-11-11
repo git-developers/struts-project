@@ -137,12 +137,12 @@
                 bp.exportExcel(this);
             });
             
-            $("#program").change(function(event) {
-            	bp.program(this);
-        	});
-            
             $("#group").change(function(event) {
             	bp.group(this);
+        	});
+            
+            $("#program").change(function(event) {
+            	bp.program(this);
         	});
             
             $(document).ready(function(){
