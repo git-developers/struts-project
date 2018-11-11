@@ -73,7 +73,17 @@
     	        downloadLink.click();
     	    }
     	};
-
+    	
+        base.queryToChange = function(context) {
+        	var queryTo = $(context).val(); 
+        	var queryFrom = $('input[name="queryFrom"]').val();
+        	
+        	if(new Date(queryTo) < new Date(queryFrom))
+        	{
+        		$('input[name="queryFrom"]').val(queryTo);
+        		alert("La fecha hasta no puede ser menor que la fecha Desde.");
+        	}
+        };
         
         // Private Functions
         function debug(e) {
@@ -97,6 +107,10 @@
             $(".report-export-excel").click(function( event ) {
                 bp.exportExcel(this);
             });
+            
+            $('input[name="queryTo"]').change(function(event) {
+            	bp.queryToChange(this);
+        	});
 
         });
     };

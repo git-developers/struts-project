@@ -28,7 +28,7 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 	private List<Sequence> listSequence;
 	private List<ReportSalesRecord> listReportSalesRecord;
 	private List<ReportSalesSummary> listReportSalesSummary;
-	private String currentDate;
+	private String currentDate, currentDateFirstDayOfMonth;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -49,7 +49,8 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 		SequenceDao sequenceDao = dao.getSequenceDao();
 		listSequence = sequenceDao.findAll();
 		currentDate = Dates.getCurrentDate();
-		
+		currentDateFirstDayOfMonth = Dates.getCurrentDateFirstDayOfMonth();
+
 		return SUCCESS;
 	}
 	
@@ -159,6 +160,14 @@ public class ReportAction extends ActionSupportBase implements ServletRequestAwa
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getCurrentDateFirstDayOfMonth() {
+		return currentDateFirstDayOfMonth;
+	}
+
+	public void setCurrentDateFirstDayOfMonth(String currentDateFirstDayOfMonth) {
+		this.currentDateFirstDayOfMonth = currentDateFirstDayOfMonth;
 	}
 	
 	

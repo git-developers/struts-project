@@ -12,6 +12,15 @@ public class Dates {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return sdf.format(new Date());
 	}
+	
+	public static String getCurrentDateFirstDayOfMonth() {
+		Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("GMT"));
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(cal.getTime());
+	}
 
 	public static String getCurrentDateTime() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
