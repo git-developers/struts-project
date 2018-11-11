@@ -86,8 +86,13 @@
         };
         
         base.queryFromChange = function(context) {
-        	var queryFrom = $(context).val(); 
-        	$('input[name="queryTo"]').val(queryFrom);
+        	var queryFrom = $(context).val();
+        	var queryTo = $('input[name="queryTo"]').val();
+        	
+        	if(new Date(queryFrom) > new Date(queryTo))
+        	{
+        		$('input[name="queryTo"]').val(queryFrom);
+        	}
         };
         
         // Private Functions
