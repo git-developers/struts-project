@@ -103,7 +103,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
         try{
         	
-            System.out.print("listAccruedIssueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
+//            System.out.print("listAccruedIssueDropdown ::::: " + programId + " --- DEADLINE ::: " + groupId);
         	
             String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_LISTADO_FECHAS_CIE_DEVEN(?, ?) }"; 
             
@@ -142,7 +142,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 
         try{
         	
-        	System.out.println("queryDateTo ::: " + object.getQueryDateTo());
+//        	System.out.println("queryDateTo ::: " + object.getQueryDateTo());
 	        	
 	        String sql = "{ ? = call FIN_PKG_REGISTRODEVENGADOS.F_PREVIEW_EMITE_DEVENGADO(?, ?, ?) } "; 
 	        
@@ -207,7 +207,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
           st.registerOutParameter(6, OracleTypes.FLOAT);
           st.execute();
           
-          System.out.println(":::: POLLO MENSAJE OUT :::: " + st.getString(5));
+//          System.out.println(":::: POLLO MENSAJE OUT :::: " + st.getString(5));
           
           obj.setResultado(st.getString(5));
           obj.setStatus(Util.floatToBool(st.getFloat(6)));

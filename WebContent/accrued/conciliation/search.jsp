@@ -10,7 +10,7 @@
 <s:else>
 	
 	<s:iterator value="listAccruedConciliation" var="object" status="status">
-		<tr class="<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">bg-light-blue</s:if>">
+		<tr class="<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">bg-teal-active</s:if>">
 			<td>
 				<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">
 					<span class="badge bg-aqua-active">
@@ -33,7 +33,7 @@
 				<s:property value = "#object.recaudo"/>
 			</td>
 			<td>
-				<button type="button" class="btn bg-purple btn-flat btn-xs">
+				<button type="button" class="btn bg-gray-active btn-flat btn-xs">
 					<s:property value = "#object.descripcion"/>
 				</button>
 			</td>

@@ -10,7 +10,7 @@
 <s:else>
 	
 	<s:iterator value="listAccruedIssue" var="object" status="status">
-		<tr class="<s:if test="%{#object.codRecaudo != null && #object.codRecaudo != ''}">bg-light-blue</s:if>">
+		<tr class="<s:if test="%{#object.codRecaudo != null && #object.codRecaudo != ''}">bg-teal-active</s:if>">
 			<td>
 				<s:if test="%{#object.codRecaudo != null && #object.codRecaudo != ''}">
 					<span class="badge bg-aqua-active">
@@ -27,7 +27,7 @@
 				<s:property value = "#object.codigoAsociado"/>
 			</td>
 			<td>
-				<button type="button" class="btn bg-purple btn-flat btn-xs">
+				<button type="button" class="btn bg-gray-active btn-flat btn-xs">
 					<s:property value = "#object.datosAsociados"/>
 				</button>
 			</td>
