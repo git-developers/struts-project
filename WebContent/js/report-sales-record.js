@@ -85,6 +85,11 @@
         	}
         };
         
+        base.queryFromChange = function(context) {
+        	var queryFrom = $(context).val(); 
+        	$('input[name="queryTo"]').val(queryFrom);
+        };
+        
         // Private Functions
         function debug(e) {
           console.log(e);
@@ -112,6 +117,9 @@
             	bp.queryToChange(this);
         	});
 
+            $('input[name="queryFrom"]').change(function(event) {
+            	bp.queryFromChange(this);
+        	});
         });
     };
 
