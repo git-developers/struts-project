@@ -118,6 +118,15 @@
                 }
             });
         };
+
+        base.fechaEmisionChange = function(context) {
+        	var fechaEmision = $(context).val(); 
+        	
+        	console.log("fechaEmision :: " + fechaEmision);
+        	
+        	$('input[name="fechaVencimiento"]').val(fechaEmision);
+        	
+        };
         
         base.rowCheckbox = function(context) {
         	
@@ -127,7 +136,10 @@
         		$(context).closest('tr').find('input[type=number]').prop('disabled', true);
         		
             	var position = $(context).data('position');
+            	
             	resetRowToZero(position);
+                sumRowSubTotal(position);
+                sumTotalFooter();
         	}
         };
         
@@ -277,6 +289,9 @@
                 bp.rowNoAfecto(this);
             });
 
+            $('input[name="fechaEmision"]').change(function(event) {
+            	bp.fechaEmisionChange(this);
+        	});
         });
     };
 

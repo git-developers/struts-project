@@ -26,6 +26,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 	private List<NoteCreditType> listNoteCreditType;
 	private List<VoucherDropdown> listVoucherDropdown;
 	private List<Series> listSeries;
+	private String currentDate;
 	
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
@@ -59,6 +60,7 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
         NoteCreditDao ncDao = dao.getNoteCreditDao();
         noteCredit = ncDao.search(ncObj);  
         listNoteCreditType = ncDao.listNoteCreditType();
+		currentDate = Dates.getCurrentDate();
         
 		return SUCCESS;
 	}
@@ -122,6 +124,18 @@ public class NoteCreditAction extends ActionSupportBase implements ServletReques
 
 	public void setListVoucherDropdown(List<VoucherDropdown> listVoucherDropdown) {
 		this.listVoucherDropdown = listVoucherDropdown;
+	}
+
+	public String getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

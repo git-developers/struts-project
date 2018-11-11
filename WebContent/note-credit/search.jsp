@@ -181,7 +181,7 @@
    		<!-- BODY -->
       <div class="box-body">
       
-      	<div class="col-md-4">
+      	<div class="col-md-6">
 	      	<div class="form-group">
 	          <label for="">Tipo Comprobante</label>
 	          <input 
@@ -192,7 +192,7 @@
 	        </div>
       	</div>
       	
-      	<div class="col-md-4">
+      	<div class="col-md-6">
 	      	<div class="form-group">
 	          <label for="">Tipo NC (09)</label>
         		 <select class="form-control" id="note-credit-type" name="queryNoteCreditType">
@@ -218,7 +218,7 @@
       	</div>
       	-->
       	
-      	<div class="col-md-4">
+      	<div class="col-md-6">
 	        <div class="form-group">
                 <label>Fecha de emisi&oacute;n</label>
 
@@ -230,12 +230,12 @@
                   	type="date" 
                   	class="form-control" 
                   	name="fechaEmision"
-                  	value="<s:property value="noteCredit.fechaEmision"/>" >
+                  	value="<s:property value="currentDate"/>">
                 </div>
              	</div>
       	</div>
       	
-      	<div class="col-md-4">
+      	<div class="col-md-6">
 	        <div class="form-group">
                 <label>Fecha de vencimiento</label>
 
@@ -247,7 +247,7 @@
                   	type="date" 
                   	class="form-control" 
                   	name="fechaVencimiento"
-                  	value="<s:property value="noteCredit.fechaVencimiento"/>" >
+                  	value="<s:property value="currentDate"/>" >
                 </div>
              	</div>
       	</div>
