@@ -10,14 +10,16 @@
 <s:else>
 	
 	<s:iterator value="listAccruedConciliation" var="object" status="status">
-		<tr>
+		<tr class="<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">bg-light-blue</s:if>">
 			<td>
-				<span class="badge bg-light-blue">
-					<s:property value="%{#status.index + 1}"/>
-				</span>
-				
-				<input type="hidden" name="rea_id" value="<s:property value = "#object.reaId"/>">
-				<input type="hidden" name="sistema" value="<s:property value = "#object.sistema"/>">
+				<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">
+					<span class="badge bg-aqua-active">
+						<s:property value="%{#status.index + 1}"/>
+					</span>
+					
+					<input type="hidden" name="rea_id" value="<s:property value = "#object.reaId"/>">
+					<input type="hidden" name="sistema" value="<s:property value = "#object.sistema"/>">
+				</s:if>
 			</td>
 			<td>
 				<s:if test="%{#object.comprobante1 != null && #object.comprobante1 != ''}">
