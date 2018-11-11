@@ -8,6 +8,11 @@
 	
 	<package name="default"  extends="struts-default">
 	
+		<action name="test" class="com.efact.action.TestAction" method="execute">
+			<result name="success">/test.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	
 		<action name="index" class="com.efact.action.IndexAction" method="execute">
 			<result name="success">/dashboard.jsp</result>
 			<result name="error">/error.jsp</result>

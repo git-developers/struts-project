@@ -21,9 +21,9 @@ public class ReportSalesRecord implements Serializable {
     private int rvb_numero;
     private String rvb_documento;
     private String rvb_datos;
-    private int rvb_valorfacturado;
-    private int rvb_baseimponible;
-    private int exonerada;
+    private String rvb_valorfacturado;
+    private String rvb_baseimponible;
+    private String exonerada;
     private int rvb_impinafecta;
     private int isc;
     private int rvb_igv;
@@ -136,23 +136,27 @@ public class ReportSalesRecord implements Serializable {
 	public void setRvb_datos(String rvb_datos) {
 		this.rvb_datos = rvb_datos;
 	}
-	public int getRvb_valorfacturado() {
+
+	public String getRvb_valorfacturado() {
 		return rvb_valorfacturado;
 	}
-	public void setRvb_valorfacturado(int rvb_valorfacturado) {
+	public void setRvb_valorfacturado(String rvb_valorfacturado) {
 		this.rvb_valorfacturado = rvb_valorfacturado;
 	}
-	public int getRvb_baseimponible() {
+	public String getRvb_baseimponible() {
 		return rvb_baseimponible;
 	}
-	public void setRvb_baseimponible(int rvb_baseimponible) {
+	public void setRvb_baseimponible(String rvb_baseimponible) {
 		this.rvb_baseimponible = rvb_baseimponible;
 	}
-	public int getExonerada() {
+	public String getExonerada() {
 		return exonerada;
 	}
-	public void setExonerada(int exonerada) {
+	public void setExonerada(String exonerada) {
 		this.exonerada = exonerada;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	public int getRvb_impinafecta() {
 		return rvb_impinafecta;
