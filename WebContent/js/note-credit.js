@@ -130,17 +130,17 @@
         
         base.rowCheckbox = function(context) {
         	
+        	var position = $(context).data('position');
+        	
         	if (context.checked) {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', false);
         	} else {
         		$(context).closest('tr').find('input[type=number]').prop('disabled', true);
-        		
-            	var position = $(context).data('position');
-            	
             	resetRowToZero(position);
-                sumRowSubTotal(position);
-                sumTotalFooter();
         	}
+        	
+            sumRowSubTotal(position);
+            sumTotalFooter();
         };
         
         base.voucher = function(context) {
@@ -288,10 +288,11 @@
         	$(document).on('keyup', '.row-no-afecto', function(event) {
                 bp.rowNoAfecto(this);
             });
-
-            $('input[name="fechaEmision"]').change(function(event) {
-            	bp.fechaEmisionChange(this);
-        	});
+        	
+        	$(document).on('change', 'input[name="fechaEmision"]', function(event) {
+                bp.fechaEmisionChange(this);
+            });
+    		
         });
     };
 
