@@ -19,7 +19,7 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
 		
         List<ReportSalesSummary> list = new ArrayList<>();
         
-    	System.out.print("YEAR ::: " + object.getQueryYear());
+//    	System.out.print("YEAR ::: " + object.getQueryYear());
 
         try{
 
