@@ -161,6 +161,7 @@ public class AccruedImpDao extends OracleDaoFactory implements AccruedDao  {
 	        	
 	        	AccruedIssue obj = new AccruedIssue();
 	            obj.setCodigoAsociado(rs.getString("ASO_COD"));
+	            obj.setCodRecaudo(rs.getString("COD_RECAUDO"));
 	            obj.setRecaudoId(rs.getInt("REC_ID"));
 	            obj.setDatosAsociados(rs.getString("DATOS"));
 	            obj.setNumeroCuota(rs.getInt("REC_NCUOTA"));

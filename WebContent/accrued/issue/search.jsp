@@ -10,16 +10,18 @@
 <s:else>
 	
 	<s:iterator value="listAccruedIssue" var="object" status="status">
-		<tr>
+		<tr class="<s:if test="%{#object.codRecaudo != null && #object.codRecaudo != ''}">bg-light-blue</s:if>">
 			<td>
-				<span class="badge bg-light-blue">
-					<s:property value="%{#status.index + 1}"/>
-				</span>
-				
-				<input type="hidden" name="rea_id" value="<s:property value = "#object.recaudoId"/>">
+				<s:if test="%{#object.codRecaudo != null && #object.codRecaudo != ''}">
+					<span class="badge bg-aqua-active">
+						<s:property value="%{#status.index + 1}"/>
+					</span>
+					
+					<input type="hidden" name="rea_id" value="<s:property value = "#object.recaudoId"/>">
+				</s:if>
 			</td>
 			<td>
-				<s:property value = "#object.recaudoId"/>
+				<s:property value = "#object.codRecaudo"/>
 			</td>
 			<td>
 				<s:property value = "#object.codigoAsociado"/>

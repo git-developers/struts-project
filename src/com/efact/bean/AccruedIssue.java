@@ -8,6 +8,7 @@ public class AccruedIssue implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int recaudoId;
+	private String codRecaudo;
 	private String datosAsociados; 
 	private int numeroCuota; 
 	private int posicion;
@@ -24,6 +25,16 @@ public class AccruedIssue implements Serializable {
     private String queryGroup;
     private String queryDateTo;
     
+    
+	public String getCodRecaudo() {
+		return codRecaudo;
+	}
+	public void setCodRecaudo(String codRecaudo) {
+		this.codRecaudo = codRecaudo;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public int getRecaudoId() {
 		return recaudoId;
 	}
