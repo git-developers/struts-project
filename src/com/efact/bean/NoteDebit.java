@@ -2,6 +2,8 @@ package com.efact.bean;
 
 import java.io.Serializable;
 
+import com.efact.util.Util;
+
 public class NoteDebit implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -21,8 +23,8 @@ public class NoteDebit implements Serializable {
     private String resultado;
     private String origen;
     
-	private int queryGroup;
-	private int queryCieId;
+	private String queryGroup;
+	private String queryCieId;
 	
 	public String getContrato() {
 		return contrato;
@@ -99,18 +101,6 @@ public class NoteDebit implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public int getQueryGroup() {
-		return queryGroup;
-	}
-	public void setQueryGroup(int queryGroup) {
-		this.queryGroup = queryGroup;
-	}
-	public int getQueryCieId() {
-		return queryCieId;
-	}
-	public void setQueryCieId(int queryCieId) {
-		this.queryCieId = queryCieId;
-	}
 	public String getResultado() {
 		return resultado;
 	}
@@ -123,7 +113,17 @@ public class NoteDebit implements Serializable {
 	public void setOrigen(String origen) {
 		this.origen = origen;
 	}
-
-	
+	public int getQueryGroup() {
+		return Util.strToInt(queryGroup);
+	}
+	public void setQueryGroup(String queryGroup) {
+		this.queryGroup = queryGroup;
+	}
+	public int getQueryCieId() {
+		return Util.strToInt(queryCieId);
+	}
+	public void setQueryCieId(String queryCieId) {
+		this.queryCieId = queryCieId;
+	}
     
 }

@@ -46,7 +46,7 @@
 		                <div class="form-group">
 		                  <label for="">Serie</label>
 				         <select class="form-control" id="select-series" name="querySerie" required="required">
-				         	<option>[seleccione]</option>
+				         	<option value="">[seleccione]</option>
 		                  	<s:iterator value="listSeries" var="series">
 		                  		<option 
 		                  			value="<s:property value = "#series.id"/>"
