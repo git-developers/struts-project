@@ -18,8 +18,6 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
 	public List<ReportSalesSummary> salesSummarySearch(ReportSalesSummary object) throws Exception {
 		
         List<ReportSalesSummary> list = new ArrayList<>();
-        
-//    	System.out.print("YEAR ::: " + object.getQueryYear());
 
         try{
 
@@ -62,7 +60,7 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
             
         } catch (Exception e){
         	System.out.print("Exception ::: " + e.getMessage());
-            throw e;
+//            throw e;
         } finally {
             this.closeConnection();
         }
