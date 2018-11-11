@@ -48,9 +48,9 @@ public class ReportSalesRecordImpDao extends OracleDaoFactory implements ReportS
             	obj.setRvb_numero(rs.getInt("RVB_NUMERO")); 
             	obj.setRvb_documento(rs.getString("RVB_DOCUMENTO")); 
             	obj.setRvb_datos(rs.getString("RVB_DATOS")); 
-            	obj.setRvb_valorfacturado(rs.getString("RVB_VALORFACTURADO")); //
-            	obj.setRvb_baseimponible(rs.getString("RVB_BASEIMPONIBLE")); //
-            	obj.setExonerada(rs.getString("EXONERADA")); //
+            	obj.setRvb_valorfacturado(rs.getString("RVB_VALORFACTURADO"));
+            	obj.setRvb_baseimponible(rs.getString("RVB_BASEIMPONIBLE"));
+            	obj.setExonerada(rs.getString("EXONERADA"));
             	obj.setRvb_impinafecta(rs.getInt("RVB_IMPINAFECTA")); 
             	obj.setIsc(rs.getInt("ISC")); 
             	obj.setRvb_igv(rs.getInt("RVB_IGV")); 
