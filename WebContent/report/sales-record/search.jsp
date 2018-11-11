@@ -42,22 +42,22 @@
 			<td>
 				<s:property value = "#object.rvb_datos"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.rvb_valorfacturado"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.rvb_baseimponible"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.rvb_impinafecta"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.rvb_igv"/>
 			</td>
 			<td class="text-right">
 				<s:property value = "#object.rvb_imptotal"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.tcd_venta"/>
 			</td>
 			<td class="text-right">
@@ -72,7 +72,7 @@
 			<td class="text-right">
 				<s:property value = "#object.totaltotal_sol"/>
 			</td>
-			<td>
+			<td class="text-right">
 				<s:property value = "#object.rvb_id"/>
 			</td>
 		</tr>
