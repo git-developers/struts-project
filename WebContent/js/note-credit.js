@@ -121,11 +121,18 @@
 
         base.fechaEmisionChange = function(context) {
         	var fechaEmision = $(context).val(); 
-        	
-        	console.log("fechaEmision :: " + fechaEmision);
-        	
         	$('input[name="fechaVencimiento"]').val(fechaEmision);
+        };
+
+        base.fechaVencimientoChange = function(context) {
+        	var fechaVencimiento = $(context).val(); 
+        	var fechaEmision = $('input[name="fechaVencimiento"]').val();
         	
+        	if(new Date(fechaVencimiento) < new Date(fechaEmision))
+        	{
+        		$('input[name="fechaVencimiento"]').val(fechaEmision);
+        		alert("la fecha de vencimiento no puede ser menor a la fecha de emisión.");
+        	}
         };
         
         base.rowCheckbox = function(context) {
@@ -198,37 +205,19 @@
         	var total = 0;
         	
     		$.each([ 1, 2, 3, 4, 5, 6, 7, 8 ], function( index, position ) {
-    			
-    			//console.log("position ::: " + position);
-    			
     			if (!$('input[name="noAfecto-' + position + '"]').is(':disabled')) {
-    				
-    				/*
-    				console.log("noAfecto ::: " + $('input[name=noAfecto-' + position + ']').val());
-    				console.log("afecto ::: " + $('input[name=afecto-' + position + ']').val());
-    				console.log("td-igv ::: " + $('.td-igv-' + position).html() );
-    				console.log("sub-total ::: " + $('.sub-total-' + position).html() );
-    				*/
-    				
-    				
     				noAfecto += parseFloat(validInt( $('input[name=noAfecto-' + position + ']').val() ));
     				afecto += parseFloat(validInt( $('input[name=afecto-' + position + ']').val() ));
     				igv += parseFloat(validInt( $('.td-igv-' + position).html() ));
     				total += parseFloat(validInt( $('.sub-total-' + position).html() ));
-    				
-    				//console.log("sumTotalFooter 11 ::: " + total);
     			}
-        		
             });
-        	
-    		//console.log("sumTotalFooter 22 ::: " + total);
     		
     		$('.no-afecto-footer-sum').html(noAfecto.toFixed(2));
     		$('.afecto-footer-sum').html(afecto.toFixed(2));
     		$('.igv-footer-sum').html(igv.toFixed(2));
         	$('.total-footer-sum').html(total.toFixed(2));
         	$("input[name='queryTotal']").val(total.toFixed(2)).change();
-        	
         }
         
         function validInt(number) {
@@ -293,6 +282,9 @@
                 bp.fechaEmisionChange(this);
             });
     		
+        	$(document).on('change', 'input[name="fechaVencimiento"]', function(event) {
+                bp.fechaVencimientoChange(this);
+            });
         });
     };
 
