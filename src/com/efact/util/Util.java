@@ -51,4 +51,12 @@ public class Util {
 		return decimalFormat.format(s);
 	}
 	
+	public static String amountFormat(double s, int digits) {
+		DecimalFormat format = new DecimalFormat("#");
+		format.setMinimumFractionDigits(digits);
+		return format.format(s);
+	}
+	
+
+	
 }

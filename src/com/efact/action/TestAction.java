@@ -1,6 +1,6 @@
 package com.efact.action;
 
-import org.apache.commons.lang3.StringUtils;
+import com.efact.util.Util;
 
 public class TestAction extends ActionSupportBase {
 
@@ -14,11 +14,11 @@ public class TestAction extends ActionSupportBase {
 	@Override
 	public String execute() throws Exception {
 		
-		double xxx = 23.40;
+		double xxx = 12345.40;
 		
-		String xx = StringUtils.rightPad("23.4", 8, '0');
+		String xx = Util.amountFormat(xxx, 2);
 		
-		System.out.print("xx ::: " + xx);
+		System.out.print("xxxxx ::: " + xx);
 		
 		return SUCCESS;
 	}

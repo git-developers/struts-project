@@ -2,6 +2,8 @@ package com.efact.bean;
 
 import java.io.Serializable;
 
+import com.efact.util.Util;
+
 public class ReportSalesSummary implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -70,96 +72,96 @@ public class ReportSalesSummary implements Serializable {
 		return serialVersionUID;
 	}
 
-	public double getEne() {
-		return ene;
+	public String getEne() {
+		return Util.amountFormat(ene, 2);
 	}
 
 	public void setEne(double ene) {
 		this.ene = ene;
 	}
 
-	public double getFeb() {
-		return feb;
+	public String getFeb() {
+		return Util.amountFormat(feb, 2);
 	}
 
 	public void setFeb(double feb) {
 		this.feb = feb;
 	}
 
-	public double getMar() {
-		return mar;
+	public String getMar() {
+		return Util.amountFormat(mar, 2);
 	}
 
 	public void setMar(double mar) {
 		this.mar = mar;
 	}
 
-	public double getAbr() {
-		return abr;
+	public String getAbr() {
+		return Util.amountFormat(abr, 2);
 	}
 
 	public void setAbr(double abr) {
 		this.abr = abr;
 	}
 
-	public double getMay() {
-		return may;
+	public String getMay() {
+		return Util.amountFormat(may, 2);
 	}
 
 	public void setMay(double may) {
 		this.may = may;
 	}
 
-	public double getJun() {
-		return jun;
+	public String getJun() {
+		return Util.amountFormat(jun, 2);
 	}
 
 	public void setJun(double jun) {
 		this.jun = jun;
 	}
 
-	public double getJul() {
-		return jul;
+	public String getJul() {
+		return Util.amountFormat(jul, 2);
 	}
 
 	public void setJul(double jul) {
 		this.jul = jul;
 	}
 
-	public double getAgo() {
-		return ago;
+	public String getAgo() {
+		return Util.amountFormat(ago, 2);
 	}
 
 	public void setAgo(double ago) {
 		this.ago = ago;
 	}
 
-	public double getSet() {
-		return set;
+	public String getSet() {
+		return Util.amountFormat(set, 2);
 	}
 
 	public void setSet(double set) {
 		this.set = set;
 	}
 
-	public double getOct() {
-		return oct;
+	public String getOct() {
+		return Util.amountFormat(oct, 2);
 	}
 
 	public void setOct(double oct) {
 		this.oct = oct;
 	}
 
-	public double getNov() {
-		return nov;
+	public String getNov() {
+		return Util.amountFormat(nov, 2);
 	}
 
 	public void setNov(double nov) {
 		this.nov = nov;
 	}
 
-	public double getDic() {
-		return dic;
+	public String getDic() {
+		return Util.amountFormat(dic, 2);
 	}
 
 	public void setDic(double dic) {
