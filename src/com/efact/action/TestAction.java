@@ -16,7 +16,7 @@ public class TestAction extends ActionSupportBase {
 		
 		double xxx = 23.40;
 		
-		String xx = StringUtils.rightPad("23.40", 8, '0');
+		String xx = StringUtils.rightPad("23.4", 8, '0');
 		
 		System.out.print("xx ::: " + xx);
 		
