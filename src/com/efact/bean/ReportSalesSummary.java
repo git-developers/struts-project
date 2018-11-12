@@ -10,18 +10,18 @@ public class ReportSalesSummary implements Serializable {
     private String tipo;
     private String serie;
     private String programa;
-    private String ene;
-    private String feb;
-    private String mar;
-    private String abr;
-    private String may;
-    private String jun;
-    private String jul;
-    private String ago;
-    private String set;
-    private String oct;
-    private String nov;
-    private String dic;
+    private float ene;
+    private float feb;
+    private float mar;
+    private float abr;
+    private float may;
+    private float jun;
+    private float jul;
+    private float ago;
+    private float set;
+    private float oct;
+    private float nov;
+    private float dic;
 
     private int queryYear;
 
@@ -66,104 +66,104 @@ public class ReportSalesSummary implements Serializable {
 		this.programa = programa;
 	}
 
-	public String getEne() {
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public float getEne() {
 		return ene;
 	}
 
-	public void setEne(String ene) {
+	public void setEne(float ene) {
 		this.ene = ene;
 	}
 
-	public String getFeb() {
+	public float getFeb() {
 		return feb;
 	}
 
-	public void setFeb(String feb) {
+	public void setFeb(float feb) {
 		this.feb = feb;
 	}
 
-	public String getMar() {
+	public float getMar() {
 		return mar;
 	}
 
-	public void setMar(String mar) {
+	public void setMar(float mar) {
 		this.mar = mar;
 	}
 
-	public String getAbr() {
+	public float getAbr() {
 		return abr;
 	}
 
-	public void setAbr(String abr) {
+	public void setAbr(float abr) {
 		this.abr = abr;
 	}
 
-	public String getMay() {
+	public float getMay() {
 		return may;
 	}
 
-	public void setMay(String may) {
+	public void setMay(float may) {
 		this.may = may;
 	}
 
-	public String getJun() {
+	public float getJun() {
 		return jun;
 	}
 
-	public void setJun(String jun) {
+	public void setJun(float jun) {
 		this.jun = jun;
 	}
 
-	public String getJul() {
+	public float getJul() {
 		return jul;
 	}
 
-	public void setJul(String jul) {
+	public void setJul(float jul) {
 		this.jul = jul;
 	}
 
-	public String getAgo() {
+	public float getAgo() {
 		return ago;
 	}
 
-	public void setAgo(String ago) {
+	public void setAgo(float ago) {
 		this.ago = ago;
 	}
 
-	public String getSet() {
+	public float getSet() {
 		return set;
 	}
 
-	public void setSet(String set) {
+	public void setSet(float set) {
 		this.set = set;
 	}
 
-	public String getOct() {
+	public float getOct() {
 		return oct;
 	}
 
-	public void setOct(String oct) {
+	public void setOct(float oct) {
 		this.oct = oct;
 	}
 
-	public String getNov() {
+	public float getNov() {
 		return nov;
 	}
 
-	public void setNov(String nov) {
+	public void setNov(float nov) {
 		this.nov = nov;
 	}
 
-	public String getDic() {
+	public float getDic() {
 		return dic;
 	}
 
-	public void setDic(String dic) {
+	public void setDic(float dic) {
 		this.dic = dic;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 
