@@ -10,18 +10,18 @@ public class ReportSalesSummary implements Serializable {
     private String tipo;
     private String serie;
     private String programa;
-    private float ene;
-    private float feb;
-    private float mar;
-    private float abr;
-    private float may;
-    private float jun;
-    private float jul;
-    private float ago;
-    private float set;
-    private float oct;
-    private float nov;
-    private float dic;
+    private double ene;
+    private double feb;
+    private double mar;
+    private double abr;
+    private double may;
+    private double jun;
+    private double jul;
+    private double ago;
+    private double set;
+    private double oct;
+    private double nov;
+    private double dic;
 
     private int queryYear;
 
@@ -70,99 +70,99 @@ public class ReportSalesSummary implements Serializable {
 		return serialVersionUID;
 	}
 
-	public float getEne() {
+	public double getEne() {
 		return ene;
 	}
 
-	public void setEne(float ene) {
+	public void setEne(double ene) {
 		this.ene = ene;
 	}
 
-	public float getFeb() {
+	public double getFeb() {
 		return feb;
 	}
 
-	public void setFeb(float feb) {
+	public void setFeb(double feb) {
 		this.feb = feb;
 	}
 
-	public float getMar() {
+	public double getMar() {
 		return mar;
 	}
 
-	public void setMar(float mar) {
+	public void setMar(double mar) {
 		this.mar = mar;
 	}
 
-	public float getAbr() {
+	public double getAbr() {
 		return abr;
 	}
 
-	public void setAbr(float abr) {
+	public void setAbr(double abr) {
 		this.abr = abr;
 	}
 
-	public float getMay() {
+	public double getMay() {
 		return may;
 	}
 
-	public void setMay(float may) {
+	public void setMay(double may) {
 		this.may = may;
 	}
 
-	public float getJun() {
+	public double getJun() {
 		return jun;
 	}
 
-	public void setJun(float jun) {
+	public void setJun(double jun) {
 		this.jun = jun;
 	}
 
-	public float getJul() {
+	public double getJul() {
 		return jul;
 	}
 
-	public void setJul(float jul) {
+	public void setJul(double jul) {
 		this.jul = jul;
 	}
 
-	public float getAgo() {
+	public double getAgo() {
 		return ago;
 	}
 
-	public void setAgo(float ago) {
+	public void setAgo(double ago) {
 		this.ago = ago;
 	}
 
-	public float getSet() {
+	public double getSet() {
 		return set;
 	}
 
-	public void setSet(float set) {
+	public void setSet(double set) {
 		this.set = set;
 	}
 
-	public float getOct() {
+	public double getOct() {
 		return oct;
 	}
 
-	public void setOct(float oct) {
+	public void setOct(double oct) {
 		this.oct = oct;
 	}
 
-	public float getNov() {
+	public double getNov() {
 		return nov;
 	}
 
-	public void setNov(float nov) {
+	public void setNov(double nov) {
 		this.nov = nov;
 	}
 
-	public float getDic() {
+	public double getDic() {
 		return dic;
 	}
 
-	public void setDic(float dic) {
+	public void setDic(double dic) {
 		this.dic = dic;
 	}
 

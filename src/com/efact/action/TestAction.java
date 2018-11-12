@@ -1,5 +1,7 @@
 package com.efact.action;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class TestAction extends ActionSupportBase {
 
 	private String userName;
@@ -11,6 +13,13 @@ public class TestAction extends ActionSupportBase {
     
 	@Override
 	public String execute() throws Exception {
+		
+		double xxx = 23.40;
+		
+		String xx = StringUtils.rightPad("23.40", 8, '0');
+		
+		System.out.print("xx ::: " + xx);
+		
 		return SUCCESS;
 	}
 

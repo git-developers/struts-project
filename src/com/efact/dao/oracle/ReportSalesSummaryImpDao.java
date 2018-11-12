@@ -39,18 +39,18 @@ public class ReportSalesSummaryImpDao extends OracleDaoFactory implements Report
             	obj.setTipo(rs.getString("TIPO"));
             	obj.setSerie(rs.getString("SERIE"));
             	obj.setPrograma(rs.getString("PROGRAMA"));
-            	obj.setEne(rs.getFloat("ENE"));
-            	obj.setFeb(rs.getFloat("FEB"));
-            	obj.setMar(rs.getFloat("MAR"));
-            	obj.setAbr(rs.getFloat("ABR"));
-            	obj.setMay(rs.getFloat("MAY"));
-            	obj.setJun(rs.getFloat("JUN"));
-            	obj.setJul(rs.getFloat("JUL"));
-            	obj.setAgo(rs.getFloat("AGO"));
-            	obj.setSet(rs.getFloat("SET"));
-            	obj.setOct(rs.getFloat("OCT"));
-            	obj.setNov(rs.getFloat("NOV"));
-            	obj.setDic(rs.getFloat("DIC"));
+            	obj.setEne(rs.getDouble("ENE"));
+            	obj.setFeb(rs.getDouble("FEB"));
+            	obj.setMar(rs.getDouble("MAR"));
+            	obj.setAbr(rs.getDouble("ABR"));
+            	obj.setMay(rs.getDouble("MAY"));
+            	obj.setJun(rs.getDouble("JUN"));
+            	obj.setJul(rs.getDouble("JUL"));
+            	obj.setAgo(rs.getDouble("AGO"));
+            	obj.setSet(rs.getDouble("SET"));
+            	obj.setOct(rs.getDouble("OCT"));
+            	obj.setNov(rs.getDouble("NOV"));
+            	obj.setDic(rs.getDouble("DIC"));
 
                 list.add(obj);
             }
